@@ -1,0 +1,48 @@
+---
+import Icon from '../ui/Icon.astro';
+import { comparisonRows } from '@/data/comparison';
+import { SITE } from '@/config/site';
+---
+<section class="section surface-sand" id="compare">
+  <div class="container-x">
+    <div class="max-w-3xl" data-reveal>
+      <div class="eyebrow">The difference</div>
+      <h2 class="h2 mt-5">A local partner, not a <em class="accent">typical</em> agency.</h2>
+      <p class="lede mt-6">Same goal: more booked jobs. Very different way of getting there.</p>
+    </div>
+    <div class="mt-12 overflow-hidden rounded-[20px] border border-stone-300 bg-white shadow-[0_1px_2px_rgba(15,31,20,.05),0_24px_48px_-28px_rgba(15,31,20,.3)]" data-reveal>
+      <table class="w-full text-left text-[15px]">
+        <caption class="sr-only">{SITE.name} compared with a typical marketing agency</caption>
+        <thead>
+          <tr class="align-bottom">
+            <th scope="col" class="hidden md:table-cell w-[24%] p-6 font-mono text-[11.5px] uppercase tracking-[0.1em] text-ink-600 font-medium"></th>
+            <th scope="col" class="p-5 md:p-6 w-1/2 md:w-[40%] bg-evergreen-950 text-mist-200">
+              <span class="block font-mono text-[10.5px] uppercase tracking-[0.12em] text-gold-300 font-medium">Us</span>
+              <span class="block mt-1 font-display text-[17px] md:text-[19px] font-[600] tracking-tight">{SITE.name}</span>
+            </th>
+            <th scope="col" class="p-5 md:p-6 w-1/2 md:w-[36%]">
+              <span class="block font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-600 font-medium">Them</span>
+              <span class="block mt-1 font-display text-[17px] md:text-[19px] font-[600] tracking-tight text-ink-600">Typical agency</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {comparisonRows.map((r) => (
+            <>
+              <tr class="md:hidden border-t border-stone-300/70"><th scope="rowgroup" colspan="2" class="px-5 pt-4 pb-0 font-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-600 font-medium">{r.label}</th></tr>
+              <tr class="md:border-t border-stone-300/70">
+                <th scope="row" class="hidden md:table-cell p-6 font-medium text-ink-900">{r.label}</th>
+                <td class="px-5 pb-4 pt-2 md:p-6 bg-evergreen-50/70 md:bg-evergreen-50">
+                  <span class="flex gap-2.5 text-ink-900 font-medium"><Icon name="check-circle" size={18} class="text-evergreen-700 shrink-0 mt-[2px]" />{r.us}</span>
+                </td>
+                <td class="px-5 pb-4 pt-2 md:p-6">
+                  <span class="flex gap-2.5 text-ink-600"><Icon name="minus" size={18} class="text-ink-600/60 shrink-0 mt-[2px]" />{r.them}</span>
+                </td>
+              </tr>
+            </>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

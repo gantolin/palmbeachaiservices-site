@@ -1,0 +1,116 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Visual from '@/components/sections/CaseStudyVisual.astro';
+import Calculator from '@/components/islands/MissedCallCalculator.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { services, type Service } from '@/data/services';
+import { getCaseStudy } from '@/data/caseStudies';
+import { CTA } from '@/config/site';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+const { service } = Astro.props as { service: Service };
+const cs = getCaseStudy(service.relatedCase)!;
+const others = services.filter((s) => s.slug !== service.slug);
+const crumbs = [{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }, { name: service.name, url: `/services/${service.slug}/` }];
+---
+<Base title={service.metaTitle} description={service.metaDescription} faqs={service.faqs} breadcrumbs={crumbs}>
+  <PageHero eyebrow={service.eyebrow} title={service.headline} lede={service.subhead} crumbs={crumbs}>
+    <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
+      <a href={CTA.primary.href} class="btn btn-primary btn-lg">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
+      <a href="/pricing/" class="link-mono self-start sm:self-auto">See pricing <Icon name="arrow-right" size={14} /></a>
+    </div>
+  </PageHero>
+
+  <!-- Outcomes -->
+  <section class="section surface-cream">
+    <div class="container-x">
+      <div class="max-w-2xl" data-reveal>
+        <div class="eyebrow">What you get</div>
+        <h2 class="h2 mt-5">Built for one thing: <em class="accent">more booked jobs.</em></h2>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        {service.outcomes.map((o, i) => (
+          <div class="card p-7 rounded-[20px]" data-reveal style={`--d:${i * 80}ms`}>
+            <div class="font-mono text-[12px] text-evergreen-700">0{i + 1}</div>
+            <h3 class="h3 mt-3">{o.title}</h3>
+            <p class="mt-3 text-ink-600 text-[15.5px]">{o.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Included + proof -->
+  <section class="section surface-sand">
+    <div class="container-x grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
+      <div class="lg:col-span-6" data-reveal>
+        <div class="eyebrow">What's included</div>
+        <h2 class="h2 mt-5">No mystery. Here is <em class="accent">exactly</em> what we do.</h2>
+        <ul class="mt-9 grid gap-3 sm:grid-cols-1">
+          {service.included.map((f) => (
+            <li class="flex gap-3 rounded-xl bg-white/70 border border-stone-300 px-4 py-3.5 text-[15.5px]">
+              <span class="mt-[2px] shrink-0 size-5 rounded-full bg-evergreen-700 text-white flex items-center justify-center"><Icon name="check" size={12} stroke={2.6} /></span>{f}
+            </li>
+          ))}
+        </ul>
+        <p class="mt-7 rounded-xl bg-evergreen-950 text-mist-200 px-5 py-4 text-[15px] flex gap-3 items-start"><Icon name="receipt" size={19} class="text-gold-300 shrink-0 mt-[2px]" /><span>{service.priceNote} <a href="/pricing/" class="text-gold-300 underline underline-offset-4">Full pricing</a></span></p>
+      </div>
+      <div class="lg:col-span-6 lg:sticky lg:top-28 space-y-5" data-reveal style="--d:100ms">
+        {service.slug === 'ai-automation' ? (
+          <div class="surface-dark rounded-[20px]"><Calculator /></div>
+        ) : null}
+        <a href={`/results/${cs.slug}/`} class="block card lift rounded-[20px] overflow-hidden group">
+          <div class="p-5 bg-[linear-gradient(180deg,var(--color-evergreen-50),var(--color-sand-100))] border-b border-stone-300"><Visual kind={cs.visual} /></div>
+          <div class="p-6">
+            <div class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Case study · {cs.client}</div>
+            <p class="mt-2 font-display text-[20px] font-[600] tracking-tight leading-snug">{cs.title}</p>
+            <span class="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-evergreen-700">Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section surface-dark relative overflow-hidden grain">
+    <div class="absolute inset-0 opacity-70" style="background: radial-gradient(60% 50% at 100% 100%, rgba(53,94,59,.55), transparent 70%)" aria-hidden="true"></div>
+    <div class="container-x relative">
+      <div class="max-w-2xl" data-reveal>
+        <div class="eyebrow">How it works</div>
+        <h2 class="h2 mt-5 text-[#f4f1e8]">Simple, fixed, and <em class="accent">fast.</em></h2>
+      </div>
+      <ol class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {service.process.map((p, i) => (
+          <li class="card-dark p-7" data-reveal style={`--d:${i * 80}ms`}>
+            <span class="font-display text-[56px] leading-none font-[300] tracking-[-0.05em] text-transparent [-webkit-text-stroke:1.2px_rgba(230,205,131,.6)]" aria-hidden="true">{i + 1}</span>
+            <h3 class="h3 mt-5 text-[#f4f1e8]">{p.title}</h3>
+            <p class="mt-2 text-mist-400 text-[15px]">{p.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <FAQ faqs={service.faqs} title={`${service.name}: *questions*`} />
+
+  <section class="pb-24 surface-cream">
+    <div class="container-x">
+      <div class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-ink-600">Works even better with</div>
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        {others.map((o) => (
+          <a href={`/services/${o.slug}/`} class="card lift group flex items-center gap-5 p-6 rounded-[18px]">
+            <span class="size-12 shrink-0 rounded-2xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name={o.icon} size={22} /></span>
+            <div class="min-w-0"><div class="font-display text-[19px] font-[600] tracking-tight">{o.name}</div><div class="text-[14px] text-ink-600 truncate">{o.outcomes[0].title}</div></div>
+            <Icon name="arrow-right" size={18} class="ml-auto text-evergreen-700 transition-transform group-hover:translate-x-1" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <FinalCTA />
+</Base>

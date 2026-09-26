@@ -1,0 +1,94 @@
+---
+import Icon from '../ui/Icon.astro';
+import PhoneDemo from '../islands/PhoneDemo.astro';
+import { CTA, SITE } from '@/config/site';
+import { plan, usd } from '@/data/pricing';
+import { words } from '@/lib/text';
+const headline = 'Turn Google searches into *booked* jobs.';
+const chips = ['Site live in 7 days', 'You own everything', `Local to ${SITE.homeBase}`];
+---
+<section class="hero relative overflow-hidden surface-dark grain -mt-px">
+  <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+  <div class="absolute inset-0 hero-contours" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
+
+  <div class="container-x relative pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-16 lg:pb-28">
+    <div class="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-7">
+        <div class="eyebrow fade-in"><span class="sm:hidden">Palm Beach County · Websites · AI</span><span class="hidden sm:inline">Websites · Google · AI automation · Palm Beach County</span></div>
+        <h1 class="display mt-6 text-[#f4f1e8] word-rise" set:html={words(headline)} />
+        <p class="lede mt-7 !text-[clamp(1.08rem,1.5vw,1.3rem)] fade-in" style="--d:380ms">
+          Websites, Google Business Profile, and AI automation for Palm Beach County home-service businesses.
+          <span class="text-mist-200">One simple plan. No contract. You own everything.</span>
+        </p>
+        <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:480ms">
+          <a href={CTA.primary.href} class="btn btn-primary btn-lg">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
+          <a href="#pricing" class="link-mono self-start sm:self-auto">See what's included <Icon name="arrow-right" size={14} /></a>
+        </div>
+        <a href="#pricing" class="price-ticket group mt-8 flex sm:inline-flex items-stretch rounded-2xl fade-in" style="--d:560ms">
+          <span class="px-4 sm:px-5 py-3.5">
+            <span class="block font-display text-[28px] sm:text-[32px] leading-none font-[600] tracking-[-0.03em] text-white tabular">{usd(plan.buildFee)}</span>
+            <span class="mt-1.5 block font-mono text-[10.5px] uppercase tracking-[0.1em] text-mist-400">One-time build</span>
+          </span>
+          <span class="flex items-center text-gold-300 text-[20px] font-light" aria-hidden="true">+</span>
+          <span class="px-4 sm:px-5 py-3.5">
+            <span class="block font-display text-[28px] sm:text-[32px] leading-none font-[600] tracking-[-0.03em] text-white tabular">{usd(plan.monthly)}<span class="text-[15px] font-[500] tracking-normal text-mist-400">/mo</span></span>
+            <span class="mt-1.5 block font-mono text-[10.5px] uppercase tracking-[0.1em] text-mist-400">Month-to-month</span>
+          </span>
+          <span class="hidden sm:flex items-center gap-2 border-l border-white/10 pl-5 pr-5 text-[13.5px] leading-snug text-mist-200 max-w-[200px]">No contract. Cancel anytime.<Icon name="arrow-right" size={15} class="shrink-0 text-gold-300 transition-transform group-hover:translate-x-0.5" /></span>
+        </a>
+        <p class="mt-5 text-[13.5px] text-mist-400 fade-in" style="--d:580ms">Free Palm Beach Teardown of your Google profile + website. You keep the fixes, whether or not we work together.</p>
+
+        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-3 fade-in" style="--d:600ms">
+          {chips.map((c) => (
+            <li class="flex items-center gap-2 text-[14px] text-mist-200/90"><Icon name="check-circle" size={17} class="text-gold-500" />{c}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-5 relative fade-in" style="--d:250ms">
+        <div class="absolute -inset-10 rounded-full bg-evergreen-700/30 blur-3xl" aria-hidden="true"></div>
+        <div class="xl:flex xl:justify-end"><PhoneDemo /></div>
+        <div class="float-card hidden xl:flex absolute -left-20 top-[12%] w-[212px]">
+          <div class="size-9 shrink-0 rounded-xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name="clock" size={18} /></div>
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Safe Haven</div>
+            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5 tabular whitespace-nowrap">45 → 10 min</div>
+            <div class="text-[11.5px] text-ink-600 mt-1">per inspection report</div>
+            <div class="mt-2 h-1.5 rounded-full bg-stone-300/60 overflow-hidden"><div class="h-full w-[22%] rounded-full bg-evergreen-700"></div></div>
+          </div>
+        </div>
+        <div class="float-card hidden xl:flex absolute -left-12 bottom-[14%] w-[212px]">
+          <div class="size-9 shrink-0 rounded-xl bg-[#fbf3dc] text-gold-700 flex items-center justify-center"><Icon name="pin" size={18} /></div>
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Hero's Pavers</div>
+            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5">Ranking <span class="tabular">#2–#3</span> on Google</div>
+            <div class="text-[11.5px] text-ink-600 mt-1">for multiple Lake Worth keywords</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .price-ticket {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025));
+    border: 1px solid rgba(230, 205, 131, 0.28);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 18px 40px -24px rgba(0, 0, 0, 0.6);
+    transition: border-color 200ms, background 200ms;
+  }
+  .price-ticket:hover { border-color: rgba(230, 205, 131, 0.55); }
+  .hero-contours {
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600' fill='none' stroke='%23E9E4D6' stroke-width='1'%3E%3Cpath d='M-50 420c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 460c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 500c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 540c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 120c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 160c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 200c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3C/svg%3E");
+    background-size: 900px 900px;
+    mask-image: radial-gradient(80% 70% at 70% 40%, #000 30%, transparent 80%);
+  }
+  .float-card {
+    gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 16px;
+    background: rgba(250, 248, 242, 0.96); border: 1px solid rgba(217, 211, 196, 0.8);
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+  }
+</style>

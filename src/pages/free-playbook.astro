@@ -1,0 +1,65 @@
+---
+/**
+ * TODO(Gino): write the playbook (PDF or email series) and deliver it from GoHighLevel when the
+ * contact is created with source "website-playbook". Update the chapter list below to match.
+ */
+import Base from '@/layouts/Base.astro';
+import LeadForm from '@/components/islands/LeadForm.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { words } from '@/lib/text';
+const chapters = [
+  'Google Business Profile setup, category by category',
+  'Getting more 5-star reviews without awkward asking',
+  'What a contractor website needs to turn visits into calls',
+  'Never losing a lead to voicemail again',
+  'Simple AI shortcuts for quotes, follow-ups, and invoices',
+];
+---
+<Base
+  title="Free Booked-Jobs Playbook for Palm Beach County Contractors | Palm Beach AI Services"
+  description="The free Google Business Profile + website checklist for Palm Beach County home-service businesses. Get found, get reviews, and stop losing leads."
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Free playbook', url: '/free-playbook/' }]}
+>
+  <section class="relative overflow-hidden surface-dark grain -mt-px">
+    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-28">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
+        <div class="lg:col-span-6">
+          <div class="eyebrow fade-in">Free playbook</div>
+          <h1 class="h1 mt-6 text-[#f4f1e8] word-rise" set:html={words('The Booked-Jobs *Playbook.*')} />
+          <p class="lede mt-6 fade-in" style="--d:300ms">The Google profile + website checklist for Palm Beach County home-service businesses. Plain English, no fluff, built from the same work we do for clients.</p>
+          <ul class="mt-9 space-y-3.5 fade-in" style="--d:400ms">
+            {chapters.map((c, i) => (
+              <li class="flex items-start gap-4 text-mist-200">
+                <span class="font-mono text-[12px] text-gold-300 mt-1 w-6">0{i + 1}</span><span class="text-[16px]">{c}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="book mt-12 hidden sm:flex items-end gap-5 fade-in" style="--d:500ms" aria-hidden="true">
+            <div class="cover">
+              <div class="font-mono text-[9px] uppercase tracking-[0.14em] text-gold-300">Palm Beach AI Services</div>
+              <div class="mt-auto font-display text-[22px] font-[600] leading-[1.02] tracking-tight text-[#f4f1e8]">The Booked-Jobs <span class="font-serif italic font-normal text-gold-500">Playbook</span></div>
+              <div class="mt-3 h-px bg-gold-300/40"></div>
+              <div class="mt-2 font-mono text-[8.5px] uppercase tracking-[0.12em] text-mist-400">For Palm Beach County trades</div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="rounded-[24px] bg-cream-50 p-6 sm:p-9 shadow-[0_40px_80px_-40px_rgba(0,0,0,.7)] border border-white/10 fade-in" style="--d:200ms">
+            <div class="flex items-center gap-3">
+              <span class="size-10 rounded-xl bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name="book" size={19} /></span>
+              <h2 class="font-display text-[24px] font-[600] tracking-tight text-ink-900">Send me the playbook</h2>
+            </div>
+            <p class="mt-3 text-[15px] text-ink-600">We will email it to you. Want us to look at your actual profile instead? <a href="/free-teardown/" class="text-evergreen-700 font-semibold underline">Get a free teardown.</a></p>
+            <div class="mt-7"><LeadForm variant="playbook" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .cover { width: 190px; height: 250px; border-radius: 6px 14px 14px 6px; padding: 18px; display: flex; flex-direction: column;
+    background: radial-gradient(120% 90% at 30% 0%, #355e3b, #1b3420 55%, #0f1f14); border: 1px solid rgba(230,205,131,.25);
+    box-shadow: -8px 0 0 -2px #0b150e inset, 0 30px 60px -20px rgba(0,0,0,.8); transform: rotate(-4deg); }
+</style>

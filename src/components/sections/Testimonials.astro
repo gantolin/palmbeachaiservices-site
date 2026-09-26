@@ -1,0 +1,42 @@
+---
+/**
+ * Hidden in production until at least one REAL testimonial exists (todo: false) in src/data/testimonials.ts.
+ * In dev, placeholder slots render with a visible notice so the layout can be reviewed.
+ */
+import { testimonials, realTestimonials } from '@/data/testimonials';
+const isDev = import.meta.env.DEV;
+const list = isDev ? testimonials : realTestimonials;
+const show = list.length > 0;
+const highlight = (q: string, h?: string) => {
+  const esc = q.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  return h ? esc.replace(h, `<mark class="bg-transparent text-evergreen-700 font-medium">${h}</mark>`) : esc;
+};
+---
+{show && (
+  <section class="section surface-cream" id="testimonials">
+    <div class="container-x">
+      {isDev && realTestimonials.length === 0 && (
+        <div class="mb-8 rounded-xl border-2 border-dashed border-[#b4462f] bg-[#fdf0ec] px-5 py-4 text-[14px] text-[#7a2615]">
+          <strong>DEV ONLY:</strong> placeholder testimonial slots. This section is hidden in the production build until
+          real, permission-granted quotes are added to <code>src/data/testimonials.ts</code> with <code>todo: false</code>.
+        </div>
+      )}
+      <div class="max-w-2xl">
+        <div class="eyebrow">In their words</div>
+        <h2 class="h2 mt-5">What local owners <em class="accent">say.</em></h2>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-3">
+        {list.map((t) => (
+          <figure class:list={['card p-7 flex flex-col', t.todo && 'border-dashed border-2 !border-[#d9a08f] !bg-[#fffaf7]']}>
+            <blockquote class="text-[17px] leading-relaxed text-ink-900" set:html={`“${highlight(t.quote, t.highlight)}”`} />
+            <figcaption class="mt-auto pt-6 text-[14px]">
+              <div class="font-semibold text-ink-900">{t.name}</div>
+              <div class="text-ink-600">{t.business} · {t.town}</div>
+              {t.sourceUrl && <a class="text-evergreen-700 underline text-[13px]" href={t.sourceUrl} rel="noopener" target="_blank">View on Google</a>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

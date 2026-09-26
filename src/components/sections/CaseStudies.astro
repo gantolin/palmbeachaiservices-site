@@ -1,0 +1,52 @@
+---
+import Icon from '../ui/Icon.astro';
+import Visual from './CaseStudyVisual.astro';
+import { caseStudies } from '@/data/caseStudies';
+import { accent } from '@/lib/text';
+interface Props { heading?: boolean; eyebrow?: string; title?: string; lede?: string; surface?: string; flush?: boolean }
+const {
+  heading = true,
+  eyebrow = 'Results',
+  title = 'Real numbers from real *local* businesses.',
+  lede = 'No stock logos, no made-up stats. Every card shows its math, so you can check it.',
+  surface = 'surface-cream',
+  flush = false,
+} = Astro.props;
+---
+<section class:list={['section', surface, flush && '!pt-0']} id="results">
+  <div class="container-x">
+    {heading && (
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6" data-reveal>
+        <div class="max-w-2xl">
+          <div class="eyebrow">{eyebrow}</div>
+          <h2 class="h2 mt-5" set:html={accent(title)} />
+          <p class="lede mt-6">{lede}</p>
+        </div>
+        <a href="/results/" class="link-mono shrink-0">All case studies <Icon name="arrow-right" size={14} /></a>
+      </div>
+    )}
+    <div class:list={['grid gap-5 lg:grid-cols-3', heading && 'mt-14']}>
+      {caseStudies.map((c, i) => (
+        <a href={`/results/${c.slug}/`} class="case card lift group flex flex-col overflow-hidden rounded-[20px]" data-reveal style={`--d:${i * 90}ms`}>
+          <div class="p-5 lg:h-[390px] flex flex-col justify-center bg-[linear-gradient(180deg,var(--color-evergreen-50),var(--color-sand-100))] border-b border-stone-300">
+            <Visual kind={c.visual} />
+          </div>
+          <div class="p-7 flex flex-col flex-1">
+            <div class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600 leading-relaxed lg:min-h-[3.4em]">{c.trade}<br />{c.area}</div>
+            <h3 class="mt-3 font-display text-[23px] font-[600] tracking-[-0.02em] leading-tight">{c.client}</h3>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class:list={['font-display font-[600] tracking-[-0.04em] leading-none', c.status === 'result' ? 'text-evergreen-700 text-[40px]' : 'text-gold-700 text-[28px]']}>{c.headlineStat}</span>
+            </div>
+            <p class="mt-2 text-[15px] text-ink-600">{c.headlineLabel}</p>
+            <p class="proof-math mt-5">{c.proofMath}</p>
+            <span class="mt-auto pt-6 inline-flex items-center gap-2 text-[14.5px] font-semibold text-evergreen-700">Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
+          </div>
+        </a>
+      ))}
+    </div>
+    <p class="mt-8 text-[13px] text-ink-600 max-w-3xl">Real client results, shared with context. Every business and market is different, so these are examples of what we delivered, not a promise of the same numbers for yours.</p>
+  </div>
+</section>
+<style>
+  .proof-math { font-family: var(--font-mono); font-size: 11.5px; line-height: 1.55; letter-spacing: .01em; color: var(--color-ink-600); border-top: 1px dashed var(--color-stone-300); padding-top: 12px; }
+</style>

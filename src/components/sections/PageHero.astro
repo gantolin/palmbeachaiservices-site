@@ -1,0 +1,28 @@
+---
+import { words } from '@/lib/text';
+interface Props { eyebrow: string; title: string; lede?: string; crumbs?: { name: string; url: string }[]; center?: boolean }
+const { eyebrow, title, lede, crumbs, center = false } = Astro.props;
+---
+<section class="relative overflow-hidden surface-dark grain -mt-px">
+  <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+  <div class="container-x relative pt-14 pb-16 sm:pt-20 sm:pb-24">
+    {crumbs && (
+      <nav aria-label="Breadcrumb" class="mb-8">
+        <ol class="flex flex-wrap items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.1em] text-mist-400">
+          {crumbs.map((c, i) => (
+            <li class="flex items-center gap-2">
+              {i < crumbs.length - 1 ? <a href={c.url} class="hover:text-gold-300">{c.name}</a> : <span aria-current="page" class="text-mist-200">{c.name}</span>}
+              {i < crumbs.length - 1 && <span aria-hidden="true">/</span>}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <div class:list={[center ? 'mx-auto text-center max-w-4xl' : 'max-w-4xl']}>
+      <div class:list={['eyebrow fade-in', center && 'justify-center']}>{eyebrow}</div>
+      <h1 class="h1 mt-6 text-[#f4f1e8] word-rise" set:html={words(title)} />
+      {lede && <p class:list={['lede mt-7 fade-in', center && 'mx-auto']} style="--d:320ms">{lede}</p>}
+      <slot />
+    </div>
+  </div>
+</section>

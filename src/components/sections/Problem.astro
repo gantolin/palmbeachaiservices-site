@@ -1,0 +1,34 @@
+---
+import Icon from '../ui/Icon.astro';
+import Calculator from '../islands/MissedCallCalculator.astro';
+const pains = [
+  { icon: 'phone-missed', title: 'Missed calls go to the next company', text: 'You are on a roof, under a sink, or driving. By the time you call back, they already booked someone else.' },
+  { icon: 'search', title: 'Google shows the other guy first', text: 'An incomplete Google profile and a slow website quietly hand your best leads to competitors.' },
+  { icon: 'receipt', title: 'Your nights go to paperwork', text: 'Quotes, invoices, reports, and follow-ups eat the hours you should be selling or resting.' },
+];
+---
+<section class="section surface-sand relative overflow-hidden" id="problem">
+  <div class="container-x">
+    <div class="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
+      <div class="lg:col-span-6" data-reveal>
+        <div class="eyebrow">The leak</div>
+        <h2 class="h2 mt-5">You pay to make the phone ring. Then it goes to <em class="accent">voicemail.</em></h2>
+        <p class="lede mt-6">Most owners never see what those missed calls actually cost. Move the sliders and put a number on it.</p>
+        <ul class="mt-10 space-y-6">
+          {pains.map((p) => (
+            <li class="flex gap-4">
+              <span class="shrink-0 size-11 rounded-xl bg-white border border-stone-300 text-evergreen-700 flex items-center justify-center"><Icon name={p.icon} size={20} /></span>
+              <div>
+                <h3 class="font-display text-[18px] font-[600] tracking-tight">{p.title}</h3>
+                <p class="mt-1 text-ink-600 text-[15.5px]">{p.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="lg:col-span-6 lg:sticky lg:top-28 surface-dark rounded-[20px]" data-reveal style="--d:120ms">
+        <Calculator />
+      </div>
+    </div>
+  </div>
+</section>

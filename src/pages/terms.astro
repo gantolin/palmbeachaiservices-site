@@ -1,0 +1,62 @@
+---
+import Legal from '@/layouts/Legal.astro';
+import { SITE, mailHref, telHref } from '@/config/site';
+const updated = 'September 26, 2026';
+---
+<Legal title="Terms of Service & SMS Policy | Palm Beach AI Services" description="Terms of service and SMS messaging terms for Palm Beach AI Services." heading="Terms & SMS Policy" updated={updated} path="/terms/">
+  <p>These Terms govern your use of <strong>{SITE.domain}</strong> and the services provided by {SITE.name} ("we," "us"), based in {SITE.address.locality}, {SITE.address.regionName}. By using the site or our services you agree to these Terms.</p>
+
+  <h2>1. Services</h2>
+  <p>We provide website design and maintenance, local SEO and Google Business Profile optimization, and AI automation and CRM setup. The specific scope, price, and timeline for your project are confirmed with you in writing (email or proposal) before work begins.</p>
+
+  <h2>2. Pricing and billing</h2>
+  <ul>
+    <li>Prices are published on our <a href="/pricing/">pricing page</a> and may change; changes never apply to a month you have already paid for.</li>
+    <li>The monthly plan is billed in advance and are <strong>month-to-month</strong>. You may cancel at any time, effective at the end of the current billing month.</li>
+    <li>The one-time website build fee is billed before the build starts. Refund terms for the build fee are confirmed with you in writing before work begins.</li>
+    <li>Custom projects (for example, custom AI automation) are quoted and confirmed in writing before any work starts.</li>
+    <li>Third-party costs you approve (for example, domain registration, paid software you choose to keep, or unusually high messaging volume) are your responsibility.</li>
+  </ul>
+
+  <h2 id="guarantee">3. The Palm Beach Promise (delivery guarantee)</h2>
+  <ul>
+    <li><strong>Website in 7 days:</strong> standard websites launch within 7 days of receiving your content (logo, photos, service details, and approvals).</li>
+    <li><strong>Live in 14 days, or month one is free:</strong> your website, Google Business Profile cleanup, and review and lead follow-up automations go live within 14 days of the day we receive your content, account access (domain, Google Business Profile, phone), and approvals. If we miss that date for reasons within our control, we refund or credit your first month's plan fee (the monthly fee, not the one-time build fee). Delays caused by missing content, access, approvals, or third parties (for example Google verification or carrier/A2P registration) pause the clock.</li>
+    <li><strong>Leave any month, keep everything:</strong> see sections 2 and 5.</li>
+    <li>This promise covers delivery only. It is not a guarantee of rankings, leads, or revenue (see section 4).</li>
+  </ul>
+
+  <h2>4. No ranking or revenue guarantee</h2>
+  <p>Search engines and platforms like Google control rankings, and results depend on many factors outside our control. We do not guarantee specific rankings, traffic, leads, or revenue. We do commit to doing the work described in your plan and reporting on it honestly.</p>
+
+  <h2>5. Ownership</h2>
+  <p>Once paid for, you own your domain, website content, Google Business Profile, and customer data. Third-party software (such as CRM platforms) is governed by that vendor's terms; we will help you transfer or export your data if you leave.</p>
+
+  <h2>6. Your responsibilities</h2>
+  <p>You confirm that the content, photos, and information you provide are accurate and that you have the right to use them, and that your use of texting and automation complies with applicable laws, including consent requirements for your own customers.</p>
+
+  <h2 id="sms">7. SMS messaging terms</h2>
+  <p><strong>Program:</strong> {SITE.name} text messaging. When you opt in through a form on this site or by texting us, you agree to receive text messages from {SITE.name} at the number you provided.</p>
+  <ul>
+    <li><strong>What we send:</strong> replies to your inquiry, appointment scheduling and reminders, project updates, and, only if you separately opted in, occasional marketing messages (tips and offers).</li>
+    <li><strong>Frequency:</strong> message frequency varies.</li>
+    <li><strong>Cost:</strong> message and data rates may apply.</li>
+    <li><strong>Opt out:</strong> reply <strong>STOP</strong> at any time to stop receiving messages. You will receive one final confirmation message.</li>
+    <li><strong>Help:</strong> reply <strong>HELP</strong>, call <a href={telHref}>{SITE.phone}</a>, or email <a href={mailHref}>{SITE.email}</a>.</li>
+    <li><strong>Consent is not a condition of purchase.</strong></li>
+    <li>Carriers are not liable for delayed or undelivered messages.</li>
+    <li>Your information is handled according to our <a href="/privacy/">Privacy Policy</a>. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</li>
+  </ul>
+
+  <h2>8. Website use</h2>
+  <p>The site content is provided for general information. Please don't misuse the site, attempt to disrupt it, or submit false information through our forms.</p>
+
+  <h2>9. Limitation of liability</h2>
+  <p>To the fullest extent permitted by law, our total liability for any claim related to our services is limited to the amount you paid us in the three months before the claim. We are not liable for indirect or consequential damages, including lost profits.</p>
+
+  <h2>10. Governing law</h2>
+  <p>These Terms are governed by the laws of the State of Florida. Any dispute will be handled in the courts of Palm Beach County, Florida.</p>
+
+  <h2>11. Contact</h2>
+  <p>{SITE.name} · {SITE.address.locality}, {SITE.address.region}<br />Phone: <a href={telHref}>{SITE.phone}</a> · Email: <a href={mailHref}>{SITE.email}</a></p>
+</Legal>

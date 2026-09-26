@@ -1,0 +1,114 @@
+---
+import '@/styles/global.css';
+import SEO from '@/components/SEO.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import MobileBar from '@/components/MobileBar.astro';
+import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  faqs?: { q: string; a: string }[];
+  breadcrumbs?: { name: string; url: string }[];
+}
+const props = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script is:inline>document.documentElement.classList.add('js')</script>
+    <link rel="preload" href={geistLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0F1F14" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <SEO {...props} />
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    <Header />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <MobileBar />
+
+    <script>
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Header: solid + blurred once you scroll
+      const header = document.getElementById('site-header');
+      const onScroll = () => header?.setAttribute('data-scrolled', String(window.scrollY > 8));
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Mobile menu
+      const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+      const sheet = document.getElementById('mobile-menu');
+      toggle?.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        header?.setAttribute('data-open', String(open));
+        if (sheet) sheet.hidden = !open;
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') toggle.click();
+      });
+
+      // Local time chip ("we're local" signal)
+      const timeEl = document.querySelector('[data-local-time]');
+      const fmt = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
+      const tick = () => { if (timeEl) timeEl.textContent = fmt.format(new Date()); };
+      tick();
+      setInterval(tick, 30_000);
+
+      // Reveal on scroll
+      const revealEls = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      if (reduce || !('IntersectionObserver' in window)) {
+        revealEls.forEach((el) => el.classList.add('is-in'));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }),
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      }
+
+      // Count-up stats (tabular numbers, ~650ms)
+      const counters = document.querySelectorAll<HTMLElement>('[data-count-to]');
+      const run = (el: HTMLElement) => {
+        const to = Number(el.dataset.countTo);
+        const pre = el.dataset.prefix ?? '';
+        const suf = el.dataset.suffix ?? '';
+        if (reduce) { el.textContent = pre + to + suf; return; }
+        const t0 = performance.now();
+        const dur = 650;
+        const step = (t: number) => {
+          const p = Math.min(1, (t - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = pre + Math.round(to * eased) + suf;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      if ('IntersectionObserver' in window) {
+        const cio = new IntersectionObserver(
+          (entries) => entries.forEach((en) => { if (en.isIntersecting) { run(en.target as HTMLElement); cio.unobserve(en.target); } }),
+          { threshold: 0.5 },
+        );
+        counters.forEach((el) => cio.observe(el));
+      }
+    </script>
+  </body>
+</html>

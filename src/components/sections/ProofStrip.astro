@@ -1,0 +1,37 @@
+---
+import { caseStudies } from '@/data/caseStudies';
+---
+<section class="relative surface-cream border-b border-stone-300/70" aria-label="Recent results">
+  <div class="container-x py-12 lg:py-14">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-4">
+        <p class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-ink-600">Recent work in South Florida</p>
+        <ul class="mt-4 flex flex-wrap items-center gap-x-7 gap-y-3">
+          {caseStudies.map((c) => (
+            <li><a href={`/results/${c.slug}/`} class="font-display text-[19px] font-[600] tracking-[-0.02em] text-ink-900/80 hover:text-evergreen-700 transition-colors">{c.client}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <a href="/results/safe-haven-inspections/" class="stat group">
+          <div class="stat-num"><span data-count-to="78" data-suffix="%">78%</span></div>
+          <div class="stat-label">less time per inspection report <span class="text-ink-600">· Safe Haven</span></div>
+        </a>
+        <a href="/results/heros-pavers/" class="stat group">
+          <div class="stat-num">#2–#3</div>
+          <div class="stat-label">on Google for Lake Worth keywords <span class="text-ink-600">· Hero's Pavers</span></div>
+        </a>
+        <a href="/pricing/" class="stat group">
+          <div class="stat-num"><span data-count-to="7" data-suffix=" days">7 days</span></div>
+          <div class="stat-label">from content to a live website <span class="text-ink-600">· our promise</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .stat { display: block; border-radius: 16px; padding: 18px 20px; background: #fff; border: 1px solid var(--color-stone-300); transition: transform 250ms var(--ease-out-soft), border-color 250ms; }
+  .stat:hover { transform: translateY(-2px); border-color: var(--color-evergreen-300); }
+  .stat-num { font-family: var(--font-display); font-weight: 600; font-size: 34px; letter-spacing: -0.04em; line-height: 1; color: var(--color-evergreen-700); font-variant-numeric: tabular-nums; }
+  .stat-label { margin-top: 8px; font-size: 13.5px; line-height: 1.4; color: var(--color-ink-900); }
+</style>

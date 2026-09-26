@@ -1,0 +1,63 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import Founder from '@/components/sections/Founder.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
+import { industries } from '@/data/comparison';
+const values = [
+  { icon: 'receipt', title: 'Published prices', text: 'You should know what something costs before you get on a call. So our prices are on the website.' },
+  { icon: 'key', title: 'You own everything', text: 'Your domain, your website, your Google profile, your customer list. If you ever leave, it all goes with you.' },
+  { icon: 'handshake', title: 'Month-to-month', text: 'No long contracts. We earn your business every month with real results you can see.' },
+  { icon: 'users', title: 'Limited spots', text: 'We take a limited number of clients per trade, per town, so we never work against you.' },
+  { icon: 'zap', title: 'Automation first', text: 'We automate the repetitive work so your systems keep running, and every dollar goes into results.' },
+  { icon: 'chart', title: 'Plain-English reporting', text: 'Calls, reviews, rankings. No jargon, no vanity charts, no 40-page PDFs.' },
+];
+---
+<Base
+  title={`About ${SITE.name} | Founder-Run in Royal Palm Beach, FL`}
+  description={`${SITE.name} is a founder-run web, local SEO, and AI automation company based in Royal Palm Beach, serving home-service businesses across Palm Beach County.`}
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
+>
+  <PageHero eyebrow="About" title="Local, founder-run, and built for *busy* owners."
+    lede={`${SITE.name} helps Palm Beach County home-service businesses get found on Google, answer every lead, and get hours back with AI. Run from ${SITE.homeBase} by ${FOUNDER_FIRST_NAME}.`}
+    crumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]} />
+  <Founder />
+  <section class="section surface-cream">
+    <div class="container-x">
+      <div class="max-w-2xl" data-reveal>
+        <div class="eyebrow">How we work</div>
+        <h2 class="h2 mt-5">The rules we <em class="accent">run on.</em></h2>
+      </div>
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {values.map((v, i) => (
+          <div class="card p-7 rounded-[20px]" data-reveal style={`--d:${(i % 3) * 80}ms`}>
+            <span class="size-11 rounded-xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name={v.icon} size={20} /></span>
+            <h3 class="mt-5 font-display text-[20px] font-[600] tracking-tight">{v.title}</h3>
+            <p class="mt-2 text-ink-600 text-[15.5px]">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section surface-sand">
+    <div class="container-x grid gap-12 lg:grid-cols-2">
+      <div data-reveal>
+        <div class="eyebrow">Who we help</div>
+        <h2 class="h2 mt-5">Home-service pros and local <em class="accent">practices.</em></h2>
+        <p class="lede mt-6">If customers find you on Google and call you on the phone, we can help you get more of them.</p>
+        <ul class="mt-8 flex flex-wrap gap-2">{industries.map((i) => <li class="chip bg-white border border-stone-300 text-[14px]">{i}</li>)}</ul>
+      </div>
+      <div data-reveal style="--d:100ms">
+        <div class="eyebrow">Where we work</div>
+        <h2 class="h2 mt-5">Home base: <em class="accent">{SITE.homeBase}.</em></h2>
+        <p class="lede mt-6">We serve all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}. Local means we can meet in person.</p>
+        <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15.5px]">
+          {SITE.serviceAreas.map((a, i) => <li class="flex items-center gap-2.5"><Icon name="pin" size={16} class={i === 0 ? 'text-gold-700' : 'text-evergreen-700'} /><span class={i === 0 ? 'font-semibold' : ''}>{a}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+  <FinalCTA />
+</Base>

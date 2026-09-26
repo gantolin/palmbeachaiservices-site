@@ -1,0 +1,63 @@
+---
+import Base from '@/layouts/Base.astro';
+import LeadForm from '@/components/islands/LeadForm.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { SITE, FOUNDER_FIRST_NAME, telHref, smsHref } from '@/config/site';
+import { words } from '@/lib/text';
+const gets = [
+  { icon: 'pin', title: 'Your Google Business Profile, graded', text: 'Categories, services, photos, reviews, and posts, side by side with the businesses outranking you.' },
+  { icon: 'globe', title: 'Your website, torn down', text: 'Speed, mobile experience, local SEO basics, and whether it actually makes the phone ring.' },
+  { icon: 'phone-missed', title: 'Where leads are leaking', text: 'Missed calls, slow follow-up, and gaps in your review flow, with a rough cost attached.' },
+  { icon: 'check-circle', title: 'A fix-first list you keep', text: 'The three things to fix first. Do them yourself or have us do them. You keep the fixes whether or not we work together.' },
+];
+---
+<Base
+  title="The Palm Beach Teardown: Free Google Profile + Website Review | Palm Beach AI Services"
+  description="Get a free teardown of your Google Business Profile and website. See what is costing you calls and what to fix first. For Palm Beach County home-service businesses."
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Free teardown', url: '/free-teardown/' }]}
+>
+  <section class="relative overflow-hidden surface-dark grain -mt-px">
+    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-28">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
+        <div class="lg:col-span-5 lg:sticky lg:top-28">
+          <div class="eyebrow fade-in">The Palm Beach Teardown · free</div>
+          <h1 class="h1 mt-6 text-[#f4f1e8] word-rise" set:html={words('See exactly what is costing you *calls.*')} />
+          <p class="lede mt-6 fade-in" style="--d:300ms">A free review of your Google Business Profile, website, and top local competitors, done by {FOUNDER_FIRST_NAME}, the founder. <span class="text-mist-200">You keep the fixes whether or not we work together.</span> No payment, no contract, no pitch deck.</p>
+          <ul class="mt-10 space-y-5 fade-in" style="--d:400ms">
+            {gets.map((g) => (
+              <li class="flex gap-4">
+                <span class="shrink-0 size-10 rounded-xl bg-evergreen-900 border border-white/10 text-gold-300 flex items-center justify-center"><Icon name={g.icon} size={19} /></span>
+                <div><div class="font-display text-[17px] font-[600] text-mist-200 tracking-tight">{g.title}</div><p class="text-[15px] text-mist-400 mt-0.5">{g.text}</p></div>
+              </li>
+            ))}
+          </ul>
+          <figure class="note mt-10 fade-in" style="--d:480ms">
+            <blockquote class="text-[15.5px] leading-relaxed text-mist-200">“Answer two quick sets of questions, and I'll personally look at your Google profile and site before we talk. Bring your questions. If I can't help, I'll tell you straight.”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <span class="font-serif italic text-[30px] leading-none text-gold-300">{FOUNDER_FIRST_NAME}</span>
+              <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-mist-400">Founder · {SITE.homeBase}</span>
+            </figcaption>
+          </figure>
+          <div class="mt-8 flex flex-wrap gap-3 fade-in" style="--d:500ms">
+            <a href={telHref} class="btn btn-outline-dark"><Icon name="phone" size={17} />Call {SITE.phone}</a>
+            <a href={smsHref} class="btn btn-outline-dark"><Icon name="message" size={17} />Text us</a>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="rounded-[24px] bg-cream-50 p-6 sm:p-9 shadow-[0_40px_80px_-40px_rgba(0,0,0,.7)] border border-white/10 fade-in" style="--d:200ms">
+            <div class="flex items-center justify-between gap-4">
+              <h2 class="font-display text-[24px] sm:text-[28px] font-[600] tracking-tight text-ink-900">Request your Palm Beach Teardown</h2>
+              <span class="hidden sm:inline-flex whitespace-nowrap shrink-0 chip bg-evergreen-100 text-evergreen-800 text-[12.5px]"><Icon name="clock" size={14} />About 60 seconds</span>
+            </div>
+            <p class="mt-2 text-[15px] text-ink-600">Two quick steps, then you pick a time. {SITE.capacityLine}</p>
+            <div class="mt-7"><LeadForm variant="teardown" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .note { border-left: 2px solid rgba(230, 205, 131, .5); padding: 4px 0 4px 20px; }
+</style>

@@ -1,0 +1,18 @@
+---
+import Base from '@/layouts/Base.astro';
+import Icon from '@/components/ui/Icon.astro';
+---
+<Base title="Page not found | Palm Beach AI Services" description="That page could not be found." noindex>
+  <section class="relative overflow-hidden surface-dark grain -mt-px min-h-[70vh] flex items-center">
+    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="container-x relative py-24 text-center">
+      <div class="font-mono text-gold-300 text-[13px] tracking-[0.14em] uppercase">404</div>
+      <h1 class="h1 mt-5 text-[#f4f1e8]">This page went to <em class="accent">voicemail.</em></h1>
+      <p class="lede mx-auto mt-6">We couldn't find that page. Try one of these instead.</p>
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/" class="btn btn-primary">Back to home<Icon name="arrow-right" size={17} /></a>
+        <a href="/pricing/" class="btn btn-outline-dark">See pricing</a>
+      </div>
+    </div>
+  </section>
+</Base>

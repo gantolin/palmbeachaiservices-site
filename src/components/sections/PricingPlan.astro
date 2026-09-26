@@ -1,0 +1,143 @@
+---
+/**
+ * The single plan ($750 build + $297/mo), what's included, and the unpriced custom AI strip.
+ * All numbers and wording come from src/data/pricing.ts.
+ */
+import Icon from '../ui/Icon.astro';
+import { plan, customAI, promises, guarantee, usd } from '@/data/pricing';
+import { SITE } from '@/config/site';
+interface Props { showPromises?: boolean }
+const { showPromises = true } = Astro.props;
+---
+<div class="pricing-plan">
+  <div class="grid gap-5 lg:grid-cols-12 items-stretch">
+    <!-- The plan -->
+    <article class="plan-featured relative rounded-[24px] p-7 sm:p-9 lg:col-span-5 flex flex-col" data-reveal>
+      <div class="flex items-center justify-between gap-3">
+        <span class="chip bg-gold-500 text-evergreen-950 text-[12px] font-semibold py-1">One plan. Everything included.</span>
+        <span class="hidden sm:inline font-mono text-[10.5px] uppercase tracking-[0.12em] text-mist-400">No tiers</span>
+      </div>
+      <h3 class="mt-6 font-display text-[26px] font-[600] tracking-[-0.02em] text-[#f4f1e8]">{plan.name}</h3>
+      <p class="mt-2 text-[15.5px] text-mist-400">{plan.tagline}</p>
+
+      <div class="mt-8 rounded-2xl border border-white/10 bg-white/[0.035] divide-y divide-white/10">
+        <div class="flex items-end justify-between gap-4 p-5">
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-[0.12em] text-mist-400">Once</div>
+            <div class="mt-1 text-[15px] text-mist-200">Custom website build</div>
+          </div>
+          <div class="font-display text-[36px] sm:text-[40px] leading-none font-[600] tracking-[-0.04em] text-white tabular">{usd(plan.buildFee)}</div>
+        </div>
+        <div class="flex items-end justify-between gap-4 p-5">
+          <div>
+            <div class="font-mono text-[10.5px] uppercase tracking-[0.12em] text-gold-300">Then monthly</div>
+            <div class="mt-1 text-[15px] text-mist-200">All 6 included</div>
+          </div>
+          <div class="text-right">
+            <span class="font-display text-[52px] sm:text-[60px] leading-[0.85] font-[600] tracking-[-0.045em] text-white tabular">{usd(plan.monthly)}</span><span class="ml-1 text-[16px] text-mist-400">/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="mt-6 grid grid-cols-2 gap-x-3 gap-y-2.5">
+        {plan.terms.map((t) => (
+          <li class="flex items-center gap-2 text-[13.5px] sm:text-[14px] text-mist-200 whitespace-nowrap"><Icon name="check-circle" size={16} class="text-gold-500 shrink-0" />{t}</li>
+        ))}
+      </ul>
+
+      <a href={plan.cta.href} class="btn btn-primary btn-lg mt-8 w-full">{plan.cta.label}<Icon name="arrow-right" size={18} /></a>
+      <a href={`tel:${SITE.phoneE164}`} class="mt-2 self-center py-2 text-[14px] text-mist-400 hover:text-white">or call {SITE.phone}</a>
+      <a href="#guarantee" class="mt-7 flex items-center gap-3.5 rounded-2xl border border-gold-300/25 bg-gold-500/[0.07] p-4 hover:border-gold-300/50 transition-colors">
+        <span class="shrink-0 size-10 rounded-full border border-gold-300/40 text-gold-300 flex items-center justify-center"><Icon name="shield" size={18} /></span>
+        <span class="text-[14px] leading-snug text-mist-200"><strong class="font-semibold text-[#f4f1e8]">{guarantee.headline}</strong> In writing. Leave anytime, keep everything.</span>
+      </a>
+      <p class="mt-auto pt-7 text-[12.5px] leading-relaxed text-mist-400">{plan.footnote}</p>
+    </article>
+
+    <!-- What's included -->
+    <div class="card rounded-[24px] lg:col-span-7 overflow-hidden flex flex-col" data-reveal style="--d:90ms">
+      <div class="p-7 sm:p-9">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <h3 class="font-display text-[22px] font-[600] tracking-tight text-ink-900">What your {usd(plan.monthly)}/mo covers</h3>
+          <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">6 things, every month</span>
+        </div>
+        <ul class="mt-7 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+          {plan.included.map((it) => (
+            <li class="flex gap-4">
+              <span class="shrink-0 size-10 rounded-xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name={it.icon} size={19} /></span>
+              <div>
+                <div class="font-display text-[16.5px] font-[600] tracking-tight text-ink-900">{it.title}</div>
+                <p class="mt-1 text-[14.5px] leading-snug text-ink-600">{it.text}</p>
+                <p class="mt-2 text-[13px] leading-snug text-ink-600"><span class="font-semibold text-evergreen-700">Replaces:</span> {it.replaces.charAt(0).toLowerCase() + it.replaces.slice(1)}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="mt-auto border-t border-stone-300 bg-sand-100/70 p-7 sm:px-9">
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <div class="font-display text-[16.5px] font-[600] tracking-tight text-ink-900">Your {usd(plan.buildFee)} build includes</div>
+          <span class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Paid once · live in 7 days</span>
+        </div>
+        <ul class="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+          {plan.build.items.map((b) => (
+            <li class="flex gap-2.5 text-[14.5px] text-ink-900"><span class="mt-[3px] shrink-0 size-[18px] rounded-full bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name="check" size={11} stroke={2.6} /></span>{b}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom AI: secondary, no price -->
+  <div class="custom-ai mt-5 relative overflow-hidden rounded-[24px] bg-evergreen-950 text-mist-200 p-7 sm:p-9" data-reveal>
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(55% 120% at 100% 0%, rgba(53,94,59,.55), transparent 70%)" aria-hidden="true"></div>
+    <div class="relative grid gap-8 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-gold-300">{customAI.eyebrow}</span>
+          <span class="chip border border-gold-300/30 bg-gold-500/10 text-gold-300 text-[11.5px] py-0.5">{customAI.priceLabel}</span>
+        </div>
+        <h3 class="mt-3 font-display text-[23px] font-[600] tracking-tight text-[#f4f1e8]">{customAI.title}</h3>
+        <p class="mt-2 text-[15px] text-mist-400 max-w-[52ch]">{customAI.text}</p>
+        <a href={customAI.cta.href} class="btn btn-outline-dark mt-6">{customAI.cta.label}<Icon name="arrow-right" size={17} /></a>
+      </div>
+      <ul class="lg:col-span-8 grid gap-4 sm:grid-cols-3">
+        {customAI.items.map((it) => (
+          <li class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+            <span class="size-10 rounded-xl bg-gold-500/15 text-gold-300 flex items-center justify-center border border-gold-300/20"><Icon name={it.icon} size={19} /></span>
+            <div class="mt-4 font-display text-[16px] font-[600] tracking-tight text-[#f4f1e8]">{it.title}</div>
+            <p class="mt-1 text-[14px] leading-snug text-mist-400">{it.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {showPromises && (
+    <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {promises.map((pr) => (
+        <li class="flex gap-3.5 rounded-2xl border border-stone-300 bg-cream-50/70 p-5">
+          <span class="shrink-0 size-10 rounded-xl bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name="shield" size={19} /></span>
+          <div>
+            <div class="font-display font-[600] text-[16px] tracking-tight text-ink-900">{pr.title}</div>
+            <div class="text-[14px] text-ink-600 mt-0.5 leading-snug">{pr.text}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
+<style>
+  .plan-featured {
+    background: radial-gradient(120% 80% at 30% 0%, #274a2d 0%, #1b3420 42%, #0f1f14 100%);
+    color: var(--color-mist-200);
+    box-shadow: 0 40px 80px -40px rgba(15, 31, 20, 0.7);
+  }
+  .plan-featured::before {
+    content: ''; position: absolute; inset: -1px; border-radius: 25px; padding: 1px; pointer-events: none;
+    background: linear-gradient(160deg, #e6cd83, rgba(230, 205, 131, 0.15) 40%, rgba(230, 205, 131, 0.05) 60%, #c9a227);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+</style>

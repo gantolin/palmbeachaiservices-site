@@ -1,0 +1,52 @@
+---
+import Base from '@/layouts/Base.astro';
+import HomeHero from '@/components/sections/HomeHero.astro';
+import ProofStrip from '@/components/sections/ProofStrip.astro';
+import Problem from '@/components/sections/Problem.astro';
+import ThreeThings from '@/components/sections/ThreeThings.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import CaseStudies from '@/components/sections/CaseStudies.astro';
+import Comparison from '@/components/sections/Comparison.astro';
+import PricingPlan from '@/components/sections/PricingPlan.astro';
+import Guarantee from '@/components/sections/Guarantee.astro';
+import Testimonials from '@/components/sections/Testimonials.astro';
+import Founder from '@/components/sections/Founder.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { homeFaqs } from '@/data/faq';
+import { plan, usd, priceLine } from '@/data/pricing';
+---
+<Base
+  title="Palm Beach AI Services | Websites, Google Rankings & AI Automation in Palm Beach County"
+  description={`More booked jobs for Palm Beach County home-service businesses. A custom website, Google Business Profile management, review automation, and lead follow-up: ${priceLine}. No contract. You own everything.`}
+  faqs={homeFaqs}
+>
+  <HomeHero />
+  <ProofStrip />
+  <Problem />
+  <ThreeThings />
+  <HowItWorks />
+  <section class="section surface-cream" id="pricing">
+    <div class="container-x">
+      <div class="mx-auto max-w-3xl text-center" data-reveal>
+        <div class="eyebrow justify-center">Pricing</div>
+        <h2 class="h2 mt-5">One plan. <em class="accent">{usd(plan.monthly)}</em> a month.</h2>
+        <p class="lede mt-6 mx-auto">A {usd(plan.buildFee)} one-time website build, then {usd(plan.monthly)}/month for everything that keeps the phone ringing. No tiers, no contract, no surprises.</p>
+      </div>
+      <div class="mt-12">
+        <PricingPlan showPromises={false} />
+      </div>
+      <p class="mt-10 text-center"><a href="/pricing/" class="link-mono">Full pricing + FAQ <Icon name="arrow-right" size={14} /></a></p>
+    </div>
+  </section>
+
+  <CaseStudies flush eyebrow="The proof behind the price" title="What that work looks like for *real* local businesses." lede="Exact numbers, with the math shown. No stock logos, no made-up stats." />
+  <Comparison />
+
+  <Guarantee />
+  <Testimonials />
+  <Founder />
+  <FAQ faqs={homeFaqs} title="Straight *answers.*" />
+  <FinalCTA />
+</Base>

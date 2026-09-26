@@ -1,0 +1,59 @@
+---
+import Logo from './ui/Logo.astro';
+import Icon from './ui/Icon.astro';
+import { SITE, NAV, CTA, telHref, mailHref } from '@/config/site';
+import { services } from '@/data/services';
+import { caseStudies } from '@/data/caseStudies';
+const year = new Date().getFullYear();
+---
+<footer class="surface-dark relative overflow-hidden border-t border-white/5">
+  <div class="container-x pt-20 pb-28 lg:pb-12">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <Logo />
+        <p class="mt-5 text-mist-400 max-w-sm text-[15px]">{SITE.tagline}</p>
+        <address class="not-italic mt-6 space-y-2 text-[15px]">
+          <div class="font-medium text-mist-200">{SITE.name}</div>
+          <div class="text-mist-400">{SITE.address.locality}, {SITE.address.region}{SITE.address.postalCode && ` ${SITE.address.postalCode}`}</div>
+          <a href={telHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300"><Icon name="phone" size={16} />{SITE.phone}</a>
+          <a href={mailHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300 break-all"><Icon name="mail" size={16} />{SITE.email}</a>
+        </address>
+      </div>
+      <div class="lg:col-span-2">
+        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Services</h2>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          {services.map((s) => <li><a class="text-mist-200/85 hover:text-white" href={`/services/${s.slug}/`}>{s.name}</a></li>)}
+          <li><a class="text-mist-200/85 hover:text-white" href="/pricing/">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Results</h2>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          {caseStudies.map((c) => <li><a class="text-mist-200/85 hover:text-white" href={`/results/${c.slug}/`}>{c.client}</a></li>)}
+        </ul>
+        <h2 class="mt-8 font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          {NAV.filter((n) => n.href === '/about/').map((n) => <li><a class="text-mist-200/85 hover:text-white" href={n.href}>{n.label}</a></li>)}
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Free teardown</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Free playbook</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-4">
+        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Service area</h2>
+        <p class="mt-4 text-[15px] text-mist-200/85">Based in <strong class="text-mist-200 font-medium">{SITE.homeBase}</strong>. Serving all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}.</p>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {SITE.serviceAreas.map((a) => <li class="chip border border-white/10 text-mist-400 text-[12.5px] py-1">{a}</li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="hairline-gold mt-16"></div>
+    <div class="mt-6 flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between text-[13.5px] text-mist-400">
+      <p>© {year} {SITE.name}. Built in Royal Palm Beach, FL.</p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-2">
+        <li><a class="hover:text-white" href="/privacy/">Privacy</a></li>
+        <li><a class="hover:text-white" href="/terms/">Terms & SMS policy</a></li>
+        <li><a class="hover:text-white" href="/sitemap-index.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,40 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import ThreeThings from '@/components/sections/ThreeThings.astro';
+import HowItWorks from '@/components/sections/HowItWorks.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { services } from '@/data/services';
+import { accent } from '@/lib/text';
+import { priceLine } from '@/data/pricing';
+---
+<Base
+  title="Services: Websites, Local SEO & AI Automation | Palm Beach AI Services"
+  description={`Websites, Google Business Profile optimization, local SEO, and AI automation for Palm Beach County home-service businesses. ${priceLine}, no contract.`}
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]}
+>
+  <PageHero eyebrow="Services" title="Everything it takes to get found, get the call, and get it *booked.*"
+    lede="Three services that work as one system, set up and run for you by a local founder. Pick one, or let them work together."
+    crumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]} />
+
+  <section class="section surface-cream">
+    <div class="container-x grid gap-5 lg:grid-cols-3">
+      {services.map((s, i) => (
+        <a href={`/services/${s.slug}/`} class="card lift group p-8 rounded-[20px] flex flex-col" data-reveal style={`--d:${i * 90}ms`}>
+          <span class="size-12 rounded-2xl bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={22} /></span>
+          <div class="mt-6 font-mono text-[11.5px] uppercase tracking-[0.1em] text-evergreen-700">{s.pillar}</div>
+          <h2 class="h3 mt-2">{s.name}</h2>
+          <p class="mt-3 text-ink-600 text-[15.5px]" set:html={accent(s.subhead)} />
+          <ul class="mt-6 space-y-2.5 text-[15px]">
+            {s.outcomes.map((o) => <li class="flex gap-2.5"><Icon name="check" size={17} stroke={2.2} class="text-evergreen-700 shrink-0 mt-[3px]" />{o.title}</li>)}
+          </ul>
+          <span class="mt-auto pt-8 inline-flex items-center gap-2 text-[14.5px] font-semibold text-evergreen-700">Explore {s.navLabel} <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <ThreeThings />
+  <HowItWorks />
+  <FinalCTA />
+</Base>

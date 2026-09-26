@@ -1,0 +1,52 @@
+---
+import Legal from '@/layouts/Legal.astro';
+import { SITE, mailHref, telHref } from '@/config/site';
+const updated = 'September 26, 2026';
+---
+<Legal title="Privacy Policy | Palm Beach AI Services" description="How Palm Beach AI Services collects, uses, and protects your information, including SMS data." heading="Privacy Policy" updated={updated} path="/privacy/">
+  <p>This Privacy Policy explains how {SITE.name} ("we," "us," or "our"), based in {SITE.address.locality}, {SITE.address.regionName}, collects, uses, and protects information when you visit <strong>{SITE.domain}</strong>, fill out a form, call, or text us.</p>
+
+  <h2>Information we collect</h2>
+  <ul>
+    <li><strong>Information you give us:</strong> your name, business name, phone number, email address, website, trade, service area, and anything you write in a form or message.</li>
+    <li><strong>Communications:</strong> records of calls, texts, and emails between you and us.</li>
+    <li><strong>Usage data:</strong> basic, non-identifying information such as pages visited, device type, and referring site, collected through privacy-respecting analytics and server logs.</li>
+  </ul>
+
+  <h2>How we use your information</h2>
+  <ul>
+    <li>To respond to your request, schedule your free teardown, and provide our services.</li>
+    <li>To send appointment reminders, project updates, and, if you opted in, occasional tips and offers.</li>
+    <li>To send you the resources you asked for (for example, the free playbook).</li>
+    <li>To improve our website and services.</li>
+    <li>To comply with the law and protect our rights.</li>
+  </ul>
+
+  <h2>SMS / text messaging</h2>
+  <p>If you provide your mobile number and opt in, we use it to text you about your inquiry and appointments, and, only if you separately opted in, occasional marketing messages. Message frequency varies. Message and data rates may apply. Reply <strong>STOP</strong> to opt out at any time, or <strong>HELP</strong> for help.</p>
+  <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> Text messaging originator opt-in data and consent are excluded from any sharing described in this policy and will not be shared with any third parties, except service providers (such as our messaging platform) that help us deliver messages to you.</p>
+
+  <h2>How we share information</h2>
+  <p>We do not sell your personal information. We share it only with service providers that help us run our business (for example, our CRM and messaging platform, email provider, website hosting, and analytics), under obligations to protect it, or when required by law.</p>
+
+  <h2>Cookies and analytics</h2>
+  <p>We use a minimal set of cookies or similar technologies to understand how the site is used. You can block cookies in your browser settings; the site will still work.</p>
+
+  <h2>Data security and retention</h2>
+  <p>We use reasonable safeguards to protect your information. We keep it only as long as needed for the purposes above or as required by law.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Opt out of texts by replying STOP, and out of emails with the unsubscribe link.</li>
+    <li>Ask us to access, correct, or delete your information by contacting us below.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Our services are for businesses and are not directed to children under 13. We do not knowingly collect information from children.</p>
+
+  <h2>Changes</h2>
+  <p>We may update this policy. The "last updated" date above shows when it last changed.</p>
+
+  <h2>Contact</h2>
+  <p>{SITE.name} · {SITE.address.locality}, {SITE.address.region}<br />Phone: <a href={telHref}>{SITE.phone}</a> · Email: <a href={mailHref}>{SITE.email}</a></p>
+</Legal>

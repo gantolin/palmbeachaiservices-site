@@ -1,0 +1,103 @@
+---
+import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
+import { plan, customAI } from '@/data/pricing';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  faqs?: { q: string; a: string }[];
+  breadcrumbs?: { name: string; url: string }[];
+  type?: 'website' | 'article';
+}
+const { title, description, image = SITE.ogImage, noindex = false, faqs, breadcrumbs, type = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL(image, SITE.url).href;
+
+const sameAs = Object.values(SITE.social).filter(Boolean);
+const business = {
+  '@context': 'https://schema.org',
+  '@type': ['ProfessionalService', 'LocalBusiness'],
+  '@id': `${SITE.url}/#business`,
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}/favicon.svg`,
+  image: ogImage,
+  description: SITE.description,
+  telephone: SITE.phoneE164,
+  email: SITE.email,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.address.locality,
+    addressRegion: SITE.address.region,
+    addressCountry: SITE.address.country,
+    ...(SITE.address.postalCode ? { postalCode: SITE.address.postalCode } : {}),
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Palm Beach County, FL' },
+    ...SITE.serviceAreas.map((c) => ({ '@type': 'City', name: `${c}, FL` })),
+    ...SITE.nearbyCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c}, FL` })),
+  ],
+  founder: { '@type': 'Person', name: FOUNDER_FIRST_NAME },
+  knowsAbout: ['Website design', 'Local SEO', 'Google Business Profile optimization', 'AI automation', 'GoHighLevel CRM', 'Missed-call text-back'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Plans and services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: `${plan.name}: website build`,
+        description: plan.build.text,
+        priceSpecification: { '@type': 'PriceSpecification', price: plan.buildFee, priceCurrency: 'USD' },
+      },
+      {
+        '@type': 'Offer',
+        name: `${plan.name}: monthly`,
+        description: plan.included.map((i) => i.title).join(', '),
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: plan.monthly, priceCurrency: 'USD', unitText: 'MONTH' },
+      },
+      { '@type': 'Offer', name: customAI.eyebrow, description: customAI.items.map((i) => i.title).join(', ') },
+    ],
+  },
+  ...(sameAs.length ? { sameAs } : {}),
+};
+const website = { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: SITE.url };
+const faqLd = faqs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    }
+  : null;
+const crumbLd = breadcrumbs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: new URL(b.url, SITE.url).href })),
+    }
+  : null;
+const ld = [business, website, faqLd, crumbLd].filter(Boolean);
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="geo.region" content="US-FL" />
+<meta name="geo.placename" content="Royal Palm Beach" />
+{ld.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}

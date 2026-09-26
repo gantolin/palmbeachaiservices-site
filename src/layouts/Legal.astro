@@ -1,0 +1,15 @@
+---
+import Base from './Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+interface Props { title: string; description: string; heading: string; updated: string; path: string }
+const { title, description, heading, updated, path } = Astro.props;
+---
+<Base title={title} description={description} breadcrumbs={[{ name: 'Home', url: '/' }, { name: heading, url: path }]}>
+  <PageHero eyebrow="Legal" title={heading} lede={`Last updated ${updated}`} crumbs={[{ name: 'Home', url: '/' }, { name: heading, url: path }]} />
+  <section class="section surface-cream !pt-16">
+    <div class="container-x">
+      <!-- TODO(Gino): have an attorney review this page before launch. -->
+      <div class="prose-legal"><slot /></div>
+    </div>
+  </section>
+</Base>

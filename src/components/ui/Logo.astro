@@ -1,0 +1,30 @@
+---
+// Wordmark + palm/circuit mark. TODO(Gino): swap in the final vector logo when it is locked.
+interface Props { tone?: 'light' | 'dark'; class?: string; compact?: boolean }
+const { tone = 'dark', class: cls = '', compact = false } = Astro.props;
+const text = tone === 'dark' ? 'text-mist-200' : 'text-evergreen-950';
+---
+<span class={`inline-flex items-center gap-2.5 ${cls}`}>
+  <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true" class="shrink-0">
+    <rect width="40" height="40" rx="11" fill={tone === 'dark' ? '#1B3420' : '#355E3B'} />
+    <rect x=".5" y=".5" width="39" height="39" rx="10.5" fill="none" stroke="#E6CD83" stroke-opacity=".28" />
+    <g fill="none" stroke="#E6CD83" stroke-width="1.7" stroke-linecap="round">
+      <path d="M20 31V19" />
+      <path d="M20 19c-1.5-4.2-4.8-6.6-9-6.8" />
+      <path d="M20 19c1.5-4.2 4.8-6.6 9-6.8" />
+      <path d="M20 19c-.6-3.8.4-7.2 3-9.6" />
+      <path d="M20 19c-3.4-1.4-7.2-.8-10 1.6" />
+      <path d="M20 19c3.4-1.4 7.2-.8 10 1.6" />
+    </g>
+    <g fill="#C9A227">
+      <circle cx="11" cy="12.2" r="1.7" /><circle cx="29" cy="12.2" r="1.7" /><circle cx="23" cy="9.4" r="1.7" />
+      <circle cx="10" cy="20.6" r="1.5" /><circle cx="30" cy="20.6" r="1.5" />
+    </g>
+  </svg>
+  {!compact && (
+    <span class={`font-display leading-none tracking-[-0.02em] ${text}`}>
+      <span class="block text-[15.5px] font-[620]">Palm Beach</span>
+      <span class="block text-[11px] font-mono font-medium uppercase tracking-[0.16em] opacity-75 mt-[3px]">AI Services</span>
+    </span>
+  )}
+</span>

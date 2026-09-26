@@ -1,0 +1,77 @@
+---
+import Icon from '../ui/Icon.astro';
+import { CTA } from '@/config/site';
+const steps = [
+  { title: 'Free teardown', time: 'Day 0', text: 'We review your Google Business Profile and website next to the companies outranking you, then show you exactly what is costing you calls. You leave with a plan, whether you hire us or not.' },
+  { title: 'Build in 7 days', time: 'Week 1', text: 'Your website goes live, your Google profile gets cleaned up, and your review and lead follow-up automations get set up. You approve everything. We handle the rest.' },
+  { title: 'Switch on the automation', time: 'Weeks 2 to 4', text: 'Missed-call text-back, follow-ups, and review requests start running on their own. Custom AI tools come next if you need them.' },
+  { title: 'Grow, month to month', time: 'Every month', text: 'A monthly check-in on calls, reviews, and rankings. Meanwhile we build backlinks and keep closing the gap on competitors. Stay because it works.' },
+];
+---
+<section class="section surface-dark relative overflow-hidden grain" id="how-it-works">
+  <div class="absolute inset-0 opacity-70" style="background: radial-gradient(60% 50% at 0% 100%, rgba(53,94,59,.55), transparent 70%)" aria-hidden="true"></div>
+  <div class="container-x relative">
+    <div class="grid gap-14 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <div class="lg:sticky lg:top-32">
+          <div class="eyebrow">How it works</div>
+          <h2 class="h2 mt-5 text-[#f4f1e8]">From teardown to booked jobs in <em class="accent">four</em> steps.</h2>
+          <p class="lede mt-6">Clear, fixed packages. A founder who does the work. No six-month onboarding.</p>
+          <div class="mt-9 flex flex-wrap items-center gap-5">
+            <a href={CTA.primary.href} class="btn btn-primary">{CTA.primary.label}<Icon name="arrow-right" size={17} /></a>
+          </div>
+          <ol class="step-dots mt-12 hidden lg:flex gap-2" aria-hidden="true">
+            {steps.map((_, i) => <li data-dot={i} class:list={['h-1 rounded-full transition-all duration-500', i === 0 ? 'w-10 bg-gold-500' : 'w-5 bg-white/15']}></li>)}
+          </ol>
+        </div>
+      </div>
+      <ol class="lg:col-span-7 space-y-5">
+        {steps.map((s, i) => (
+          <li class="step card-dark relative p-6 sm:p-9 overflow-hidden" data-step={i} data-reveal>
+            <div class="flex gap-5 sm:gap-9 items-start">
+              <span class="numeral font-display" aria-hidden="true">{i + 1}</span>
+              <div class="pt-2">
+                <div class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-gold-300">{s.time}</div>
+                <h3 class="h3 mt-2 text-[#f4f1e8]"><span class="sr-only">Step {i + 1}: </span>{s.title}</h3>
+                <p class="mt-3 text-mist-400 text-[15.5px] leading-relaxed">{s.text}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .numeral {
+    font-size: clamp(56px, 9vw, 120px); line-height: .82; font-weight: 300; letter-spacing: -0.06em; min-width: .62em;
+    color: transparent; -webkit-text-stroke: 1.2px rgba(141, 181, 148, 0.5);
+    background-image: linear-gradient(180deg, #e6cd83 0%, #8db594 55%, #447a4c 100%);
+    background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 0%;
+    -webkit-background-clip: text; background-clip: text;
+    transition: background-size 600ms var(--ease-out-soft), -webkit-text-stroke-color 400ms;
+  }
+  .step { transition: border-color 500ms; }
+  .step.is-active { border-color: rgba(230, 205, 131, 0.26); }
+  .step.is-active .numeral { background-size: 100% 100%; -webkit-text-stroke-color: rgba(230, 205, 131, 0); }
+</style>
+
+<script>
+  const steps = Array.from(document.querySelectorAll<HTMLElement>('[data-step]'));
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('[data-dot]'));
+  const setActive = (idx: number) => {
+    steps.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+    dots.forEach((d, i) => {
+      d.classList.toggle('w-10', i === idx); d.classList.toggle('bg-gold-500', i === idx);
+      d.classList.toggle('w-5', i !== idx); d.classList.toggle('bg-white/15', i !== idx);
+    });
+  };
+  setActive(0);
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setActive(Number((e.target as HTMLElement).dataset.step)); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach((s) => io.observe(s));
+  }
+</script>

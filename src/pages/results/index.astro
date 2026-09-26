@@ -1,0 +1,29 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import CaseStudies from '@/components/sections/CaseStudies.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+---
+<Base
+  title="Results & Case Studies | Palm Beach AI Services"
+  description="Real results for South Florida businesses: 78% less time per inspection report for Safe Haven Inspections, and #2 to #3 Google rankings in Lake Worth for Hero's Pavers."
+  breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Results', url: '/results/' }]}
+>
+  <PageHero eyebrow="Results" title="Proof, not *promises.*"
+    lede="Every number on this page is real and specific. When a project is still ramping up, we say so."
+    crumbs={[{ name: 'Home', url: '/' }, { name: 'Results', url: '/results/' }]} />
+  <CaseStudies heading={false} />
+  <section class="pb-24 surface-cream">
+    <div class="container-x">
+      <div class="rounded-[20px] border border-dashed border-stone-300 p-8 sm:p-10 flex flex-col md:flex-row md:items-center gap-6 justify-between bg-white/50">
+        <div>
+          <div class="font-display text-[22px] font-[600] tracking-tight">Want to be the next case study?</div>
+          <p class="mt-1 text-ink-600">We take a limited number of clients per trade, per town. See if yours is open.</p>
+        </div>
+        <a href="/free-teardown/" class="btn btn-green shrink-0">Check my trade + town<Icon name="arrow-right" size={17} /></a>
+      </div>
+    </div>
+  </section>
+  <FinalCTA />
+</Base>
