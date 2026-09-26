@@ -15,11 +15,11 @@ export const homeFaqs = [
   },
   {
     q: 'Can you guarantee #1 on Google?',
-    a: 'No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 7 days, a complete and active profile, and a plain-English report every month.',
+    a: 'No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 14 days, a complete and active profile, and a plain-English report every month.',
   },
   {
     q: 'How fast will I see results?',
-    a: 'Missed-call text-back and review requests work from day one. A new website goes live in 7 days. Google rankings take longer and depend on your town and competition, so we report progress monthly.',
+    a: 'Missed-call text-back and review requests work from day one. A new website goes live in 14 days. Google rankings take longer and depend on your town and competition, so we report progress monthly.',
   },
   {
     q: 'What does "AI automation" actually mean for my business?',
@@ -45,7 +45,7 @@ export const homeFaqs = [
 
 export const pricingFaqs = [
   { q: 'What does it cost?', a: `${usd(BUILD_FEE)} once for your custom website build, then ${usd(MONTHLY)}/month. That is the whole plan. No tiers.` },
-  { q: `What does the ${usd(BUILD_FEE)} build fee cover?`, a: `A custom, mobile-first website designed, written, and launched for you: service pages, your main town page, click-to-call and a quote form, Google-ready structured data, your Google Business Profile connected, and Analytics + Search Console set up. Live in 7 days once we have your content. You pay it once.` },
+  { q: `What does the ${usd(BUILD_FEE)} build fee cover?`, a: `A custom, mobile-first website designed, written, and launched for you: service pages, your main town page, click-to-call and a quote form, Google-ready structured data, your Google Business Profile connected, and Analytics + Search Console set up. Live in 14 days once we have your content. You pay it once.` },
   { q: `What does the ${usd(MONTHLY)}/month include?`, a: 'Six things, every month: review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.' },
   { q: 'Is there a contract?', a: 'No. It is month-to-month. Cancel anytime, and your website, domain, Google profile, and customer data stay yours.' },
   { q: 'Are there any other fees?', a: `No hidden fees. The ${usd(BUILD_FEE)} build and the ${usd(MONTHLY)}/month plan are the price. Custom AI work is optional and quoted separately, in writing, before anything starts. If your texting or calling volume is unusually high, we will tell you up front before any usage costs apply.` },

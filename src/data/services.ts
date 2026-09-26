@@ -27,11 +27,11 @@ export const services: Service[] = [
     navLabel: 'Websites',
     metaTitle: 'Website Design for Palm Beach County Contractors | Palm Beach AI Services',
     metaDescription:
-      `Fast, custom websites for Palm Beach County home-service businesses. Built to rank on Google and turn visitors into calls. Live in 7 days. ${usd(BUILD_FEE)} one-time build, part of our one simple plan.`,
+      `Fast, custom websites for Palm Beach County home-service businesses. Built to rank on Google and turn visitors into calls. Live in 14 days. ${usd(BUILD_FEE)} one-time build, part of our one simple plan.`,
     eyebrow: 'Websites',
     headline: 'A website that *earns* its keep.',
     subhead:
-      'Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 7 days. You own every pixel.',
+      'Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.',
     outcomes: [
       { title: 'Shows up on Google', text: 'Service and town pages built around what your customers actually search.' },
       { title: 'Turns visits into calls', text: 'Tap-to-call, quote forms, and proof right where people decide.' },
@@ -50,14 +50,14 @@ export const services: Service[] = [
     process: [
       { title: 'Teardown', text: 'We review your current site and Google profile and show you what is costing you calls.' },
       { title: 'Content', text: 'You send photos and a logo. We write the words, built around local searches.' },
-      { title: 'Build', text: 'Your site goes live in 7 days from the day we have your content.' },
+      { title: 'Build', text: 'Your site goes live in 14 days from the day we have your content.' },
       { title: 'Grow', text: 'On the monthly plan we keep improving it, building backlinks, and tracking competitors.' },
     ],
     relatedCase: 'heros-pavers',
     priceNote: `${usd(BUILD_FEE)} one-time website build, then ${usd(MONTHLY)}/month for reviews, Google profile management, lead follow-up, backlinks, and competitor tracking. No contract.`,
     faqs: [
       { q: 'Do I own the website?', a: 'Yes. Your domain, your content, your site. No hostage situations.' },
-      { q: 'How fast can it go live?', a: 'Seven days from the day we have your content (logo, photos, and a quick call about your services).' },
+      { q: 'How fast can it go live?', a: 'Within 14 days of the day we have your content (logo, photos, and a quick call about your services). If we miss it, your first month is free.' },
       { q: 'I already have a site. Do I need a new one?', a: 'Not always. The free teardown tells you honestly whether to fix it or rebuild it.' },
     ],
     icon: 'globe',

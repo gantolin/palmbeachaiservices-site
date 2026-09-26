@@ -31,7 +31,7 @@ export const plan = {
   /** The one-time $750 covers this. TODO(Gino): confirm build scope. */
   build: {
     title: 'Custom website build',
-    text: 'Designed, written, and launched for you. Live in 7 days once we have your content.',
+    text: 'Designed, written, and launched for you. Live in 14 days once we have your content.',
     items: [
       'Custom, mobile-first design that loads fast',
       'Service pages + your main town page, written for local search',
@@ -118,8 +118,8 @@ export const guarantee = {
 
 /** Short delivery promises (used under pricing). */
 export const promises = [
-  { title: 'Website live in 7 days', text: 'Counted from the day we have your content and logo.' },
-  { title: 'Full setup in 14 days', text: 'Or your first month is free. In writing.' },
+  { title: 'Live in 14 days', text: 'Counted from the day we have your content and account access.' },
+  { title: 'Or month one is free', text: 'If we miss the 14 days, your first month is on us. In writing.' },
   { title: 'Leave any month', text: 'No contract, and you keep everything we built.' },
   { title: 'Flat, published prices', text: 'No surprise invoices. No "call for pricing."' },
 ];

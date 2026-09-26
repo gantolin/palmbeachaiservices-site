@@ -95,7 +95,7 @@ No contract. Cancel anytime.
 
 Free Palm Beach Teardown of your Google profile + website. You keep the fixes, whether or not we work together.
 
-- Site live in 7 days
+- Live in 14 days
 - You own everything
 - Local to Royal Palm Beach
 2:14
@@ -140,7 +140,7 @@ less time per inspection report · Safe Haven
 
 on Google for Lake Worth keywords · Hero's Pavers
 
-7 days
+14 days
 
 from content to a live website · our promise
 
@@ -264,8 +264,8 @@ Clear, fixed packages. A founder who does the work. No six-month onboarding.
 [Button: Get my free teardown](/free-teardown/)
 
 - 1 Day 0 Step 1: Free teardown We review your Google Business Profile and website next to the companies outranking you, then show you exactly what is costing you calls. You leave with a plan, whether you hire us or not.
-- 2 Week 1 Step 2: Build in 7 days Your website goes live, your Google profile gets cleaned up, and your review and lead follow-up automations get set up. You approve everything. We handle the rest.
-- 3 Weeks 2 to 4 Step 3: Switch on the automation Missed-call text-back, follow-ups, and review requests start running on their own. Custom AI tools come next if you need them.
+- 2 Weeks 1 to 2 Step 2: Live in 14 days Your website goes live, your Google profile gets cleaned up, and your review and lead follow-up automations get set up. You approve everything. We handle the rest.
+- 3 Weeks 3 to 4 Step 3: Tune the automation Missed-call text-back, follow-ups, and review requests run on their own, and we tune them as real leads come in. Custom AI tools come next if you need them.
 - 4 Every month Step 4: Grow, month to month A monthly check-in on calls, reviews, and rankings. Meanwhile we build backlinks and keep closing the gap on competitors. Stay because it works.
 
 ---
@@ -322,7 +322,7 @@ The build fee is paid once. After that it is one flat monthly price, month-to-mo
 - Competitor analysis + ranking improvement We watch who outranks you in your towns and keep closing the gap, month after month. Replaces: guessing why the other guy shows up first
 Your $750 build includes
 
-Paid once · live in 7 days
+Paid once · live in 14 days
 
 - Custom, mobile-first design that loads fast
 - Service pages + your main town page, written for local search
@@ -442,7 +442,7 @@ Same goal: more booked jobs. Very different way of getting there.
 | Pricing | $750 build + $297/mo, published | "Let’s hop on a call" pricing |
 | Contract | Month-to-month | Often 6 to 12 month lock-ins |
 | Who you talk to | The founder, locally, in Palm Beach County | Account manager #4, often out of state |
-| Website launch | Live in 7 days | Often weeks or months |
+| Website launch | Live in 14 days | Often weeks or months |
 | Lead response | Missed calls texted back in seconds | Not their problem |
 | Reviews + lead follow-up | Automated, included in the plan | Separate vendor, separate bill |
 | What we measure | Calls, reviews, and booked jobs | Impressions and "reach" |
@@ -500,9 +500,9 @@ Still have a question? Call or text (561) 365-8443.
 - **Q: Do I own my website and Google profile?**
   A: Yes. Your domain, your website content, your Google Business Profile, and your customer data are yours. Always.
 - **Q: Can you guarantee #1 on Google?**
-  A: No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 7 days, a complete and active profile, and a plain-English report every month.
+  A: No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 14 days, a complete and active profile, and a plain-English report every month.
 - **Q: How fast will I see results?**
-  A: Missed-call text-back and review requests work from day one. A new website goes live in 7 days. Google rankings take longer and depend on your town and competition, so we report progress monthly.
+  A: Missed-call text-back and review requests work from day one. A new website goes live in 14 days. Google rankings take longer and depend on your town and competition, so we report progress monthly.
 - **Q: What does "AI automation" actually mean for my business?**
   A: Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut Safe Haven Inspections’ report time from 45 to 10 minutes.
 - **Q: What if it doesn’t work?**
@@ -551,7 +551,7 @@ Get found
 
 ### Websites
 
-Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 7 days. You own every pixel.
+Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.
 
 - Shows up on Google
 - Turns visits into calls
@@ -664,8 +664,8 @@ Clear, fixed packages. A founder who does the work. No six-month onboarding.
 [Button: Get my free teardown](/free-teardown/)
 
 - 1 Day 0 Step 1: Free teardown We review your Google Business Profile and website next to the companies outranking you, then show you exactly what is costing you calls. You leave with a plan, whether you hire us or not.
-- 2 Week 1 Step 2: Build in 7 days Your website goes live, your Google profile gets cleaned up, and your review and lead follow-up automations get set up. You approve everything. We handle the rest.
-- 3 Weeks 2 to 4 Step 3: Switch on the automation Missed-call text-back, follow-ups, and review requests start running on their own. Custom AI tools come next if you need them.
+- 2 Weeks 1 to 2 Step 2: Live in 14 days Your website goes live, your Google profile gets cleaned up, and your review and lead follow-up automations get set up. You approve everything. We handle the rest.
+- 3 Weeks 3 to 4 Step 3: Tune the automation Missed-call text-back, follow-ups, and review requests run on their own, and we tune them as real leads come in. Custom AI tools come next if you need them.
 - 4 Every month Step 4: Grow, month to month A monthly check-in on calls, reviews, and rankings. Meanwhile we build backlinks and keep closing the gap on competitors. Stay because it works.
 
 ---
@@ -687,7 +687,7 @@ We take a limited number of clients per trade, per town.
 # Page: /services/websites/
 
 - **SEO title:** Website Design for Palm Beach County Contractors | Palm Beach AI Services
-- **Meta description:** Fast, custom websites for Palm Beach County home-service businesses. Built to rank on Google and turn visitors into calls. Live in 7 days. $750 one-time build, part of our one simple plan.
+- **Meta description:** Fast, custom websites for Palm Beach County home-service businesses. Built to rank on Google and turn visitors into calls. Live in 14 days. $750 one-time build, part of our one simple plan.
 
 ---
 
@@ -698,7 +698,7 @@ Websites
 
 ## A website that earns its keep.
 
-Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 7 days. You own every pixel.
+Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.
 
 [Button: Get my free teardown](/free-teardown/)
 
@@ -767,7 +767,7 @@ How it works
 
 - 1 Teardown We review your current site and Google profile and show you what is costing you calls.
 - 2 Content You send photos and a logo. We write the words, built around local searches.
-- 3 Build Your site goes live in 7 days from the day we have your content.
+- 3 Build Your site goes live in 14 days from the day we have your content.
 - 4 Grow On the monthly plan we keep improving it, building backlinks, and tracking competitors.
 
 ---
@@ -781,7 +781,7 @@ Still have a question? Call or text (561) 365-8443.
 - **Q: Do I own the website?**
   A: Yes. Your domain, your content, your site. No hostage situations.
 - **Q: How fast can it go live?**
-  A: Seven days from the day we have your content (logo, photos, and a quick call about your services).
+  A: Within 14 days of the day we have your content (logo, photos, and a quick call about your services). If we miss it, your first month is free.
 - **Q: I already have a site. Do I need a new one?**
   A: Not always. The free teardown tells you honestly whether to fix it or rebuild it.
 
@@ -1585,7 +1585,7 @@ The build fee is paid once. After that it is one flat monthly price, month-to-mo
 - Competitor analysis + ranking improvement We watch who outranks you in your towns and keep closing the gap, month after month. Replaces: guessing why the other guy shows up first
 Your $750 build includes
 
-Paid once · live in 7 days
+Paid once · live in 14 days
 
 - Custom, mobile-first design that loads fast
 - Service pages + your main town page, written for local search
@@ -1605,8 +1605,8 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
 - Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
-- Website live in 7 days Counted from the day we have your content and logo.
-- Full setup in 14 days Or your first month is free. In writing.
+- Live in 14 days Counted from the day we have your content and account access.
+- Or month one is free If we miss the 14 days, your first month is on us. In writing.
 - Leave any month No contract, and you keep everything we built.
 - Flat, published prices No surprise invoices. No "call for pricing."
 
@@ -1719,7 +1719,7 @@ Same goal: more booked jobs. Very different way of getting there.
 | Pricing | $750 build + $297/mo, published | "Let’s hop on a call" pricing |
 | Contract | Month-to-month | Often 6 to 12 month lock-ins |
 | Who you talk to | The founder, locally, in Palm Beach County | Account manager #4, often out of state |
-| Website launch | Live in 7 days | Often weeks or months |
+| Website launch | Live in 14 days | Often weeks or months |
 | Lead response | Missed calls texted back in seconds | Not their problem |
 | Reviews + lead follow-up | Automated, included in the plan | Separate vendor, separate bill |
 | What we measure | Calls, reviews, and booked jobs | Impressions and "reach" |
@@ -1738,7 +1738,7 @@ Still have a question? Call or text (561) 365-8443.
 - **Q: What does it cost?**
   A: $750 once for your custom website build, then $297/month. That is the whole plan. No tiers.
 - **Q: What does the $750 build fee cover?**
-  A: A custom, mobile-first website designed, written, and launched for you: service pages, your main town page, click-to-call and a quote form, Google-ready structured data, your Google Business Profile connected, and Analytics + Search Console set up. Live in 7 days once we have your content. You pay it once.
+  A: A custom, mobile-first website designed, written, and launched for you: service pages, your main town page, click-to-call and a quote form, Google-ready structured data, your Google Business Profile connected, and Analytics + Search Console set up. Live in 14 days once we have your content. You pay it once.
 - **Q: What does the $297/month include?**
   A: Six things, every month: review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.
 - **Q: Is there a contract?**
@@ -2135,7 +2135,6 @@ We provide website design and maintenance, local SEO and Google Business Profile
 
 ### 3. The Palm Beach Promise (delivery guarantee)
 
-- Website in 7 days: standard websites launch within 7 days of receiving your content (logo, photos, service details, and approvals).
 - Live in 14 days, or month one is free: your website, Google Business Profile cleanup, and review and lead follow-up automations go live within 14 days of the day we receive your content, account access (domain, Google Business Profile, phone), and approvals. If we miss that date for reasons within our control, we refund or credit your first month's plan fee (the monthly fee, not the one-time build fee). Delays caused by missing content, access, approvals, or third parties (for example Google verification or carrier/A2P registration) pause the clock.
 - Leave any month, keep everything: see sections 2 and 5.
 - This promise covers delivery only. It is not a guarantee of rankings, leads, or revenue (see section 4).

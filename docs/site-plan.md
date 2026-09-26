@@ -75,7 +75,7 @@ All forms POST JSON to `PUBLIC_LEAD_ENDPOINT` (a Lambda → GoHighLevel, scaffol
 ## Pricing (single source: `src/data/pricing.ts`)
 One plan, no tiers, no toggle. The earlier Get Found/Growth/Automate tiers, the GBP Kickstart, and annual billing have been removed.
 
-- **$750 one-time** custom website build (`BUILD_FEE`). Covers a custom mobile-first design, service pages + main town page, click-to-call/quote form/structured data, Google Business Profile connected and cleaned up, and Analytics + Search Console. Live in 7 days from content.
+- **$750 one-time** custom website build (`BUILD_FEE`). Covers a custom mobile-first design, service pages + main town page, click-to-call/quote form/structured data, Google Business Profile connected and cleaned up, and Analytics + Search Console. Live in 14 days from content (the same 14-day promise as the guarantee).
 - **$297/month** (`MONTHLY`): month-to-month, no contract. Includes exactly 6 things: **review automation, Google Business Profile management, lead follow-up, monthly check-in, backlink building, competitor analysis + ranking improvement.** Each item shows a qualitative "Replaces: ..." line (no invented dollar values).
 - **Custom AI automation, quoted per project** (no price shown): CRM/GoHighLevel setup, custom AI workflows (e.g. the Safe Haven report system), AI Workday Install.
 - **Where the price appears:** hero price ticket, home pricing section heading + card, `/pricing/` hero + card, home and pricing FAQs, meta descriptions, JSON-LD offers, service-page price notes, the comparison table, `llms.txt`. All of these read `BUILD_FEE`, `MONTHLY`, and `priceLine` from the data file.
