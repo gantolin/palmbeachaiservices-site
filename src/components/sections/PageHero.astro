@@ -4,7 +4,7 @@ interface Props { eyebrow: string; title: string; lede?: string; crumbs?: { name
 const { eyebrow, title, lede, crumbs, center = false } = Astro.props;
 ---
 <section class="relative overflow-hidden surface-dark grain -mt-px">
-  <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+  <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
   <div class="container-x relative pt-14 pb-16 sm:pt-20 sm:pb-24">
     {crumbs && (
       <nav aria-label="Breadcrumb" class="mb-8">

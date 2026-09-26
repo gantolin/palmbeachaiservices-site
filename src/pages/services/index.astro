@@ -22,14 +22,14 @@ import { priceLine } from '@/data/pricing';
     <div class="container-x grid gap-5 lg:grid-cols-3">
       {services.map((s, i) => (
         <a href={`/services/${s.slug}/`} class="card lift group p-8 rounded-[20px] flex flex-col" data-reveal style={`--d:${i * 90}ms`}>
-          <span class="size-12 rounded-2xl bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={22} /></span>
-          <div class="mt-6 font-mono text-[11.5px] uppercase tracking-[0.1em] text-evergreen-700">{s.pillar}</div>
+          <span class="size-12 rounded-2xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={22} /></span>
+          <div class="mt-6 font-mono text-[11.5px] uppercase tracking-[0.1em] text-navy-700">{s.pillar}</div>
           <h2 class="h3 mt-2">{s.name}</h2>
           <p class="mt-3 text-ink-600 text-[15.5px]" set:html={accent(s.subhead)} />
           <ul class="mt-6 space-y-2.5 text-[15px]">
-            {s.outcomes.map((o) => <li class="flex gap-2.5"><Icon name="check" size={17} stroke={2.2} class="text-evergreen-700 shrink-0 mt-[3px]" />{o.title}</li>)}
+            {s.outcomes.map((o) => <li class="flex gap-2.5"><Icon name="check" size={17} stroke={2.2} class="text-navy-700 shrink-0 mt-[3px]" />{o.title}</li>)}
           </ul>
-          <span class="mt-auto pt-8 inline-flex items-center gap-2 text-[14.5px] font-semibold text-evergreen-700">Explore {s.navLabel} <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
+          <span class="mt-auto pt-8 inline-flex items-center gap-2 text-[14.5px] font-semibold text-navy-700">Explore {s.navLabel} <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
         </a>
       ))}
     </div>

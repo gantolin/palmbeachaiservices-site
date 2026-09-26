@@ -14,10 +14,6 @@
 
 **Footer:**
 
-Palm Beach
-
-AI Services
-
 Websites, Google rankings, and AI automation for Palm Beach County home-service businesses.
 
 Palm Beach AI Services

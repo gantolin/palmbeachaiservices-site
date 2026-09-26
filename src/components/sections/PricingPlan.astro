@@ -14,7 +14,7 @@ const { showPromises = true } = Astro.props;
     <!-- The plan -->
     <article class="plan-featured relative rounded-[24px] p-7 sm:p-9 lg:col-span-5 flex flex-col" data-reveal>
       <div class="flex items-center justify-between gap-3">
-        <span class="chip bg-gold-500 text-evergreen-950 text-[12px] font-semibold py-1">One plan. Everything included.</span>
+        <span class="chip bg-gold-500 text-navy-950 text-[12px] font-semibold py-1">One plan. Everything included.</span>
         <span class="hidden sm:inline font-mono text-[10.5px] uppercase tracking-[0.12em] text-mist-400">No tiers</span>
       </div>
       <h3 class="mt-6 font-display text-[26px] font-[600] tracking-[-0.02em] text-[#f4f1e8]">{plan.name}</h3>
@@ -64,11 +64,11 @@ const { showPromises = true } = Astro.props;
         <ul class="mt-7 grid gap-x-8 gap-y-7 sm:grid-cols-2">
           {plan.included.map((it) => (
             <li class="flex gap-4">
-              <span class="shrink-0 size-10 rounded-xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name={it.icon} size={19} /></span>
+              <span class="shrink-0 size-10 rounded-xl bg-navy-100 text-navy-700 flex items-center justify-center"><Icon name={it.icon} size={19} /></span>
               <div>
                 <div class="font-display text-[16.5px] font-[600] tracking-tight text-ink-900">{it.title}</div>
                 <p class="mt-1 text-[14.5px] leading-snug text-ink-600">{it.text}</p>
-                <p class="mt-2 text-[13px] leading-snug text-ink-600"><span class="font-semibold text-evergreen-700">Replaces:</span> {it.replaces.charAt(0).toLowerCase() + it.replaces.slice(1)}</p>
+                <p class="mt-2 text-[13px] leading-snug text-ink-600"><span class="font-semibold text-navy-700">Replaces:</span> {it.replaces.charAt(0).toLowerCase() + it.replaces.slice(1)}</p>
               </div>
             </li>
           ))}
@@ -81,7 +81,7 @@ const { showPromises = true } = Astro.props;
         </div>
         <ul class="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
           {plan.build.items.map((b) => (
-            <li class="flex gap-2.5 text-[14.5px] text-ink-900"><span class="mt-[3px] shrink-0 size-[18px] rounded-full bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name="check" size={11} stroke={2.6} /></span>{b}</li>
+            <li class="flex gap-2.5 text-[14.5px] text-ink-900"><span class="mt-[3px] shrink-0 size-[18px] rounded-full bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name="check" size={11} stroke={2.6} /></span>{b}</li>
           ))}
         </ul>
       </div>
@@ -89,8 +89,8 @@ const { showPromises = true } = Astro.props;
   </div>
 
   <!-- Custom AI: secondary, no price -->
-  <div class="custom-ai mt-5 relative overflow-hidden rounded-[24px] bg-evergreen-950 text-mist-200 p-7 sm:p-9" data-reveal>
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(55% 120% at 100% 0%, rgba(53,94,59,.55), transparent 70%)" aria-hidden="true"></div>
+  <div class="custom-ai mt-5 relative overflow-hidden rounded-[24px] bg-navy-950 text-mist-200 p-7 sm:p-9" data-reveal>
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(55% 120% at 100% 0%, rgba(30,84,148,.55), transparent 70%)" aria-hidden="true"></div>
     <div class="relative grid gap-8 lg:grid-cols-12 lg:items-center">
       <div class="lg:col-span-4">
         <div class="flex flex-wrap items-center gap-3">
@@ -117,7 +117,7 @@ const { showPromises = true } = Astro.props;
     <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {promises.map((pr) => (
         <li class="flex gap-3.5 rounded-2xl border border-stone-300 bg-cream-50/70 p-5">
-          <span class="shrink-0 size-10 rounded-xl bg-evergreen-700 text-gold-300 flex items-center justify-center"><Icon name="shield" size={19} /></span>
+          <span class="shrink-0 size-10 rounded-xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name="shield" size={19} /></span>
           <div>
             <div class="font-display font-[600] text-[16px] tracking-tight text-ink-900">{pr.title}</div>
             <div class="text-[14px] text-ink-600 mt-0.5 leading-snug">{pr.text}</div>
@@ -130,9 +130,9 @@ const { showPromises = true } = Astro.props;
 
 <style>
   .plan-featured {
-    background: radial-gradient(120% 80% at 30% 0%, #274a2d 0%, #1b3420 42%, #0f1f14 100%);
+    background: radial-gradient(120% 80% at 30% 0%, #0e3d72 0%, #062d59 38%, #041733 100%);
     color: var(--color-mist-200);
-    box-shadow: 0 40px 80px -40px rgba(15, 31, 20, 0.7);
+    box-shadow: 0 40px 80px -40px rgba(3, 14, 29, 0.7);
   }
   .plan-featured::before {
     content: ''; position: absolute; inset: -1px; border-radius: 25px; padding: 1px; pointer-events: none;

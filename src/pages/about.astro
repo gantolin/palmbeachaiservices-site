@@ -33,7 +33,7 @@ const values = [
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {values.map((v, i) => (
           <div class="card p-7 rounded-[20px]" data-reveal style={`--d:${(i % 3) * 80}ms`}>
-            <span class="size-11 rounded-xl bg-evergreen-100 text-evergreen-700 flex items-center justify-center"><Icon name={v.icon} size={20} /></span>
+            <span class="size-11 rounded-xl bg-navy-100 text-navy-700 flex items-center justify-center"><Icon name={v.icon} size={20} /></span>
             <h3 class="mt-5 font-display text-[20px] font-[600] tracking-tight">{v.title}</h3>
             <p class="mt-2 text-ink-600 text-[15.5px]">{v.text}</p>
           </div>
@@ -54,7 +54,7 @@ const values = [
         <h2 class="h2 mt-5">Home base: <em class="accent">{SITE.homeBase}.</em></h2>
         <p class="lede mt-6">We serve all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}. Local means we can meet in person.</p>
         <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15.5px]">
-          {SITE.serviceAreas.map((a, i) => <li class="flex items-center gap-2.5"><Icon name="pin" size={16} class={i === 0 ? 'text-gold-700' : 'text-evergreen-700'} /><span class={i === 0 ? 'font-semibold' : ''}>{a}</span></li>)}
+          {SITE.serviceAreas.map((a, i) => <li class="flex items-center gap-2.5"><Icon name="pin" size={16} class={i === 0 ? 'text-gold-700' : 'text-navy-700'} /><span class={i === 0 ? 'font-semibold' : ''}>{a}</span></li>)}
         </ul>
       </div>
     </div>

@@ -5,11 +5,11 @@ import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
 ---
 <Base title="Thanks! | Palm Beach AI Services" description="Thanks for reaching out to Palm Beach AI Services." noindex>
   <section class="relative overflow-hidden surface-dark grain -mt-px min-h-[70vh]">
-    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
     <div class="container-x relative py-20 sm:py-24">
       <!-- Teardown: step 3, book the call -->
       <div data-for="teardown" class="max-w-3xl mx-auto text-center">
-        <span class="mx-auto size-14 rounded-2xl bg-gold-500 text-evergreen-950 flex items-center justify-center"><Icon name="check" size={28} stroke={2.4} /></span>
+        <span class="mx-auto size-14 rounded-2xl bg-gold-500 text-navy-950 flex items-center justify-center"><Icon name="check" size={28} stroke={2.4} /></span>
         <div class="mt-6 font-mono text-[11.5px] uppercase tracking-[0.12em] text-gold-300">Step 3 of 3 · Book your call</div>
         <h1 class="h1 mt-4 text-[#f4f1e8]">Got it. Now pick a <em class="accent">time.</em></h1>
         <p class="lede mt-5 mx-auto">{FOUNDER_FIRST_NAME} will review your Google profile and website before the call. If a partner weighs in on marketing, pick a time that works for both of you.</p>
@@ -18,7 +18,7 @@ import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
             <iframe src={SITE.bookingUrl} title="Book your Palm Beach Teardown" loading="lazy" class="w-full h-[720px] border-0"></iframe>
           </div>
         ) : (
-          <div class="mt-10 rounded-[20px] border border-white/10 bg-evergreen-900/60 p-7 text-left">
+          <div class="mt-10 rounded-[20px] border border-white/10 bg-navy-900/60 p-7 text-left">
             <p class="text-mist-200">We will text you a link to pick a time for your teardown. Prefer to talk now?</p>
             <a href={telHref} class="btn btn-primary mt-5"><Icon name="phone" size={17} />Call {SITE.phone}</a>
           </div>
@@ -26,7 +26,7 @@ import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
       </div>
       <!-- Playbook: upsell to the teardown -->
       <div data-for="playbook" hidden class="max-w-3xl mx-auto text-center">
-        <span class="mx-auto size-14 rounded-2xl bg-gold-500 text-evergreen-950 flex items-center justify-center"><Icon name="mail" size={26} stroke={2} /></span>
+        <span class="mx-auto size-14 rounded-2xl bg-gold-500 text-navy-950 flex items-center justify-center"><Icon name="mail" size={26} stroke={2} /></span>
         <h1 class="h1 mt-8 text-[#f4f1e8]">Check your <em class="accent">inbox.</em></h1>
         <p class="lede mt-5 mx-auto">Your Booked-Jobs Playbook is on its way. Want someone to apply it to your business? Get {CTA.offerName}: {FOUNDER_FIRST_NAME} reviews your Google profile and website, and you keep the fixes whether or not we work together.</p>
         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">

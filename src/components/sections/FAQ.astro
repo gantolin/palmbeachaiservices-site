@@ -10,14 +10,14 @@ const { faqs, title = 'Straight answers.', surface = 'surface-cream' } = Astro.p
       <div class="lg:col-span-4" data-reveal>
         <div class="eyebrow">FAQ</div>
         <h2 class="h2 mt-5" set:html={title.replace(/\*(.+?)\*/g, '<em class="accent">$1</em>')} />
-        <p class="mt-6 text-ink-600">Still have a question? Call or text <a href={telHref} class="text-evergreen-700 font-semibold underline">{SITE.phone}</a>.</p>
+        <p class="mt-6 text-ink-600">Still have a question? Call or text <a href={telHref} class="text-navy-700 font-semibold underline">{SITE.phone}</a>.</p>
       </div>
       <div class="lg:col-span-8 divide-y divide-stone-300 border-y border-stone-300" data-reveal style="--d:80ms">
         {faqs.map((f, i) => (
           <details class="faq group" open={i === 0}>
             <summary class="flex items-center justify-between gap-6 py-6 list-none">
               <h3 class="font-display text-[18px] sm:text-[20px] font-[560] tracking-[-0.015em] text-ink-900">{f.q}</h3>
-              <span class="shrink-0 size-9 rounded-full border border-stone-300 flex items-center justify-center text-evergreen-700 transition-transform duration-300 group-open:rotate-180 group-open:bg-evergreen-700 group-open:text-white group-open:border-evergreen-700"><Icon name="chevron-down" size={18} /></span>
+              <span class="shrink-0 size-9 rounded-full border border-stone-300 flex items-center justify-center text-navy-700 transition-transform duration-300 group-open:rotate-180 group-open:bg-navy-700 group-open:text-white group-open:border-navy-700"><Icon name="chevron-down" size={18} /></span>
             </summary>
             <p class="pb-7 -mt-1 pr-12 text-[16px] leading-relaxed text-ink-600 max-w-[64ch]">{f.a}</p>
           </details>

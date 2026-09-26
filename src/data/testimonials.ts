@@ -14,7 +14,7 @@ export interface Testimonial {
   name: string;
   business: string;
   town: string;
-  /** Optional: phrase inside the quote to highlight in green. */
+  /** Optional: phrase inside the quote to highlight in the accent color. */
   highlight?: string;
   /** Optional: /images/testimonials/*.jpg */
   photo?: string;

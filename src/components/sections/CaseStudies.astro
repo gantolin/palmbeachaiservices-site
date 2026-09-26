@@ -28,18 +28,18 @@ const {
     <div class:list={['grid gap-5 lg:grid-cols-3', heading && 'mt-14']}>
       {caseStudies.map((c, i) => (
         <a href={`/results/${c.slug}/`} class="case card lift group flex flex-col overflow-hidden rounded-[20px]" data-reveal style={`--d:${i * 90}ms`}>
-          <div class="p-5 lg:h-[390px] flex flex-col justify-center bg-[linear-gradient(180deg,var(--color-evergreen-50),var(--color-sand-100))] border-b border-stone-300">
+          <div class="p-5 lg:h-[390px] flex flex-col justify-center bg-[linear-gradient(180deg,var(--color-navy-50),var(--color-sand-100))] border-b border-stone-300">
             <Visual kind={c.visual} />
           </div>
           <div class="p-7 flex flex-col flex-1">
             <div class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600 leading-relaxed lg:min-h-[3.4em]">{c.trade}<br />{c.area}</div>
             <h3 class="mt-3 font-display text-[23px] font-[600] tracking-[-0.02em] leading-tight">{c.client}</h3>
             <div class="mt-4 flex items-baseline gap-2">
-              <span class:list={['font-display font-[600] tracking-[-0.04em] leading-none', c.status === 'result' ? 'text-evergreen-700 text-[40px]' : 'text-gold-700 text-[28px]']}>{c.headlineStat}</span>
+              <span class:list={['font-display font-[600] tracking-[-0.04em] leading-none', c.status === 'result' ? 'text-navy-700 text-[40px]' : 'text-gold-700 text-[28px]']}>{c.headlineStat}</span>
             </div>
             <p class="mt-2 text-[15px] text-ink-600">{c.headlineLabel}</p>
             <p class="proof-math mt-5">{c.proofMath}</p>
-            <span class="mt-auto pt-6 inline-flex items-center gap-2 text-[14.5px] font-semibold text-evergreen-700">Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
+            <span class="mt-auto pt-6 inline-flex items-center gap-2 text-[14.5px] font-semibold text-navy-700">Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
           </div>
         </a>
       ))}

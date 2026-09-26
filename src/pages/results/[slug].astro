@@ -18,7 +18,7 @@ const inProgress = cs.status === 'in-progress';
 ---
 <Base title={`${cs.client}: ${cs.headlineStat} ${cs.headlineLabel} | Palm Beach AI Services`} description={cs.summary} breadcrumbs={crumbs}>
   <section class="relative overflow-hidden surface-dark grain -mt-px">
-    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
     <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-24">
       <nav aria-label="Breadcrumb" class="mb-8">
         <ol class="flex flex-wrap items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.1em] text-mist-400">
@@ -56,13 +56,13 @@ const inProgress = cs.status === 'in-progress';
     <div class="container-x py-12 grid gap-4 sm:grid-cols-3">
       {cs.stats.map((s) => (
         <div class="rounded-2xl bg-white border border-stone-300 p-6">
-          <div class:list={['font-display font-[600] tracking-[-0.04em] leading-none tabular', inProgress ? 'text-[30px] text-ink-900' : 'text-[40px] text-evergreen-700']}>
+          <div class:list={['font-display font-[600] tracking-[-0.04em] leading-none tabular', inProgress ? 'text-[30px] text-ink-900' : 'text-[40px] text-navy-700']}>
             {s.countTo !== undefined ? <span data-count-to={s.countTo} data-suffix={s.suffix ?? ''} data-prefix={s.prefix ?? ''}>{s.value}</span> : s.value}
           </div>
           <div class="mt-3 text-[14.5px] text-ink-600">{s.label}</div>
         </div>
       ))}
-      <p class="sm:col-span-3 font-mono text-[12px] leading-relaxed text-ink-600 border-t border-dashed border-stone-300 pt-4"><span class="text-evergreen-700 font-semibold">The math:</span> {cs.proofMath}</p>
+      <p class="sm:col-span-3 font-mono text-[12px] leading-relaxed text-ink-600 border-t border-dashed border-stone-300 pt-4"><span class="text-navy-700 font-semibold">The math:</span> {cs.proofMath}</p>
     </div>
   </section>
 
@@ -72,11 +72,11 @@ const inProgress = cs.status === 'in-progress';
         <div class="lg:sticky lg:top-28 space-y-5">
           <div class="card p-6 rounded-[18px]">
             <div class="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Services</div>
-            <ul class="mt-3 flex flex-wrap gap-2">{cs.services.map((s) => <li class="chip bg-evergreen-100 text-evergreen-800 text-[13px]">{s}</li>)}</ul>
+            <ul class="mt-3 flex flex-wrap gap-2">{cs.services.map((s) => <li class="chip bg-navy-100 text-navy-800 text-[13px]">{s}</li>)}</ul>
             <div class="mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Status</div>
             <p class="mt-2 text-[15px] font-medium">{inProgress ? 'Live. Waiting to rank.' : 'Live and delivering.'}</p>
           </div>
-          <div class="rounded-[18px] bg-evergreen-950 p-6 text-mist-200">
+          <div class="rounded-[18px] bg-navy-950 p-6 text-mist-200">
             <p class="font-display text-[20px] font-[600] tracking-tight leading-snug">Want results like this in your town?</p>
             <p class="mt-2 text-[14.5px] text-mist-400">Start with a free teardown of your Google profile and website.</p>
             <a href={CTA.primary.href} class="btn btn-primary w-full mt-5">{CTA.primary.label}<Icon name="arrow-right" size={17} /></a>
@@ -93,7 +93,7 @@ const inProgress = cs.status === 'in-progress';
           <ol class="mt-6 space-y-4">
             {cs.whatWeDid.map((w, i) => (
               <li class="flex gap-5 items-start">
-                <span class="shrink-0 size-9 rounded-full border border-evergreen-700/40 text-evergreen-700 font-mono text-[13px] flex items-center justify-center">{i + 1}</span>
+                <span class="shrink-0 size-9 rounded-full border border-navy-700/40 text-navy-700 font-mono text-[13px] flex items-center justify-center">{i + 1}</span>
                 <span class="pt-1.5 text-[17px]">{w}</span>
               </li>
             ))}
@@ -103,12 +103,12 @@ const inProgress = cs.status === 'in-progress';
           <div class="eyebrow">{inProgress ? 'Where it stands' : 'The result'}</div>
           <ul class="mt-6 space-y-3">
             {cs.outcome.map((o) => (
-              <li class="flex gap-3 items-start text-[17px]"><Icon name={inProgress ? 'clock' : 'check-circle'} size={21} class={inProgress ? 'text-gold-700 shrink-0 mt-[3px]' : 'text-evergreen-700 shrink-0 mt-[3px]'} />{o}</li>
+              <li class="flex gap-3 items-start text-[17px]"><Icon name={inProgress ? 'clock' : 'check-circle'} size={21} class={inProgress ? 'text-gold-700 shrink-0 mt-[3px]' : 'text-navy-700 shrink-0 mt-[3px]'} />{o}</li>
             ))}
           </ul>
           {cs.timeMath && (
-            <div class="mt-8 rounded-2xl bg-evergreen-50 border border-evergreen-100 p-6 flex gap-4">
-              <Icon name="clock" size={22} class="text-evergreen-700 shrink-0" />
+            <div class="mt-8 rounded-2xl bg-navy-50 border border-navy-100 p-6 flex gap-4">
+              <Icon name="clock" size={22} class="text-navy-700 shrink-0" />
               <p class="text-[16px]"><strong class="font-semibold">In time terms:</strong> {cs.timeMath}</p>
             </div>
           )}
@@ -118,7 +118,7 @@ const inProgress = cs.status === 'in-progress';
         <!-- TODO(Gino): add before/after screenshots (Google rankings, GBP insights, site) to /public/images/results/. -->
         <div class="mt-16 pt-8 border-t border-stone-300 flex items-center justify-between gap-4">
           <a href="/results/" class="link-mono"><span aria-hidden="true">←</span> All results</a>
-          <a href={`/results/${next.slug}/`} class="group inline-flex items-center gap-2 text-[15px] font-semibold text-evergreen-700">Next: {next.client}<Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></a>
+          <a href={`/results/${next.slug}/`} class="group inline-flex items-center gap-2 text-[15px] font-semibold text-navy-700">Next: {next.client}<Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></a>
         </div>
       </article>
     </div>

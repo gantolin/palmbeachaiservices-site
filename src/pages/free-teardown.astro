@@ -17,7 +17,7 @@ const gets = [
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Free teardown', url: '/free-teardown/' }]}
 >
   <section class="relative overflow-hidden surface-dark grain -mt-px">
-    <div class="hero-bloom absolute inset-0 glow-evergreen" aria-hidden="true"></div>
+    <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
     <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-28">
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
         <div class="lg:col-span-5 lg:sticky lg:top-28">
@@ -27,7 +27,7 @@ const gets = [
           <ul class="mt-10 space-y-5 fade-in" style="--d:400ms">
             {gets.map((g) => (
               <li class="flex gap-4">
-                <span class="shrink-0 size-10 rounded-xl bg-evergreen-900 border border-white/10 text-gold-300 flex items-center justify-center"><Icon name={g.icon} size={19} /></span>
+                <span class="shrink-0 size-10 rounded-xl bg-navy-900 border border-white/10 text-gold-300 flex items-center justify-center"><Icon name={g.icon} size={19} /></span>
                 <div><div class="font-display text-[17px] font-[600] text-mist-200 tracking-tight">{g.title}</div><p class="text-[15px] text-mist-400 mt-0.5">{g.text}</p></div>
               </li>
             ))}
@@ -48,7 +48,7 @@ const gets = [
           <div class="rounded-[24px] bg-cream-50 p-6 sm:p-9 shadow-[0_40px_80px_-40px_rgba(0,0,0,.7)] border border-white/10 fade-in" style="--d:200ms">
             <div class="flex items-center justify-between gap-4">
               <h2 class="font-display text-[24px] sm:text-[28px] font-[600] tracking-tight text-ink-900">Request your Palm Beach Teardown</h2>
-              <span class="hidden sm:inline-flex whitespace-nowrap shrink-0 chip bg-evergreen-100 text-evergreen-800 text-[12.5px]"><Icon name="clock" size={14} />About 60 seconds</span>
+              <span class="hidden sm:inline-flex whitespace-nowrap shrink-0 chip bg-navy-100 text-navy-800 text-[12.5px]"><Icon name="clock" size={14} />About 60 seconds</span>
             </div>
             <p class="mt-2 text-[15px] text-ink-600">Two quick steps, then you pick a time. {SITE.capacityLine}</p>
             <div class="mt-7"><LeadForm variant="teardown" /></div>

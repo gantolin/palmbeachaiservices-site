@@ -23,7 +23,7 @@ Nothing has been pushed or deployed. Suggested repo name: **`palmbeachaiservices
 ## 4. Content Gino must supply / confirm
 - [ ] Founder first name: site uses **Gino** (`FOUNDER_FIRST_NAME`); the email is `Gene@…`. Confirm which name goes public.
 - [ ] Founder photo → `public/` + `SITE.founderPhoto`
-- [ ] Final logo (current mark is a placeholder gold palm/circuit SVG in `src/components/ui/Logo.astro`, plus the favicons/OG made by `npm run assets`)
+- [x] Logo: official navy logo vectorized and in use (`public/brand/`); a designer's original vector file (SVG/AI/EPS) would be even cleaner if one exists
 - [ ] Real testimonials (with permission) → `realTestimonials`; owner quotes + before/after screenshots for case studies
 - [ ] Hero's Pavers: the exact Lake Worth keywords + a ranking screenshot
 - [ ] Next Level: trade/business description; update when results exist

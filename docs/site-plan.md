@@ -6,7 +6,33 @@
 
 **Voice:** plain, confident, owner-to-owner. No buzzwords, no hype stats.
 
-**Brand:** hunter/evergreen green with a warm gold accent, on sand/off-white. The type is Geist (display), Inter (body), Instrument Serif italic (accents), and JetBrains Mono (labels).
+**Brand:** navy + gold (a classic Palm Beach pairing), on cream/sand off-white. See "Brand system" below.
+
+## Brand system
+- **Logo:** Gino's official lockup (a white pin with a palm tree plus the "Palm Beach AI Services" serif wordmark on navy). The source PNG is in `brand/source/`. It is vectorized with potrace (`scripts/trace-logo.py` → `brand/traced/*.json`), and `scripts/make-assets.mjs` (`npm run assets`) writes:
+  - `public/brand/logo-lockup-white.svg|png`: for dark backgrounds (header, footer)
+  - `public/brand/logo-lockup-navy.svg|png`: for light backgrounds
+  - `public/brand/logo-mark-white.svg`, `logo-mark-navy.svg|png`: the pin + palm mark alone
+  - `public/brand/logo-plate.svg|png`: the original navy-plate version, and `logo-square-800.png` (social avatars, JSON-LD logo)
+  - `favicon.svg`, `favicon.ico` (16+32), `favicon-16/32.png`, `apple-touch-icon.png` (180), `icon-192/512.png` (maskable-safe), and `og/default.png` (1200×630)
+- **Colors** (tokens in `src/styles/global.css`):
+
+| Token | Hex | Role |
+|---|---|---|
+| `navy-950` | `#030E1D` | Near-black navy: darkest sections (hero, how-it-works, final CTA, footer), theme-color |
+| `navy-925` | `#05152A` | Dark layering |
+| `navy-900` | `#061F3F` | Announcement bar, dark cards |
+| `navy-800` | `#062D59` | **Logo navy** (sampled from the PNG): brand surfaces, favicon/app-icon tiles, OG |
+| `navy-700` | `#0E3D72` | Navy accent on light backgrounds: links, icons, italic accents, navy buttons |
+| `navy-600` / `navy-500` | `#1A4D88` / `#2B609E` | Mid navy: glows, gradients, borders on dark |
+| `navy-300` / `100` / `50` | `#8EA9CB` / `#DCE5F1` / `#EEF3F9` | Tints: chips, table highlight, icon wells |
+| `gold-500` / `400` / `300` / `700` | `#C9A227` / `#D4B24C` / `#E6CD83` / `#8A6A12` | CTAs, highlights, accents on dark; gold-700 for gold text on light |
+| `cream-50` / `sand-100` / `stone-300` | `#FAF8F2` / `#F1ECDF` / `#D9D3C4` | Light sections and borders |
+| `ink-900` / `ink-600` | `#121A26` / `#525C6B` | Cool neutral text on light |
+| `mist-200` / `mist-400` | `#E6E9F0` / `#9FB0C7` | Text on dark |
+
+- **Contrast (WCAG AA, computed):** ink-900 on cream is 16.5:1. Ink-600 is 6.4:1 on cream, 5.7:1 on sand, and 6.8:1 on white. Navy-700 is 10.3:1 on cream and 8.6:1 on navy-100. Gold-700 on cream is 4.8:1. On dark: mist-200 on navy-950 is 15.9:1, mist-400 is 8.8:1 on navy-950 and 6.2:1 on the logo navy, and gold-300 is 12.4:1 on navy-950 and 8.8:1 on the logo navy. Gold-500 buttons with navy-950 text are 8.0:1.
+- **Typography:** Geist (headings), Inter (body), JetBrains Mono (labels), plus **Instrument Serif italic** for one accent word per headline (gold on navy, navy on cream). The logo's bold serif wordmark is used only as the traced logo artwork. It is not a web font, so it isn't loaded, and it doesn't compete with headings. The light italic serif accent echoes it, so the logo and headlines feel like one family without a second heavy serif.
 
 ## Hard content rules (enforced in code/data)
 - **Only real facts.** Safe Haven: 45 → 10 min, 78%. Hero's Pavers: #2–#3 on Google for Lake Worth keywords. Next Level: just launched, results in progress. No invented stats, reviews, logos, or quotes.

@@ -15,7 +15,7 @@ npm run build:fast     # build without type check
 npm run preview        # serve dist/ locally
 npm run screenshots    # needs preview running; writes screenshots/*.png (PAGES="/,/pricing/" to limit)
 npm run copy:export    # regenerate docs/copy.md from dist/
-npm run assets         # regenerate favicons + OG image (uses local Chrome)
+npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG image from brand/traced (uses local Chrome)
 ```
 
 ## Where to edit things
@@ -30,7 +30,8 @@ npm run assets         # regenerate favicons + OG image (uses local Chrome)
 | FAQs | `src/data/faq.ts` |
 | Us-vs-agency table, industries | `src/data/comparison.ts` |
 | Services | `src/data/services.ts` |
-| Design tokens, components, motion | `src/styles/global.css` |
+| Design tokens (navy/gold system), components, motion | `src/styles/global.css` |
+| Logo + favicons + OG image | `brand/` (source PNG + traced paths), `scripts/trace-logo.py`, `scripts/make-assets.mjs` → `public/brand/`, `public/favicon*`, `public/og/` |
 | Legal (privacy, terms, SMS, guarantee terms) | `src/pages/privacy.astro`, `src/pages/terms.astro` |
 
 Copy uses `*word*` in data strings to render the italic-serif accent (`src/lib/text.ts`).
@@ -82,7 +83,7 @@ Caching: `_astro/*` (hashed) is uploaded with `max-age=31536000, immutable`. HTM
 6. Delete or disable `.github/workflows/deploy.yml` deploy job (Amplify builds on push itself).
 
 ## Before launch (open TODOs)
-See **DEPLOY.md** for the checklist. The content TODOs are listed there too (founder photo, final logo, testimonials, booking URL, etc.).
+See **DEPLOY.md** for the checklist. The content TODOs are listed there too (founder photo, testimonials, booking URL, etc.).
 
 ## Docs
 - `docs/site-plan.md`: page-by-page plan, conversion flows, content rules.

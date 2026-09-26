@@ -6,18 +6,22 @@
 @import "@fontsource/instrument-serif/latin-400-italic.css";
 @import "@fontsource-variable/jetbrains-mono/wght.css";
 
-/* ---------- Palm Beach Evergreen tokens ---------- */
+/* ---------- Palm Beach Navy tokens ----------
+   Derived from the logo navy #062D59 (sampled from the supplied PNG):
+   950 = near-black navy (darkest sections), 800 = logo navy (brand surfaces),
+   700 = accent navy on light backgrounds, 600/500 = mid navy (cards, borders, glows on dark).
+   Gold stays the CTA/highlight accent. Cream/sand stay the light surfaces. Ink/mist are cool neutrals. */
 @theme {
-  --color-evergreen-950: #0f1f14;
-  --color-evergreen-925: #132719;
-  --color-evergreen-900: #1b3420;
-  --color-evergreen-800: #274a2d;
-  --color-evergreen-700: #355e3b;
-  --color-evergreen-600: #3b6a42;
-  --color-evergreen-500: #447a4c;
-  --color-evergreen-300: #8db594;
-  --color-evergreen-100: #ddeadf;
-  --color-evergreen-50: #f1f6f1;
+  --color-navy-950: #030e1d;
+  --color-navy-925: #05152a;
+  --color-navy-900: #061f3f;
+  --color-navy-800: #062d59;
+  --color-navy-700: #0e3d72;
+  --color-navy-600: #1a4d88;
+  --color-navy-500: #2b609e;
+  --color-navy-300: #8ea9cb;
+  --color-navy-100: #dce5f1;
+  --color-navy-50: #eef3f9;
 
   --color-gold-500: #c9a227;
   --color-gold-400: #d4b24c;
@@ -27,10 +31,10 @@
   --color-cream-50: #faf8f2;
   --color-sand-100: #f1ecdf;
   --color-stone-300: #d9d3c4;
-  --color-ink-900: #1c2420;
-  --color-ink-600: #5b665f;
-  --color-mist-200: #e9e4d6;
-  --color-mist-400: #a9b8ad;
+  --color-ink-900: #121a26;
+  --color-ink-600: #525c6b;
+  --color-mist-200: #e6e9f0;
+  --color-mist-400: #9fb0c7;
 
   --font-display: "Geist Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -83,7 +87,7 @@
     text-wrap: balance;
   }
   p { text-wrap: pretty; }
-  ::selection { background: var(--color-gold-300); color: var(--color-evergreen-950); }
+  ::selection { background: var(--color-gold-300); color: var(--color-navy-950); }
 
   :focus-visible {
     outline: 2px solid var(--color-gold-500);
@@ -109,7 +113,7 @@
   @media (min-width: 768px) { .section { padding-block: 104px; } }
   @media (min-width: 1100px) { .section { padding-block: 128px; } }
 
-  .surface-dark { background: var(--color-evergreen-950); color: var(--color-mist-200); }
+  .surface-dark { background: var(--color-navy-950); color: var(--color-mist-200); }
   .surface-sand { background: var(--color-sand-100); }
   .surface-cream { background: var(--color-cream-50); }
 
@@ -119,7 +123,7 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-evergreen-700);
+    color: var(--color-navy-700);
     display: inline-flex; align-items: center; gap: 10px;
   }
   .eyebrow::before {
@@ -139,7 +143,7 @@
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
-    color: var(--color-evergreen-700);
+    color: var(--color-navy-700);
     padding-right: 0.04em;
     font-size: 1.08em;
     line-height: 0.9;
@@ -157,22 +161,22 @@
   .btn svg { transition: transform 200ms var(--ease-out-soft); }
   .btn:hover svg { transform: translateX(3px); }
   .btn-primary {
-    background: var(--color-gold-500); color: var(--color-evergreen-950);
+    background: var(--color-gold-500); color: var(--color-navy-950);
     box-shadow: 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 24px -10px rgba(201,162,39,.7);
   }
   .btn-primary:hover { background: var(--color-gold-400); transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,.35) inset, 0 14px 32px -12px rgba(201,162,39,.85); }
-  .btn-outline-dark { border: 1px solid rgba(233,228,214,.28); color: var(--color-mist-200); background: rgba(233,228,214,.03); }
-  .btn-outline-dark:hover { border-color: rgba(233,228,214,.6); background: rgba(233,228,214,.07); }
-  .btn-outline { border: 1px solid var(--color-evergreen-700); color: var(--color-evergreen-700); background: transparent; }
-  .btn-outline:hover { background: var(--color-evergreen-700); color: var(--color-cream-50); }
-  .btn-green { background: var(--color-evergreen-700); color: var(--color-cream-50); }
-  .btn-green:hover { background: var(--color-evergreen-800); transform: translateY(-1px); }
+  .btn-outline-dark { border: 1px solid rgba(230,233,240,.28); color: var(--color-mist-200); background: rgba(230,233,240,.03); }
+  .btn-outline-dark:hover { border-color: rgba(230,233,240,.6); background: rgba(230,233,240,.07); }
+  .btn-outline { border: 1px solid var(--color-navy-700); color: var(--color-navy-700); background: transparent; }
+  .btn-outline:hover { background: var(--color-navy-700); color: var(--color-cream-50); }
+  .btn-navy { background: var(--color-navy-700); color: var(--color-cream-50); }
+  .btn-navy:hover { background: var(--color-navy-800); transform: translateY(-1px); }
   .btn-lg { min-height: 56px; padding: 0 28px; font-size: 16px; }
   .btn-sm { min-height: 40px; padding: 0 16px; font-size: 14px; }
 
   .link-mono {
     font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500;
-    display: inline-flex; align-items: center; gap: 8px; color: var(--color-evergreen-700);
+    display: inline-flex; align-items: center; gap: 8px; color: var(--color-navy-700);
     border-bottom: 1px solid currentColor; padding-bottom: 3px;
   }
   .surface-dark .link-mono, .on-dark .link-mono { color: var(--color-gold-300); }
@@ -184,19 +188,19 @@
 
   .card {
     background: #fff; border: 1px solid var(--color-stone-300); border-radius: var(--radius-card);
-    box-shadow: 0 1px 2px rgba(15,31,20,.05), 0 12px 32px -18px rgba(15,31,20,.18);
+    box-shadow: 0 1px 2px rgba(3,14,29,.05), 0 12px 32px -18px rgba(3,14,29,.18);
   }
   .card-dark {
-    background: linear-gradient(180deg, rgba(27,52,32,.7), rgba(19,39,25,.7));
-    border: 1px solid rgba(233,228,214,.1); border-radius: var(--radius-card);
+    background: linear-gradient(180deg, rgba(6,31,63,.7), rgba(5,21,42,.7));
+    border: 1px solid rgba(230,233,240,.1); border-radius: var(--radius-card);
   }
   .lift { transition: transform 280ms var(--ease-out-soft), box-shadow 280ms var(--ease-out-soft), border-color 280ms; }
-  .lift:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(15,31,20,.05), 0 24px 48px -20px rgba(15,31,20,.28); }
+  .lift:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(3,14,29,.05), 0 24px 48px -20px rgba(3,14,29,.28); }
 
   .hairline-gold { height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold-300), transparent); opacity: .5; }
 
-  .glow-evergreen {
-    background: radial-gradient(120% 80% at 50% 110%, #355e3b 0%, #1b3420 38%, #0f1f14 72%);
+  .glow-navy {
+    background: radial-gradient(120% 80% at 50% 110%, #1a4d88 0%, #062d59 30%, #05193a 56%, #030e1d 80%);
   }
   .grain::after {
     content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
@@ -209,9 +213,9 @@
   .prose-legal { max-width: 72ch; color: var(--color-ink-900); }
   .prose-legal h2 { font-size: 1.5rem; margin: 2.4rem 0 .8rem; }
   .prose-legal h3 { font-size: 1.15rem; margin: 1.6rem 0 .5rem; }
-  .prose-legal p, .prose-legal li { color: #34403a; margin: .7rem 0; }
+  .prose-legal p, .prose-legal li { color: #2a3444; margin: .7rem 0; }
   .prose-legal ul { list-style: disc; padding-left: 1.3rem; }
-  .prose-legal a { color: var(--color-evergreen-700); text-decoration: underline; }
+  .prose-legal a { color: var(--color-navy-700); text-decoration: underline; }
   .prose-legal strong { color: var(--color-ink-900); }
 }
 
