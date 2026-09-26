@@ -3,7 +3,7 @@
 The marketing site for **Palm Beach AI Services**: websites, local SEO + Google Business Profile, and AI automation for Palm Beach County home-service businesses.
 
 - **Stack:** Astro 5 (static output) · Tailwind CSS v4 (`@tailwindcss/vite`) · TypeScript (strict) · `@astrojs/sitemap` · self-hosted Fontsource fonts. No client framework: the interactive bits are small inline scripts.
-- **Output:** plain static files in `dist/`, served from S3 + CloudFront (recommended) or Amplify Hosting.
+- **Output:** plain static files in `dist/`, published to **GitHub Pages** at https://palmbeachaiservices.com (AWS S3 + CloudFront scaffolding kept in `infra/aws/` as an alternative).
 - **Node:** 20.x works (Astro 5). If you move to Astro 6+, use Node 22.
 
 ## Commands
@@ -44,43 +44,38 @@ Both forms (`/free-teardown/`, `/free-playbook/`) `POST` JSON to **`PUBLIC_LEAD_
 - If the endpoint is empty (e.g. local dev), the form logs the payload and still goes to `/thanks/`, so the flow can be tested.
 - **Booking:** set `SITE.bookingUrl` to the GHL calendar URL, and `/thanks/?type=teardown` embeds it. Until then, the page says we'll text a link.
 
-## Deploy: AWS S3 + CloudFront (recommended)
-The CI workflow is in `.github/workflows/deploy.yml`. It builds on every push/PR. On `main`, it assumes an AWS role via **GitHub OIDC** (no stored keys), `aws s3 sync`s `dist/`, and invalidates CloudFront. The deploy job is skipped until `AWS_ROLE_ARN` is set.
+## Deploy: GitHub Pages (current hosting)
+`.github/workflows/pages.yml` builds and publishes on every push to `main` (and on manual runs). It follows the same pattern as the Safe Haven site:
+- Actions are pinned to commit SHAs.
+- The top-level permissions are read-only.
+- A **build** job (`npm ci`, `npm run build`, output checks, `upload-pages-artifact`) runs first, then a **deploy** job with `pages: write` + `id-token: write` (`deploy-pages`).
+- The build job never gets `id-token: write`.
 
-**GitHub repo variables** (Settings → Secrets and variables → Actions → *Variables*):
-| Variable | Example |
-|---|---|
-| `AWS_ROLE_ARN` | `arn:aws:iam::123456789012:role/palmbeachaiservices-site-deploy` |
-| `AWS_REGION` | `us-east-1` |
-| `S3_BUCKET` | `palmbeachaiservices-site` |
-| `CLOUDFRONT_DISTRIBUTION_ID` | `E1ABCDEF...` |
-| `PUBLIC_LEAD_ENDPOINT` | `https://xxxx.lambda-url.us-east-1.on.aws/` |
+- **Repo:** `gantolin/palmbeachaiservices-site` (public, because free-plan Pages requires it). Pages source = **GitHub Actions**.
+- **Custom domain:** `public/CNAME` = `palmbeachaiservices.com` (copied into `dist/`), and the Pages custom domain is set to the same. `astro.config.mjs` has `site: 'https://palmbeachaiservices.com'`, so canonical URLs, the sitemap, and OG URLs use the apex domain.
+- **Not-found pages:** GitHub Pages serves `dist/404.html` automatically. `/pricing/` style URLs work because the build emits `pricing/index.html`.
+- **Repo variable (optional):** `PUBLIC_LEAD_ENDPOINT` (Settings → Secrets and variables → Actions → Variables).
 
-**One-time AWS setup:**
-1. **S3 bucket** (private, Block Public Access ON, no website hosting). CloudFront reads it via **Origin Access Control**.
-2. **ACM certificate in `us-east-1`** for `palmbeachaiservices.com` + `www.palmbeachaiservices.com` (DNS validation in Route 53).
-3. **CloudFront distribution**:
-   - Origin = the S3 bucket with OAC (apply the bucket policy CloudFront generates). Default root object `index.html`.
-   - Viewer protocol = redirect HTTP→HTTPS. HTTP/2+3. Compression on. `CachingOptimized` policy.
-   - Alternate names = apex + www, with the ACM cert.
-   - **CloudFront Function** (viewer request) = `infra/cloudfront-function.js`. It handles www→apex 301, `/path` → `/path/`, and `/path/` → `/path/index.html`.
-   - **Custom error responses:** 403 and 404 → `/404.html` with response code 404.
-   - **Response headers policy:** HSTS, nosniff, frame-options, referrer-policy, CSP. See `infra/security-headers.md`.
-4. **Route 53:** hosted zone for the domain. A/AAAA **alias** records for the apex and www → the distribution. (If the domain is registered elsewhere, point its nameservers at the zone.)
-5. **GitHub OIDC:**
-   - Create the IAM OIDC provider `token.actions.githubusercontent.com` (audience `sts.amazonaws.com`).
-   - Create role `palmbeachaiservices-site-deploy` with trust policy `infra/github-oidc-trust-policy.json` (edit `OWNER/palmbeachaiservices-site`) and permissions `infra/deploy-role-policy.json` (edit bucket name, account ID, distribution ID).
-6. Set the repo variables above, then push to `main`.
+**DNS (Route 53 hosted zone for palmbeachaiservices.com):**
 
-Caching: `_astro/*` (hashed) is uploaded with `max-age=31536000, immutable`. HTML and other files get `max-age=0, must-revalidate`. Every deploy invalidates `/*`.
+| Name | Type | Value |
+|---|---|---|
+| `palmbeachaiservices.com` (apex) | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| `palmbeachaiservices.com` (apex) | AAAA (recommended) | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| `www.palmbeachaiservices.com` | CNAME | `gantolin.github.io` |
 
-## Deploy: Amplify Hosting (simpler alternative)
-1. Amplify console → *Host web app* → connect the GitHub repo, branch `main`.
-2. Build settings: `npm ci` / `npm run build`, artifact dir `dist`.
-3. Environment variable `PUBLIC_LEAD_ENDPOINT`.
-4. Rewrites: `/<*>` → `/404.html` (404). Add a www → apex 301 redirect.
-5. Custom domain: add `palmbeachaiservices.com` (Amplify issues the cert and, with Route 53, creates the records).
-6. Delete or disable `.github/workflows/deploy.yml` deploy job (Amplify builds on push itself).
+After DNS resolves, GitHub issues the HTTPS certificate automatically. Then turn on **Enforce HTTPS** (Settings → Pages, or `gh api -X PUT repos/gantolin/palmbeachaiservices-site/pages -F https_enforced=true`). Remove any old A/AAAA/ALIAS records for the apex and www that point elsewhere. Optionally verify the domain for the account (Settings → Pages → Verified domains) to prevent takeover.
+
+**Limits to know about:** GitHub Pages can't set custom response headers (CSP/HSTS beyond GitHub's defaults) or server-side redirects. Canonical tags point to the apex, and GitHub redirects `www` → apex automatically once both records exist.
+
+## Alternative hosting: AWS S3 + CloudFront (not active)
+If hosting ever moves to AWS, everything is ready in `infra/aws/`:
+- `deploy-s3-cloudfront.yml.example`: a GitHub OIDC → S3 sync + CloudFront invalidation workflow. Copy it into `.github/workflows/` and disable Pages.
+- `cloudfront-function.js`: www→apex, `/path` → `/path/index.html`.
+- `github-oidc-trust-policy.json`, `deploy-role-policy.json`: the IAM deploy role.
+- `security-headers.md`: the CloudFront response headers policy.
+
+You'd need: a private S3 bucket + CloudFront with OAC, an ACM cert in us-east-1, Route 53 alias records, 403/404 → `/404.html`, and repo variables `AWS_ROLE_ARN`, `AWS_REGION`, `S3_BUCKET`, `CLOUDFRONT_DISTRIBUTION_ID`.
 
 ## Before launch (open TODOs)
 See **DEPLOY.md** for the checklist. The content TODOs are listed there too (founder photo, testimonials, booking URL, etc.).

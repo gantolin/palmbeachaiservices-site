@@ -1,3 +1,6 @@
+# NOT ACTIVE. Moved out of .github/workflows when hosting switched to GitHub Pages (see .github/workflows/pages.yml).
+# Kept as a reference in case the site ever moves to S3 + CloudFront. To use it, copy it back to .github/workflows/.
+
 # Build the static site and deploy it to S3 + CloudFront using GitHub OIDC (no long-lived AWS keys).
 #
 # Required repository VARIABLES (Settings → Secrets and variables → Actions → Variables):

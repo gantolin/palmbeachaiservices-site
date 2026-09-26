@@ -1,24 +1,24 @@
 # Launch checklist
 
-Nothing has been pushed or deployed. Suggested repo name: **`palmbeachaiservices-site`** (private).
+Hosting: **GitHub Pages** from `gantolin/palmbeachaiservices-site` (public). Workflow: `.github/workflows/pages.yml`.
 
-## 1. Repo
-- [ ] Create a GitHub repo `palmbeachaiservices-site`. Then `git remote add origin … && git push -u origin main`.
-- [ ] Edit `infra/github-oidc-trust-policy.json` → replace `OWNER` with the GitHub org/user.
+## 1. Repo + Pages (done by the agent)
+- [x] Repo `gantolin/palmbeachaiservices-site`, pushed to `main`
+- [x] Secret scan of the full history (gitleaks + pattern grep): clean
+- [x] Repo made public (free-plan Pages requirement, approved by Gino)
+- [x] Pages enabled with source = GitHub Actions; custom domain `palmbeachaiservices.com`; `public/CNAME`
 
-## 2. AWS (one time; details in README)
-- [ ] S3 bucket (private, Block Public Access on), e.g. `palmbeachaiservices-site`
-- [ ] ACM cert in **us-east-1** for apex + www (DNS-validated)
-- [ ] CloudFront distribution + **OAC** + bucket policy, default root `index.html`, HTTPS redirect, compression
-- [ ] CloudFront Function `infra/cloudfront-function.js` on viewer-request
-- [ ] Error responses: 403/404 → `/404.html` (404)
-- [ ] Response headers policy (`infra/security-headers.md`)
-- [ ] Route 53 hosted zone + A/AAAA alias for apex and www
-- [ ] IAM OIDC provider `token.actions.githubusercontent.com` + role `palmbeachaiservices-site-deploy` (`infra/*.json`)
-- [ ] (Leads) Lambda from `lambda/lead/` + Function URL, CORS = `https://palmbeachaiservices.com`, GHL Private Integration token in SSM/Secrets Manager
+## 2. DNS in Route 53 (Gino, since the agent has no AWS access)
+- [ ] Apex `palmbeachaiservices.com` **A**: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- [ ] Apex **AAAA** (recommended): `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+- [ ] `www` **CNAME** → `gantolin.github.io`
+- [ ] Remove any conflicting old apex/www records
+- [ ] After the certificate is issued (minutes to about an hour after DNS resolves): enable **Enforce HTTPS** in Settings → Pages
+- [ ] Optional: verify the domain in GitHub account settings → Pages → Verified domains
 
-## 3. GitHub repo variables
-- [ ] `AWS_ROLE_ARN`, `AWS_REGION` (`us-east-1`), `S3_BUCKET`, `CLOUDFRONT_DISTRIBUTION_ID`, `PUBLIC_LEAD_ENDPOINT`
+## 3. Leads (later)
+- [ ] Lambda from `lambda/lead/` + Function URL, CORS = `https://palmbeachaiservices.com`, GHL Private Integration token in SSM/Secrets Manager
+- [ ] Repo variable `PUBLIC_LEAD_ENDPOINT` = the Function URL, then re-run the Pages workflow
 
 ## 4. Content Gino must supply / confirm
 - [ ] Founder first name: site uses **Gino** (`FOUNDER_FIRST_NAME`); the email is `Gene@…`. Confirm which name goes public.

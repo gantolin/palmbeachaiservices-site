@@ -9,7 +9,7 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'ignore',
   build: {
-    // /pricing/index.html style output works cleanly with S3 + a CloudFront Function rewrite
+    // /pricing/index.html style output: GitHub Pages serves /pricing/ from it directly
     format: 'directory',
     inlineStylesheets: 'auto',
   },
