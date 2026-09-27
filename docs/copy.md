@@ -203,7 +203,7 @@ Estimate only, based on your numbers: missed calls × 4.33 weeks × close rate �
 
 What we do
 
-### Three things. Done right. Live in 30 days.
+### Three things. Done right. Live in 14 days.
 
 No 40-item menu. No buzzwords. Just the three things that get a local service business more booked jobs, set up for you and running in the background.
 
@@ -603,7 +603,7 @@ Explore AI Automation
 
 What we do
 
-### Three things. Done right. Live in 30 days.
+### Three things. Done right. Live in 14 days.
 
 No 40-item menu. No buzzwords. Just the three things that get a local service business more booked jobs, set up for you and running in the background.
 

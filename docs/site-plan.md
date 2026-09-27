@@ -2,7 +2,7 @@
 
 **Goal:** turn Palm Beach County home-service owners into booked **Free Palm Beach Teardown** calls. The secondary goal is capturing earlier-stage visitors with the **Free Playbook**, whose thank-you page leads back to booking.
 
-**Positioning:** a founder-run, local shop with ONE simple plan ($750 one-time website build + $297/mo, month-to-month). "Three things, done right, live in 30 days." The client owns everything. Our proof is small but real, and we show the math.
+**Positioning:** a founder-run, local shop with ONE simple plan ($750 one-time website build + $297/mo, month-to-month). "Three things, done right, live in 14 days." The client owns everything. Our proof is small but real, and we show the math.
 
 **Voice:** plain, confident, owner-to-owner. No buzzwords, no hype stats.
 
@@ -55,7 +55,7 @@ All forms POST JSON to `PUBLIC_LEAD_ENDPOINT` (a Lambda → GoHighLevel, scaffol
 ## Pages
 | Route | Purpose | Key sections |
 |---|---|---|
-| `/` | Home | Hero (headline, dual CTA, **$750 + $297/mo price ticket**, teardown offer line, trust ticks, phone-thread demo, 2 floating proof cards), proof strip (real numbers only), Problem + missed-call calculator, **Three things, live in 30 days** (arrow chain + 3 illustrated cards + industries), How it works (4 sticky steps), **Pricing** (single plan card + "What your $297/mo covers" 6-item checklist with what each replaces + "Your $750 build includes" + unpriced Custom AI strip), **Case studies directly below pricing** ("The proof behind the price", proof cards with the math), **Us vs a typical agency** comparison, **Palm Beach Promise** guarantee, Testimonials (dev only), Founder note (signed), FAQ (opens with "How much does it cost?"), Final CTA |
+| `/` | Home | Hero (headline, dual CTA, **$750 + $297/mo price ticket**, teardown offer line, trust ticks, phone-thread demo, 2 floating proof cards), proof strip (real numbers only), Problem + missed-call calculator, **Three things, live in 14 days** (arrow chain + 3 illustrated cards + industries), How it works (4 sticky steps), **Pricing** (single plan card + "What your $297/mo covers" 6-item checklist with what each replaces + "Your $750 build includes" + unpriced Custom AI strip), **Case studies directly below pricing** ("The proof behind the price", proof cards with the math), **Us vs a typical agency** comparison, **Palm Beach Promise** guarantee, Testimonials (dev only), Founder note (signed), FAQ (opens with "How much does it cost?"), Final CTA |
 | `/services/` | Services hub | 3 service cards, Three things, comparison, CTA |
 | `/services/websites/` | Service | Hero, what you get, process, related case study, pricing link, FAQ, CTA |
 | `/services/local-seo-google-business-profile/` | Service | Same pattern; Hero's Pavers proof |
