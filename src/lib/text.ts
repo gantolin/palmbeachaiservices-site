@@ -12,11 +12,11 @@ export function accent(s: string): string {
  */
 export function words(s: string, start = 0): string {
   let i = start;
-  const tokens = s.match(/\*[^*]+\*|\S+/g) ?? [];
+  // An accent keeps any punctuation that follows it in the same word span ("*answered*." stays "answered.").
+  const tokens = [...s.matchAll(/\*([^*]+)\*(\S*)|\S+/g)];
   return tokens
-    .map((t) => {
-      const isAccent = t.startsWith('*') && t.endsWith('*');
-      const inner = isAccent ? `<em class="accent">${esc(t.slice(1, -1))}</em>` : esc(t);
+    .map((m) => {
+      const inner = m[1] !== undefined ? `<em class="accent">${esc(m[1])}</em>${esc(m[2])}` : esc(m[0]);
       return `<span class="w" style="--i:${i++}">${inner}</span>`;
     })
     .join(' ');

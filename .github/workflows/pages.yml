@@ -31,8 +31,8 @@ jobs:
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          # Pinned major; Astro 5 supports Node 18.20+/20.3+/22.
-          node-version: 20
+          # Pinned major; Astro 7 needs Node 22+.
+          node-version: 22
           cache: npm
 
       - run: npm ci
