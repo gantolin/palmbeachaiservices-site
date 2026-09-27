@@ -1,0 +1,24 @@
+---
+/**
+ * Infinite ticker. The first group is the real content; the second is an aria-hidden duplicate
+ * for the seamless loop. Reduced motion: static, wrapped, duplicate hidden. Pauses on hover.
+ */
+interface Props { items: readonly string[]; label: string; tone?: 'dark' | 'light'; duration?: number; reverse?: boolean; size?: 'sm' | 'lg' }
+const { items, label, tone = 'dark', duration = 48, reverse = false, size = 'sm' } = Astro.props;
+const itemCls = size === 'lg'
+  ? `font-display text-[20px] sm:text-[24px] font-[560] tracking-[-0.02em] ${tone === 'dark' ? 'text-mist-200' : 'text-ink-900'}`
+  : `font-mono text-[12px] sm:text-[12.5px] uppercase tracking-[0.14em] ${tone === 'dark' ? 'text-mist-400' : 'text-ink-600'}`;
+---
+<div class:list={['marquee', size === 'lg' ? 'py-4' : 'py-3', reverse && 'marquee-reverse']} role="region" aria-label={label} style={`--marquee-dur:${duration}s`}>
+  <div class="marquee-track">
+    {[0, 1].map((copy) => (
+      <ul class="marquee-group" aria-hidden={copy === 1 ? 'true' : undefined}>
+        {items.map((it) => (
+          <li class={`flex items-center gap-7 pr-7 whitespace-nowrap ${itemCls}`}>
+            <span>{it}</span><span class:list={['rounded-full bg-gold-500/80', size === 'lg' ? 'size-1.5' : 'size-1']} aria-hidden="true"></span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>

@@ -15,6 +15,7 @@ npm run build:fast     # build without type check
 npm run preview        # serve dist/ locally
 npm run screenshots    # needs preview running; writes screenshots/*.png (PAGES="/,/pricing/" to limit)
 npm run copy:export    # regenerate docs/copy.md from dist/
+npm run record         # needs preview running + ffmpeg; records screenshots/home-hero-scroll.mp4/.gif
 npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG image from brand/traced (uses local Chrome)
 ```
 
@@ -30,7 +31,7 @@ npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG imag
 | FAQs | `src/data/faq.ts` |
 | Us-vs-agency table, industries | `src/data/comparison.ts` |
 | Services | `src/data/services.ts` |
-| Design tokens (navy/gold system), components, motion | `src/styles/global.css` |
+| Design tokens (navy/gold system), components, motion | `src/styles/global.css`, `src/scripts/motion.ts` (see docs/site-plan.md → Motion system) |
 | Logo + favicons + OG image | `brand/` (source PNG + traced paths), `scripts/trace-logo.py`, `scripts/make-assets.mjs` → `public/brand/`, `public/favicon*`, `public/og/` |
 | Legal (privacy, terms, SMS, guarantee terms) | `src/pages/privacy.astro`, `src/pages/terms.astro` |
 

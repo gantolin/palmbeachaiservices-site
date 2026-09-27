@@ -1,10 +1,13 @@
 ---
 import { words } from '@/lib/text';
+import Aurora from '../ui/Aurora.astro';
 interface Props { eyebrow: string; title: string; lede?: string; crumbs?: { name: string; url: string }[]; center?: boolean }
 const { eyebrow, title, lede, crumbs, center = false } = Astro.props;
 ---
-<section class="relative overflow-hidden surface-dark grain -mt-px">
+<section class="relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
   <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
+  <Aurora variant="soft" orbit={center ? 'center' : 'right'} />
+  <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
   <div class="container-x relative pt-14 pb-16 sm:pt-20 sm:pb-24">
     {crumbs && (
       <nav aria-label="Breadcrumb" class="mb-8">

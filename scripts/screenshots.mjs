@@ -19,7 +19,9 @@ const browser = await chromium.launch({
 });
 const settle = async (page) => {
   await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(1400); // let the hero intro + phone demo play
+  await page.waitForTimeout(1400); // let the hero intro play
+  // The phone demo replays a live sequence (~13s); capture it with the full thread on screen.
+  if (await page.$('[data-phone-demo]')) await page.waitForTimeout(12200);
 };
 for (const vp of viewports) {
   // Hero shots at full device scale

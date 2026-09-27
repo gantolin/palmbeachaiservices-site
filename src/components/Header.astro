@@ -18,7 +18,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
 <header id="site-header" data-open="false" class="site-header sticky top-0 z-40 text-mist-200">
   <div class="container-x flex items-center justify-between h-[68px] gap-6">
-    <a href="/" class="shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={40} class="h-[36px] w-auto sm:h-[40px]" /></a>
+    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={40} class="h-[36px] w-auto sm:h-[40px]" /></a>
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
@@ -31,13 +31,15 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
         <span class="size-1.5 rounded-full bg-navy-300"></span>Royal Palm Beach <span data-local-time class="tabular text-mist-200">--:--</span>
       </span>
       <a href={telHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="phone" size={16} /> {SITE.phone}</a>
-      <a href={CTA.primary.href} class="btn btn-primary btn-sm">Free teardown <Icon name="arrow-right" size={16} /></a>
+      <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Free teardown <Icon name="arrow-right" size={16} /></a>
     </div>
 
     <button type="button" class="lg:hidden inline-flex items-center justify-center size-11 -mr-2 rounded-full hover:bg-white/5" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
       <Icon name="menu" size={24} />
     </button>
   </div>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <div id="mobile-menu" class="mobile-sheet lg:hidden" hidden>
     <div class="container-x pb-8 pt-2">
@@ -59,13 +61,17 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 </header>
 
 <style>
-  .site-header { transition: background-color 250ms, backdrop-filter 250ms, border-color 250ms; border-bottom: 1px solid transparent; background: #030e1d; }
+  .site-header { transition: background-color 300ms, backdrop-filter 300ms, border-color 300ms, box-shadow 300ms; border-bottom: 1px solid transparent; background: #030e1d; }
   .site-header[data-scrolled='true'], .site-header[data-open='true'] {
-    background: rgba(3, 14, 29, 0.82);
-    backdrop-filter: saturate(140%) blur(14px);
-    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    background: rgba(3, 14, 29, 0.84);
+    backdrop-filter: saturate(160%) blur(18px);
+    -webkit-backdrop-filter: saturate(160%) blur(18px);
     border-bottom-color: rgba(230, 233, 240, 0.08);
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.7), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
   }
+  /* Shrink effect without layout shift: header height is fixed, only the logo scales (transform). */
+  .header-logo { transform-origin: 0 50%; transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
+  .site-header[data-scrolled='true'] .header-logo { transform: scale(0.9); }
   .site-header[data-open='true'] { background: rgba(3, 14, 29, 0.98); }
   .mobile-sheet { max-height: calc(100dvh - 68px); overflow-y: auto; }
 </style>

@@ -25,9 +25,11 @@ const steps = [
           </ol>
         </div>
       </div>
-      <ol class="lg:col-span-7 space-y-5">
+      <div class="lg:col-span-7 relative pl-5 sm:pl-10" data-progress>
+      <div class="rail" aria-hidden="true"><div class="rail-fill"></div><div class="rail-dot"></div></div>
+      <ol class="space-y-5">
         {steps.map((s, i) => (
-          <li class="step card-dark relative p-6 sm:p-9 overflow-hidden" data-step={i} data-reveal>
+          <li class="step card-dark relative p-6 sm:p-9 overflow-hidden" data-step={i} data-reveal style={`--d:${i * 60}ms`}>
             <div class="flex gap-5 sm:gap-9 items-start">
               <span class="numeral font-display" aria-hidden="true">{i + 1}</span>
               <div class="pt-2">
@@ -39,6 +41,7 @@ const steps = [
           </li>
         ))}
       </ol>
+      </div>
     </div>
   </div>
 </section>
@@ -53,6 +56,12 @@ const steps = [
     transition: background-size 600ms var(--ease-out-soft), -webkit-text-stroke-color 400ms;
   }
   .step { transition: border-color 500ms; }
+  /* Scroll-linked progress rail (motion.ts sets --p 0..1 on [data-progress]; defaults to full) */
+  .rail { position: absolute; left: 0; top: 12px; bottom: 12px; width: 2px; border-radius: 2px; background: rgba(230, 233, 240, 0.1); }
+  .rail-fill { position: absolute; inset: 0; border-radius: inherit; transform-origin: 50% 0; transform: scaleY(var(--p, 1));
+    background: linear-gradient(180deg, #e6cd83, #c9a227 60%, rgba(201, 162, 39, 0.4)); box-shadow: 0 0 12px rgba(230, 205, 131, 0.5); }
+  .rail-dot { position: absolute; left: 50%; top: calc(var(--p, 1) * 100%); width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
+    background: #f7e9b8; box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.25), 0 0 18px rgba(230, 205, 131, 0.8); }
   .step.is-active { border-color: rgba(230, 205, 131, 0.26); }
   .step.is-active .numeral { background-size: 100% 100%; -webkit-text-stroke-color: rgba(230, 205, 131, 0); }
 </style>

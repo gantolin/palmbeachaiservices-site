@@ -6,3 +6,4 @@ dist/
 !.env.example
 .DS_Store
 lighthouse/*.html
+screenshots/*.gif

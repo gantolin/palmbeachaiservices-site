@@ -1,0 +1,19 @@
+---
+/** Animated navy aurora + faint grid + cursor spotlight. Decorative only (aria-hidden, pointer-events: none). */
+interface Props { variant?: 'hero' | 'soft'; grid?: boolean; spot?: boolean; orbit?: 'right' | 'center' }
+const { variant = 'hero', grid = true, spot = true, orbit } = Astro.props;
+---
+<div class="aurora" data-variant={variant} aria-hidden="true">
+  <div class="aurora-blob b1"></div>
+  <div class="aurora-blob b2"></div>
+  <div class="aurora-blob b3"></div>
+  {grid && <div class="aurora-grid"></div>}
+  {spot && <div class="aurora-spot"></div>}
+  {orbit && (
+    <div class={`orbit orbit-${orbit}`}>
+      <div class="orbit-ring r1"><span class="orbit-dot"></span></div>
+      <div class="orbit-ring r2"><span class="orbit-dot d2"></span></div>
+      <div class="orbit-ring r3"></div>
+    </div>
+  )}
+</div>

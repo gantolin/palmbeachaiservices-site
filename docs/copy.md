@@ -125,6 +125,25 @@ Ranking #2–#3 on Google
 
 for multiple Lake Worth keywords
 
+- Custom websites
+- Google Business Profile
+- Local SEO
+- Review automation
+- Missed-call text-back
+- Lead follow-up
+- Custom AI tools
+- Royal Palm Beach
+- Wellington
+- West Palm Beach
+- Loxahatchee
+- Greenacres
+- Lake Worth Beach
+- Palm Beach Gardens
+- Jupiter
+- Boynton Beach
+- Delray Beach
+- Boca Raton
+
 ---
 
 Recent work in South Florida
@@ -704,6 +723,18 @@ Fast, custom, built to rank in your town, and designed to turn visitors into cal
 
 [Button: See pricing](/pricing/)
 
+- Royal Palm Beach
+- Wellington
+- West Palm Beach
+- Loxahatchee
+- Greenacres
+- Lake Worth Beach
+- Palm Beach Gardens
+- Jupiter
+- Boynton Beach
+- Delray Beach
+- Boca Raton
+
 ---
 
 What you get
@@ -833,6 +864,18 @@ When someone nearby searches for what you do, the top three on Google Maps get t
 
 [Button: See pricing](/pricing/)
 
+- Royal Palm Beach
+- Wellington
+- West Palm Beach
+- Loxahatchee
+- Greenacres
+- Lake Worth Beach
+- Palm Beach Gardens
+- Jupiter
+- Boynton Beach
+- Delray Beach
+- Boca Raton
+
 ---
 
 What you get
@@ -961,6 +1004,18 @@ Missed-call text-back, instant follow-ups, review requests, invoicing, and custo
 [Button: Get my free teardown](/free-teardown/)
 
 [Button: See pricing](/pricing/)
+
+- Royal Palm Beach
+- Wellington
+- West Palm Beach
+- Loxahatchee
+- Greenacres
+- Lake Worth Beach
+- Palm Beach Gardens
+- Jupiter
+- Boynton Beach
+- Delray Beach
+- Boca Raton
 
 ---
 

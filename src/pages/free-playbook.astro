@@ -1,4 +1,5 @@
 ---
+import Aurora from '@/components/ui/Aurora.astro';
 /**
  * TODO(Gino): write the playbook (PDF or email series) and deliver it from GoHighLevel when the
  * contact is created with source "website-playbook". Update the chapter list below to match.
@@ -20,8 +21,9 @@ const chapters = [
   description="The free Google Business Profile + website checklist for Palm Beach County home-service businesses. Get found, get reviews, and stop losing leads."
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Free playbook', url: '/free-playbook/' }]}
 >
-  <section class="relative overflow-hidden surface-dark grain -mt-px">
+  <section class="relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
+    <Aurora variant="soft" />
     <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-28">
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
         <div class="lg:col-span-6">

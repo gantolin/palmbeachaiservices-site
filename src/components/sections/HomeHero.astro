@@ -1,5 +1,6 @@
 ---
 import Icon from '../ui/Icon.astro';
+import Aurora from '../ui/Aurora.astro';
 import PhoneDemo from '../islands/PhoneDemo.astro';
 import { CTA, SITE } from '@/config/site';
 import { plan, usd } from '@/data/pricing';
@@ -7,8 +8,9 @@ import { words } from '@/lib/text';
 const headline = 'Turn Google searches into *booked* jobs.';
 const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBase}`];
 ---
-<section class="hero relative overflow-hidden surface-dark grain -mt-px">
+<section class="hero relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
   <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
+  <Aurora />
   <div class="absolute inset-0 hero-contours" aria-hidden="true"></div>
   <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
 
@@ -22,7 +24,7 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
           <span class="text-mist-200">One simple plan. No contract. You own everything.</span>
         </p>
         <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:480ms">
-          <a href={CTA.primary.href} class="btn btn-primary btn-lg">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
+          <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
           <a href="#pricing" class="link-mono self-start sm:self-auto">See what's included <Icon name="arrow-right" size={14} /></a>
         </div>
         <a href="#pricing" class="price-ticket group mt-8 flex sm:inline-flex items-stretch rounded-2xl fade-in" style="--d:560ms">
@@ -48,24 +50,24 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
 
       <div class="lg:col-span-5 relative fade-in" style="--d:250ms">
         <div class="absolute -inset-10 rounded-full bg-navy-700/30 blur-3xl" aria-hidden="true"></div>
-        <div class="xl:flex xl:justify-end"><PhoneDemo /></div>
-        <div class="float-card hidden xl:flex absolute -left-20 top-[12%] w-[212px]">
+        <div class="xl:flex xl:justify-end plx-1"><PhoneDemo /></div>
+        <div class="plx-2 hidden xl:block absolute -left-20 top-[12%] z-10"><div class="float-card float-y flex w-[212px]">
           <div class="size-9 shrink-0 rounded-xl bg-navy-100 text-navy-700 flex items-center justify-center"><Icon name="clock" size={18} /></div>
           <div>
             <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Safe Haven</div>
-            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5 tabular whitespace-nowrap">45 → 10 min</div>
+            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5 tabular whitespace-nowrap">45 → <span data-count-to="10" data-count-from="45" data-count-dur="1600" data-suffix=" min">10 min</span></div>
             <div class="text-[11.5px] text-ink-600 mt-1">per inspection report</div>
-            <div class="mt-2 h-1.5 rounded-full bg-stone-300/60 overflow-hidden"><div class="h-full w-[22%] rounded-full bg-navy-700"></div></div>
+            <div class="mt-2 h-1.5 rounded-full bg-stone-300/60 overflow-hidden"><div class="bar-fill h-full w-[22%] rounded-full bg-navy-700"></div></div>
           </div>
-        </div>
-        <div class="float-card hidden xl:flex absolute -left-12 bottom-[14%] w-[212px]">
+        </div></div>
+        <div class="plx-2 hidden xl:block absolute -left-28 bottom-[10%] z-10"><div class="float-card float-y-slow flex w-[212px]">
           <div class="size-9 shrink-0 rounded-xl bg-[#fbf3dc] text-gold-700 flex items-center justify-center"><Icon name="pin" size={18} /></div>
           <div>
             <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Hero's Pavers</div>
             <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5">Ranking <span class="tabular">#2–#3</span> on Google</div>
             <div class="text-[11.5px] text-ink-600 mt-1">for multiple Lake Worth keywords</div>
           </div>
-        </div>
+        </div></div>
       </div>
     </div>
   </div>
@@ -84,6 +86,10 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600' fill='none' stroke='%23E9E4D6' stroke-width='1'%3E%3Cpath d='M-50 420c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 460c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 500c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 540c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 120c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 160c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 200c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3C/svg%3E");
     background-size: 900px 900px;
     mask-image: radial-gradient(80% 70% at 70% 40%, #000 30%, transparent 80%);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .bar-fill { transform-origin: 0 50%; animation: bar 1.4s cubic-bezier(.22,1,.36,1) 1.2s both; }
+    @keyframes bar { from { transform: scaleX(0); } }
   }
   .float-card {
     gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 16px;

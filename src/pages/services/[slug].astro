@@ -6,9 +6,10 @@ import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Visual from '@/components/sections/CaseStudyVisual.astro';
 import Calculator from '@/components/islands/MissedCallCalculator.astro';
 import Icon from '@/components/ui/Icon.astro';
+import Marquee from '@/components/ui/Marquee.astro';
 import { services, type Service } from '@/data/services';
 import { getCaseStudy } from '@/data/caseStudies';
-import { CTA } from '@/config/site';
+import { CTA, SITE } from '@/config/site';
 
 export function getStaticPaths() {
   return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
@@ -21,10 +22,13 @@ const crumbs = [{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/
 <Base title={service.metaTitle} description={service.metaDescription} faqs={service.faqs} breadcrumbs={crumbs}>
   <PageHero eyebrow={service.eyebrow} title={service.headline} lede={service.subhead} crumbs={crumbs}>
     <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
-      <a href={CTA.primary.href} class="btn btn-primary btn-lg">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
+      <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
       <a href="/pricing/" class="link-mono self-start sm:self-auto">See pricing <Icon name="arrow-right" size={14} /></a>
     </div>
   </PageHero>
+  <div class="surface-dark border-b border-white/[0.06] bg-navy-950">
+    <Marquee items={SITE.serviceAreas} label="Towns we serve in Palm Beach County" duration={56} />
+  </div>
 
   <!-- Outcomes -->
   <section class="section surface-cream">

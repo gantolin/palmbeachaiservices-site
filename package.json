@@ -12,6 +12,7 @@
     "check": "astro check",
     "screenshots": "node scripts/screenshots.mjs",
     "copy:export": "node scripts/export-copy.mjs",
+    "record": "node scripts/record-hero.mjs",
     "assets": "node scripts/make-assets.mjs"
   },
   "engines": {

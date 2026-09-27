@@ -1,4 +1,5 @@
 ---
+import Aurora from '@/components/ui/Aurora.astro';
 import Base from '@/layouts/Base.astro';
 import LeadForm from '@/components/islands/LeadForm.astro';
 import Icon from '@/components/ui/Icon.astro';
@@ -16,8 +17,9 @@ const gets = [
   description="Get a free teardown of your Google Business Profile and website. See what is costing you calls and what to fix first. For Palm Beach County home-service businesses."
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Free teardown', url: '/free-teardown/' }]}
 >
-  <section class="relative overflow-hidden surface-dark grain -mt-px">
+  <section class="relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
+    <Aurora variant="soft" />
     <div class="container-x relative pt-14 pb-20 sm:pt-20 lg:pb-28">
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
         <div class="lg:col-span-5 lg:sticky lg:top-28">

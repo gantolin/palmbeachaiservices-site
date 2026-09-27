@@ -88,7 +88,21 @@ One plan, no tiers, no toggle. The earlier Get Found/Growth/Automate tiers, the 
 - `@astrojs/sitemap` (excludes /thanks and /404), `robots.txt`, `llms.txt`, web manifest, and a generated 1200×630 OG image.
 - Local keywords are woven into copy: Palm Beach County, Royal Palm Beach, Wellington, West Palm Beach, Lake Worth, and the trade names.
 
+## Motion system
+Vanilla CSS + one small script (`src/scripts/motion.ts`, imported by `Base.astro`). No animation libraries.
+- **Backdrops:** `ui/Aurora.astro` draws drifting navy/gold aurora blobs, a masked grid, a cursor spotlight, and optional orbit rings (`orbit="right|center"`). It is used in HomeHero, PageHero (services, pricing, results, about), FinalCTA, the free-teardown, free-playbook and case-study heroes, and the 404 page. Any section marked `data-parallax-root` gets `--mx/--my` (px) and `--px/--py` (-1..1) from the pointer.
+- **Hero:** the headline rises word by word with a blur-in, the gold accent word shimmers, and the primary CTAs shine (`btn-shine`) and are magnetic (`data-magnetic`). The phone mockup tilts in 3D with a glare (`data-tilt`), the float cards parallax (`plx-1/2`) and bob (`float-y`), and the "45 → 10 min" figure counts down.
+- **Phone demo:** a live sequence with an incoming call (pulsing ring), then the missed-call pill, then messages with typing dots on both sides. It replays while on screen. Without JS or with reduced motion, the whole thread is shown statically.
+- **Scroll:** `[data-reveal]` fades, slides, and blurs in (stagger it with `--d`), and `[data-count-to]` counts up (with optional `data-count-from` / `data-count-dur`). `[data-progress]` gets `--p` from 0 to 1, which drives the How-it-works gold rail. The header bar shows scroll progress.
+- **Micro-interactions:** `.card`, `.card-dark` and `[data-spot]` get a cursor spotlight fill plus a gold border glow. The header turns to glass and the logo scales to 0.9 on scroll (the height stays fixed, so there's no CLS). The featured pricing card has a rotating conic gold border (`.gborder`). `ui/Marquee.astro` is a seamless ticker with an aria-hidden duplicate that pauses on hover.
+- **Guardrails:**
+  - Content is never hidden unless JS is running and motion is allowed. A 2.5 s failsafe in `<head>` reveals everything if the motion script never boots.
+  - Pointer effects only run on `(hover:hover) and (pointer:fine)`.
+  - `prefers-reduced-motion: reduce` removes the aurora drift, spotlight, tilt, parallax, sheen, and marquee movement. The marquee becomes a static, wrapped list.
+  - Everything animates with transform or opacity, except the small accent-word shimmer (background-position).
+- **Video:** `node scripts/record-hero.mjs` records `screenshots/home-hero-scroll.mp4` and `.gif`. It needs preview running and ffmpeg (`npx playwright-core install ffmpeg` for Playwright's recorder).
+
 ## Performance / a11y
-- Static HTML, self-hosted fonts (preloaded, `font-display: swap`), and almost no JS (small inline islands).
-- Motion is gated behind `.js` + `prefers-reduced-motion`.
+- Static HTML, self-hosted fonts (preloaded, `font-display: swap`), and very little JS (a ~3 KB motion script plus small inline islands).
+- Motion is gated behind `.js` + `prefers-reduced-motion` (see Motion system).
 - Semantic landmarks, labeled fields, visible focus rings, 44px tap targets.

@@ -14,6 +14,9 @@ import Founder from '@/components/sections/Founder.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
+import Marquee from '@/components/ui/Marquee.astro';
+import { SITE } from '@/config/site';
+const serviceTicker = ['Custom websites', 'Google Business Profile', 'Local SEO', 'Review automation', 'Missed-call text-back', 'Lead follow-up', 'Custom AI tools'];
 import { homeFaqs } from '@/data/faq';
 import { plan, usd, priceLine } from '@/data/pricing';
 ---
@@ -23,6 +26,10 @@ import { plan, usd, priceLine } from '@/data/pricing';
   faqs={homeFaqs}
 >
   <HomeHero />
+  <div class="ticker-band surface-dark border-b border-white/[0.06]">
+    <Marquee items={serviceTicker} label="What we do" size="lg" duration={42} />
+    <Marquee items={SITE.serviceAreas} label="Towns we serve in Palm Beach County" duration={56} reverse />
+  </div>
   <ProofStrip />
   <Problem />
   <ThreeThings />
