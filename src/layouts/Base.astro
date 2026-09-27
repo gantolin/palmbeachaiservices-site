@@ -14,6 +14,9 @@ interface Props {
   noindex?: boolean;
   faqs?: { q: string; a: string }[];
   breadcrumbs?: { name: string; url: string }[];
+  /** Extra JSON-LD objects for this page (Service, Article, ...). */
+  schema?: Record<string, unknown>[];
+  type?: 'website' | 'article';
 }
 const props = Astro.props;
 ---
@@ -21,6 +24,14 @@ const props = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!--
+      GitHub Pages cannot send response headers, so the security policy lives here.
+      The only third parties are Web3Forms (form POST), Calendly (booking iframe) and Google Maps (contact page iframe).
+      Add a host here before loading anything new (analytics, pixels, embeds), or it will be blocked.
+      frame-ancestors is ignored in a meta tag; that needs a header (Cloudflare) if clickjacking ever matters.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src https://calendly.com https://www.google.com; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <script is:inline>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__motion)document.documentElement.classList.add('motion-failsafe')},2500)</script>
     <link rel="preload" href={geistLatin} as="font" type="font/woff2" crossorigin />

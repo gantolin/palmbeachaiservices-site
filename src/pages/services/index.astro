@@ -10,16 +10,16 @@ import { accent } from '@/lib/text';
 import { priceLine } from '@/data/pricing';
 ---
 <Base
-  title="Services: Websites, Local SEO & AI Automation | Palm Beach AI Services"
-  description={`Websites, Google Business Profile optimization, local SEO, and AI automation for Palm Beach County home-service businesses. ${priceLine}, no contract.`}
+  title="Services: Get Seen on Google & Save Time with AI | Palm Beach AI Services"
+  description={`Google Maps SEO, websites that rank, AI automation, and an AI answering service for home service businesses in Palm Beach County. ${priceLine}, no contract.`}
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]}
 >
-  <PageHero eyebrow="Services" title="Everything it takes to get found, get the call, and get it *booked.*"
-    lede="Three services that work as one system, set up and run for you by a local founder. Pick one, or let them work together."
+  <PageHero eyebrow="Get seen on Google · Get your time back with AI" title="Get you *seen* on Google, then give you time back."
+    lede="Four services that work as one system, set up and run for you from Royal Palm Beach. Pick one, or let them work together."
     crumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]} />
 
   <section class="section surface-cream">
-    <div class="container-x grid gap-5 lg:grid-cols-3">
+    <div class="container-x grid gap-5 md:grid-cols-2">
       {services.map((s, i) => (
         <a href={`/services/${s.slug}/`} class="card lift group p-8 rounded-[20px] flex flex-col" data-reveal style={`--d:${i * 90}ms`}>
           <span class="size-12 rounded-2xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={22} /></span>

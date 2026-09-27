@@ -16,22 +16,22 @@ export interface Service {
   relatedCase: string; // case study slug
   priceNote: string;
   faqs: { q: string; a: string }[];
-  icon: 'globe' | 'pin' | 'spark';
+  icon: 'globe' | 'pin' | 'spark' | 'phone';
 }
 
 export const services: Service[] = [
   {
     slug: 'websites',
-    pillar: 'Get found',
-    name: 'Websites',
+    pillar: 'Get seen on Google',
+    name: 'Websites That Rank',
     navLabel: 'Websites',
-    metaTitle: 'Website Design for Palm Beach County Contractors | Palm Beach AI Services',
+    metaTitle: 'Web Design in West Palm Beach for Contractors | Palm Beach AI Services',
     metaDescription:
-      `Fast, custom websites for Palm Beach County home-service businesses. Built to rank on Google and turn visitors into calls. Live in 14 days. ${usd(BUILD_FEE)} one-time build, part of our one simple plan.`,
-    eyebrow: 'Websites',
-    headline: 'A website that *earns* its keep.',
+      `Web design for West Palm Beach and Palm Beach County home-service businesses. Fast, custom websites built to rank on Google and turn visitors into calls. Live in 14 days. ${usd(BUILD_FEE)} one-time build.`,
+    eyebrow: 'Web design · West Palm Beach & Palm Beach County',
+    headline: 'Web design that *earns* its keep.',
     subhead:
-      'Fast, custom, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.',
+      'Custom websites for contractors in West Palm Beach and across Palm Beach County. Fast, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.',
     outcomes: [
       { title: 'Shows up on Google', text: 'Service and town pages built around what your customers actually search.' },
       { title: 'Turns visits into calls', text: 'Tap-to-call, quote forms, and proof right where people decide.' },
@@ -48,7 +48,7 @@ export const services: Service[] = [
       'You own the domain, the content, and the site',
     ],
     process: [
-      { title: 'Teardown', text: 'We review your current site and Google profile and show you what is costing you calls.' },
+      { title: 'Google check', text: 'We check where you show up on Google today and show you what is costing you calls.' },
       { title: 'Content', text: 'You send photos and a logo. We write the words, built around local searches.' },
       { title: 'Build', text: 'Your site goes live in 14 days from the day we have your content.' },
       { title: 'Grow', text: 'On the monthly plan we keep improving it, building backlinks, and tracking competitors.' },
@@ -58,22 +58,23 @@ export const services: Service[] = [
     faqs: [
       { q: 'Do I own the website?', a: 'Yes. Your domain, your content, your site. No hostage situations.' },
       { q: 'How fast can it go live?', a: 'Within 14 days of the day we have your content (logo, photos, and a quick call about your services). If we miss it, your first month is free.' },
-      { q: 'I already have a site. Do I need a new one?', a: 'Not always. The free teardown tells you honestly whether to fix it or rebuild it.' },
+      { q: 'I already have a site. Do I need a new one?', a: 'Not always. The free Google Visibility Check tells you honestly whether to fix it or rebuild it.' },
     ],
     icon: 'globe',
   },
   {
-    slug: 'local-seo-google-business-profile',
-    pillar: 'Get found',
-    name: 'Local SEO & Google Business Profile',
-    navLabel: 'Local SEO & Google Profile',
-    metaTitle: 'Local SEO & Google Business Profile Optimization in Palm Beach County | Palm Beach AI Services',
+    slug: 'google-maps-seo',
+    pillar: 'Get seen on Google',
+    name: 'Google Maps SEO & Google Business Profile',
+    navLabel: 'Google Maps SEO',
+    // Targets "google maps seo" (2,900/mo) + "gmb optimization" (1,000, KD 25) + "google business profile optimization service" (480, KD 30).
+    metaTitle: 'Google Maps SEO & Google Business Profile Optimization Service',
     metaDescription:
-      `Get into the Google map pack in your town. Google Business Profile optimization, review automation, and local SEO for Palm Beach County trades. ${priceLine}, month-to-month.`,
-    eyebrow: 'Local SEO & Google Business Profile',
-    headline: 'Get into the *map pack* in your town.',
+      `Get your home service business seen on Google Maps. Google Business Profile optimization, reviews on autopilot, and local SEO from Royal Palm Beach, FL. ${priceLine}, month-to-month.`,
+    eyebrow: 'Google Maps SEO · Google Business Profile optimization',
+    headline: 'Get seen on *Google Maps* in your town.',
     subhead:
-      'When someone nearby searches for what you do, the top three on Google Maps get the calls. We get your profile built, active, and collecting reviews so you can compete for those spots.',
+      'When someone in West Palm Beach, Wellington, or Royal Palm Beach searches for what you do, the top three on Google Maps get the calls. We get your profile built, active, and collecting reviews so you can compete for those spots.',
     outcomes: [
       { title: 'A complete, active profile', text: 'Categories, services, photos, and posts that tell Google exactly what you do and where.' },
       { title: 'Reviews on autopilot', text: 'Every finished job triggers a friendly review request by text. No awkward asking.' },
@@ -90,7 +91,7 @@ export const services: Service[] = [
       'Monthly plain-English report',
     ],
     process: [
-      { title: 'Teardown', text: 'We look at your profile next to the businesses outranking you and show you the gaps.' },
+      { title: 'Google check', text: 'We look at your profile next to the businesses outranking you on Google Maps and show you the gaps.' },
       { title: 'Fix', text: 'We rebuild the profile: categories, services, photos, and description.' },
       { title: 'Automate', text: 'Review requests go out automatically after every job.' },
       { title: 'Report', text: 'Every month you get the numbers that matter, in plain English.' },
@@ -106,13 +107,14 @@ export const services: Service[] = [
   },
   {
     slug: 'ai-automation',
-    pillar: 'Never miss a lead · Get your time back',
+    pillar: 'Get your time back with AI',
     name: 'AI Automation',
     navLabel: 'AI Automation',
-    metaTitle: 'AI Automation & GoHighLevel CRM for Palm Beach County Businesses | Palm Beach AI Services',
+    // Targets "ai automation services" (1,600/mo, KD 31) + "business automation services" (1,000, KD 28).
+    metaTitle: 'AI Automation Services for Home Service Businesses | Palm Beach AI',
     metaDescription:
-      'Missed-call text-back, lead follow-up, review requests, invoicing, and custom AI workflows with Claude, ChatGPT, and Grok. GoHighLevel CRM setup for Palm Beach County trades.',
-    eyebrow: 'AI Automation',
+      'AI automation services that save home service businesses time and make them money: missed-call text-back, speed to lead, review requests, invoicing, and custom AI workflows.',
+    eyebrow: 'AI automation services · Get your time back',
     headline: 'Stop losing jobs to *voicemail*.',
     subhead:
       'Missed-call text-back, instant follow-ups, review requests, invoicing, and custom AI tools that take hours of busywork off your week. Set up for you, running quietly in the background.',
@@ -127,7 +129,7 @@ export const services: Service[] = [
       'Lead follow-up sequences by text + email',
       'Automated review requests',
       'Invoicing + payment reminder automation',
-      'AI receptionist for after-hours + overflow calls (custom quote)',
+      'AI answering service for after-hours + overflow calls (custom quote)',
       'Custom AI workflows with Claude, ChatGPT, or Grok',
       'Custom tools built around your process, like the Safe Haven report system',
     ],
@@ -145,6 +147,50 @@ export const services: Service[] = [
       { q: 'Do I need to be good with tech?', a: 'No. We build it, test it, and show you the few things you need to know.' },
     ],
     icon: 'spark',
+  },
+  {
+    slug: 'ai-answering-service',
+    pillar: 'Get your time back with AI',
+    name: 'AI Answering Service',
+    navLabel: 'AI Answering Service',
+    // Targets "answering service for contractors" (1,000/mo, KD 10, $60 CPC) + "ai phone answering service" (720, KD 51).
+    metaTitle: 'AI Answering Service for Contractors | Palm Beach AI Services',
+    metaDescription:
+      'An AI answering service for contractors and home service businesses. Every call answered 24/7, questions handled, jobs booked, and the details texted to you. Set up in Palm Beach County.',
+    eyebrow: 'AI answering service for contractors',
+    headline: 'Every call *answered*. Even on the roof.',
+    subhead:
+      'You cannot pick up while you are on a job, driving, or asleep. Our AI answering service picks up for you, 24/7, in a natural voice: it answers common questions, books the job, and texts you the details.',
+    outcomes: [
+      { title: 'No more voicemail', text: 'Callers get a real conversation instead of a beep, so they do not hang up and call the next company.' },
+      { title: 'Jobs booked while you work', text: 'It collects the address and the problem and books straight into your calendar.' },
+      { title: 'You stay in control', text: 'Urgent calls get forwarded to you. Everything else arrives as a short text summary.' },
+    ],
+    included: [
+      'AI voice agent trained on your services, service area, and hours',
+      'Answers after hours, on weekends, and when you are busy (overflow)',
+      'Books appointments into your calendar',
+      'Emergency calls transferred to you or your on-call tech',
+      'Text + email summary of every call',
+      'Call recordings and transcripts in your CRM',
+      'Missed-call text-back as a backup',
+      'Scripts written in your voice and approved by you before going live',
+    ],
+    process: [
+      { title: 'Listen', text: 'We learn how you answer the phone today: what customers ask, what you book, what counts as an emergency.' },
+      { title: 'Build', text: 'We set up the AI agent with your services, prices you are comfortable sharing, and your calendar.' },
+      { title: 'Test', text: 'We call it ourselves, over and over, until it sounds like your business and books correctly.' },
+      { title: 'Go live', text: 'Forward your missed or after-hours calls to it and watch the summaries roll in. We keep tuning it monthly.' },
+    ],
+    relatedCase: 'safe-haven-inspections',
+    priceNote: 'The AI answering service is quoted per business, based on call volume and how much it should handle. Missed-call text-back is already included in the $297/month plan.',
+    faqs: [
+      { q: 'Will callers know it is AI?', a: 'It sounds natural and polite, and we do not pretend it is a person if someone asks. Most callers just care that someone answered and their job got booked.' },
+      { q: 'What happens with emergencies?', a: 'You decide what counts as an emergency (no AC in August, a burst pipe). Those calls get transferred to you or your on-call tech right away.' },
+      { q: 'Do I have to change my phone number?', a: 'No. You keep your number and forward missed or after-hours calls to the AI line.' },
+      { q: 'Is this different from an answering service?', a: 'A traditional answering service takes a message. The AI can answer questions, qualify the job, and book it on your calendar, any hour of the day.' },
+    ],
+    icon: 'phone',
   },
 ];
 

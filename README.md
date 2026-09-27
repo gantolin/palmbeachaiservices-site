@@ -14,6 +14,8 @@ npm run build          # astro check (types) + static build -> dist/
 npm run build:fast     # build without type check
 npm run preview        # serve dist/ locally
 npm run screenshots    # needs preview running; writes screenshots/*.png (PAGES="/,/pricing/" to limit)
+node scripts/smoke-booking.mjs  # needs preview running; form -> booking flow + CSP check
+node scripts/page-shots.mjs     # quick screenshots of key pages
 npm run copy:export    # regenerate docs/copy.md from dist/
 npm run record         # needs preview running + ffmpeg; records screenshots/home-hero-scroll.mp4/.gif
 npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG image from brand/traced (uses local Chrome)
@@ -29,6 +31,8 @@ npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG imag
 | Case studies (+ "show the math" lines) | `src/data/caseStudies.ts` |
 | Testimonials (hidden in prod until real) | `src/data/testimonials.ts`: add to `realTestimonials` to publish |
 | FAQs | `src/data/faq.ts` |
+| Guides (long-form SEO articles) | `src/content/guides/*.md` (schema in `src/content.config.ts`, brief in `docs/guide-brief.md`) |
+| Which page targets which search | `docs/keyword-map.md` |
 | Us-vs-agency table, industries | `src/data/comparison.ts` |
 | Services | `src/data/services.ts` |
 | Design tokens (navy/gold system), components, motion | `src/styles/global.css`, `src/scripts/motion.ts` (see docs/site-plan.md → Motion system) |
@@ -37,13 +41,10 @@ npm run assets         # regenerate logo SVG/PNGs, favicons, app icons + OG imag
 
 Copy uses `*word*` in data strings to render the italic-serif accent (`src/lib/text.ts`).
 
-## Leads → GoHighLevel
-Both forms (`/free-teardown/`, `/free-playbook/`) `POST` JSON to **`PUBLIC_LEAD_ENDPOINT`**. The value is inlined at build time: `.env` locally, a repo variable in CI.
-
-- The payload includes form fields, `type` (`teardown` | `playbook`), `plan`, the page, UTM + gclid/fbclid, the two SMS consent booleans, and the exact consent text + timestamp. A honeypot field is dropped client-side.
-- **TODO:** deploy `lambda/lead/` (Node 20 Lambda + Function URL, CORS restricted to the site origin). It upserts the contact in GHL (Private Integration token in Secrets Manager/SSM), tags it, maps custom fields, and fires the text-back/booking workflow. See `lambda/lead/README.md`.
-- If the endpoint is empty (e.g. local dev), the form logs the payload and still goes to `/thanks/`, so the flow can be tested.
-- **Booking:** set `SITE.bookingUrl` to the GHL calendar URL, and `/thanks/?type=teardown` embeds it. Until then, the page says we'll text a link.
+## Leads + booking
+- The Google check form (`/free-google-check/`) posts to **Web3Forms**, which emails each lead to Gene@. The access key comes from the `PUBLIC_WEB3FORMS_KEY` repo variable (`.env` locally); it is public by design. CI fails if it is missing.
+- After the form, `/thanks/` embeds the **Calendly** event (`SITE.bookingUrl`) as a plain iframe, prefilled with name, email, phone and business notes from sessionStorage (no personal info in URLs). `/book/` embeds the same calendar for people who skip the form.
+- `lambda/lead/` (GoHighLevel webhook) is not used; it is kept as a future option.
 
 ## Deploy: GitHub Pages (current hosting)
 `.github/workflows/pages.yml` builds and publishes on every push to `main` (and on manual runs). It follows the same pattern as the Safe Haven site:

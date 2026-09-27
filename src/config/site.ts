@@ -4,21 +4,20 @@
  */
 import { priceLine } from '../data/pricing';
 
-/**
- * Founder's first name, used everywhere on the site.
- * TODO(Gino): confirm which name to use publicly. 'Gino' or 'Gene'.
- * (Hero's Pavers' reviews already say "Gene", and the inbox is Gene@.)
- */
-export const FOUNDER_FIRST_NAME = 'Gino';
+/** Founder's first name, used everywhere on the site (confirmed by Gene 2026-09-26). */
+export const FOUNDER_FIRST_NAME = 'Gene';
 
 export const SITE = {
   name: 'Palm Beach AI Services',
   shortName: 'PBAI Services',
   domain: 'palmbeachaiservices.com',
   url: 'https://palmbeachaiservices.com',
-  tagline: 'Websites, Google rankings, and AI automation for Palm Beach County home-service businesses.',
+  /** The brand line (chosen by Gene 2026-09-27). */
+  tagline: 'Get seen on Google. Get your time back with AI.',
+  /** One-sentence positioning, used under the tagline. */
+  positioning: 'We get home service businesses seen on Google, then use AI to save them time and make them money.',
   description:
-    `Founder-run websites, local SEO + Google Business Profile, and AI automation for Palm Beach County home-service businesses. One simple plan: ${priceLine}, no contract, you own everything. Based in Royal Palm Beach, FL.`,
+    `Get seen on Google. Get your time back with AI. Local SEO, Google Maps, websites, and AI automation for home service businesses in Palm Beach County. ${priceLine}, no contract. Based in Royal Palm Beach, FL.`,
 
   founder: FOUNDER_FIRST_NAME,
 
@@ -26,16 +25,19 @@ export const SITE = {
   phoneE164: '+15613658443',
   email: 'Gene@Palmbeachaiservices.com',
 
-  // Service-area business: no street address is published.
-  // TODO(Gino): if the Google Business Profile shows a street address, add it here so NAP matches exactly.
+  // Public office address (Gene chose to publish it 2026-09-27 so the business can rank on Google Maps).
+  // Must match the Google Business Profile character for character.
   address: {
+    street: '172 Roycourt Circle',
     locality: 'Royal Palm Beach',
     region: 'FL',
     regionName: 'Florida',
     country: 'US',
-    postalCode: '', // TODO(Gino): add ZIP to match the GBP (leave blank if the GBP hides the address)
+    postalCode: '33411',
   },
-  geo: { lat: 26.7084, lng: -80.2306 }, // Royal Palm Beach town center (approximate)
+  geo: { lat: 26.7084, lng: -80.2306 }, // TODO(Gene): replace with the exact pin from the Google Business Profile once it exists
+  /** Opens the address in Google Maps. Swap for the GBP share link (maps.app.goo.gl/...) once the profile is live. */
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=172+Roycourt+Circle,+Royal+Palm+Beach,+FL+33411',
 
   homeBase: 'Royal Palm Beach',
   primaryArea: 'Palm Beach County',
@@ -54,7 +56,7 @@ export const SITE = {
   ],
   nearbyCounties: ['Martin County', 'Broward County'],
 
-  // TODO(Gino): add public profile URLs as they go live (GBP share link, Facebook, Instagram, LinkedIn, YouTube).
+  // TODO(Gene): add public profile URLs as they go live (GBP share link, Facebook, Instagram, LinkedIn, YouTube).
   social: {
     googleBusinessProfile: '',
     facebook: '',
@@ -67,20 +69,20 @@ export const SITE = {
   capacityLine: 'We take a limited number of clients per trade, per town.',
 
   /**
-   * Lead + playbook forms POST JSON here.
-   * TODO: set PUBLIC_LEAD_ENDPOINT to the AWS Lambda Function URL that validates the payload
-   * and creates the contact/opportunity in GoHighLevel (which then fires the text-back + nurture).
+   * The Google check form posts to Web3Forms, which emails each lead to Gene@.
+   * The access key is public by design (it only allows sending to that inbox). It comes from the
+   * PUBLIC_WEB3FORMS_KEY repo variable in CI and from .env locally. Empty = the form shows a
+   * call/text fallback instead of pretending to send.
    */
-  leadEndpoint: import.meta.env.PUBLIC_LEAD_ENDPOINT ?? '',
+  web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
 
   /**
-   * GoHighLevel booking calendar URL, embedded on /thanks/ after the teardown form.
-   * TODO(Gino): paste the GHL calendar widget URL (e.g. https://api.leadconnectorhq.com/widget/booking/XXXX).
-   * Leave empty and the thank-you page says we will text a booking link instead.
+   * Calendly event for the Google Visibility Check call. Embedded on /book/ and on /thanks/ after the form.
+   * If the Calendly link slug changes (Profile > My Link), update it here.
    */
-  bookingUrl: '' as string,
+  bookingUrl: 'https://calendly.com/antolinoaisolutions/palm-beach-teardown-call',
 
-  /** Portrait for the founder block. TODO(Gino): drop a photo at /public/images/founder.jpg and set this. */
+  /** Portrait for the founder block. TODO(Gene): drop a photo at /public/images/founder.jpg and set this. */
   founderPhoto: '' as string,
 
   ogImage: '/og/default.png',
@@ -93,12 +95,13 @@ export const mailHref = `mailto:${SITE.email}`;
 export const NAV = [
   { label: 'Services', href: '/services/' },
   { label: 'Results', href: '/results/' },
+  { label: 'Guides', href: '/guides/' },
   { label: 'Pricing', href: '/pricing/' },
   { label: 'About', href: '/about/' },
 ] as const;
 
 export const CTA = {
-  primary: { label: 'Get my free teardown', href: '/free-teardown/' },
-  offerName: 'The Palm Beach Teardown',
-  secondary: { label: 'Get the free playbook', href: '/free-playbook/' },
+  primary: { label: 'Get my free Google check', href: '/free-google-check/' },
+  offerName: 'The Free Google Visibility Check',
+  secondary: { label: 'Book a call', href: '/book/' },
 } as const;

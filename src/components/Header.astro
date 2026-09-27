@@ -17,8 +17,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 </div>
 
 <header id="site-header" data-open="false" class="site-header sticky top-0 z-40 text-mist-200">
-  <div class="container-x flex items-center justify-between h-[68px] gap-6">
-    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={40} class="h-[36px] w-auto sm:h-[40px]" /></a>
+  <div class="container-x flex items-center justify-between h-[76px] lg:h-[92px] gap-6">
+    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[50px] w-auto sm:h-[56px] lg:h-[64px]" /></a>
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
@@ -27,11 +27,11 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </nav>
 
     <div class="hidden lg:flex items-center gap-2">
-      <span class="local-time hidden xl:inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.08em] text-mist-400 mr-2" aria-hidden="true">
+      <span class="local-time hidden 2xl:inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.08em] text-mist-400 mr-2" aria-hidden="true">
         <span class="size-1.5 rounded-full bg-navy-300"></span>Royal Palm Beach <span data-local-time class="tabular text-mist-200">--:--</span>
       </span>
       <a href={telHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="phone" size={16} /> {SITE.phone}</a>
-      <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Free teardown <Icon name="arrow-right" size={16} /></a>
+      <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Free Google check <Icon name="arrow-right" size={16} /></a>
     </div>
 
     <button type="button" class="lg:hidden inline-flex items-center justify-center size-11 -mr-2 rounded-full hover:bg-white/5" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
@@ -73,5 +73,5 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   .header-logo { transform-origin: 0 50%; transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
   .site-header[data-scrolled='true'] .header-logo { transform: scale(0.9); }
   .site-header[data-open='true'] { background: rgba(3, 14, 29, 0.98); }
-  .mobile-sheet { max-height: calc(100dvh - 68px); overflow-y: auto; }
+  .mobile-sheet { max-height: calc(100dvh - 76px); overflow-y: auto; }
 </style>

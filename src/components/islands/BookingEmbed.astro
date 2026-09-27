@@ -1,0 +1,63 @@
+---
+/**
+ * Calendly inline booking, embedded as a plain iframe (no Calendly script, so the CSP only has to
+ * allow calendly.com as a frame source). If the visitor just filled in the Google check form, their
+ * name, email, phone and business notes are prefilled from sessionStorage.
+ */
+import Icon from '../ui/Icon.astro';
+import { SITE, telHref } from '@/config/site';
+interface Props { title?: string }
+const { title = 'Book your free Google Visibility Check call' } = Astro.props;
+---
+<div class="booking" data-booking data-url={SITE.bookingUrl}>
+  <div class="frame rounded-[20px] overflow-hidden bg-white">
+    <iframe title={title} class="w-full border-0" data-booking-frame></iframe>
+  </div>
+  <div class="done hidden rounded-[20px] border border-white/10 bg-navy-900/60 p-7 text-left" data-booking-done role="status">
+    <p class="text-[#f4f1e8] font-display text-[22px] font-semibold">You're booked.</p>
+    <p class="mt-2 text-mist-200">A confirmation is on its way to your email. {SITE.founder} will look at your Google profile and website before the call.</p>
+  </div>
+  <p class="mt-4 text-[14px] text-mist-400">
+    Calendar not loading? <a href={SITE.bookingUrl} target="_blank" rel="noopener" class="text-gold-300 underline underline-offset-4">Open it in a new tab</a>
+    or call <a href={telHref} class="text-gold-300 underline underline-offset-4">{SITE.phone}</a>.
+  </p>
+  <noscript>
+    <a href={SITE.bookingUrl} class="btn btn-primary mt-4">Pick a time<Icon name="arrow-right" size={17} /></a>
+  </noscript>
+</div>
+
+<style>
+  .frame iframe { height: 700px; }
+  @media (max-width: 640px) { .frame iframe { height: 1000px; } }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-booking]').forEach((root) => {
+    const frame = root.querySelector<HTMLIFrameElement>('[data-booking-frame]')!;
+    const url = new URL(root.dataset.url!);
+    url.searchParams.set('embed_domain', location.hostname);
+    url.searchParams.set('embed_type', 'Inline');
+    url.searchParams.set('hide_gdpr_banner', '1');
+    url.searchParams.set('primary_color', 'c9a227');
+
+    let prefill: { name?: string; email?: string; phone?: string; notes?: string } = {};
+    try { prefill = JSON.parse(sessionStorage.getItem('pbai-booking') ?? '{}'); } catch { /* ignore */ }
+    if (prefill.name) url.searchParams.set('name', prefill.name);
+    if (prefill.email) url.searchParams.set('email', prefill.email);
+    if (prefill.phone) url.searchParams.set('location', prefill.phone);
+    if (prefill.notes) url.searchParams.set('a1', prefill.notes);
+
+    // Pass UTM tags through so Calendly records where the booking came from.
+    new URLSearchParams(location.search).forEach((v, k) => { if (k.startsWith('utm_')) url.searchParams.set(k, v); });
+    frame.src = url.href;
+
+    window.addEventListener('message', (e) => {
+      if (e.origin !== 'https://calendly.com') return;
+      if ((e.data as { event?: string })?.event === 'calendly.event_scheduled') {
+        try { sessionStorage.removeItem('pbai-booking'); } catch { /* ignore */ }
+        root.querySelector('[data-booking-done]')?.classList.remove('hidden');
+        root.querySelector('[data-booking-done]')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+</script>

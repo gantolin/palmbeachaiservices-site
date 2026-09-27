@@ -1,8 +1,8 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  /** URL the lead + playbook forms POST JSON to (AWS Lambda → GoHighLevel). */
-  readonly PUBLIC_LEAD_ENDPOINT?: string;
+  /** Web3Forms access key for the Google check form (public by design; emails leads to Gene@). */
+  readonly PUBLIC_WEB3FORMS_KEY?: string;
 }
 interface ImportMeta {
   readonly env: ImportMetaEnv;

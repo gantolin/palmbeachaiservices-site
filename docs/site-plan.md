@@ -9,7 +9,7 @@
 **Brand:** navy + gold (a classic Palm Beach pairing), on cream/sand off-white. See "Brand system" below.
 
 ## Brand system
-- **Logo:** Gino's official lockup (a white pin with a palm tree plus the "Palm Beach AI Services" serif wordmark on navy). The source PNG is in `brand/source/`. It is vectorized with potrace (`scripts/trace-logo.py` → `brand/traced/*.json`), and `scripts/make-assets.mjs` (`npm run assets`) writes:
+- **Logo:** Gene's official lockup (a white pin with a palm tree plus the "Palm Beach AI Services" serif wordmark on navy). The source PNG is in `brand/source/`. It is vectorized with potrace (`scripts/trace-logo.py` → `brand/traced/*.json`), and `scripts/make-assets.mjs` (`npm run assets`) writes:
   - `public/brand/logo-lockup-white.svg|png`: for dark backgrounds (header, footer)
   - `public/brand/logo-lockup-navy.svg|png`: for light backgrounds
   - `public/brand/logo-mark-white.svg`, `logo-mark-navy.svg|png`: the pin + palm mark alone

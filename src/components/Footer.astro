@@ -11,10 +11,11 @@ const year = new Date().getFullYear();
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-4">
         <Logo height={52} />
-        <p class="mt-5 text-mist-400 max-w-sm text-[15px]">{SITE.tagline}</p>
+        <p class="mt-5 text-mist-200 max-w-sm text-[16px] font-display font-[560]">{SITE.tagline}</p>
+        <p class="mt-2 text-mist-400 max-w-sm text-[14.5px]">{SITE.positioning}</p>
         <address class="not-italic mt-6 space-y-2 text-[15px]">
           <div class="font-medium text-mist-200">{SITE.name}</div>
-          <div class="text-mist-400">{SITE.address.locality}, {SITE.address.region}{SITE.address.postalCode && ` ${SITE.address.postalCode}`}</div>
+          <a href={SITE.mapsUrl} target="_blank" rel="noopener" class="block text-mist-400 hover:text-gold-300">{SITE.address.street}<br />{SITE.address.locality}, {SITE.address.region} {SITE.address.postalCode}</a>
           <a href={telHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300"><Icon name="phone" size={16} />{SITE.phone}</a>
           <a href={mailHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300 break-all"><Icon name="mail" size={16} />{SITE.email}</a>
         </address>
@@ -34,8 +35,10 @@ const year = new Date().getFullYear();
         <h2 class="mt-8 font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Company</h2>
         <ul class="mt-4 space-y-2.5 text-[15px]">
           {NAV.filter((n) => n.href === '/about/').map((n) => <li><a class="text-mist-200/85 hover:text-white" href={n.href}>{n.label}</a></li>)}
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Free teardown</a></li>
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Free playbook</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Free Google check</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Book a call</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href="/guides/">Guides</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href="/contact/">Contact</a></li>
         </ul>
       </div>
       <div class="lg:col-span-4">

@@ -1,0 +1,58 @@
+---
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { SITE, CTA, telHref, smsHref, mailHref } from '@/config/site';
+
+const path = '/contact/';
+const crumbs = [{ name: 'Home', url: '/' }, { name: 'Contact', url: path }];
+const fullAddress = `${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region} ${SITE.address.postalCode}`;
+// Keyless Google Maps embed (no API key, no script). CSP allows https://www.google.com as a frame source.
+const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&z=15&output=embed`;
+
+const contactLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: `Contact ${SITE.name}`,
+  url: `${SITE.url}${path}`,
+  about: { '@id': `${SITE.url}/#business` },
+};
+---
+<Base
+  title="Contact Palm Beach AI Services | Royal Palm Beach, FL"
+  description={`Call, text, or visit ${SITE.name} at ${fullAddress}. Local SEO, Google Maps, and AI automation for home service businesses in Palm Beach County.`}
+  breadcrumbs={crumbs}
+  schema={[contactLd]}
+>
+  <PageHero eyebrow="Contact" title="Talk to a *real* person in Royal Palm Beach." lede={`${SITE.tagline} Call, text, email, or book a time with ${SITE.founder}.`} crumbs={crumbs} />
+
+  <section class="section surface-cream">
+    <div class="container-x grid gap-10 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-5 space-y-4" data-reveal>
+        <address class="not-italic card p-7 rounded-[20px]">
+          <div class="font-display text-[22px] font-[600] tracking-tight">{SITE.name}</div>
+          <a href={SITE.mapsUrl} target="_blank" rel="noopener" class="mt-4 flex gap-3 text-ink-900 hover:text-navy-700">
+            <Icon name="pin" size={19} class="text-navy-700 shrink-0 mt-[3px]" />
+            <span>{SITE.address.street}<br />{SITE.address.locality}, {SITE.address.region} {SITE.address.postalCode}</span>
+          </a>
+          <a href={telHref} class="mt-3 flex gap-3 items-center text-ink-900 hover:text-navy-700"><Icon name="phone" size={18} class="text-navy-700" />{SITE.phone}</a>
+          <a href={mailHref} class="mt-3 flex gap-3 items-center text-ink-900 hover:text-navy-700 break-all"><Icon name="mail" size={18} class="text-navy-700" />{SITE.email}</a>
+          <p class="mt-5 text-[14.5px] text-ink-600">Meetings by appointment. Serving all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}.</p>
+        </address>
+        <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <a href={telHref} class="btn btn-navy w-full"><Icon name="phone" size={17} />Call</a>
+          <a href={smsHref} class="btn btn-outline w-full"><Icon name="message" size={17} />Text</a>
+          <a href={CTA.secondary.href} class="btn btn-primary w-full"><Icon name="calendar-check" size={17} />Book</a>
+        </div>
+        <p class="text-[14.5px] text-ink-600">
+          Want to know where you stand first? Get a <a href={CTA.primary.href} class="text-navy-700 font-semibold underline">free Google Visibility Check</a>.
+        </p>
+      </div>
+      <div class="lg:col-span-7" data-reveal style="--d:100ms">
+        <div class="rounded-[20px] overflow-hidden border border-stone-300 bg-white">
+          <iframe src={mapEmbed} title={`Map to ${SITE.name} in ${SITE.address.locality}, FL`} class="w-full h-[420px] lg:h-[520px] border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,30 +1,23 @@
 ---
 /**
- * Multi-step lead forms.
- *  - teardown: 2 short steps (qualify → contact), then /thanks/?type=teardown (booking).
- *  - playbook: one question per screen (name → email → phone optional), then /thanks/?type=playbook (upsell to teardown).
- * POSTs JSON to SITE.leadEndpoint (PUBLIC_LEAD_ENDPOINT).
- * TODO: The endpoint will be an AWS Lambda (Function URL / API Gateway) that validates the payload,
- *       checks the honeypot (+ optional Cloudflare Turnstile), and creates/updates the contact and
- *       opportunity in GoHighLevel so the text-back + nurture workflows fire. See lambda/lead/ + README.
+ * Google Visibility Check form: 2 short steps (qualify, then contact), then /thanks/ where the Calendly
+ * booking is embedded and prefilled from this form (via sessionStorage, so no personal info
+ * lands in URLs). Submissions go to Web3Forms, which emails each lead to Gene@.
  */
 import Icon from '../ui/Icon.astro';
 import { SITE, FOUNDER_FIRST_NAME, telHref } from '@/config/site';
 import { industries } from '@/data/comparison';
-interface Props { variant?: 'teardown' | 'playbook' }
-const { variant = 'teardown' } = Astro.props;
-const isTeardown = variant === 'teardown';
-const v = variant;
+const v = 'check';
 const challenges = ['Not enough calls', 'Missing calls / slow follow-up', 'Not showing on Google Maps', 'Website needs work', 'Too much paperwork', 'Not sure yet'];
 const revenue = ['Just starting out', 'Under $10K/mo', '$10K–$25K/mo', '$25K–$75K/mo', '$75K+/mo', 'Prefer not to say'];
 const deciders = ['Just me', 'Me + a partner or co-owner', 'Me + an office manager'];
 const smsTransactional = `Yes, text me about my request and appointments. Texts from ${SITE.name} may be sent using automated technology or an AI assistant.`;
 const smsMarketing = `Yes, send me occasional marketing texts (tips and offers) from ${SITE.name}. These may be sent using automated technology.`;
 const smsFine = 'Both boxes are optional. Message frequency varies. Msg & data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase.';
-const steps = isTeardown ? ['Your business', 'Your details', 'Book your call'] : ['Name', 'Email', 'Phone'];
+const steps = ['Your business', 'Your details', 'Book your call'];
 ---
-<form class="lead-form" data-lead-form data-variant={variant} data-endpoint={SITE.leadEndpoint} novalidate>
-  <input type="hidden" name="source" value={isTeardown ? 'website-teardown' : 'website-playbook'} />
+<form class="lead-form" data-lead-form data-key={SITE.web3formsKey} novalidate>
+  <input type="hidden" name="source" value="website-google-check" />
   <input type="hidden" name="plan" value="" data-plan />
   <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label></div>
 
@@ -34,132 +27,88 @@ const steps = isTeardown ? ['Your business', 'Your details', 'Book your call'] :
     ))}
   </ol>
 
-  {isTeardown ? (
-    <>
-      <fieldset class="step" data-step="0">
-        <legend class="sr-only">Step 1 of 2: your business</legend>
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="field sm:col-span-2">
-            <label for={`${v}-business`}>Business name</label>
-            <input id={`${v}-business`} name="business" type="text" autocomplete="organization" required />
-          </div>
-          <div class="field">
-            <label for={`${v}-trade`}>Your trade</label>
-            <select id={`${v}-trade`} name="trade" required>
-              <option value="" disabled selected>Select one</option>
-              {industries.map((i) => <option>{i}</option>)}
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for={`${v}-town`}>Main town you serve</label>
-            <select id={`${v}-town`} name="town" required>
-              <option value="" disabled selected>Select one</option>
-              {SITE.serviceAreas.map((a) => <option>{a}</option>)}
-              {SITE.nearbyCounties.map((a) => <option>{a}</option>)}
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field sm:col-span-2">
-            <label for={`${v}-website`}>Website or Google profile link <span class="opt">(optional)</span></label>
-            <input id={`${v}-website`} name="website" type="text" inputmode="url" placeholder="yourbusiness.com" autocomplete="url" />
-          </div>
-          <fieldset class="field sm:col-span-2">
-            <legend>Roughly how much does the business bring in?</legend>
-            <div class="mt-2 flex flex-wrap gap-2">
-              {revenue.map((c) => (<label class="pill"><input type="radio" name="revenueBand" value={c} required /><span>{c}</span></label>))}
-            </div>
-          </fieldset>
-          <fieldset class="field sm:col-span-2">
-            <legend>Who makes marketing decisions?</legend>
-            <div class="mt-2 flex flex-wrap gap-2">
-              {deciders.map((c, i) => (<label class="pill"><input type="radio" name="decisionMakers" value={c} checked={i === 0} /><span>{c}</span></label>))}
-            </div>
-            <p class="hint">If a partner weighs in on marketing, pick a call time that works for both of you.</p>
-          </fieldset>
-          <fieldset class="field sm:col-span-2">
-            <legend>Biggest headache right now?</legend>
-            <div class="mt-2 flex flex-wrap gap-2">
-              {challenges.map((c, i) => (<label class="pill"><input type="radio" name="challenge" value={c} checked={i === 0} /><span>{c}</span></label>))}
-            </div>
-          </fieldset>
+  <fieldset class="step" data-step="0">
+    <legend class="sr-only">Step 1 of 2: your business</legend>
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="field sm:col-span-2">
+        <label for={`${v}-business`}>Business name</label>
+        <input id={`${v}-business`} name="business" type="text" autocomplete="organization" required />
+      </div>
+      <div class="field">
+        <label for={`${v}-trade`}>Your trade</label>
+        <select id={`${v}-trade`} name="trade" required>
+          <option value="" disabled selected>Select one</option>
+          {industries.map((i) => <option>{i}</option>)}
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for={`${v}-town`}>Main town you serve</label>
+        <select id={`${v}-town`} name="town" required>
+          <option value="" disabled selected>Select one</option>
+          {SITE.serviceAreas.map((a) => <option>{a}</option>)}
+          {SITE.nearbyCounties.map((a) => <option>{a}</option>)}
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field sm:col-span-2">
+        <label for={`${v}-website`}>Website or Google profile link <span class="opt">(optional)</span></label>
+        <input id={`${v}-website`} name="website" type="text" inputmode="url" placeholder="yourbusiness.com" autocomplete="url" />
+      </div>
+      <fieldset class="field sm:col-span-2">
+        <legend>Roughly how much does the business bring in?</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {revenue.map((c) => (<label class="pill"><input type="radio" name="revenueBand" value={c} required /><span>{c}</span></label>))}
         </div>
-        <button type="button" class="btn btn-navy btn-lg w-full mt-7" data-next>Next: your details<Icon name="arrow-right" size={18} /></button>
       </fieldset>
+      <fieldset class="field sm:col-span-2">
+        <legend>Who makes marketing decisions?</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {deciders.map((c, i) => (<label class="pill"><input type="radio" name="decisionMakers" value={c} checked={i === 0} /><span>{c}</span></label>))}
+        </div>
+        <p class="hint">If a partner weighs in on marketing, pick a call time that works for both of you.</p>
+      </fieldset>
+      <fieldset class="field sm:col-span-2">
+        <legend>Biggest headache right now?</legend>
+        <div class="mt-2 flex flex-wrap gap-2">
+          {challenges.map((c, i) => (<label class="pill"><input type="radio" name="challenge" value={c} checked={i === 0} /><span>{c}</span></label>))}
+        </div>
+      </fieldset>
+    </div>
+    <button type="button" class="btn btn-navy btn-lg w-full mt-7" data-next>Next: your details<Icon name="arrow-right" size={18} /></button>
+  </fieldset>
 
-      <fieldset class="step" data-step="1">
-        <legend class="sr-only">Step 2 of 2: your details</legend>
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="field sm:col-span-2">
-            <label for={`${v}-name`}>Your name</label>
-            <input id={`${v}-name`} name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for={`${v}-phone`}>Mobile phone</label>
-            <input id={`${v}-phone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
-          </div>
-          <div class="field">
-            <label for={`${v}-email`}>Email</label>
-            <input id={`${v}-email`} name="email" type="email" autocomplete="email" inputmode="email" required />
-          </div>
-          <div class="field sm:col-span-2">
-            <label for={`${v}-message`}>Anything else? <span class="opt">(optional)</span></label>
-            <textarea id={`${v}-message`} name="message" rows="3" placeholder="The areas you want to rank in, or what you have tried so far."></textarea>
-          </div>
-        </div>
-        <div class="consent mt-6 space-y-3">
-          <label class="check"><input type="checkbox" name="smsConsentTransactional" value="yes" /><span>{smsTransactional}</span></label>
-          <label class="check"><input type="checkbox" name="smsConsentMarketing" value="yes" /><span>{smsMarketing}</span></label>
-          <p class="fine">{smsFine} See our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/#sms">SMS terms</a>.</p>
-        </div>
-        <div class="mt-7 flex gap-3">
-          <button type="button" class="btn btn-outline btn-lg shrink-0" data-back aria-label="Back to step 1"><span aria-hidden="true">←</span></button>
-          <button type="submit" class="btn btn-primary btn-lg flex-1" data-submit><span data-label>Get my free teardown</span><Icon name="arrow-right" size={18} /></button>
-        </div>
-        <p class="mt-3 text-center text-[13px] text-ink-600">You will hear back from {FOUNDER_FIRST_NAME} personally. No spam, ever.</p>
-      </fieldset>
-    </>
-  ) : (
-    <>
-      <fieldset class="step" data-step="0">
-        <legend class="sr-only">Step 1 of 3</legend>
-        <div class="field">
-          <label for={`${v}-name`} class="q">What's your name?</label>
-          <input id={`${v}-name`} name="name" type="text" autocomplete="name" required />
-        </div>
-        <button type="button" class="btn btn-navy btn-lg w-full mt-6" data-next>Next<Icon name="arrow-right" size={18} /></button>
-      </fieldset>
-      <fieldset class="step" data-step="1">
-        <legend class="sr-only">Step 2 of 3</legend>
-        <div class="field">
-          <label for={`${v}-email`} class="q">Where should we send it?</label>
-          <input id={`${v}-email`} name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@business.com" required />
-        </div>
-        <div class="mt-6 flex gap-3">
-          <button type="button" class="btn btn-outline btn-lg shrink-0" data-back aria-label="Back"><span aria-hidden="true">←</span></button>
-          <button type="button" class="btn btn-navy btn-lg flex-1" data-next>Next<Icon name="arrow-right" size={18} /></button>
-        </div>
-      </fieldset>
-      <fieldset class="step" data-step="2">
-        <legend class="sr-only">Step 3 of 3</legend>
-        <div class="field">
-          <label for={`${v}-phone`} class="q">Mobile number <span class="opt">(optional)</span></label>
-          <input id={`${v}-phone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" />
-          <p class="hint">Only if you'd like a text when new playbook chapters drop.</p>
-        </div>
-        <div class="consent mt-5 space-y-3">
-          <label class="check"><input type="checkbox" name="smsConsentTransactional" value="yes" /><span>{smsTransactional}</span></label>
-          <label class="check"><input type="checkbox" name="smsConsentMarketing" value="yes" /><span>{smsMarketing}</span></label>
-          <p class="fine">{smsFine} See our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/#sms">SMS terms</a>.</p>
-        </div>
-        <div class="mt-6 flex gap-3">
-          <button type="button" class="btn btn-outline btn-lg shrink-0" data-back aria-label="Back"><span aria-hidden="true">←</span></button>
-          <button type="submit" class="btn btn-primary btn-lg flex-1" data-submit><span data-label>Send me the playbook</span><Icon name="arrow-right" size={18} /></button>
-        </div>
-        <p class="mt-3 text-center text-[13px] text-ink-600">Free. Unsubscribe anytime.</p>
-      </fieldset>
-    </>
-  )}
+  <fieldset class="step" data-step="1">
+    <legend class="sr-only">Step 2 of 2: your details</legend>
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div class="field sm:col-span-2">
+        <label for={`${v}-name`}>Your name</label>
+        <input id={`${v}-name`} name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for={`${v}-phone`}>Mobile phone</label>
+        <input id={`${v}-phone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+      </div>
+      <div class="field">
+        <label for={`${v}-email`}>Email</label>
+        <input id={`${v}-email`} name="email" type="email" autocomplete="email" inputmode="email" required />
+      </div>
+      <div class="field sm:col-span-2">
+        <label for={`${v}-message`}>Anything else? <span class="opt">(optional)</span></label>
+        <textarea id={`${v}-message`} name="message" rows="3" placeholder="The areas you want to rank in, or what you have tried so far."></textarea>
+      </div>
+    </div>
+    <div class="consent mt-6 space-y-3">
+      <label class="check"><input type="checkbox" name="smsConsentTransactional" value="yes" /><span>{smsTransactional}</span></label>
+      <label class="check"><input type="checkbox" name="smsConsentMarketing" value="yes" /><span>{smsMarketing}</span></label>
+      <p class="fine">{smsFine} See our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/#sms">SMS terms</a>.</p>
+    </div>
+    <div class="mt-7 flex gap-3">
+      <button type="button" class="btn btn-outline btn-lg shrink-0" data-back aria-label="Back to step 1"><span aria-hidden="true">←</span></button>
+      <button type="submit" class="btn btn-primary btn-lg flex-1" data-submit><span data-label>Get my free Google check</span><Icon name="arrow-right" size={18} /></button>
+    </div>
+    <p class="mt-3 text-center text-[13px] text-ink-600">You will hear back from {FOUNDER_FIRST_NAME} personally. No spam, ever.</p>
+  </fieldset>
 
   <div class="status mt-5 hidden rounded-xl p-4 text-[14.5px]" role="status" aria-live="polite" data-status></div>
   <noscript><p class="mt-4 text-[14px]">This form needs JavaScript. Call or text <a href={telHref}>{SITE.phone}</a> instead.</p></noscript>
@@ -209,8 +158,7 @@ const steps = isTeardown ? ['Your business', 'Your details', 'Book your call'] :
   const TEL = 'tel:+15613658443';
   document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
     const status = form.querySelector<HTMLElement>('[data-status]')!;
-    const endpoint = form.dataset.endpoint ?? '';
-    const variant = form.dataset.variant;
+    const key = form.dataset.key ?? '';
     const stepEls = Array.from(form.querySelectorAll<HTMLElement>('.step'));
     const dots = Array.from(form.querySelectorAll<HTMLElement>('[data-dot]'));
     let current = 0;
@@ -278,28 +226,60 @@ const steps = isTeardown ? ['Your business', 'Your details', 'Book your call'] :
       const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
       if (data.company_website) return; // bot
       delete data.company_website;
-      const payload = {
-        ...data,
-        smsConsentTransactional: data.smsConsentTransactional === 'yes',
-        smsConsentMarketing: data.smsConsentMarketing === 'yes',
-        consentText: stepEls[current].querySelector('.consent')?.textContent?.replace(/\s+/g, ' ').trim(),
-        page: location.pathname,
-        referrer: document.referrer || undefined,
-        utm: Object.fromEntries([...params.entries()].filter(([k]) => /^(utm_|gclid|fbclid|msclkid)/.test(k))),
-        submittedAt: new Date().toISOString(),
-      };
+      const utm = [...params.entries()].filter(([k]) => /^(utm_|gclid|fbclid|msclkid)/.test(k)).map(([k, v]) => `${k}=${v}`).join(' ');
+      const consentText = stepEls[current].querySelector('.consent')?.textContent?.replace(/\s+/g, ' ').trim() ?? '';
 
-      if (!endpoint) {
-        console.warn('[lead-form] PUBLIC_LEAD_ENDPOINT is not set. Payload:', payload);
-        show('err', `Our online form is being connected. Please call or text <a href="${TEL}">${PHONE}</a> and we will get you set up.`);
+      // Prefill for the Calendly embed on /thanks/. sessionStorage keeps personal info out of URLs and history.
+      const notes = [
+        `${data.business} (${data.trade}, ${data.town})`,
+        data.website && `Site/profile: ${data.website}`,
+        `Biggest headache: ${data.challenge}`,
+        data.message,
+      ].filter(Boolean).join('\n');
+      try {
+        sessionStorage.setItem('pbai-booking', JSON.stringify({ name: data.name, email: data.email, phone: data.phone, notes }));
+      } catch { /* private mode: the booking page just starts blank */ }
+
+      if (!key) {
+        // Form delivery not configured yet: still move them to booking, where Calendly captures the lead.
+        location.href = '/thanks/';
         return;
       }
       btn.disabled = true;
       label.textContent = 'Sending…';
       try {
-        const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-        if (!res.ok) throw new Error(String(res.status));
-        location.href = `/thanks/?type=${variant}`;
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: key,
+            subject: `New Google check request: ${data.business} (${data.town})`,
+            from_name: 'palmbeachaiservices.com',
+            botcheck: false,
+            Name: data.name,
+            Email: data.email,
+            Phone: data.phone,
+            Business: data.business,
+            Trade: data.trade,
+            Town: data.town,
+            'Website / Google profile': data.website || '(none given)',
+            Revenue: data.revenueBand,
+            'Decision makers': data.decisionMakers,
+            'Biggest headache': data.challenge,
+            Message: data.message || '(none)',
+            Plan: data.plan || '(none)',
+            'SMS consent (transactional)': data.smsConsentTransactional === 'yes' ? 'Yes' : 'No',
+            'SMS consent (marketing)': data.smsConsentMarketing === 'yes' ? 'Yes' : 'No',
+            'Consent text shown': consentText,
+            Page: location.pathname,
+            Referrer: document.referrer || '(direct)',
+            UTM: utm || '(none)',
+            'Submitted at': new Date().toISOString(),
+          }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok || json.success === false) throw new Error(String(res.status));
+        location.href = '/thanks/';
       } catch {
         show('err', `Something went wrong sending the form. Please call or text <a href="${TEL}">${PHONE}</a>.`);
         btn.disabled = false;

@@ -1,6 +1,6 @@
 /**
  * CASE STUDIES. Exact numbers only. Never round up or embellish.
- * TODO(Gino): add owner quotes (with permission), before/after screenshots, and photos
+ * TODO(Gene): add owner quotes (with permission), before/after screenshots, and photos
  * to /public/images/results/ and reference them here.
  */
 export interface CaseStudy {
@@ -89,34 +89,35 @@ export const caseStudies: CaseStudy[] = [
     visual: 'rank-ladder',
   },
   {
-    slug: 'next-level',
-    client: 'Next Level',
-    trade: 'Local service business',
-    area: 'Palm Beach County',
+    slug: 'next-level-air-conditioning',
+    client: 'Next Level Air Conditioning',
+    trade: 'HVAC contractor',
+    area: 'Lake Worth & Palm Beach County',
     status: 'in-progress',
-    headlineStat: 'Rebuilt',
-    headlineLabel: 'results in progress',
-    title: 'Rebuilt: new website and Google profile, results in progress.',
+    headlineStat: '5 → 30+',
+    headlineLabel: 'website pages, results in progress',
+    title: 'A 5-page site rebuilt into 30+ pages, with a Google profile to match.',
     summary:
-      'We rebuilt the website and the Google Business Profile from scratch. Rankings take time to build, so we are tracking progress and will post real numbers here when they come in. No guesses.',
+      'Next Level had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.',
     stats: [
-      { value: 'Rebuilt', label: 'Website' },
-      { value: 'Rebuilt', label: 'Google Business Profile' },
-      { value: 'Tracking', label: 'Rankings, calls, and reviews' },
+      { value: '5 → 30+', label: 'Website pages, including 15 city pages' },
+      { value: '5.0 ★', label: 'Google rating, 34 reviews' },
+      { value: 'Tracking', label: 'Map rankings, calls, and website clicks' },
     ],
     challenge:
-      'An outdated website and an incomplete Google profile were holding the business back from showing up in local searches.',
+      'Great reviews, but a 5-page website and a Google profile that was mostly empty: one photo, no description, no services, and a single category. In live map searches across Lake Worth, Greenacres, and Boynton Beach, competitors with a fraction of the reviews ranked while Next Level did not appear in the top 20.',
     whatWeDid: [
-      'Rebuilt the website with a local SEO structure',
-      'Rebuilt and optimized the Google Business Profile',
+      'Rebuilt the website with a page for every core service',
+      'Added 15 city pages across Palm Beach and Broward counties',
+      'Rebuilt the Google Business Profile: categories, description, and service areas',
       'Set up tracking so we can report real results, not guesses',
     ],
     outcome: [
-      'Website and Google profile are live',
-      'Waiting to rank. We will update this page with real numbers as they come in',
+      'New website and Google profile went live in September 2026',
+      'Now tracking map rankings, calls, and website clicks. We will update this page with real numbers as they come in',
     ],
-    services: ['Website', 'Google Business Profile'],
-    proofMath: 'No numbers yet. Rankings take time. We will publish real before/after data here, not projections.',
+    services: ['Website', 'Local SEO', 'Google Business Profile'],
+    proofMath: 'Before: 5 pages, 1 profile photo, 1 category, not in the top 20 map results in 4 live searches (Aug 2026). After numbers will be posted here, not projected.',
     visual: 'launch-timeline',
   },
 ];

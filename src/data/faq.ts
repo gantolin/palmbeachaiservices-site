@@ -38,7 +38,7 @@ export const homeFaqs = [
     a: 'All of Palm Beach County, from our home base in Royal Palm Beach, plus nearby Martin and Broward counties.',
   },
   {
-    q: 'What happens on the free Palm Beach Teardown?',
+    q: 'What happens on the free Google Visibility Check?',
     a: 'We review your Google profile, website, and top local competitors, then walk you through what is costing you calls and what to fix first. You keep the fixes whether or not we work together. No payment, no contract, no pitch deck.',
   },
 ];

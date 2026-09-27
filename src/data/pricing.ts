@@ -23,12 +23,12 @@ export interface Included {
 }
 
 export const plan = {
-  // TODO(Gino): confirm the public plan name.
+  // TODO(Gene): confirm the public plan name.
   name: 'The Local Growth Plan',
   tagline: 'Everything a local service business needs to get found, get reviews, and get booked.',
   buildFee: BUILD_FEE,
   monthly: MONTHLY,
-  /** The one-time $750 covers this. TODO(Gino): confirm build scope. */
+  /** The one-time $750 covers this. TODO(Gene): confirm build scope. */
   build: {
     title: 'Custom website build',
     text: 'Designed, written, and launched for you. Live in 14 days once we have your content.',
@@ -40,7 +40,7 @@ export const plan = {
       'Analytics + Search Console set up',
     ],
   },
-  /** The $297/mo covers exactly these six things (from Gino). Order matters: it is the display order. */
+  /** The $297/mo covers exactly these six things (from Gene). Order matters: it is the display order. */
   included: [
     {
       title: 'Review automation',
@@ -55,7 +55,7 @@ export const plan = {
       icon: 'pin',
     },
     {
-      // TODO(Gino): confirm missed-call text-back is part of "lead follow-up" in the $297 plan.
+      // TODO(Gene): confirm missed-call text-back is part of "lead follow-up" in the $297 plan.
       title: 'Lead follow-up',
       text: 'New leads and missed calls get a fast automatic text and email, so no inquiry sits unanswered.',
       replaces: 'Leads that go cold in your voicemail',
@@ -81,7 +81,7 @@ export const plan = {
     },
   ] as Included[],
   terms: ['Month-to-month', 'No contract', 'You own everything', 'Cancel anytime'],
-  cta: { label: 'Get my free teardown', href: '/free-teardown/?plan=local-growth' },
+  cta: { label: 'Get my free Google check', href: '/free-google-check/?plan=local-growth' },
   footnote:
     'The build fee is paid once. After that it is one flat monthly price, month-to-month. Your domain, website content, Google profile, and customer data are always yours.',
 };
@@ -97,13 +97,13 @@ export const customAI = {
     { title: 'Custom AI workflows', text: 'Like the Safe Haven report system: 45 → 10 minutes per report.', icon: 'sparkles' },
     { title: 'AI Workday Install', text: 'A hands-on day setting up Claude, ChatGPT, or Grok for your team.', icon: 'zap' },
   ],
-  cta: { label: 'Get a custom quote', href: '/free-teardown/?plan=custom-ai' },
+  cta: { label: 'Get a custom quote', href: '/free-google-check/?plan=custom-ai' },
 };
 
 /**
  * THE WRITTEN GUARANTEE. Delivery promises only, things we control. Never revenue or ranking guarantees.
  * Full terms render on /terms/#guarantee.
- * TODO(Gino): confirm these before launch. They are a real commitment.
+ * TODO(Gene): confirm these before launch. They are a real commitment.
  */
 export const guarantee = {
   name: 'The Palm Beach Promise',

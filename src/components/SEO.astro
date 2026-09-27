@@ -10,8 +10,9 @@ interface Props {
   faqs?: { q: string; a: string }[];
   breadcrumbs?: { name: string; url: string }[];
   type?: 'website' | 'article';
+  schema?: Record<string, unknown>[];
 }
-const { title, description, image = SITE.ogImage, noindex = false, faqs, breadcrumbs, type = 'website' } = Astro.props;
+const { title, description, image = SITE.ogImage, noindex = false, faqs, breadcrumbs, type = 'website', schema = [] } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
 const ogImage = new URL(image, SITE.url).href;
 
@@ -25,11 +26,14 @@ const business = {
   logo: `${SITE.url}/brand/logo-square-800.png`,
   image: ogImage,
   description: SITE.description,
+  slogan: SITE.tagline,
+  hasMap: SITE.mapsUrl,
   telephone: SITE.phoneE164,
   email: SITE.email,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: SITE.address.street,
     addressLocality: SITE.address.locality,
     addressRegion: SITE.address.region,
     addressCountry: SITE.address.country,
@@ -42,7 +46,7 @@ const business = {
     ...SITE.nearbyCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c}, FL` })),
   ],
   founder: { '@type': 'Person', name: FOUNDER_FIRST_NAME },
-  knowsAbout: ['Website design', 'Local SEO', 'Google Business Profile optimization', 'AI automation', 'GoHighLevel CRM', 'Missed-call text-back'],
+  knowsAbout: ['Local SEO', 'Google Maps SEO', 'Google Business Profile optimization', 'Website design', 'AI automation', 'AI answering service', 'Missed-call text-back', 'Speed to lead', 'Review management', 'GoHighLevel CRM'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Plans and services',
@@ -79,7 +83,7 @@ const crumbLd = breadcrumbs?.length
       itemListElement: breadcrumbs.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: new URL(b.url, SITE.url).href })),
     }
   : null;
-const ld = [business, website, faqLd, crumbLd].filter(Boolean);
+const ld = [business, website, faqLd, crumbLd, ...schema].filter(Boolean);
 ---
 <title>{title}</title>
 <meta name="description" content={description} />

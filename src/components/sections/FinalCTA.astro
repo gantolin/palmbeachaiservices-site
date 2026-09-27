@@ -5,21 +5,21 @@ import { CTA, SITE, telHref } from '@/config/site';
 interface Props { title?: string; text?: string }
 const {
   title = 'See exactly what is costing you *calls.*',
-  text = 'Get the Palm Beach Teardown: a free review of your Google Business Profile, website, and top competitors. You keep the fixes whether or not we work together. No payment, no contract, no pitch deck.',
+  text = 'Get a free Google Visibility Check: where you show up on Google Maps in your town, how your profile and website stack up against the top 3, and what to fix first. You keep the fixes whether or not we work together. No payment, no contract, no pitch deck.',
 } = Astro.props;
 ---
 <section class="relative overflow-hidden surface-dark grain" id="get-started" data-parallax-root>
   <div class="cta-bloom absolute inset-0" aria-hidden="true"></div>
   <Aurora variant="soft" />
   <div class="container-x relative py-24 lg:py-32 text-center">
-    <div class="eyebrow justify-center">The Palm Beach Teardown · free</div>
+    <div class="eyebrow justify-center">Free Google Visibility Check</div>
     <h2 class="display !text-[clamp(2.4rem,5.6vw,4.4rem)] mt-6 text-[#f4f1e8] max-w-4xl mx-auto" set:html={title.replace(/\*(.+?)\*/g, '<em class="accent shimmer-text">$1</em>')} />
     <p class="lede mx-auto mt-7 text-center">{text}</p>
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
       <a href={telHref} class="btn btn-outline-dark btn-lg"><Icon name="phone" size={18} />Call {SITE.phone}</a>
     </div>
-    <p class="mt-8 text-[14px] text-mist-400">Not ready to talk? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Grab the free Booked-Jobs Playbook</a> instead.</p>
+    <p class="mt-8 text-[14px] text-mist-400">Know you want to talk? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Skip the form and book a call</a>.</p>
     <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-mist-400/80">{SITE.capacityLine}</p>
   </div>
 </section>

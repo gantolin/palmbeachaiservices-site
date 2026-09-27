@@ -1,19 +1,34 @@
 # Palm Beach AI Services
 
-> Founder-run websites, local SEO + Google Business Profile management, and AI automation for Palm Beach County, Florida home-service businesses. Based in Royal Palm Beach, FL. Phone (561) 365-8443.
+> Get seen on Google. Get your time back with AI. Palm Beach AI Services gets home service businesses (HVAC, plumbing, roofing, pavers, pest control, landscaping, pool service, inspections) seen on Google Maps and search, then uses AI to answer every lead and save them time. Founder-run by Gene. Office: 172 Roycourt Circle, Royal Palm Beach, FL 33411. Phone (561) 365-8443. Email Gene@palmbeachaiservices.com.
 
-- Pricing: one plan. A $750 one-time custom website build, then $297/month (month-to-month, no contract). The monthly plan includes review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.
-- Custom AI automation (CRM/GoHighLevel setup, custom AI workflows, AI Workday Install) is quoted per project.
+- Pricing: one plan. A $750 one-time website build, then $297/month (month-to-month, no contract). The monthly plan includes review automation, Google Business Profile management, lead follow-up with missed-call text-back, a monthly check-in, citation and backlink building, and competitor analysis.
+- Custom AI (AI answering service, GoHighLevel CRM setup, custom AI workflows, AI Workday Install) is quoted per project.
 - Clients own their website, domain, Google profile, and data.
 - Delivery promise: live in 14 days from content and access, or the first month is free. No ranking or revenue guarantees.
-- Service area: Palm Beach County (Royal Palm Beach, Wellington, West Palm Beach, Lake Worth Beach, Greenacres, Jupiter, Boca Raton and more), plus Martin and Broward counties.
+- Results: Safe Haven Inspections cut inspection report time from 45 to 10 minutes (78%) with a custom AI automation. Hero's Pavers ranks #2 to #3 on Google for multiple Lake Worth keywords after an SEO website rebuild and Google Business Profile optimization. Next Level Air Conditioning's site and profile were rebuilt in September 2026 (results in progress).
+- Service area: Palm Beach County (Royal Palm Beach, Wellington, West Palm Beach, Loxahatchee, Greenacres, Lake Worth Beach, Palm Beach Gardens, Jupiter, Boynton Beach, Delray Beach, Boca Raton), plus Martin and Broward counties.
+- Free offer: the Free Google Visibility Check (where a business shows up on Google Maps and search, how it compares to the top 3, and what to fix first).
 
-## Pages
+## Services
+- [Google Maps SEO & Google Business Profile](https://palmbeachaiservices.com/services/google-maps-seo/)
+- [Websites That Rank](https://palmbeachaiservices.com/services/websites/)
+- [AI Automation Services](https://palmbeachaiservices.com/services/ai-automation/)
+- [AI Answering Service for Contractors](https://palmbeachaiservices.com/services/ai-answering-service/)
+- [SEO Company in West Palm Beach](https://palmbeachaiservices.com/seo-company-west-palm-beach/)
+
+## Guides
+- [Local SEO for Contractors](https://palmbeachaiservices.com/guides/local-seo-for-contractors/)
+- [How to Rank Higher on Google Maps](https://palmbeachaiservices.com/guides/how-to-rank-higher-on-google-maps/)
+- [How to Get More Google Reviews](https://palmbeachaiservices.com/guides/how-to-get-more-google-reviews/)
+- [Speed to Lead for Contractors](https://palmbeachaiservices.com/guides/speed-to-lead/)
+- [How Much Does SEO Cost?](https://palmbeachaiservices.com/guides/how-much-does-seo-cost/)
+
+## Company
 - [Home](https://palmbeachaiservices.com/)
 - [Pricing](https://palmbeachaiservices.com/pricing/)
-- [Websites](https://palmbeachaiservices.com/services/websites/)
-- [Local SEO & Google Business Profile](https://palmbeachaiservices.com/services/local-seo-google-business-profile/)
-- [AI Automation](https://palmbeachaiservices.com/services/ai-automation/)
 - [Results](https://palmbeachaiservices.com/results/)
 - [About](https://palmbeachaiservices.com/about/)
-- [Free Palm Beach Teardown](https://palmbeachaiservices.com/free-teardown/)
+- [Contact](https://palmbeachaiservices.com/contact/)
+- [Free Google Visibility Check](https://palmbeachaiservices.com/free-google-check/)
+- [Book a call](https://palmbeachaiservices.com/book/)

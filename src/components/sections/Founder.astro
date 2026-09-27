@@ -3,7 +3,7 @@ import Icon from '../ui/Icon.astro';
 import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
 interface Props { compact?: boolean }
 const { compact = false } = Astro.props;
-// TODO(Gino): replace the placeholder with a real editorial portrait (set SITE.founderPhoto in src/config/site.ts).
+// TODO(Gene): replace the placeholder with a real editorial portrait (set SITE.founderPhoto in src/config/site.ts).
 ---
 <section class="section surface-sand relative overflow-hidden" id="founder">
   <div class="container-x">
@@ -34,7 +34,7 @@ const { compact = false } = Astro.props;
           {!compact && <p>Because I do the work myself, I take a limited number of clients per trade, per town. That way you never compete with another client of mine for the same customers.</p>}
         </div>
         <div class="mt-9 flex flex-col sm:flex-row gap-4 sm:items-center">
-          <a href={CTA.primary.href} class="btn btn-navy">Book your free teardown with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
+          <a href={CTA.primary.href} class="btn btn-navy">Book your free Google check with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
           <a href={telHref} class="inline-flex items-center gap-2 font-semibold text-navy-700 hover:text-navy-800 min-h-11"><Icon name="phone" size={17} />{SITE.phone}</a>
         </div>
       </div>
