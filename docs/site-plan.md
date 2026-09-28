@@ -50,7 +50,7 @@
 | Call / text | Header, mobile bar, footer, final CTA | `tel:` / `sms:` links to (561) 365-8443 |
 | Custom AI quote | "Custom AI automation, quoted per project" strip under the plan | Links to the teardown with `?plan=custom-ai` (captured as a hidden `plan` field; the main plan CTA sends `?plan=local-growth`) |
 
-All forms POST JSON to `PUBLIC_LEAD_ENDPOINT` (a Lambda → GoHighLevel, scaffold in `lambda/lead/`). They include a honeypot, UTM, gclid/fbclid, the page, and a consent text snapshot plus timestamp (for A2P 10DLC records).
+All forms POST to Web3Forms (`PUBLIC_WEB3FORMS_KEY`, emails Gene@) straight from the browser. They include a honeypot, UTM, gclid/fbclid, the page, and a consent text snapshot plus timestamp (for A2P 10DLC records). The `lambda/lead/` GoHighLevel scaffold is unused, kept as a future option.
 
 ## Pages
 | Route | Purpose | Key sections |

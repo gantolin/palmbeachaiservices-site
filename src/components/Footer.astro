@@ -4,6 +4,8 @@ import Icon from './ui/Icon.astro';
 import { SITE, NAV, CTA, telHref, mailHref } from '@/config/site';
 import { services } from '@/data/services';
 import { caseStudies } from '@/data/caseStudies';
+import { cities, cityPath } from '@/data/cities';
+const cityByName = new Map(cities.map((c) => [c.name, c]));
 const year = new Date().getFullYear();
 ---
 <footer class="surface-dark relative overflow-hidden border-t border-white/5">
@@ -45,7 +47,12 @@ const year = new Date().getFullYear();
         <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Service area</h2>
         <p class="mt-4 text-[15px] text-mist-200/85">Based in <strong class="text-mist-200 font-medium">{SITE.homeBase}</strong>. Serving all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}.</p>
         <ul class="mt-4 flex flex-wrap gap-2">
-          {SITE.serviceAreas.map((a) => <li class="chip border border-white/10 text-mist-400 text-[12.5px] py-1">{a}</li>)}
+          {SITE.serviceAreas.map((a) => {
+            const page = cityByName.get(a);
+            return page
+              ? <li><a href={cityPath(page)} class="chip border border-white/20 text-mist-200 hover:text-gold-300 hover:border-gold-300/50 text-[12.5px] py-1">{a}</a></li>
+              : <li class="chip border border-white/10 text-mist-400 text-[12.5px] py-1">{a}</li>;
+          })}
         </ul>
       </div>
     </div>

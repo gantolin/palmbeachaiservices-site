@@ -3,12 +3,14 @@
 import { parse } from 'node-html-parser';
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = join(root, 'dist');
-const order = ['/', '/services/', '/services/websites/', '/services/local-seo-google-business-profile/', '/services/ai-automation/',
-  '/results/', '/results/safe-haven-inspections/', '/results/heros-pavers/', '/results/next-level/', '/pricing/', '/about/',
-  '/free-teardown/', '/free-playbook/', '/thanks/', '/privacy/', '/terms/', '/404/'];
+const order = ['/', '/services/', '/services/google-maps-seo/', '/services/websites/', '/services/ai-automation/',
+  '/services/ai-answering-service/', '/seo-company-west-palm-beach/', '/seo-company-wellington/', '/seo-company-palm-beach-gardens/',
+  '/seo-company-jupiter/', '/seo-company-boynton-beach/', '/seo-company-delray-beach/', '/seo-company-boca-raton/',
+  '/results/', '/pricing/', '/about/', '/free-google-check/', '/book/', '/contact/', '/thanks/', '/privacy/', '/terms/', '/404/'];
 
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));
 const files = walk(dist).filter((f) => f.endsWith('.html'));
@@ -53,7 +55,7 @@ const lines = [
   '',
   '> Generated from the production build by `scripts/export-copy.mjs`, so this is exactly what ships.',
   '> To change words, edit the source (mostly `src/data/*.ts`, `src/config/site.ts`, and `src/components/sections/*`), rebuild, and re-run the script.',
-  '> Items marked TODO need Gino. The Testimonials section is hidden in production until real quotes exist (see `src/data/testimonials.ts`).',
+  '> Items marked TODO need Gene. The Testimonials section is hidden in production until real quotes exist (see `src/data/testimonials.ts`).',
   '',
 ];
 
@@ -61,13 +63,14 @@ const lines = [
 const home = parse(readFileSync(join(dist, 'index.html'), 'utf8'));
 lines.push('## Global elements (every page)', '');
 lines.push(`**Announcement bar:** ${clean(home.querySelector('.announce')?.text ?? '')}`, '');
-lines.push(`**Header nav:** ${home.querySelectorAll('nav[aria-label=Main] a').map((a) => text(a)).join(' · ')} · Call (561) 365-8443 · [Button: Free teardown]`, '');
+lines.push(`**Header nav:** ${home.querySelectorAll('nav[aria-label=Main] a').map((a) => text(a)).join(' · ')} · Call (561) 365-8443 · [Button: Free Google check]`, '');
 lines.push(`**Mobile action bar:** ${home.querySelectorAll('.mobile-bar a').map((a) => text(a)).join(' · ')}`, '');
 const footerOut = []; render(home.querySelector('footer'), footerOut);
 lines.push('**Footer:**', '', ...footerOut.filter((l) => l !== '---'), '');
 
 for (const { f, r } of pages) {
   const doc = parse(readFileSync(f, 'utf8').replace(/<br\s*\/?>/g, ' '));
+  if (!doc.querySelector('main')) continue; // meta-refresh redirect stubs
   const title = clean(doc.querySelector('title')?.text ?? '');
   const desc = doc.querySelector('meta[name=description]')?.getAttribute('content') ?? '';
   lines.push('', '', `# Page: ${r}`, '', `- **SEO title:** ${title}`, `- **Meta description:** ${desc}`, '');
