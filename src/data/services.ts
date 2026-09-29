@@ -1,4 +1,3 @@
-import { BUILD_FEE, MONTHLY, usd, priceLine } from './pricing';
 /** Service pages. Each renders at /services/<slug>/ using the ServicePage template. */
 export interface Service {
   slug: string;
@@ -27,7 +26,7 @@ export const services: Service[] = [
     navLabel: 'Websites',
     metaTitle: 'Web Design in West Palm Beach for Contractors | Palm Beach AI Services',
     metaDescription:
-      `Web design for West Palm Beach and Palm Beach County home-service businesses. Fast, custom websites built to rank on Google and turn visitors into calls. Live in 14 days. ${usd(BUILD_FEE)} one-time build.`,
+      `Web design for West Palm Beach and Palm Beach County home-service businesses. Fast, custom websites built to rank on Google and turn visitors into calls. Live in 14 days. No contract.`,
     eyebrow: 'Web design · West Palm Beach & Palm Beach County',
     headline: 'Web design that *earns* its keep.',
     subhead:
@@ -54,7 +53,7 @@ export const services: Service[] = [
       { title: 'Grow', text: 'On the monthly plan we keep improving it, building backlinks, and tracking competitors.' },
     ],
     relatedCase: 'heros-pavers',
-    priceNote: `${usd(BUILD_FEE)} one-time website build, then ${usd(MONTHLY)}/month for reviews, Google profile management, lead follow-up, backlinks, and competitor tracking. No contract.`,
+    priceNote: 'A one-time website build, then one flat monthly plan for reviews, Google profile management, lead follow-up, backlinks, and competitor tracking. Fixed quote in writing after a free call. No contract.',
     faqs: [
       { q: 'Do I own the website?', a: 'Yes. Your domain, your content, your site. No hostage situations.' },
       { q: 'How fast can it go live?', a: 'Within 14 days of the day we have your content (logo, photos, and a quick call about your services). If we miss it, your first month is free.' },
@@ -70,7 +69,7 @@ export const services: Service[] = [
     // Targets "google maps seo" (2,900/mo) + "gmb optimization" (1,000, KD 25) + "google business profile optimization service" (480, KD 30).
     metaTitle: 'Google Maps SEO & Google Business Profile Optimization Service',
     metaDescription:
-      `Get your home service business seen on Google Maps. Google Business Profile optimization, reviews on autopilot, and local SEO from Royal Palm Beach, FL. ${priceLine}, month-to-month.`,
+      `Get your home service business seen on Google Maps. Google Business Profile optimization, reviews on autopilot, and local SEO from Royal Palm Beach, FL. Month-to-month, no contract.`,
     eyebrow: 'Google Maps SEO · Google Business Profile optimization',
     headline: 'Get seen on *Google Maps* in your town.',
     subhead:
@@ -97,11 +96,11 @@ export const services: Service[] = [
       { title: 'Report', text: 'Every month you get the numbers that matter, in plain English.' },
     ],
     relatedCase: 'heros-pavers',
-    priceNote: `Google Business Profile management is included in the ${usd(MONTHLY)}/month plan (after a ${usd(BUILD_FEE)} one-time website build). Month-to-month.`,
+    priceNote: 'Google Business Profile management is included in the monthly plan, after a one-time website build. Fixed quote in writing after a free call. Month-to-month.',
     faqs: [
       { q: 'Can you guarantee #1 on Google?', a: 'No, and be wary of anyone who does. Google decides rankings. We control the work: a complete profile, steady reviews, and a site that backs it up.' },
       { q: 'How long does it take to see movement?', a: 'It depends on your town and your competition. Profile fixes can show movement within weeks; bigger ranking gains usually take a few months of steady work.' },
-      { q: 'Do I need a new website too?', a: `A strong site helps your profile rank, which is why the plan starts with a ${usd(BUILD_FEE)} custom website build.` },
+      { q: 'Do I need a new website too?', a: `A strong site helps your profile rank, which is why the plan starts with a custom website build.` },
     ],
     icon: 'pin',
   },
@@ -140,7 +139,7 @@ export const services: Service[] = [
       { title: 'Tune it', text: 'We watch the numbers monthly and keep improving what is working.' },
     ],
     relatedCase: 'safe-haven-inspections',
-    priceNote: `Review automation and lead follow-up are included in the ${usd(MONTHLY)}/month plan. CRM/GoHighLevel setup, custom AI workflows, and the AI Workday Install are quoted per project.`,
+    priceNote: `Review automation and lead follow-up are included in the monthly plan. CRM/GoHighLevel setup, custom AI workflows, and the AI Workday Install are quoted per project.`,
     faqs: [
       { q: 'What is GoHighLevel?', a: 'An all-in-one CRM: contacts, texting, calendar, pipeline, and automations in one place. We set it up and run it for you.' },
       { q: 'Will AI sound robotic to my customers?', a: 'We write every message in your voice and keep it short and human. You approve it before it goes live.' },
@@ -183,7 +182,7 @@ export const services: Service[] = [
       { title: 'Go live', text: 'Forward your missed or after-hours calls to it and watch the summaries roll in. We keep tuning it monthly.' },
     ],
     relatedCase: 'safe-haven-inspections',
-    priceNote: 'The AI answering service is quoted per business, based on call volume and how much it should handle. Missed-call text-back is already included in the $297/month plan.',
+    priceNote: 'The AI answering service is quoted per business, based on call volume and how much it should handle. Missed-call text-back is already included in the monthly plan.',
     faqs: [
       { q: 'Will callers know it is AI?', a: 'It sounds natural and polite, and we do not pretend it is a person if someone asks. Most callers just care that someone answered and their job got booked.' },
       { q: 'What happens with emergencies?', a: 'You decide what counts as an emergency (no AC in August, a burst pipe). Those calls get transferred to you or your on-call tech right away.' },

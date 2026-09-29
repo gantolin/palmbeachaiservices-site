@@ -7,7 +7,6 @@
  * free-flow (no traffic) from the office to the Census place center, pulled 2026-09-28.
  */
 import { SITE } from '../config/site';
-import { priceLine, usd, BUILD_FEE, MONTHLY } from './pricing';
 
 export interface Reason { icon: string; title: string; text: string }
 export interface Faq { q: string; a: string }
@@ -42,7 +41,7 @@ export const cityPath = (c: Pick<City, 'slug'>) => `/seo-company-${c.slug}/`;
 
 export const sharedReasons: Reason[] = [
   { icon: 'users', title: 'Built for home service businesses', text: 'HVAC, plumbing, roofing, pavers, pest control, pool service, inspections. We know how homeowners search when something breaks.' },
-  { icon: 'receipt', title: 'Published prices', text: `${usd(BUILD_FEE)} once, then ${usd(MONTHLY)} a month. No contract, no setup surprises, no "let's hop on a call to discuss pricing."` },
+  { icon: 'receipt', title: 'Your price in writing', text: 'One build fee, then one flat monthly price, quoted in writing before any work starts. No contract, no setup surprises, no surprise invoices.' },
   { icon: 'key', title: 'You own everything', text: 'Your website, domain, Google Business Profile, and customer data stay yours. If you leave, it all goes with you.' },
 ];
 
@@ -56,7 +55,7 @@ export const cities: City[] = [
     name: 'West Palm Beach',
     placeType: 'City',
     seoTitle: 'SEO Company in West Palm Beach for Home Service Businesses',
-    metaDescription: `A local SEO company for West Palm Beach home service businesses. Google Maps rankings, websites that rank, and AI follow-up. ${priceLine}, no contract. Based in Royal Palm Beach.`,
+    metaDescription: `A local SEO company for West Palm Beach home service businesses. Google Maps rankings, websites that rank, and AI follow-up. No contract. Based in Royal Palm Beach.`,
     heroTitle: 'The West Palm Beach SEO company that gets *home service* businesses seen.',
     heroLede: `When a homeowner in West Palm Beach searches for what you do, the businesses at the top of Google Maps get the call. We get you there with local SEO, a website that ranks, and AI that answers every lead. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'Local SEO in West Palm Beach, *without* the agency runaround.',
@@ -80,7 +79,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you only work with West Palm Beach businesses?', a: `No. We are based in ${SITE.homeBase} and work across Palm Beach County, from Jupiter to Boca Raton, plus Martin and Broward counties. West Palm Beach is one of the most competitive markets we cover, so it gets its own page.` },
-      { q: 'How much does SEO cost in West Palm Beach?', a: `Agency retainers in South Florida often run into the thousands per month. Ours is ${priceLine}: a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking. No contract.` },
+      { q: 'How much does SEO cost in West Palm Beach?', a: `Agency retainers in South Florida often run into the thousands per month. It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.` },
       { q: 'How long until I show up higher on Google Maps?', a: 'Profile fixes can move you within weeks. Competitive West Palm Beach searches usually take a few months of steady work: reviews, a stronger website, and local links. We report the real numbers every month.' },
       { q: 'Can you guarantee a #1 ranking?', a: 'No, and be careful with anyone who does. Google decides rankings. We guarantee the work we control, like having your site live in 14 days or your first month is free.' },
       { q: 'Do you also build websites in West Palm Beach?', a: 'Yes. Every plan starts with a fast, custom website built around the services you sell and the towns you serve, because a strong site is what backs up your Google Maps ranking.' },
@@ -92,7 +91,7 @@ export const cities: City[] = [
     name: 'Wellington',
     placeType: 'City',
     seoTitle: 'SEO Company in Wellington, FL for Home Service Businesses',
-    metaDescription: `Local SEO for Wellington, FL home service businesses from a team 7 miles away in Royal Palm Beach. Google Maps rankings, websites that rank, AI follow-up. ${priceLine}, no contract.`,
+    metaDescription: `Local SEO for Wellington, FL home service businesses from a team 7 miles away in Royal Palm Beach. Google Maps rankings, websites that rank, AI follow-up. No contract.`,
     heroTitle: 'Wellington SEO from the team *next door*.',
     heroLede: `Wellington homeowners pick from the three businesses Google Maps puts in front of them. We get your company into that top three with local SEO, a website that ranks, and AI that answers every lead. Run by ${SITE.founder}, about 7 miles away in ${SITE.homeBase}.`,
     whyTitle: 'Most of the agencies ranking for Wellington SEO are *nowhere near* Wellington.',
@@ -117,7 +116,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you actually work in Wellington?', a: `Yes. Our office is in ${SITE.homeBase}, about 7 miles away, and Wellington is part of our home market. We can meet in person, and we know the difference between Olympia, Sugar Pond Manor, and the equestrian side of the Village.` },
-      { q: 'How much does SEO cost for a Wellington business?', a: `${priceLine}, month to month. That covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking. No contract and no setup surprises.` },
+      { q: 'How much does SEO cost for a Wellington business?', a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.' },
       { q: 'My customers say they live in Wellington but their address says Lake Worth. Does that matter?', a: 'It matters for how you set up your Google profile and website. Many Lake Worth 33467 and 33449 addresses west of the Turnpike are unincorporated, not Wellington, but those homeowners still search for Wellington businesses. We set your service area and pages to cover both, so you do not miss them.' },
       { q: 'Business drops off in the summer. Is SEO still worth it?', a: 'Yes, and summer is a good time to start. Google rankings build over months, so work done in the slow season pays off when the equestrian crowd and the seasonal residents come back in the winter.' },
       { q: 'Can you guarantee I will rank #1 in Wellington?', a: 'No, and nobody honest can. Google decides rankings. We guarantee the work we control, like having your site live in 14 days or your first month is free, and we show you the real numbers every month.' },
@@ -129,7 +128,7 @@ export const cities: City[] = [
     name: 'Palm Beach Gardens',
     placeType: 'City',
     seoTitle: 'SEO Company in Palm Beach Gardens for Home Service Businesses',
-    metaDescription: `Local SEO for Palm Beach Gardens home service businesses. Google Maps rankings, websites that rank, and AI follow-up for the gated-community market. ${priceLine}, no contract.`,
+    metaDescription: `Local SEO for Palm Beach Gardens home service businesses. Google Maps rankings, websites that rank, and AI follow-up for the gated-community market. No contract.`,
     heroTitle: 'Palm Beach Gardens SEO that gets you *past the gate*.',
     heroLede: `In Palm Beach Gardens, the homeowner, the HOA, and the club manager all look you up on Google before you get a gate pass. We make sure what they find is good: a strong map ranking, a website that ranks, and AI that answers every lead. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'A newer, gated city needs a *different* kind of local SEO.',
@@ -153,7 +152,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you work with Palm Beach Gardens businesses?', a: `Yes. We are based in ${SITE.homeBase}, about 20 miles away, and cover Palm Beach Gardens along with Jupiter, Tequesta, and North Palm Beach. We meet in person.` },
-      { q: 'How much does SEO cost in Palm Beach Gardens?', a: `${priceLine}, month to month. You get a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.` },
+      { q: 'How much does SEO cost in Palm Beach Gardens?', a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.' },
       { q: 'Most of my customers are in gated communities. Does local SEO still help?', a: 'Yes. People inside PGA National or Mirasol still search Google Maps when they need a contractor, and they check your reviews before they ask the gate to let you in. A strong profile and a steady flow of recent reviews matter more here, not less.' },
       { q: 'I also work in Jupiter. Do I need separate pages?', a: 'Usually, yes. Palm Beach Gardens and Jupiter share two ZIP codes, but people search them as different towns. We give each town you serve its own real page, so Google knows you cover both.' },
       { q: 'How long does it take to see results?', a: 'Profile fixes can move you in a few weeks. Competitive searches take a few months of steady reviews, content, and local links. We report the real numbers every month, good or bad.' },
@@ -165,7 +164,7 @@ export const cities: City[] = [
     name: 'Jupiter',
     placeType: 'City',
     seoTitle: 'SEO Company in Jupiter, FL for Home Service Businesses',
-    metaDescription: `Local SEO for Jupiter, FL home service businesses, from the coast to Jupiter Farms. Google Maps rankings, websites that rank, and AI follow-up. ${priceLine}, no contract.`,
+    metaDescription: `Local SEO for Jupiter, FL home service businesses, from the coast to Jupiter Farms. Google Maps rankings, websites that rank, and AI follow-up. No contract.`,
     heroTitle: 'Jupiter SEO for the coast *and* the Farms.',
     heroLede: `Jupiter is two markets that share one name. We help home service businesses show up in both, with local SEO, a website that ranks, and AI that answers every lead, including the snowbird who calls from up north. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'One name on the map, *two* very different customers.',
@@ -189,7 +188,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you work with businesses in Jupiter Farms too?', a: 'Yes. Jupiter Farms has Jupiter addresses but is unincorporated county, and its homeowners search differently from people in Abacoa or on the water. We cover both, with pages written for each.' },
-      { q: 'How much does SEO cost in Jupiter?', a: `${priceLine}, month to month. That includes a website built to rank, Google Business Profile management, review automation, lead follow-up with missed-call text-back, citations and links, and competitor tracking.` },
+      { q: 'How much does SEO cost in Jupiter?', a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.' },
       { q: 'A lot of my customers are only here in the winter. How do I reach them?', a: 'They search before they fly down, often from out of state, and they text more than they call. We set up missed-call text-back and fast follow-up so a snowbird who reaches out in October is booked before they land.' },
       { q: 'Do I need separate pages for Tequesta and Juno Beach?', a: 'If you work there, yes. They are separate towns and people search them by name. We only build a town page when you really serve that town and we have something real to say about it.' },
       { q: 'Can you guarantee a top ranking in Jupiter?', a: 'No. Google decides rankings, and anyone who guarantees #1 is guessing. We guarantee the work we control, like your site live in 14 days or your first month is free.' },
@@ -201,7 +200,7 @@ export const cities: City[] = [
     name: 'Boynton Beach',
     placeType: 'City',
     seoTitle: 'SEO Company in Boynton Beach for Home Service Businesses',
-    metaDescription: `Local SEO for Boynton Beach home service businesses. Google Maps rankings, websites that rank, and AI follow-up, from the marina to the 55+ communities west. ${priceLine}, no contract.`,
+    metaDescription: `Local SEO for Boynton Beach home service businesses. Google Maps rankings, websites that rank, and AI follow-up, from the marina to the 55+ communities west. No contract.`,
     heroTitle: 'Boynton Beach SEO for the businesses that keep its *homes running*.',
     heroLede: `From the villas near Boynton Harbor Marina to the 55+ communities out west, Boynton homeowners hire whoever shows up first on Google Maps. We get you there with local SEO, a website that ranks, and AI that answers every lead. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'Two generations of *55+* buyers, and they both use Google.',
@@ -225,7 +224,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you cover the 55+ communities west of Boynton?', a: 'Yes. Quail Ridge, Indian Spring, Valencia Reserve and the rest of that belt have Boynton Beach addresses, and those homeowners search for Boynton Beach businesses. We make sure your profile and website cover them.' },
-      { q: 'How much does SEO cost in Boynton Beach?', a: `${priceLine}, month to month. That covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking. No contract.` },
+      { q: 'How much does SEO cost in Boynton Beach?', a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.' },
       { q: 'Many of my customers are retirees. Do they really find contractors on Google?', a: 'Yes. They search, they read reviews closely, and many still prefer to call. That is why every plan includes review automation and missed-call text-back, so the call you miss on a job still gets an answer within seconds.' },
       { q: 'How long until I show up higher on Google Maps?', a: 'Profile fixes can move you within weeks. Competitive searches take a few months of steady reviews, content, and local links. We show you the real numbers every month.' },
       { q: 'Can you promise I will rank #1?', a: 'No. Google decides rankings. We promise the work we control, like having your site live in 14 days or your first month is free.' },
@@ -237,7 +236,7 @@ export const cities: City[] = [
     name: 'Delray Beach',
     placeType: 'City',
     seoTitle: 'SEO Company in Delray Beach for Home Service Businesses',
-    metaDescription: `Local SEO for Delray Beach home service businesses, from the historic districts to West Delray. Google Maps rankings, websites that rank, and AI follow-up. ${priceLine}, no contract.`,
+    metaDescription: `Local SEO for Delray Beach home service businesses, from the historic districts to West Delray. Google Maps rankings, websites that rank, and AI follow-up. No contract.`,
     heroTitle: 'Delray Beach SEO for *home service* businesses, not boutiques.',
     heroLede: `Most Delray SEO pages are written for shops on Atlantic Ave. We work with the contractors who keep Delray's homes, condos, and historic houses running, and we get them into the top three on Google Maps. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'Delray is a *condo and association* market. Market to it that way.',
@@ -261,7 +260,7 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you work with businesses that serve Kings Point and West Delray?', a: 'Yes. Kings Point, Villages of Oriole, and High Point have Delray Beach addresses even though they are outside city limits, and residents there search for Delray businesses. We make sure you show up for them.' },
-      { q: 'How much does SEO cost in Delray Beach?', a: `${priceLine}, month to month. That includes a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.` },
+      { q: 'How much does SEO cost in Delray Beach?', a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.' },
       { q: 'A lot of my work comes from condo associations. Can SEO help with that?', a: 'Yes. Board members and property managers search Google and read reviews before they request bids. A strong profile, recent reviews, and a website with a clear page for association work make you an easy yes.' },
       { q: 'How long until I rank better in Delray?', a: 'Profile fixes can move you within weeks. "Delray Beach" searches are less crowded than West Palm Beach or Boca, so steady work often shows up sooner. We report the real numbers every month.' },
       { q: 'Can you guarantee a #1 ranking?', a: 'No. Google decides rankings. We guarantee the work we control, like having your site live in 14 days or your first month is free.' },
@@ -273,7 +272,7 @@ export const cities: City[] = [
     name: 'Boca Raton',
     placeType: 'City',
     seoTitle: 'SEO Company in Boca Raton for Home Service Businesses',
-    metaDescription: `Local SEO for Boca Raton home service businesses, east Boca to West Boca. Google Maps rankings, websites that rank, and AI follow-up. ${priceLine}, no contract. Based in Palm Beach County.`,
+    metaDescription: `Local SEO for Boca Raton home service businesses, east Boca to West Boca. Google Maps rankings, websites that rank, and AI follow-up. No contract. Based in Palm Beach County.`,
     heroTitle: 'Boca Raton SEO for the businesses that keep *Boca* running.',
     heroLede: `Boca homeowners, condo boards, and building managers hire whoever shows up first on Google Maps. We get your business into that top three with local SEO, a website that ranks, and AI that answers every lead. Run by ${SITE.founder} from ${SITE.homeBase}.`,
     whyTitle: 'Ranking in Boca means ranking in *two* Bocas.',
@@ -297,8 +296,8 @@ export const cities: City[] = [
     },
     faqs: [
       { q: 'Do you work with businesses in West Boca?', a: 'Yes. Boca West, Century Village, Sandalfoot Cove and the rest of West Boca have Boca Raton addresses but sit in unincorporated county. Those homeowners search for Boca Raton businesses, so we make sure your profile and website cover them.' },
-      { q: 'How much does SEO cost in Boca Raton?', a: `Boca agency retainers often run into the thousands per month. Ours is ${priceLine}: a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking. No contract.` },
-      { q: 'You are in Royal Palm Beach. Why not hire a Boca agency?', a: 'Hire whoever does the work best. What we offer is a founder you can reach directly, published prices, and a plan built only for home service businesses. We meet Boca clients in person, and you own everything we build.' },
+      { q: 'How much does SEO cost in Boca Raton?', a: `Boca agency retainers often run into the thousands per month. It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers a website built to rank, Google Business Profile management, review automation, lead follow-up, citations and links, and competitor tracking.` },
+      { q: 'You are in Royal Palm Beach. Why not hire a Boca agency?', a: 'Hire whoever does the work best. What we offer is a founder you can reach directly, a fixed price in writing, and a plan built only for home service businesses. We meet Boca clients in person, and you own everything we build.' },
       { q: 'How long until I show up higher on Google Maps in Boca?', a: 'Profile fixes can move you within weeks. Boca is competitive, so the bigger searches usually take a few months of reviews, content, and local links. We report the real numbers every month.' },
       { q: 'Can you guarantee a #1 ranking?', a: 'No, and be careful with anyone who does. Google decides rankings. We guarantee the work we control, like having your site live in 14 days or your first month is free.' },
     ],

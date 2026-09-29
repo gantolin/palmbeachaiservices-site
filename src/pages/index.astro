@@ -18,11 +18,10 @@ import Marquee from '@/components/ui/Marquee.astro';
 import { SITE } from '@/config/site';
 const serviceTicker = ['Custom websites', 'Google Business Profile', 'Local SEO', 'Review automation', 'Missed-call text-back', 'Lead follow-up', 'Custom AI tools'];
 import { homeFaqs } from '@/data/faq';
-import { plan, usd, priceLine } from '@/data/pricing';
 ---
 <Base
   title="Local SEO & AI for Home Service Businesses | Palm Beach AI Services"
-  description={`Get seen on Google. Get your time back with AI. Local SEO, Google Maps, and AI automation for home service businesses in Royal Palm Beach and Palm Beach County. ${priceLine}, no contract.`}
+  description={`Get seen on Google. Get your time back with AI. Local SEO, Google Maps, and AI automation for home service businesses in Royal Palm Beach and Palm Beach County. No contract, and you own everything.`}
   faqs={homeFaqs}
 >
   <HomeHero />
@@ -34,21 +33,20 @@ import { plan, usd, priceLine } from '@/data/pricing';
   <Problem />
   <ThreeThings />
   <HowItWorks />
-  <section class="section surface-cream" id="pricing">
+  <section class="section surface-cream" id="whats-included">
     <div class="container-x">
       <div class="mx-auto max-w-3xl text-center" data-reveal>
-        <div class="eyebrow justify-center">Pricing</div>
-        <h2 class="h2 mt-5">One plan. <em class="accent">{usd(plan.monthly)}</em> a month.</h2>
-        <p class="lede mt-6 mx-auto">A {usd(plan.buildFee)} one-time website build, then {usd(plan.monthly)}/month for everything that keeps the phone ringing. No tiers, no contract, no surprises.</p>
+        <div class="eyebrow justify-center">What you get</div>
+        <h2 class="h2 mt-5">One plan. <em class="accent">Everything</em> included.</h2>
+        <p class="lede mt-6 mx-auto">A one-time website build, then one flat monthly plan for everything that keeps the phone ringing. No tiers, no contract, and a fixed quote in writing before we start.</p>
       </div>
       <div class="mt-12">
         <PricingPlan showPromises={false} />
       </div>
-      <p class="mt-10 text-center"><a href="/pricing/" class="link-mono">Full pricing + FAQ <Icon name="arrow-right" size={14} /></a></p>
     </div>
   </section>
 
-  <CaseStudies flush eyebrow="The proof behind the price" title="What that work looks like for *real* local businesses." lede="Exact numbers, with the math shown. No stock logos, no made-up stats." />
+  <CaseStudies flush eyebrow="The proof behind the plan" title="What that work looks like for *real* local businesses." lede="Exact numbers, with the math shown. No stock logos, no made-up stats." />
   <Comparison />
 
   <Guarantee />

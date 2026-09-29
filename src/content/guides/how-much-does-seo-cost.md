@@ -121,21 +121,23 @@ Several of these come straight from Google's list. The rest come from what we se
 
 A good provider should also ask you questions: what makes your business different, who your competitors are, and how customers find you today. Google calls this out too. If they pitch before they ask, move on.
 
-## Our pricing, as one example
+## How we price it
 
-Since you are reading this on our site, here is exactly what we charge, so you can compare it to the numbers above. You do not have to hire us to use this guide.
+Since you are reading this on our site, here is how our pricing works. You do not have to hire us to use this guide.
 
-We have one plan. It is listed on our [pricing page](/pricing/):
+We have one plan, and every quote has the same two parts:
 
-- **$750 one-time** to build your website
-- **$297 a month** after that, month-to-month, no contract
+- **A one-time website build**, paid once
+- **One flat monthly price** after that, month-to-month, no contract
 - **You own everything:** the site, the domain, the profile
+
+We do not post a number because the right scope depends on your trade, how many towns you want to show up in, and where your Google profile and website start. A roofer covering three towns with a solid profile needs less than one covering ten towns with no reviews. So we look first, then send a fixed quote in writing before any work starts. Nothing gets added to the bill later without your OK.
 
 The monthly plan includes review automation, Google Business Profile management, lead follow-up (including missed-call text-back), a monthly check-in, backlink and citation building, and competitor analysis. Custom AI work, like CRM setup or an AI answering service, is quoted separately. We promise your site is live within 14 days of getting your content and access, or month one is free.
 
 What we do not promise: rankings, leads, or revenue. No one can honestly promise those, and Google says so.
 
-How does that compare? $297 a month sits below the most common band in both surveys. In SE Ranking's data, 30% of agencies charge under $500 a month, so it is not unheard of, but it is on the low end. That works because our plan is built for local service businesses in Palm Beach, Martin, and Broward counties, focused on the basics that move [Google Maps rankings for contractors](/services/google-maps-seo/). If you are chasing a huge metro, running many locations, or want a heavy weekly content program, you may need a bigger plan than ours, and that is fine. Use the questions above with whoever you talk to.
+Whoever you talk to, us included, hold the quote up against the survey numbers above and ask the questions in the last section. Our plan is built for local service businesses in Palm Beach, Martin, and Broward counties, focused on the basics that move [Google Maps rankings for contractors](/services/google-maps-seo/). If you are chasing a huge metro, running many locations, or want a heavy weekly content program, you may need a bigger plan than ours, and that is fine.
 
 ## Not sure what you need yet?
 

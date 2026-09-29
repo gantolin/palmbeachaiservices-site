@@ -1,18 +1,14 @@
 /**
- * ALL PRICES LIVE HERE. Edit this file to change what the site shows (home hero, home pricing,
- * /pricing, FAQs, JSON-LD, meta descriptions all read from it).
+ * THE OFFER. No dollar amounts anywhere on the site (Gene, 2026-09-29): prices are quoted on a call.
+ * The home "what you get" section, city pages, FAQs, and JSON-LD all read from this file.
  *
- * The offer is ONE plan: a one-time website build fee, then a flat monthly price.
- * Custom AI automation is quoted per project and intentionally has no price on the site.
+ * The shape of the offer is still one plan: a one-time website build, then a flat monthly plan.
+ * The numbers live in the written quote Gene sends after the call, never on the site.
  */
 
-export const BUILD_FEE = 750;
-export const MONTHLY = 297;
-
-export const usd = (n: number) => `$${n.toLocaleString('en-US')}`;
-/** "$750 build + $297/mo" style strings, used across the site so wording stays consistent. */
-export const priceLine = `${usd(BUILD_FEE)} build + ${usd(MONTHLY)}/mo`;
-export const priceSentence = `${usd(BUILD_FEE)} one-time website build, then ${usd(MONTHLY)}/month. No contract.`;
+/** Used wherever copy needs to say how pricing works without a number. */
+export const quoteLine = 'Fixed quote in writing after a free call';
+export const quoteSentence = 'You get a fixed quote in writing after a free 30-minute call: a one-time website build, then one flat monthly plan. No contract.';
 
 export interface Included {
   title: string;
@@ -26,9 +22,7 @@ export const plan = {
   // TODO(Gene): confirm the public plan name.
   name: 'The Local Growth Plan',
   tagline: 'Everything a local service business needs to get found, get reviews, and get booked.',
-  buildFee: BUILD_FEE,
-  monthly: MONTHLY,
-  /** The one-time $750 covers this. TODO(Gene): confirm build scope. */
+  /** The one-time build covers this. TODO(Gene): confirm build scope. */
   build: {
     title: 'Custom website build',
     text: 'Designed, written, and launched for you. Live in 14 days once we have your content.',
@@ -40,7 +34,7 @@ export const plan = {
       'Analytics + Search Console set up',
     ],
   },
-  /** The $297/mo covers exactly these six things (from Gene). Order matters: it is the display order. */
+  /** The monthly plan covers exactly these six things (from Gene). Order matters: it is the display order. */
   included: [
     {
       title: 'Review automation',
@@ -55,7 +49,7 @@ export const plan = {
       icon: 'pin',
     },
     {
-      // TODO(Gene): confirm missed-call text-back is part of "lead follow-up" in the $297 plan.
+      // TODO(Gene): confirm missed-call text-back is part of "lead follow-up" in the monthly plan.
       title: 'Lead follow-up',
       text: 'New leads and missed calls get a fast automatic text and email, so no inquiry sits unanswered.',
       replaces: 'Leads that go cold in your voicemail',
@@ -81,9 +75,9 @@ export const plan = {
     },
   ] as Included[],
   terms: ['Month-to-month', 'No contract', 'You own everything', 'Cancel anytime'],
-  cta: { label: 'Get my free Google check', href: '/free-google-check/?plan=local-growth' },
+  cta: { label: 'Book a free call', href: '/book/' },
   footnote:
-    'The build fee is paid once. After that it is one flat monthly price, month-to-month. Your domain, website content, Google profile, and customer data are always yours.',
+    'Every business starts in a different spot, so the price is set on a free call and sent to you in writing before any work starts. The build is paid once. After that it is one flat monthly price, month-to-month. Your domain, website content, Google profile, and customer data are always yours.',
 };
 
 /** Secondary offer: shown below the main plan. Deliberately NO price. */
@@ -97,7 +91,7 @@ export const customAI = {
     { title: 'Custom AI workflows', text: 'Like the Safe Haven report system: 45 → 10 minutes per report.', icon: 'sparkles' },
     { title: 'AI Workday Install', text: 'A hands-on day setting up Claude, ChatGPT, or Grok for your team.', icon: 'zap' },
   ],
-  cta: { label: 'Get a custom quote', href: '/free-google-check/?plan=custom-ai' },
+  cta: { label: 'Talk it through on a call', href: '/book/' },
 };
 
 /**
@@ -109,9 +103,9 @@ export const guarantee = {
   name: 'The Palm Beach Promise',
   headline: 'Live in 14 days, or month one is free.',
   points: [
-    { title: 'Live in 14 days, or month one is free', text: `Your website, Google profile cleanup, and review + lead follow-up automations go live within 14 days of getting your content and account access. If we miss it, your first ${usd(MONTHLY)} month is on us.` },
+    { title: 'Live in 14 days, or month one is free', text: `Your website, Google profile cleanup, and review + lead follow-up automations go live within 14 days of getting your content and account access. If we miss it, your first month is on us.` },
     { title: 'Leave any month, keep everything', text: 'No contract. If you cancel, your website, domain, Google profile, and customer data stay yours.' },
-    { title: 'Flat, published prices', text: `${usd(BUILD_FEE)} once, ${usd(MONTHLY)} a month. Anything custom gets a fixed quote, in writing, before work starts.` },
+    { title: 'Your price, in writing', text: 'You get a fixed quote in writing before any work starts. One build fee, one flat monthly price, no surprise invoices.' },
   ],
   fine: 'We do not guarantee rankings, leads, or revenue. Nobody honest can. We guarantee the work we control.',
 };
@@ -121,5 +115,5 @@ export const promises = [
   { title: 'Live in 14 days', text: 'Counted from the day we have your content and account access.' },
   { title: 'Or month one is free', text: 'If we miss the 14 days, your first month is on us. In writing.' },
   { title: 'Leave any month', text: 'No contract, and you keep everything we built.' },
-  { title: 'Flat, published prices', text: 'No surprise invoices. No "call for pricing."' },
+  { title: 'Price in writing', text: 'A fixed quote before any work starts. No surprise invoices.' },
 ];

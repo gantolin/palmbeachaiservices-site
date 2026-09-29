@@ -33,7 +33,7 @@ const serviceLd = {
   <PageHero eyebrow={service.eyebrow} title={service.headline} lede={service.subhead} crumbs={crumbs}>
     <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
-      <a href="/pricing/" class="link-mono self-start sm:self-auto">See pricing <Icon name="arrow-right" size={14} /></a>
+      <a href="/#whats-included" class="link-mono self-start sm:self-auto">See what's included <Icon name="arrow-right" size={14} /></a>
     </div>
   </PageHero>
   <div class="surface-dark border-b border-white/[0.06] bg-navy-950">
@@ -72,7 +72,7 @@ const serviceLd = {
             </li>
           ))}
         </ul>
-        <p class="mt-7 rounded-xl bg-navy-950 text-mist-200 px-5 py-4 text-[15px] flex gap-3 items-start"><Icon name="receipt" size={19} class="text-gold-300 shrink-0 mt-[2px]" /><span>{service.priceNote} <a href="/pricing/" class="text-gold-300 underline underline-offset-4">Full pricing</a></span></p>
+        <p class="mt-7 rounded-xl bg-navy-950 text-mist-200 px-5 py-4 text-[15px] flex gap-3 items-start"><Icon name="receipt" size={19} class="text-gold-300 shrink-0 mt-[2px]" /><span>{service.priceNote} <a href="/book/" class="text-gold-300 underline underline-offset-4">Book a free call</a></span></p>
       </div>
       <div class="lg:col-span-6 lg:sticky lg:top-28 space-y-5" data-reveal style="--d:100ms">
         {service.slug === 'ai-automation' || service.slug === 'ai-answering-service' ? (

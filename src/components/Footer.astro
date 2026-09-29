@@ -26,7 +26,6 @@ const year = new Date().getFullYear();
         <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Services</h2>
         <ul class="mt-4 space-y-2.5 text-[15px]">
           {services.map((s) => <li><a class="text-mist-200/85 hover:text-white" href={`/services/${s.slug}/`}>{s.name}</a></li>)}
-          <li><a class="text-mist-200/85 hover:text-white" href="/pricing/">Pricing</a></li>
         </ul>
       </div>
       <div class="lg:col-span-2">
@@ -37,8 +36,8 @@ const year = new Date().getFullYear();
         <h2 class="mt-8 font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Company</h2>
         <ul class="mt-4 space-y-2.5 text-[15px]">
           {NAV.filter((n) => n.href === '/about/').map((n) => <li><a class="text-mist-200/85 hover:text-white" href={n.href}>{n.label}</a></li>)}
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Free Google check</a></li>
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Book a call</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Free Google check</a></li>
+          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Book a call</a></li>
           <li><a class="text-mist-200/85 hover:text-white" href="/guides/">Guides</a></li>
           <li><a class="text-mist-200/85 hover:text-white" href="/contact/">Contact</a></li>
         </ul>

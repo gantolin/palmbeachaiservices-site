@@ -1,6 +1,5 @@
-import { priceLine } from './pricing';
 export const comparisonRows: { label: string; us: string; them: string }[] = [
-  { label: 'Pricing', us: `${priceLine}, published`, them: '"Let\u2019s hop on a call" pricing' },
+  { label: 'Pricing', us: 'One flat monthly price, quoted in writing up front', them: 'Tiers, add-ons, and surprise invoices' },
   { label: 'Contract', us: 'Month-to-month', them: 'Often 6 to 12 month lock-ins' },
   { label: 'Who you talk to', us: 'The founder, locally, in Palm Beach County', them: 'Account manager #4, often out of state' },
   { label: 'Website launch', us: 'Live in 14 days', them: 'Often weeks or months' },

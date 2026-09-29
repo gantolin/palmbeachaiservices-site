@@ -9,7 +9,7 @@ const problems = [];
 page.on('console', (m) => { if (m.type() === 'error') problems.push(`console: ${m.text()}`); });
 page.on('pageerror', (e) => problems.push(`pageerror: ${e.message}`));
 
-for (const path of ['/', '/pricing/', '/services/websites/', '/results/next-level-air-conditioning/', '/book/', '/privacy/']) {
+for (const path of ['/', '/services/websites/', '/results/next-level-air-conditioning/', '/book/', '/privacy/']) {
   const res = await page.goto(BASE + path, { waitUntil: 'load' });
   console.log(path, res.status(), '|', await page.title());
 }

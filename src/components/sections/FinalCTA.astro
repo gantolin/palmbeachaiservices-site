@@ -5,7 +5,7 @@ import { CTA, SITE, telHref } from '@/config/site';
 interface Props { title?: string; text?: string }
 const {
   title = 'See exactly what is costing you *calls.*',
-  text = 'Get a free Google Visibility Check: where you show up on Google Maps in your town, how your profile and website stack up against the top 3, and what to fix first. You keep the fixes whether or not we work together. No payment, no contract, no pitch deck.',
+  text = 'Book a free 30-minute call. Before it, we check where you show up on Google Maps in your town, how your profile and website stack up against the top 3, and what to fix first. You keep the fixes whether or not we work together. No payment, no contract, no pitch deck.',
 } = Astro.props;
 ---
 <section class="relative overflow-hidden surface-dark grain" id="get-started" data-parallax-root>
@@ -19,7 +19,7 @@ const {
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
       <a href={telHref} class="btn btn-outline-dark btn-lg"><Icon name="phone" size={18} />Call {SITE.phone}</a>
     </div>
-    <p class="mt-8 text-[14px] text-mist-400">Know you want to talk? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Skip the form and book a call</a>.</p>
+    <p class="mt-8 text-[14px] text-mist-400">Rather send your details first? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Fill in the 2-minute Google check form</a>.</p>
     <p class="mt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-mist-400/80">{SITE.capacityLine}</p>
   </div>
 </section>

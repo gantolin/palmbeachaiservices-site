@@ -1,9 +1,7 @@
-import { BUILD_FEE, MONTHLY, usd } from './pricing';
-
 export const homeFaqs = [
   {
     q: 'How much does it cost?',
-    a: `${usd(BUILD_FEE)} one-time for your custom website build, then ${usd(MONTHLY)}/month. The monthly plan covers review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement. No contract.`,
+    a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.',
   },
   {
     q: 'Do I have to sign a contract?',
@@ -43,12 +41,3 @@ export const homeFaqs = [
   },
 ];
 
-export const pricingFaqs = [
-  { q: 'What does it cost?', a: `${usd(BUILD_FEE)} once for your custom website build, then ${usd(MONTHLY)}/month. That is the whole plan. No tiers.` },
-  { q: `What does the ${usd(BUILD_FEE)} build fee cover?`, a: `A custom, mobile-first website designed, written, and launched for you: service pages, your main town page, click-to-call and a quote form, Google-ready structured data, your Google Business Profile connected, and Analytics + Search Console set up. Live in 14 days once we have your content. You pay it once.` },
-  { q: `What does the ${usd(MONTHLY)}/month include?`, a: 'Six things, every month: review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.' },
-  { q: 'Is there a contract?', a: 'No. It is month-to-month. Cancel anytime, and your website, domain, Google profile, and customer data stay yours.' },
-  { q: 'Are there any other fees?', a: `No hidden fees. The ${usd(BUILD_FEE)} build and the ${usd(MONTHLY)}/month plan are the price. Custom AI work is optional and quoted separately, in writing, before anything starts. If your texting or calling volume is unusually high, we will tell you up front before any usage costs apply.` },
-  { q: 'What about custom AI automation?', a: 'CRM and GoHighLevel setup, custom AI workflows (like the Safe Haven report system), and the AI Workday Install are quoted per project, because every business is different. You get a fixed quote before we start.' },
-  { q: 'How do I cancel?', a: 'Tell us. The plan is month-to-month, and everything we built for you stays yours.' },
-];

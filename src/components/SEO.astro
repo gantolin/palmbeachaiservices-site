@@ -55,13 +55,11 @@ const business = {
         '@type': 'Offer',
         name: `${plan.name}: website build`,
         description: plan.build.text,
-        priceSpecification: { '@type': 'PriceSpecification', price: plan.buildFee, priceCurrency: 'USD' },
       },
       {
         '@type': 'Offer',
         name: `${plan.name}: monthly`,
         description: plan.included.map((i) => i.title).join(', '),
-        priceSpecification: { '@type': 'UnitPriceSpecification', price: plan.monthly, priceCurrency: 'USD', unitText: 'MONTH' },
       },
       { '@type': 'Offer', name: customAI.eyebrow, description: customAI.items.map((i) => i.title).join(', ') },
     ],

@@ -6,7 +6,7 @@ import { mkdirSync } from 'node:fs';
 const base = process.argv[2] ?? 'http://localhost:4321';
 const out = new URL('../screenshots/', import.meta.url).pathname;
 mkdirSync(out, { recursive: true });
-const pages = (process.env.PAGES ?? '/,/pricing/,/results/safe-haven-inspections/').split(',');
+const pages = (process.env.PAGES ?? '/,/book/,/results/safe-haven-inspections/').split(',');
 const viewports = [
   { name: 'desktop', width: 1440, height: 900, deviceScaleFactor: 1 },
   { name: 'mobile', width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true },

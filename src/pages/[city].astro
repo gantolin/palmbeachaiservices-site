@@ -13,7 +13,6 @@ import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { SITE, CTA, telHref } from '@/config/site';
 import { services } from '@/data/services';
-import { usd, BUILD_FEE, MONTHLY } from '@/data/pricing';
 import { cities, cityPath, sharedReasons, type City } from '@/data/cities';
 import { accent } from '@/lib/text';
 
@@ -137,12 +136,12 @@ const pageLd = {
 
   <CaseStudies eyebrow="Proof from Palm Beach County" title="Real results for *local* businesses near you." />
 
-  <section class="section surface-cream" id="pricing">
+  <section class="section surface-cream" id="whats-included">
     <div class="container-x">
       <div class="mx-auto max-w-3xl text-center" data-reveal>
-        <div class="eyebrow justify-center">SEO pricing</div>
-        <h2 class="h2 mt-5">One plan. <em class="accent">{usd(MONTHLY)}</em> a month.</h2>
-        <p class="lede mt-6 mx-auto">A {usd(BUILD_FEE)} one-time website build, then {usd(MONTHLY)}/month for everything that keeps you seen on Google. No tiers, no contract.</p>
+        <div class="eyebrow justify-center">What you get</div>
+        <h2 class="h2 mt-5">One plan. <em class="accent">Everything</em> included.</h2>
+        <p class="lede mt-6 mx-auto">A one-time website build, then one flat monthly plan for everything that keeps you seen on Google in {city.name}. No tiers, no contract, and a fixed quote in writing before we start.</p>
       </div>
       <div class="mt-12"><PricingPlan showPromises={false} /></div>
     </div>

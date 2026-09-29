@@ -2,7 +2,6 @@
  * Single source of truth for business facts.
  * Edit here and every page, the footer, JSON-LD and legal pages update.
  */
-import { priceLine } from '../data/pricing';
 
 /** Founder's first name, used everywhere on the site (confirmed by Gene 2026-09-26). */
 export const FOUNDER_FIRST_NAME = 'Gene';
@@ -17,7 +16,7 @@ export const SITE = {
   /** One-sentence positioning, used under the tagline. */
   positioning: 'We get home service businesses seen on Google, then use AI to save them time and make them money.',
   description:
-    `Get seen on Google. Get your time back with AI. Local SEO, Google Maps, websites, and AI automation for home service businesses in Palm Beach County. ${priceLine}, no contract. Based in Royal Palm Beach, FL.`,
+    'Get seen on Google. Get your time back with AI. Local SEO, Google Maps, websites, and AI automation for home service businesses in Palm Beach County. No contract. Based in Royal Palm Beach, FL.',
 
   founder: FOUNDER_FIRST_NAME,
 
@@ -96,12 +95,15 @@ export const NAV = [
   { label: 'Services', href: '/services/' },
   { label: 'Results', href: '/results/' },
   { label: 'Guides', href: '/guides/' },
-  { label: 'Pricing', href: '/pricing/' },
   { label: 'About', href: '/about/' },
 ] as const;
 
+/**
+ * The main ask everywhere is booking a call (Gene, 2026-09-29). The Google check form stays as the
+ * softer option for people who would rather send details first.
+ */
 export const CTA = {
-  primary: { label: 'Get my free Google check', href: '/free-google-check/' },
+  primary: { label: 'Book a free call', href: '/book/' },
   offerName: 'The Free Google Visibility Check',
-  secondary: { label: 'Book a call', href: '/book/' },
+  secondary: { label: 'Get my free Google check', href: '/free-google-check/' },
 } as const;

@@ -165,7 +165,7 @@ That is where a CRM helps. When a job is marked complete, the system texts the c
 
 Automation doesn't change the rules. It still asks every customer and still asks for an honest review. It just removes "we forgot" from the equation.
 
-Review automation is included in our [$297/month plan](/pricing/), along with Google Business Profile management and missed-call text-back. We set it up to fire after every completed job, following Google's policies. You can see how it fits into our [Google Maps SEO service](/services/google-maps-seo/).
+Review automation is included in our [monthly plan](/#whats-included), along with Google Business Profile management and missed-call text-back. We set it up to fire after every completed job, following Google's policies. You can see how it fits into our [Google Maps SEO service](/services/google-maps-seo/).
 
 ## Common mistakes that slow down reviews
 

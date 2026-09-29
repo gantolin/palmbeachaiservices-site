@@ -80,7 +80,7 @@ A simple example:
 
 Keep it short. Use a real first name. Give them one clear thing to do. Skip the links and the sales pitch.
 
-Missed-call text-back is included in our [$297/month plan](/pricing/) as part of lead follow-up, along with review automation and Google Business Profile management.
+Missed-call text-back is included in our [monthly plan](/#whats-included) as part of lead follow-up, along with review automation and Google Business Profile management.
 
 ### 2. Auto-reply to every web form instantly
 
