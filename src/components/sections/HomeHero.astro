@@ -19,8 +19,8 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
         <div class="eyebrow fade-in"><span class="sm:hidden">Get seen on Google · Save time with AI</span><span class="hidden sm:inline">Get seen on Google · Get your time back with AI</span></div>
         <h1 class="display mt-6 text-[#f4f1e8] word-rise" set:html={words(headline)} />
         <p class="lede mt-7 !text-[clamp(1.08rem,1.5vw,1.3rem)] fade-in" style="--d:380ms">
-          We get Palm Beach County home service businesses seen on Google Maps and search, then use AI to answer every lead and hand you back hours.
-          <span class="text-mist-200">One simple plan. No contract. You own everything.</span>
+          We help Palm Beach County home service businesses show up on Google when people nearby need them. Then we set up the follow-up, so a missed call gets a text back and a new lead hears from you right away.
+          <span class="text-mist-200">Month to month, and you own everything we build.</span>
         </p>
         <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:480ms">
           <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
@@ -38,7 +38,7 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
           </span>
           <span class="hidden sm:flex items-center gap-2 border-l border-white/10 pl-5 pr-5 text-[13.5px] leading-snug text-mist-200 max-w-[200px]">Fixed quote in writing. No contract.<Icon name="arrow-right" size={15} class="shrink-0 text-gold-300 transition-transform group-hover:translate-x-0.5" /></span>
         </a>
-        <p class="mt-5 text-[13.5px] text-mist-400 fade-in" style="--d:580ms">The call includes a free Google Visibility Check: where you show up on Google and what to fix. You keep the fixes, whether or not we work together.</p>
+        <p class="mt-5 text-[13.5px] text-mist-400 fade-in" style="--d:580ms">On the call, we pull up where you show up on Google today and what's holding you back. You keep the notes whether you hire us or not.</p>
 
         <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-3 fade-in" style="--d:600ms">
           {chips.map((c) => (
@@ -50,23 +50,6 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
       <div class="lg:col-span-5 relative fade-in" style="--d:250ms">
         <div class="absolute -inset-10 rounded-full bg-navy-700/30 blur-3xl" aria-hidden="true"></div>
         <div class="xl:flex xl:justify-end plx-1"><PhoneDemo /></div>
-        <div class="plx-2 hidden xl:block absolute -left-20 top-[12%] z-10"><div class="float-card float-y flex w-[212px]">
-          <div class="size-9 shrink-0 rounded-xl bg-navy-100 text-navy-700 flex items-center justify-center"><Icon name="clock" size={18} /></div>
-          <div>
-            <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Safe Haven</div>
-            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5 tabular whitespace-nowrap">45 → <span data-count-to="10" data-count-from="45" data-count-dur="1600" data-suffix=" min">10 min</span></div>
-            <div class="text-[11.5px] text-ink-600 mt-1">per inspection report</div>
-            <div class="mt-2 h-1.5 rounded-full bg-stone-300/60 overflow-hidden"><div class="bar-fill h-full w-[22%] rounded-full bg-navy-700"></div></div>
-          </div>
-        </div></div>
-        <div class="plx-2 hidden xl:block absolute -left-28 bottom-[10%] z-10"><div class="float-card float-y-slow flex w-[212px]">
-          <div class="size-9 shrink-0 rounded-xl bg-[#fbf3dc] text-gold-700 flex items-center justify-center"><Icon name="pin" size={18} /></div>
-          <div>
-            <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-600">Hero's Pavers</div>
-            <div class="font-display text-[17px] font-[620] text-ink-900 tracking-tight leading-tight mt-0.5">Ranking <span class="tabular">#2–#3</span> on Google</div>
-            <div class="text-[11.5px] text-ink-600 mt-1">for multiple Lake Worth keywords</div>
-          </div>
-        </div></div>
       </div>
     </div>
   </div>
@@ -85,15 +68,5 @@ const chips = ['Live in 14 days', 'You own everything', `Local to ${SITE.homeBas
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600' fill='none' stroke='%23E9E4D6' stroke-width='1'%3E%3Cpath d='M-50 420c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 460c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 500c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 540c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 120c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 160c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 200c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3C/svg%3E");
     background-size: 900px 900px;
     mask-image: radial-gradient(80% 70% at 70% 40%, #000 30%, transparent 80%);
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .bar-fill { transform-origin: 0 50%; animation: bar 1.4s cubic-bezier(.22,1,.36,1) 1.2s both; }
-    @keyframes bar { from { transform: scaleX(0); } }
-  }
-  .float-card {
-    gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 16px;
-    background: rgba(250, 248, 242, 0.96); border: 1px solid rgba(217, 211, 196, 0.8);
-    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(8px);
   }
 </style>

@@ -3,11 +3,11 @@ export const comparisonRows: { label: string; us: string; them: string }[] = [
   { label: 'Contract', us: 'Month-to-month', them: 'Often 6 to 12 month lock-ins' },
   { label: 'Who you talk to', us: 'The founder, locally, in Palm Beach County', them: 'Account manager #4, often out of state' },
   { label: 'Website launch', us: 'Live in 14 days', them: 'Often weeks or months' },
-  { label: 'Lead response', us: 'Missed calls texted back in seconds', them: 'Not their problem' },
+  { label: 'Lead response', us: 'Missed calls texted back in seconds', them: 'Usually not part of the job' },
   { label: 'Reviews + lead follow-up', us: 'Automated, included in the plan', them: 'Separate vendor, separate bill' },
   { label: 'What we measure', us: 'Calls, reviews, and booked jobs', them: 'Impressions and "reach"' },
-  { label: 'Reporting', us: 'Plain English, every month', them: 'Dashboards full of jargon' },
-  { label: 'Who owns the work', us: 'You do. 100%. Leave and keep it all', them: 'Often theirs until you pay to leave' },
+  { label: 'Reporting', us: 'A short monthly check-in you can follow', them: 'Dashboards full of jargon' },
+  { label: 'Who owns the work', us: 'You do. Leave anytime and take it all with you', them: 'Often theirs until you pay to leave' },
   { label: 'Guarantee', us: 'Live in 14 days or month one is free', them: 'Vague promises, long lock-in' },
 ];
 

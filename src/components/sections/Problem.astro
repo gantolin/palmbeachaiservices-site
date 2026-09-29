@@ -2,18 +2,18 @@
 import Icon from '../ui/Icon.astro';
 import Calculator from '../islands/MissedCallCalculator.astro';
 const pains = [
-  { icon: 'phone-missed', title: 'Missed calls go to the next company', text: 'You are on a roof, under a sink, or driving. By the time you call back, they already booked someone else.' },
-  { icon: 'search', title: 'Google shows the other guy first', text: 'An incomplete Google profile and a slow website quietly hand your best leads to competitors.' },
-  { icon: 'receipt', title: 'Your nights go to paperwork', text: 'Quotes, invoices, reports, and follow-ups eat the hours you should be selling or resting.' },
+  { icon: 'phone-missed', title: 'Missed calls go to the next company', text: 'You\'re on a roof, under a sink, or on the road. By the time you call back, they\'ve already hired someone else.' },
+  { icon: 'search', title: 'Google shows someone else first', text: 'If your Google profile is half filled out and your website is slow, the calls go to whoever shows up above you.' },
+  { icon: 'receipt', title: 'Paperwork eats your nights', text: 'Quotes, invoices, reports, and follow-up texts pile up after the real work is done.' },
 ];
 ---
 <section class="section surface-sand relative overflow-hidden" id="problem">
   <div class="container-x">
     <div class="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
       <div class="lg:col-span-6" data-reveal>
-        <div class="eyebrow">The leak</div>
+        <div class="eyebrow">The problem</div>
         <h2 class="h2 mt-5">You pay to make the phone ring. Then it goes to <em class="accent">voicemail.</em></h2>
-        <p class="lede mt-6">Most owners never see what those missed calls actually cost. Move the sliders and put a number on it.</p>
+        <p class="lede mt-6">Most owners have never added up what missed calls cost them. Move the sliders and see your number.</p>
         <ul class="mt-10 space-y-6">
           {pains.map((p) => (
             <li class="flex gap-4">

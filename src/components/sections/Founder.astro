@@ -29,12 +29,12 @@ const { compact = false } = Astro.props;
         <div class="eyebrow">Meet the founder</div>
         <h2 class="h2 mt-5">Hi, I'm {FOUNDER_FIRST_NAME}. You'll work <em class="accent">with me,</em> not an account manager.</h2>
         <div class="mt-7 space-y-5 text-[17px] leading-relaxed text-ink-900/90 max-w-[60ch]">
-          <p>I'm a local, founder-run shop in {SITE.homeBase}. I build every website, set up every Google profile, and wire up every automation myself, so the person you talk to is the person doing the work.</p>
-          <p>I use the same AI tools the big companies use (Claude, ChatGPT, and Grok) to build simple systems for local owners: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut Safe Haven Inspections' report time from 45 to 10 minutes.</p>
+          <p>I run {SITE.name} out of {SITE.homeBase}. I build every website, set up every Google profile, and put together every automation myself, so the person you talk to is the person doing the work.</p>
+          <p>I also use AI tools like Claude, ChatGPT, and Grok to take busywork off owners' plates: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut Safe Haven Inspections' report time from 45 minutes to 10.</p>
           {!compact && <p>Because I do the work myself, I take a limited number of clients per trade, per town. That way you never compete with another client of mine for the same customers.</p>}
         </div>
         <div class="mt-9 flex flex-col sm:flex-row gap-4 sm:items-center">
-          <a href={CTA.primary.href} class="btn btn-navy">Book your free Google check with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
+          <a href={CTA.primary.href} class="btn btn-navy">Book a call with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
           <a href={telHref} class="inline-flex items-center gap-2 font-semibold text-navy-700 hover:text-navy-800 min-h-11"><Icon name="phone" size={17} />{SITE.phone}</a>
         </div>
       </div>

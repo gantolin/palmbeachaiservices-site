@@ -21,7 +21,7 @@ export interface Included {
 export const plan = {
   // TODO(Gene): confirm the public plan name.
   name: 'The Local Growth Plan',
-  tagline: 'Everything a local service business needs to get found, get reviews, and get booked.',
+  tagline: 'What a local service business needs to show up on Google and turn searches into jobs.',
   /** The one-time build covers this. TODO(Gene): confirm build scope. */
   build: {
     title: 'Custom website build',
@@ -38,38 +38,38 @@ export const plan = {
   included: [
     {
       title: 'Review automation',
-      text: 'Every finished job gets a friendly text asking for a Google review, with a follow-up if they forget.',
+      text: 'After every job, your customer gets a friendly text asking for a Google review, and one reminder if they forget.',
       replaces: 'A separate review app subscription',
       icon: 'star',
     },
     {
       title: 'Google Business Profile management',
-      text: 'Categories, services, photos, and posts kept complete and active, so you show up in the map pack.',
+      text: 'We keep your categories, services, photos, and posts up to date, so you have a real shot at the map pack.',
       replaces: 'Doing it yourself at night, or never',
       icon: 'pin',
     },
     {
       // TODO(Gene): confirm missed-call text-back is part of "lead follow-up" in the monthly plan.
       title: 'Lead follow-up',
-      text: 'New leads and missed calls get a fast automatic text and email, so no inquiry sits unanswered.',
+      text: 'New leads and missed calls get a quick text and email back, so nobody is left waiting on you.',
       replaces: 'Leads that go cold in your voicemail',
       icon: 'message',
     },
     {
       title: 'Monthly check-in',
-      text: 'A plain-English call or report with the founder: what moved, what we are doing next.',
+      text: 'A short call or report from Gene each month covering what changed and what comes next.',
       replaces: 'Agency reports nobody can read',
       icon: 'calendar-check',
     },
     {
       title: 'Backlink building',
-      text: 'Real local citations and links that tell Google your business is legit and local.',
+      text: 'Local directory listings and links that show Google you are a real business in your area.',
       replaces: 'A separate SEO link vendor',
       icon: 'layers',
     },
     {
       title: 'Competitor analysis + ranking improvement',
-      text: 'We watch who outranks you in your towns and keep closing the gap, month after month.',
+      text: 'We keep an eye on who ranks above you in your towns and work on closing the gap every month.',
       replaces: 'Guessing why the other guy shows up first',
       icon: 'chart',
     },
@@ -83,13 +83,13 @@ export const plan = {
 /** Secondary offer: shown below the main plan. Deliberately NO price. */
 export const customAI = {
   eyebrow: 'Custom AI automation',
-  title: 'Want AI to take whole chores off your plate?',
-  text: 'For businesses that are ready for more than the essentials. Scoped to your workflow, with a fixed quote in writing before any work starts.',
+  title: 'Need something built around how you work?',
+  text: 'Some jobs need more than the basics. We build custom tools around the way your business runs, with a fixed price in writing before we start.',
   priceLabel: 'Quoted per project',
   items: [
-    { title: 'CRM + GoHighLevel setup', text: 'Pipeline, inbox, calendar, and automations in one place.', icon: 'inbox' },
-    { title: 'Custom AI workflows', text: 'Like the Safe Haven report system: 45 → 10 minutes per report.', icon: 'sparkles' },
-    { title: 'AI Workday Install', text: 'A hands-on day setting up Claude, ChatGPT, or Grok for your team.', icon: 'zap' },
+    { title: 'CRM + GoHighLevel setup', text: 'Your leads, texts, calendar, and pipeline in one place.', icon: 'inbox' },
+    { title: 'Custom AI workflows', text: 'Like the Safe Haven report tool that cut 45 minutes down to 10.', icon: 'sparkles' },
+    { title: 'AI Workday Install', text: 'A hands-on day getting your team set up with Claude, ChatGPT, or Grok.', icon: 'zap' },
   ],
   cta: { label: 'Talk it through on a call', href: '/book/' },
 };
@@ -107,7 +107,7 @@ export const guarantee = {
     { title: 'Leave any month, keep everything', text: 'No contract. If you cancel, your website, domain, Google profile, and customer data stay yours.' },
     { title: 'Your price, in writing', text: 'You get a fixed quote in writing before any work starts. One build fee, one flat monthly price, no surprise invoices.' },
   ],
-  fine: 'We do not guarantee rankings, leads, or revenue. Nobody honest can. We guarantee the work we control.',
+  fine: 'We can\'t promise rankings, leads, or revenue, and you should be wary of anyone who does. We can promise the work we control.',
 };
 
 /** Short delivery promises (used under pricing). */
