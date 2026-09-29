@@ -5,7 +5,7 @@ export const homeFaqs = [
   },
   {
     q: 'Do I have to sign a contract?',
-    a: 'No. The plan is month-to-month. You stay because it works, not because you are locked in.',
+    a: 'No. The plan is month-to-month, so you can stop any time.',
   },
   {
     q: 'Do I own my website and Google profile?',
@@ -13,7 +13,7 @@ export const homeFaqs = [
   },
   {
     q: 'Can you guarantee #1 on Google?',
-    a: 'No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 14 days, a complete and active profile, and a plain-English report every month.',
+    a: 'No. Nobody honest can, because Google decides rankings. What we guarantee is the work: a site live in 14 days, a complete and active profile, and a monthly check-in on how it is going.',
   },
   {
     q: 'How fast will I see results?',

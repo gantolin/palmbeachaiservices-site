@@ -28,7 +28,7 @@ export const services: Service[] = [
     metaDescription:
       `Web design for West Palm Beach and Palm Beach County home-service businesses. Fast, custom websites built to rank on Google and turn visitors into calls. Live in 14 days. No contract.`,
     eyebrow: 'Web design · West Palm Beach & Palm Beach County',
-    headline: 'Web design that *earns* its keep.',
+    headline: 'A website that brings in *calls*.',
     subhead:
       'Custom websites for contractors in West Palm Beach and across Palm Beach County. Fast, built to rank in your town, and designed to turn visitors into calls. Live in 14 days. You own every pixel.',
     outcomes: [
@@ -69,31 +69,31 @@ export const services: Service[] = [
     // Targets "google maps seo" (2,900/mo) + "gmb optimization" (1,000, KD 25) + "google business profile optimization service" (480, KD 30).
     metaTitle: 'Google Maps SEO & Google Business Profile Optimization Service',
     metaDescription:
-      `Get your home service business seen on Google Maps. Google Business Profile optimization, reviews on autopilot, and local SEO from Royal Palm Beach, FL. Month-to-month, no contract.`,
+      `Get your home service business seen on Google Maps. Google Business Profile optimization, automatic review requests, and local SEO from Royal Palm Beach, FL. Month-to-month, no contract.`,
     eyebrow: 'Google Maps SEO · Google Business Profile optimization',
     headline: 'Get seen on *Google Maps* in your town.',
     subhead:
       'When someone in West Palm Beach, Wellington, or Royal Palm Beach searches for what you do, the top three on Google Maps get the calls. We get your profile built, active, and collecting reviews so you can compete for those spots.',
     outcomes: [
-      { title: 'A complete, active profile', text: 'Categories, services, photos, and posts that tell Google exactly what you do and where.' },
-      { title: 'Reviews on autopilot', text: 'Every finished job triggers a friendly review request by text. No awkward asking.' },
-      { title: 'Reports in plain English', text: 'Once a month: calls, reviews, and rankings. No jargon, no vanity charts.' },
+      { title: 'A complete profile', text: 'Categories, services, photos, and posts that tell Google what you do and where you do it.' },
+      { title: 'More reviews', text: 'After every job, your customer gets a friendly text asking for a review, so you never have to remember to ask.' },
+      { title: 'A monthly check-in', text: 'Once a month we go over your calls, reviews, and rankings, and what we are working on next.' },
     ],
     included: [
       'Full Google Business Profile audit + rebuild',
-      'Primary and secondary categories dialed in',
+      'Primary and secondary categories set correctly',
       'Services, descriptions, and photos optimized',
       'Regular posts linking back to your website',
       'Automated review requests after every job',
       'Review response help',
       'Local listing consistency (name, address, phone) checks',
-      'Monthly plain-English report',
+      'A monthly report you can actually read',
     ],
     process: [
       { title: 'Google check', text: 'We look at your profile next to the businesses outranking you on Google Maps and show you the gaps.' },
       { title: 'Fix', text: 'We rebuild the profile: categories, services, photos, and description.' },
       { title: 'Automate', text: 'Review requests go out automatically after every job.' },
-      { title: 'Report', text: 'Every month you get the numbers that matter, in plain English.' },
+      { title: 'Check in', text: 'Every month we go over the calls, reviews, and rankings with you.' },
     ],
     relatedCase: 'heros-pavers',
     priceNote: 'Google Business Profile management is included in the monthly plan, after a one-time website build. Fixed quote in writing after a free call. Month-to-month.',
@@ -119,8 +119,8 @@ export const services: Service[] = [
       'Missed-call text-back, instant follow-ups, review requests, invoicing, and custom AI tools that take hours of busywork off your week. Set up for you, running quietly in the background.',
     outcomes: [
       { title: 'Every missed call gets a text', text: 'Within seconds, so the customer hears from you before they call the next company.' },
-      { title: 'Follow-up that never forgets', text: 'Quotes, reminders, and check-ins go out on time, every time, by text and email.' },
-      { title: 'Paperwork that does itself', text: 'Reports, invoices, and estimates drafted by AI so you can get back to the job.' },
+      { title: 'Follow-up that goes out on time', text: 'Quotes, reminders, and check-ins get sent by text and email, even on your busiest weeks.' },
+      { title: 'Less paperwork', text: 'AI drafts your reports, invoices, and estimates, so you review them instead of writing them from scratch.' },
     ],
     included: [
       'CRM setup on GoHighLevel: pipeline, unified inbox, calendar',
@@ -157,7 +157,7 @@ export const services: Service[] = [
     metaDescription:
       'An AI answering service for contractors and home service businesses. Every call answered 24/7, questions handled, jobs booked, and the details texted to you. Set up in Palm Beach County.',
     eyebrow: 'AI answering service for contractors',
-    headline: 'Every call *answered*. Even on the roof.',
+    headline: 'Every call *answered*, even when you are on a roof.',
     subhead:
       'You cannot pick up while you are on a job, driving, or asleep. Our AI answering service picks up for you, 24/7, in a natural voice: it answers common questions, books the job, and texts you the details.',
     outcomes: [
@@ -179,7 +179,7 @@ export const services: Service[] = [
       { title: 'Listen', text: 'We learn how you answer the phone today: what customers ask, what you book, what counts as an emergency.' },
       { title: 'Build', text: 'We set up the AI agent with your services, prices you are comfortable sharing, and your calendar.' },
       { title: 'Test', text: 'We call it ourselves, over and over, until it sounds like your business and books correctly.' },
-      { title: 'Go live', text: 'Forward your missed or after-hours calls to it and watch the summaries roll in. We keep tuning it monthly.' },
+      { title: 'Go live', text: 'You forward missed or after-hours calls to it, and a short summary of each call lands on your phone. We keep adjusting it every month.' },
     ],
     relatedCase: 'safe-haven-inspections',
     priceNote: 'The AI answering service is quoted per business, based on call volume and how much it should handle. Missed-call text-back is already included in the monthly plan.',

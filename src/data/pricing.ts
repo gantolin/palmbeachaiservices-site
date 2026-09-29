@@ -100,10 +100,10 @@ export const customAI = {
  * TODO(Gene): confirm these before launch. They are a real commitment.
  */
 export const guarantee = {
-  name: 'The Palm Beach Promise',
+  name: 'Our promise',
   headline: 'Live in 14 days, or month one is free.',
   points: [
-    { title: 'Live in 14 days, or month one is free', text: `Your website, Google profile cleanup, and review + lead follow-up automations go live within 14 days of getting your content and account access. If we miss it, your first month is on us.` },
+    { title: 'How the 14 days work', text: `Your website, Google profile cleanup, and review + lead follow-up automations go live within 14 days of getting your content and account access. If we miss it, your first month is on us.` },
     { title: 'Leave any month, keep everything', text: 'No contract. If you cancel, your website, domain, Google profile, and customer data stay yours.' },
     { title: 'Your price, in writing', text: 'You get a fixed quote in writing before any work starts. One build fee, one flat monthly price, no surprise invoices.' },
   ],

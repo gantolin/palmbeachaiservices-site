@@ -15,7 +15,7 @@ const crumbs = [{ name: 'Home', url: '/' }, { name: 'Guides', url: '/guides/' }]
   description="Plain-English guides for home service businesses: rank higher on Google Maps, get more Google reviews, local SEO for contractors, speed to lead, and SEO costs."
   breadcrumbs={crumbs}
 >
-  <PageHero eyebrow="Guides" title="How to get *seen* on Google, and get your time back." lede={`Free, plain-English playbooks for home service owners, written by ${SITE.founder} in ${SITE.homeBase}. No fluff, no jargon, no email required.`} crumbs={crumbs} />
+  <PageHero eyebrow="Guides" title="Guides for getting found on Google." lede={`Free how-to guides for home service owners, written by ${SITE.founder} in ${SITE.homeBase}. You do not need to give us your email to read them.`} crumbs={crumbs} />
   {pillars.map((p, pi) => {
     const list = guides.filter((g) => g.data.pillar === p);
     return list.length > 0 && (

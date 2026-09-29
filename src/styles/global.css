@@ -117,17 +117,13 @@
   .surface-sand { background: var(--color-sand-100); }
   .surface-cream { background: var(--color-cream-50); }
 
+  /* Section kicker: a short plain label in sentence case (no mono, no letter-spacing, no rule). */
   .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-navy-700);
-    display: inline-flex; align-items: center; gap: 10px;
-  }
-  .eyebrow::before {
-    content: ""; width: 18px; height: 1px; background: currentColor; opacity: .7;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-gold-700);
+    display: inline-flex; align-items: center;
   }
   .surface-dark .eyebrow, .on-dark .eyebrow { color: var(--color-gold-300); }
 
@@ -138,17 +134,10 @@
   .lede { font-size: clamp(1.06rem, 1.4vw, 1.25rem); line-height: 1.6; color: var(--color-ink-600); max-width: 62ch; }
   .surface-dark .lede, .on-dark .lede { color: var(--color-mist-400); }
 
-  .accent {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    color: var(--color-navy-700);
-    padding-right: 0.04em;
-    font-size: 1.08em;
-    line-height: 0.9;
-  }
-  .surface-dark .accent, .on-dark .accent { color: var(--color-gold-500); }
+  /* Headlines stay plain. The old italic-serif accent word read as a template trick, so .accent is now
+     a no-op everywhere except the hero, where one word keeps the brand gold. */
+  .accent { font: inherit; color: inherit; letter-spacing: inherit; }
+  .hero .accent { color: var(--color-gold-500); }
 
   /* Buttons */
   .btn {
@@ -175,7 +164,7 @@
   .btn-sm { min-height: 40px; padding: 0 16px; font-size: 14px; }
 
   .link-mono {
-    font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500;
+    font-family: var(--font-sans); font-size: 15px; font-weight: 600;
     display: inline-flex; align-items: center; gap: 8px; color: var(--color-navy-700);
     border-bottom: 1px solid currentColor; padding-bottom: 3px;
   }
@@ -196,6 +185,7 @@
   }
   .lift { transition: transform 280ms var(--ease-out-soft), box-shadow 280ms var(--ease-out-soft), border-color 280ms; }
   .lift:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(3,14,29,.05), 0 24px 48px -20px rgba(3,14,29,.28); }
+
 
   .hairline-gold { height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold-300), transparent); opacity: .5; }
 
@@ -396,3 +386,9 @@
   .marquee-group[aria-hidden='true'] { display: none; }
   .marquee-group { flex-wrap: wrap; justify-content: center; row-gap: 6px; padding-inline: 16px; }
 }
+
+/* Small labels used to be spaced-out monospace capitals all over the site. Render them as normal
+   sentence-case text instead (source strings are already sentence case). Unlayered on purpose so it
+   beats the Tailwind font-mono / uppercase / tracking utilities. */
+.font-mono { font-family: var(--font-sans); }
+.font-mono.uppercase { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 500; }

@@ -19,9 +19,6 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </nav>
 
     <div class="hidden lg:flex items-center gap-2">
-      <span class="local-time hidden 2xl:inline-flex items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.08em] text-mist-400 mr-2" aria-hidden="true">
-        <span class="size-1.5 rounded-full bg-navy-300"></span>Royal Palm Beach <span data-local-time class="tabular text-mist-200">--:--</span>
-      </span>
       <a href={telHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="phone" size={16} /> {SITE.phone}</a>
       <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Book a free call <Icon name="arrow-right" size={16} /></a>
     </div>

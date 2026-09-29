@@ -4,7 +4,7 @@ import Aurora from '../ui/Aurora.astro';
 import { CTA, SITE, telHref } from '@/config/site';
 interface Props { title?: string; text?: string }
 const {
-  title = 'Find out what is costing you *calls.*',
+  title = 'Find out what is costing you calls.',
   text = 'Book a free 30-minute call. Beforehand, we look at where you show up on Google Maps in your town and how you compare to the top 3. On the call, we go over what to fix first. You keep the list either way, and there is nothing to sign.',
 } = Astro.props;
 ---
@@ -12,8 +12,8 @@ const {
   <div class="cta-bloom absolute inset-0" aria-hidden="true"></div>
   <Aurora variant="soft" />
   <div class="container-x relative py-24 lg:py-32 text-center">
-    <div class="eyebrow justify-center">Free Google Visibility Check</div>
-    <h2 class="display !text-[clamp(2.4rem,5.6vw,4.4rem)] mt-6 text-[#f4f1e8] max-w-4xl mx-auto" set:html={title.replace(/\*(.+?)\*/g, '<em class="accent shimmer-text">$1</em>')} />
+    <div class="eyebrow justify-center">Free 30-minute call</div>
+    <h2 class="display !text-[clamp(2.4rem,5.6vw,4.4rem)] mt-6 text-[#f4f1e8] max-w-4xl mx-auto" set:html={title.replace(/\*(.+?)\*/g, '$1')} />
     <p class="lede mx-auto mt-7 text-center">{text}</p>
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>

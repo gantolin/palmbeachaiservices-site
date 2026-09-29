@@ -1,22 +1,16 @@
 ---
 import Base from '@/layouts/Base.astro';
 import HomeHero from '@/components/sections/HomeHero.astro';
-import ProofStrip from '@/components/sections/ProofStrip.astro';
 import Problem from '@/components/sections/Problem.astro';
 import ThreeThings from '@/components/sections/ThreeThings.astro';
 import HowItWorks from '@/components/sections/HowItWorks.astro';
 import CaseStudies from '@/components/sections/CaseStudies.astro';
-import Comparison from '@/components/sections/Comparison.astro';
 import PricingPlan from '@/components/sections/PricingPlan.astro';
 import Guarantee from '@/components/sections/Guarantee.astro';
 import Testimonials from '@/components/sections/Testimonials.astro';
 import Founder from '@/components/sections/Founder.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
-import Icon from '@/components/ui/Icon.astro';
-import Marquee from '@/components/ui/Marquee.astro';
-import { SITE } from '@/config/site';
-const serviceTicker = ['Custom websites', 'Google Business Profile', 'Local SEO', 'Review automation', 'Missed-call text-back', 'Lead follow-up', 'Custom AI tools'];
 import { homeFaqs } from '@/data/faq';
 ---
 <Base
@@ -25,11 +19,6 @@ import { homeFaqs } from '@/data/faq';
   faqs={homeFaqs}
 >
   <HomeHero />
-  <div class="ticker-band surface-dark border-b border-white/[0.06]">
-    <Marquee items={serviceTicker} label="What we do" size="lg" duration={42} />
-    <Marquee items={SITE.serviceAreas} label="Towns we serve in Palm Beach County" duration={56} reverse />
-  </div>
-  <ProofStrip />
   <Problem />
   <ThreeThings />
   <HowItWorks />
@@ -37,7 +26,7 @@ import { homeFaqs } from '@/data/faq';
     <div class="container-x">
       <div class="mx-auto max-w-3xl text-center" data-reveal>
         <div class="eyebrow justify-center">What you get</div>
-        <h2 class="h2 mt-5">One plan. <em class="accent">Everything</em> included.</h2>
+        <h2 class="h2 mt-4">One plan, built for local service businesses.</h2>
         <p class="lede mt-6 mx-auto">You pay once for the website, then one flat monthly price for everything that keeps it working. You get the quote in writing before we start, and there is no contract.</p>
       </div>
       <div class="mt-12">
@@ -46,8 +35,7 @@ import { homeFaqs } from '@/data/faq';
     </div>
   </section>
 
-  <CaseStudies flush eyebrow="Results" title="Work we have done for local *businesses.*" lede="Real clients, real numbers, and how we got them." />
-  <Comparison />
+  <CaseStudies flush eyebrow="Recent work" title="A few businesses we have helped." lede="Real clients and real numbers. Click any of them for the full story." />
 
   <Guarantee />
   <Testimonials />

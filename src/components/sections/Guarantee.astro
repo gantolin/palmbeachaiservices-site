@@ -1,7 +1,6 @@
 ---
 import Icon from '../ui/Icon.astro';
 import { guarantee } from '@/data/pricing';
-import { FOUNDER_FIRST_NAME } from '@/config/site';
 interface Props { flush?: boolean }
 const { flush = false } = Astro.props;
 ---
@@ -10,22 +9,9 @@ const { flush = false } = Astro.props;
     <div class="relative overflow-hidden rounded-[28px] surface-dark grain p-8 sm:p-12 lg:p-16" data-reveal>
       <div class="absolute inset-0 opacity-90" style="background: radial-gradient(70% 90% at 0% 100%, rgba(43,96,158,.55), transparent 65%)" aria-hidden="true"></div>
       <div class="relative grid gap-12 lg:grid-cols-12 items-center">
-        <div class="lg:col-span-4 flex justify-center lg:justify-start">
-          <div class="seal" aria-hidden="true">
-            <svg viewBox="0 0 220 220" class="w-full h-full">
-              <defs><path id="ring" d="M110,110 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0" /></defs>
-              <circle cx="110" cy="110" r="104" fill="none" stroke="#E6CD83" stroke-opacity=".35" />
-              <circle cx="110" cy="110" r="70" fill="#061F3F" stroke="#C9A227" stroke-opacity=".6" />
-              <text font-family="JetBrains Mono Variable, monospace" font-size="11.5" letter-spacing="3.2" fill="#E6CD83"><textPath href="#ring">THE PALM BEACH PROMISE · IN WRITING · </textPath></text>
-              <text x="110" y="104" text-anchor="middle" font-family="Geist Variable, sans-serif" font-weight="620" font-size="40" fill="#F4F1E8" letter-spacing="-1.5">14</text>
-              <text x="110" y="126" text-anchor="middle" font-family="JetBrains Mono Variable, monospace" font-size="10" letter-spacing="2" fill="#E6CD83">DAYS</text>
-              <text x="110" y="146" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="15" fill="#9FB0C7">or it's free</text>
-            </svg>
-          </div>
-        </div>
-        <div class="lg:col-span-8">
+        <div class="lg:col-span-12 max-w-5xl">
           <div class="eyebrow">{guarantee.name}</div>
-          <h2 class="h2 mt-5 text-[#f4f1e8]">Live in 14 days, or month one is <em class="accent">free.</em></h2>
+          <h2 class="h2 mt-5 text-[#f4f1e8]">Your site is live in 14 days, or your first month is free.</h2>
           <ul class="mt-9 grid gap-6 md:grid-cols-3">
             {guarantee.points.map((pt) => (
               <li>
@@ -35,12 +21,11 @@ const { flush = false } = Astro.props;
               </li>
             ))}
           </ul>
-          <p class="mt-8 text-[13.5px] text-mist-400">{guarantee.fine} <a href="/terms/#guarantee" class="text-gold-300 underline underline-offset-4">Read the full terms</a>. <span class="font-serif italic text-gold-300 text-[17px] ml-1">{FOUNDER_FIRST_NAME}</span></p>
+          <p class="mt-8 text-[13.5px] text-mist-400">{guarantee.fine} <a href="/terms/#guarantee" class="text-gold-300 underline underline-offset-4">Read the full terms</a>.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 <style>
-  .seal { width: 220px; height: 220px; }
 </style>

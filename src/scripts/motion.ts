@@ -40,13 +40,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') toggle.click();
 });
 
-/* ---------- Local time chip ---------- */
-const timeEl = document.querySelector('[data-local-time]');
-const fmt = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
-const tick = () => { if (timeEl) timeEl.textContent = fmt.format(new Date()); };
-tick();
-setInterval(tick, 30_000);
-
 /* ---------- Reveal on scroll ---------- */
 const revealEls = document.querySelectorAll<HTMLElement>('[data-reveal]');
 if (reduce || !('IntersectionObserver' in window)) {
