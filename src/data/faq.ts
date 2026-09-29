@@ -28,10 +28,6 @@ export const homeFaqs = [
     a: 'You can leave any month and keep everything we built. We also put our delivery in writing: your site, Google profile cleanup, and review + lead follow-up automations are live within 14 days of getting your content, or your first month is free. We never promise rankings or revenue we can\u2019t control.',
   },
   {
-    q: 'Why do you limit clients per trade?',
-    a: 'We won\u2019t help two competing companies fight for the same customers in the same town. So we take a limited number of clients per trade, per town.',
-  },
-  {
     q: 'What areas do you serve?',
     a: 'All of Palm Beach County, from our home base in Royal Palm Beach, plus nearby Martin and Broward counties.',
   },

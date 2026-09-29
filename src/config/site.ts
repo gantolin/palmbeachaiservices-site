@@ -64,8 +64,6 @@ export const SITE = {
     youtube: '',
   } as Record<string, string>,
 
-  // Scarcity line used across the site (no day-job mention anywhere, by design).
-  capacityLine: 'We take a limited number of clients per trade, per town.',
 
   /**
    * The Google check form posts to Web3Forms, which emails each lead to Gene@.
