@@ -1,63 +1,52 @@
 ---
 import Logo from './ui/Logo.astro';
 import Icon from './ui/Icon.astro';
-import { SITE, NAV, CTA, telHref, mailHref } from '@/config/site';
+import { SITE, telHref, mailHref } from '@/config/site';
 import { services } from '@/data/services';
-import { caseStudies } from '@/data/caseStudies';
 import { cities, cityPath } from '@/data/cities';
-const cityByName = new Map(cities.map((c) => [c.name, c]));
 const year = new Date().getFullYear();
+const heading = 'text-[14px] font-semibold text-mist-200';
+const link = 'text-mist-200/85 hover:text-white';
 ---
 <footer class="surface-dark relative overflow-hidden border-t border-white/5">
-  <div class="container-x pt-20 pb-28 lg:pb-12">
-    <div class="grid gap-12 lg:grid-cols-12">
-      <div class="lg:col-span-4">
+  <div class="container-x pt-16 pb-28 lg:pb-12">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-12 lg:gap-10">
+      <div class="col-span-2 lg:col-span-4">
         <Logo height={52} />
-        <p class="mt-5 text-mist-200 max-w-sm text-[16px] font-display font-[560]">{SITE.tagline}</p>
-        <p class="mt-2 text-mist-400 max-w-sm text-[14.5px]">{SITE.positioning}</p>
+        <p class="mt-5 text-mist-400 max-w-sm text-[15px]">{SITE.tagline}</p>
         <address class="not-italic mt-6 space-y-2 text-[15px]">
-          <div class="font-medium text-mist-200">{SITE.name}</div>
           <a href={SITE.mapsUrl} target="_blank" rel="noopener" class="block text-mist-400 hover:text-gold-300">{SITE.address.street}<br />{SITE.address.locality}, {SITE.address.region} {SITE.address.postalCode}</a>
           <a href={telHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300"><Icon name="phone" size={16} />{SITE.phone}</a>
           <a href={mailHref} class="flex items-center gap-2 text-mist-200 hover:text-gold-300 break-all"><Icon name="mail" size={16} />{SITE.email}</a>
         </address>
       </div>
-      <div class="lg:col-span-2">
-        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Services</h2>
+      <div class="lg:col-span-3">
+        <h2 class={heading}>Services</h2>
         <ul class="mt-4 space-y-2.5 text-[15px]">
-          {services.map((s) => <li><a class="text-mist-200/85 hover:text-white" href={`/services/${s.slug}/`}>{s.name}</a></li>)}
+          {services.map((s) => <li><a class={link} href={`/services/${s.slug}/`}>{s.navLabel}</a></li>)}
         </ul>
       </div>
       <div class="lg:col-span-2">
-        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Results</h2>
+        <h2 class={heading}>Company</h2>
         <ul class="mt-4 space-y-2.5 text-[15px]">
-          {caseStudies.map((c) => <li><a class="text-mist-200/85 hover:text-white" href={`/results/${c.slug}/`}>{c.client}</a></li>)}
-        </ul>
-        <h2 class="mt-8 font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Company</h2>
-        <ul class="mt-4 space-y-2.5 text-[15px]">
-          {NAV.filter((n) => n.href === '/about/').map((n) => <li><a class="text-mist-200/85 hover:text-white" href={n.href}>{n.label}</a></li>)}
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.secondary.href}>Free Google check</a></li>
-          <li><a class="text-mist-200/85 hover:text-white" href={CTA.primary.href}>Book a call</a></li>
-          <li><a class="text-mist-200/85 hover:text-white" href="/guides/">Guides</a></li>
-          <li><a class="text-mist-200/85 hover:text-white" href="/contact/">Contact</a></li>
+          <li><a class={link} href="/about/">About</a></li>
+          <li><a class={link} href="/results/">Results</a></li>
+          <li><a class={link} href="/guides/">Guides</a></li>
+          <li><a class={link} href="/contact/">Contact</a></li>
+          <li><a class={link} href="/book/">Book a free call</a></li>
         </ul>
       </div>
-      <div class="lg:col-span-4">
-        <h2 class="font-mono text-[11.5px] uppercase tracking-[0.12em] text-mist-400 font-medium">Service area</h2>
-        <p class="mt-4 text-[15px] text-mist-200/85">Based in <strong class="text-mist-200 font-medium">{SITE.homeBase}</strong>. Serving all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}.</p>
-        <ul class="mt-4 flex flex-wrap gap-2">
-          {SITE.serviceAreas.map((a) => {
-            const page = cityByName.get(a);
-            return page
-              ? <li><a href={cityPath(page)} class="chip border border-white/20 text-mist-200 hover:text-gold-300 hover:border-gold-300/50 text-[12.5px] py-1">{a}</a></li>
-              : <li class="chip border border-white/10 text-mist-400 text-[12.5px] py-1">{a}</li>;
-          })}
+      <div class="col-span-2 lg:col-span-3">
+        <h2 class={heading}>Areas we serve</h2>
+        <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15px] lg:grid-cols-1">
+          {cities.map((c) => <li><a class={link} href={cityPath(c)}>{c.name}</a></li>)}
         </ul>
+        <p class="mt-4 text-[14px] text-mist-400">And the rest of {SITE.primaryArea}.</p>
       </div>
     </div>
-    <div class="hairline-gold mt-16"></div>
+    <div class="hairline-gold mt-14"></div>
     <div class="mt-6 flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between text-[13.5px] text-mist-400">
-      <p>© {year} {SITE.name}. Built in Royal Palm Beach, FL.</p>
+      <p>© {year} {SITE.name}</p>
       <ul class="flex flex-wrap gap-x-6 gap-y-2">
         <li><a class="hover:text-white" href="/privacy/">Privacy</a></li>
         <li><a class="hover:text-white" href="/terms/">Terms & SMS policy</a></li>
