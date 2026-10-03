@@ -1,8 +1,9 @@
 ---
 import Icon from '../ui/Icon.astro';
 import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
-interface Props { compact?: boolean }
-const { compact = false } = Astro.props;
+// `home` is the home page version: no client results, no tool names, and no buttons (the audit is the only ask there).
+interface Props { compact?: boolean; home?: boolean }
+const { compact = false, home = false } = Astro.props;
 // TODO(Gene): replace the placeholder with a real editorial portrait (set SITE.founderPhoto in src/config/site.ts).
 ---
 <section class="section surface-sand relative overflow-hidden" id="founder">
@@ -30,12 +31,18 @@ const { compact = false } = Astro.props;
         <h2 class="h2 mt-5">Hi, I'm {FOUNDER_FIRST_NAME}. You'll work <em class="accent">with me,</em> not an account manager.</h2>
         <div class="mt-7 space-y-5 text-[17px] leading-relaxed text-ink-900/90 max-w-[60ch]">
           <p>I run {SITE.name}. I build every website, set up every Google profile, and put together every automation myself, so the person you talk to is the person doing the work.</p>
-          <p>I also use AI tools like Claude, ChatGPT, and Grok to take busywork off owners' plates: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut a mold inspection company's report time from 45 minutes to 10.</p>
+          {home ? (
+            <p>I also set up AI for the busywork: texting back missed calls, asking for reviews, following up on quotes, and drafting the reports and paperwork your trade already does.</p>
+          ) : (
+            <p>I also use AI tools like Claude, ChatGPT, and Grok to take busywork off owners' plates: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut a mold inspection company's report time from 45 minutes to 10.</p>
+          )}
         </div>
+        {!home && (
         <div class="mt-9 flex flex-col sm:flex-row gap-4 sm:items-center">
           <a href={CTA.primary.href} class="btn btn-navy">Book a call with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
           <a href={telHref} class="inline-flex items-center gap-2 font-semibold text-navy-700 hover:text-navy-800 min-h-11"><Icon name="phone" size={17} />{SITE.phone}</a>
         </div>
+        )}
       </div>
     </div>
   </div>

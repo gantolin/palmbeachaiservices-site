@@ -1,7 +1,7 @@
 export const homeFaqs = [
   {
     q: 'How much does it cost?',
-    a: 'It depends on your trade, how many towns you want to show up in, and where your Google profile and website start today. After a free 30-minute call you get a fixed quote in writing: a one-time website build, then one flat monthly plan. No contract. The monthly plan covers review automation, Google Business Profile management, lead follow-up, a monthly check-in, backlink building, and competitor analysis + ranking improvement.',
+    a: 'A one-time website build, then one flat monthly plan. You get both as a fixed quote in writing after the free 30-minute call, based on your trade and how many towns you want to show up in. No contract. The monthly plan covers Google Business Profile management, review requests, lead follow-up, backlink building, competitor tracking, and a monthly check-in.',
   },
   {
     q: 'Do I have to sign a contract?',
@@ -21,7 +21,7 @@ export const homeFaqs = [
   },
   {
     q: 'What does "AI automation" actually mean for my business?',
-    a: 'Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut a mold inspection company\u2019s report time from 45 to 10 minutes.',
+    a: 'Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and drafting the reports and paperwork your trade already does.',
   },
   {
     q: 'What if it doesn\u2019t work?',

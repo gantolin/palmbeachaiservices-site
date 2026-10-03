@@ -2,24 +2,28 @@
 import Icon from '../ui/Icon.astro';
 import Aurora from '../ui/Aurora.astro';
 import { CTA, SITE, telHref } from '@/config/site';
-interface Props { title?: string; text?: string }
+// `only` leaves the booking button as the single call to action (used on the home page).
+interface Props { title?: string; text?: string; eyebrow?: string; ctaLabel?: string; only?: boolean }
 const {
   title = 'Find out what is costing you calls.',
   text = 'Book a free 30-minute call. Beforehand, we look at where you show up on Google Maps in your town and how you compare to the top 3. On the call, we go over what to fix first. You keep the list either way, and there is nothing to sign.',
+  eyebrow = 'Free 30-minute call',
+  ctaLabel = CTA.primary.label,
+  only = false,
 } = Astro.props;
 ---
 <section class="relative overflow-hidden surface-dark grain" id="get-started" data-parallax-root>
   <div class="cta-bloom absolute inset-0" aria-hidden="true"></div>
   <Aurora variant="soft" />
   <div class="container-x relative py-24 lg:py-32 text-center">
-    <div class="eyebrow justify-center">Free 30-minute call</div>
+    <div class="eyebrow justify-center">{eyebrow}</div>
     <h2 class="display !text-[clamp(2.4rem,5.6vw,4.4rem)] mt-6 text-[#f4f1e8] max-w-4xl mx-auto" set:html={title.replace(/\*(.+?)\*/g, '$1')} />
     <p class="lede mx-auto mt-7 text-center">{text}</p>
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
-      <a href={telHref} class="btn btn-outline-dark btn-lg"><Icon name="phone" size={18} />Call {SITE.phone}</a>
+      <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{ctaLabel}<Icon name="arrow-right" size={18} /></a>
+      {!only && <a href={telHref} class="btn btn-outline-dark btn-lg"><Icon name="phone" size={18} />Call {SITE.phone}</a>}
     </div>
-    <p class="mt-8 text-[14px] text-mist-400">Rather send your details first? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Fill in the 2-minute Google check form</a>.</p>
+    {!only && <p class="mt-8 text-[14px] text-mist-400">Rather send your details first? <a href={CTA.secondary.href} class="text-gold-300 underline underline-offset-4 hover:text-gold-400">Fill in the 2-minute Google check form</a>.</p>}
   </div>
 </section>
 <style>
