@@ -14,7 +14,9 @@ export function getStaticPaths() {
   return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
 }
 const { service } = Astro.props as { service: Service };
-const cs = getCaseStudy(service.relatedCase)!;
+const cs = service.relatedCase ? getCaseStudy(service.relatedCase) : undefined;
+const hasCalculator = service.slug === 'ai-automation' || service.slug === 'ai-answering-service';
+const hasAside = Boolean(cs) || hasCalculator;
 const others = services.filter((s) => s.slug !== service.slug);
 const crumbs = [{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }, { name: service.name, url: `/services/${service.slug}/` }];
 const serviceLd = {
@@ -77,22 +79,24 @@ const serviceLd = {
   <!-- Included + proof -->
   <section class="section surface-sand" id="whats-included">
     <div class="container-x grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
-      <div class="lg:col-span-6" data-reveal>
+      <div class={hasAside ? 'lg:col-span-6' : 'lg:col-span-12'} data-reveal>
         <div class="eyebrow">What's included</div>
         <h2 class="h2 mt-5">What we do, step by step</h2>
-        <ul class="mt-9 grid gap-3 sm:grid-cols-1">
+        <ul class={`mt-9 grid gap-3 ${hasAside ? 'sm:grid-cols-1' : 'md:grid-cols-2'}`}>
           {service.included.map((f) => (
             <li class="flex gap-3 rounded-xl bg-white/70 border border-stone-300 px-4 py-3.5 text-[15.5px]">
               <span class="mt-[2px] shrink-0 size-5 rounded-full bg-navy-700 text-white flex items-center justify-center"><Icon name="check" size={12} stroke={2.6} /></span>{f}
             </li>
           ))}
         </ul>
-        <p class="mt-7 rounded-xl bg-navy-950 text-mist-200 px-5 py-4 text-[15px] flex gap-3 items-start"><Icon name="receipt" size={19} class="text-gold-300 shrink-0 mt-[2px]" /><span>{service.priceNote} <a href="/book/" class="text-gold-300 underline underline-offset-4">Book a free call</a></span></p>
+        <p class:list={['mt-7 rounded-xl bg-navy-950 text-mist-200 px-5 py-4 text-[15px] flex gap-3 items-start', !hasAside && 'max-w-3xl']}><Icon name="receipt" size={19} class="text-gold-300 shrink-0 mt-[2px]" /><span>{service.priceNote} <a href="/book/" class="text-gold-300 underline underline-offset-4">Book a free call</a></span></p>
       </div>
+      {hasAside && (
       <div class="lg:col-span-6 lg:sticky lg:top-28 space-y-5" data-reveal style="--d:100ms">
-        {service.slug === 'ai-automation' || service.slug === 'ai-answering-service' ? (
+        {hasCalculator ? (
           <div class="surface-dark rounded-[20px]"><Calculator /></div>
         ) : null}
+        {cs && (
         <a href={`/results/${cs.slug}/`} class="block card lift rounded-[20px] overflow-hidden group">
           <div class="p-5 bg-[linear-gradient(180deg,var(--color-navy-50),var(--color-sand-100))] border-b border-stone-300"><Visual kind={cs.visual} /></div>
           <div class="p-6">
@@ -101,7 +105,9 @@ const serviceLd = {
             <span class="mt-4 inline-flex items-center gap-2 text-[14.5px] font-semibold text-navy-700">Read the case study <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
           </div>
         </a>
+        )}
       </div>
+      )}
     </div>
   </section>
 

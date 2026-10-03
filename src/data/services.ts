@@ -14,10 +14,10 @@ export interface Service {
   process: { title: string; text: string }[];
   /** Optional "one missed call" walk-through. An example, not a statistic. */
   timeline?: { title: string; steps: { time: string; text: string }[]; after: string };
-  relatedCase: string; // case study slug
+  relatedCase?: string; // case study slug, when one is relevant
   priceNote: string;
   faqs: { q: string; a: string }[];
-  icon: 'globe' | 'pin' | 'spark' | 'phone';
+  icon: 'globe' | 'pin' | 'spark' | 'phone' | 'star' | 'users' | 'message' | 'chart';
 }
 
 export const services: Service[] = [
@@ -107,6 +107,90 @@ export const services: Service[] = [
     icon: 'pin',
   },
   {
+    slug: 'google-reviews',
+    pillar: 'Get seen on Google',
+    name: 'Google Review Requests',
+    navLabel: 'Google Reviews',
+    metaTitle: 'Google Review Requests for Home Service Businesses | Palm Beach AI',
+    metaDescription:
+      'Get more Google reviews without having to ask. After every job your customer gets a text with a one-tap review link. Set up for home service businesses in Palm Beach County.',
+    eyebrow: 'Google reviews · Palm Beach County',
+    headline: 'More Google reviews, *without having to ask*.',
+    subhead:
+      'Most happy customers will leave a review if someone asks at the right time and makes it easy. After every job, your customer gets a short text with a link that opens your Google review box in one tap. You finish the job and the request goes out for you.',
+    outcomes: [
+      { title: 'A request after every job', text: 'The text goes out when the job is marked done, so no customer gets skipped on a busy week.' },
+      { title: 'One tap to review', text: 'The link opens the review box on your Google profile. No searching for your business name.' },
+      { title: 'A profile that looks active', text: 'New reviews coming in every month help homeowners trust you and help Google see you are still in business.' },
+    ],
+    included: [
+      'Review request text sent after every finished job',
+      'A direct link to the review box on your Google profile',
+      'One polite reminder if they have not left a review',
+      'Message written in your voice and approved by you',
+      'Help replying to reviews, good and bad',
+      'The same request by email when you have an address on file',
+      'Text registration with the phone carriers handled for you',
+      'Review count and rating in your monthly check-in',
+    ],
+    process: [
+      { title: 'Connect', text: 'We link your Google profile and set up the review link.' },
+      { title: 'Write', text: 'We write the request and the reminder in your voice. You approve both.' },
+      { title: 'Trigger', text: 'The text goes out when you mark a job done, or from a list you send us each week.' },
+      { title: 'Reply', text: 'New reviews get a reply, and we go over the numbers with you every month.' },
+    ],
+    priceNote: 'Review requests are included in the monthly plan. Fixed quote in writing after a free call. Month-to-month.',
+    faqs: [
+      { q: 'Do you only send the link to happy customers?', a: 'No. Every customer gets the same link. Google does not allow businesses to filter who gets asked, and profiles that do it can lose their reviews.' },
+      { q: 'What if I get a bad review?', a: 'It happens to every business. We help you write a calm, short reply, and a steady flow of good reviews keeps one bad one from standing out.' },
+      { q: 'Can you get reviews from my past customers?', a: 'Yes. Send us a list of recent customers and we send the request in small batches, so the reviews come in at a natural pace.' },
+      { q: 'Is it legal to text my customers?', a: 'Yes, when it is set up properly. Phone carriers require a business to register before it sends texts, and customers have to be able to opt out. We handle the registration and build the opt-out in.' },
+    ],
+    icon: 'star',
+  },
+  {
+    slug: 'facebook-ads',
+    pillar: 'Get more leads',
+    name: 'Facebook Ads',
+    navLabel: 'Facebook Ads',
+    metaTitle: 'Facebook Ads for Home Service Businesses | Palm Beach AI Services',
+    metaDescription:
+      'Facebook and Instagram ads for home service businesses in Palm Beach County. Ads shown to homeowners in the towns you work in, with every lead texted to your phone. No contract.',
+    eyebrow: 'Facebook and Instagram ads · Palm Beach County',
+    headline: 'Local leads from *Facebook*, sent to your phone.',
+    subhead:
+      'Google takes time to build. Facebook and Instagram ads can put your business in front of homeowners in the towns you work in this week. We set up the ads, the lead form, and the follow-up, and every new lead lands on your phone as a text.',
+    outcomes: [
+      { title: 'Leads while Google builds', text: 'Ads can start bringing in inquiries within days, while your website and Google profile climb.' },
+      { title: 'Only the towns you serve', text: 'Your ads show to homeowners in the zip codes you pick, so you are not paying for clicks an hour away.' },
+      { title: 'No lead left sitting', text: 'Each lead gets a text back right away and comes to your phone with a name, number, and what they need.' },
+    ],
+    included: [
+      'Ad account and Facebook page set up in your name, so you own them',
+      'Ads written for your trade, using photos of your real jobs',
+      'Targeting by town and zip code',
+      'A short lead form, or a landing page on your website',
+      'New leads texted and emailed to you the moment they come in',
+      'An automatic text back to the lead',
+      'Follow-up texts for leads who do not answer',
+      'A monthly report: what you spent, how many leads, and the cost per lead',
+    ],
+    process: [
+      { title: 'Plan', text: 'We agree on the service to advertise, the towns, and a monthly ad budget you are comfortable with.' },
+      { title: 'Build', text: 'We set up the account, write the ads, and connect the lead form to your phone.' },
+      { title: 'Launch', text: 'The ads go live and we watch the first leads come in with you.' },
+      { title: 'Adjust', text: 'Every month we keep the ads that bring in jobs and replace the ones that do not.' },
+    ],
+    priceNote: 'Ad management is quoted per business after a free call. Your ad budget is paid straight to Facebook, with no markup from us. Month-to-month.',
+    faqs: [
+      { q: 'How much should I spend on ads?', a: 'It depends on your trade and how many towns you cover. We suggest a starting budget on the call, and you can raise, lower, or pause it at any time. The budget goes to Facebook, not to us.' },
+      { q: 'Do Facebook ads work for my trade?', a: 'They tend to work best for jobs people plan and like to see first, such as pavers, roofing, remodeling, cleaning, and landscaping. For emergency work like a broken AC, Google usually does better. We tell you honestly on the call.' },
+      { q: 'Can you guarantee a number of leads?', a: 'No. Nobody can promise what Facebook will deliver. We report what you spent and what came in every month, so you can see whether it is paying for itself.' },
+      { q: 'Do I need a Facebook page?', a: 'Yes, and if you do not have one we set it up for you during the build.' },
+    ],
+    icon: 'users',
+  },
+  {
     slug: 'ai-automation',
     pillar: 'Get your time back with AI',
     name: 'AI Automation',
@@ -149,6 +233,90 @@ export const services: Service[] = [
       { q: 'Is it legal to text my customers automatically?', a: 'Yes, when it is set up properly. Phone carriers require a business to register before it sends texts, and customers have to be able to opt out. We handle the registration during setup and build the opt-out in.' },
     ],
     icon: 'spark',
+  },
+  {
+    slug: 'lead-follow-up',
+    pillar: 'Get your time back with AI',
+    name: 'Lead Follow-Up',
+    navLabel: 'Lead Follow-Up',
+    metaTitle: 'Lead Follow-Up by Text and Email for Contractors | Palm Beach AI',
+    metaDescription:
+      'Automatic lead follow-up for home service businesses. New leads get an answer in seconds, and open quotes get a text or email on schedule until they book or say no.',
+    eyebrow: 'Lead follow-up · Text and email',
+    headline: 'Every lead gets followed up, *even on your busiest week*.',
+    subhead:
+      'Most lost jobs are not lost to a better price. They are lost because nobody called back. We set up texts and emails that answer a new lead in seconds and keep checking in on open quotes, so you only step in when the customer is ready to talk.',
+    outcomes: [
+      { title: 'A fast first answer', text: 'A new lead from your website, an ad, or a missed call gets a reply in seconds, at any hour.' },
+      { title: 'Quotes that do not go cold', text: 'Open estimates get a check-in by text or email on a schedule you choose, until they book or say no.' },
+      { title: 'Past customers come back', text: 'Reminders for seasonal work and maintenance go out on their own.' },
+    ],
+    included: [
+      'Instant text reply to every new lead',
+      'Missed-call text-back',
+      'Follow-up sequence for open quotes, by text and email',
+      'Appointment confirmations and reminders',
+      'Seasonal and maintenance reminders for past customers',
+      'One inbox for texts, emails, and form messages',
+      'Every message written in your voice and approved by you',
+      'Text registration with the phone carriers handled for you',
+    ],
+    process: [
+      { title: 'Map it', text: 'We look at where your leads come from and where they stop hearing from you.' },
+      { title: 'Write it', text: 'We write each message the way you would say it. You approve them before anything goes out.' },
+      { title: 'Turn it on', text: 'We connect your forms, your phone line, and your calendar, then test it with you.' },
+      { title: 'Tune it', text: 'Every month we look at which messages get replies and change the ones that do not.' },
+    ],
+    priceNote: 'Lead follow-up is included in the monthly plan. Fixed quote in writing after a free call. Month-to-month.',
+    faqs: [
+      { q: 'Will my customers feel spammed?', a: 'No. The messages are short, spaced out, and stop the moment someone books, replies, or asks to opt out.' },
+      { q: 'Will it sound like a robot?', a: 'We write every message in your voice and keep it to a sentence or two. You approve them before they go live.' },
+      { q: 'What happens when a customer replies?', a: 'The reply comes to your phone and your inbox, and the automatic messages to that person stop so you can take it from there.' },
+      { q: 'Is it legal to text my leads automatically?', a: 'Yes, when it is set up properly. Phone carriers require a business to register before it sends texts, and customers have to be able to opt out. We handle the registration and build the opt-out in.' },
+    ],
+    icon: 'message',
+  },
+  {
+    slug: 'lead-dashboard',
+    pillar: 'Know your numbers',
+    name: 'Lead and Job Dashboard',
+    navLabel: 'Lead Dashboard',
+    metaTitle: 'Lead Tracking Dashboard for Home Service Businesses | Palm Beach AI',
+    metaDescription:
+      'One dashboard for your leads, follow-ups, booked jobs, and revenue, so you can see which marketing brings in work. Set up for home service businesses in Palm Beach County.',
+    eyebrow: 'Lead tracking · Jobs and revenue in one place',
+    headline: 'See where your jobs *come from*.',
+    subhead:
+      'If your leads live in texts, voicemails, and a notebook in the truck, you cannot tell what is working. We set up one dashboard that shows every lead, who has been followed up with, which jobs you won, and what each source of leads brought in.',
+    outcomes: [
+      { title: 'Every lead in one place', text: 'Calls, website forms, ads, and Google messages all land in the same list.' },
+      { title: 'Know what is working', text: 'See how many leads and booked jobs came from Google, from ads, and from referrals.' },
+      { title: 'Nothing falls through', text: 'Each lead shows whether it was answered, quoted, won, or lost, so you know who to call today.' },
+    ],
+    included: [
+      'Dashboard set up on GoHighLevel, in an account you own',
+      'Your existing contacts and leads imported',
+      'Leads from calls, forms, and ads added automatically',
+      'A simple pipeline: new, quoted, won, lost',
+      'Job value recorded when a job is won',
+      'Revenue by lead source, next to what you spent on marketing',
+      'A phone app so you can check it from the truck',
+      'A short walkthrough so you and your office know how to use it',
+    ],
+    process: [
+      { title: 'Set up', text: 'We build the dashboard and bring in your current contacts.' },
+      { title: 'Connect', text: 'We link your phone line, website forms, and ads so new leads show up on their own.' },
+      { title: 'Show you', text: 'We walk you through it in about 20 minutes and adjust it to how you work.' },
+      { title: 'Review', text: 'Every month we go over the numbers together and decide what to do more of.' },
+    ],
+    priceNote: 'Dashboard setup is quoted per business after a free call, based on how many tools need to connect. Month-to-month.',
+    faqs: [
+      { q: 'Do I have to type everything in?', a: 'No. Leads come in on their own. The only thing you do is mark a job won or lost and enter what it was worth, which takes a few seconds.' },
+      { q: 'I already use Jobber or Housecall Pro. Do I need this?', a: 'Maybe not. Those tools are good at scheduling and invoicing. On the call we look at what you already have and only add what is missing.' },
+      { q: 'Who owns the data?', a: 'You do. The account is in your name and your contacts stay yours if we stop working together.' },
+      { q: 'Do I need to be good with tech?', a: 'No. We set it up, show you the two or three screens you need, and stay available when you have a question.' },
+    ],
+    icon: 'chart',
   },
   {
     slug: 'ai-answering-service',
