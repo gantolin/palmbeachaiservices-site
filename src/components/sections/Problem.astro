@@ -2,9 +2,9 @@
 import Icon from '../ui/Icon.astro';
 import Calculator from '../islands/MissedCallCalculator.astro';
 const pains = [
-  { icon: 'phone-missed', title: 'Missed calls go to the next company', text: 'You\'re on a roof, under a sink, or on the road. By the time you call back, they\'ve already hired someone else.' },
   { icon: 'search', title: 'Google shows someone else first', text: 'If your Google profile is half filled out and your website is slow, the calls go to whoever shows up above you.' },
   { icon: 'receipt', title: 'Paperwork eats your nights', text: 'Quotes, invoices, reports, and follow-up texts pile up after the real work is done.' },
+  { icon: 'phone-missed', title: 'Missed calls go to the next company', text: 'You\'re on a roof, under a sink, or on the road. By the time you call back, they\'ve already hired someone else.' },
 ];
 ---
 <section class="section surface-sand relative overflow-hidden" id="problem">
@@ -12,8 +12,8 @@ const pains = [
     <div class="grid gap-14 lg:grid-cols-12 lg:gap-16 items-start">
       <div class="lg:col-span-6" data-reveal>
         <div class="eyebrow">The problem</div>
-        <h2 class="h2 mt-5">You pay to make the phone ring. Then it goes to voicemail.</h2>
-        <p class="lede mt-6">Most owners have never added up what missed calls cost them. Move the sliders and see your number.</p>
+        <h2 class="h2 mt-5">Customers can't find you, and the office work never ends.</h2>
+        <p class="lede mt-6">Those are the two problems we fix. If you also miss calls while you are on a job, move the sliders to see what that costs you.</p>
         <ul class="mt-10 space-y-6">
           {pains.map((p) => (
             <li class="flex gap-4">

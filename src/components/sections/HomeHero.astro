@@ -1,10 +1,10 @@
 ---
 import Icon from '../ui/Icon.astro';
 import Aurora from '../ui/Aurora.astro';
-import PhoneDemo from '../islands/PhoneDemo.astro';
-import { CTA, SITE, telHref } from '@/config/site';
+import { CTA, SITE, FOUNDER_FIRST_NAME, telHref } from '@/config/site';
 import { words } from '@/lib/text';
-const headline = 'Turn Google searches into *booked* jobs.';
+const headline = 'Get found on Google. Get *hours back* every week.';
+const terms = ['Month to month', 'You own everything we build', `You work with ${FOUNDER_FIRST_NAME}, the owner`];
 ---
 <section class="hero relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
   <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
@@ -18,29 +18,78 @@ const headline = 'Turn Google searches into *booked* jobs.';
         <div class="eyebrow fade-in">Local SEO and AI for home service businesses in Palm Beach County</div>
         <h1 class="display mt-6 text-[#f4f1e8] word-rise" set:html={words(headline)} />
         <p class="lede mt-7 !text-[clamp(1.08rem,1.5vw,1.3rem)] fade-in" style="--d:380ms">
-          We help Palm Beach County home service businesses show up on Google when people nearby need them. Then we set up the follow-up, so a missed call gets a text back and a new lead hears from you right away.
-          <span class="text-mist-200">Month to month, and you own everything we build.</span>
+          We help Palm Beach County home service businesses show up on Google when people nearby search. Then we build AI tools that take the paperwork and the follow-up off your plate, like the inspection report we cut from 45 minutes to 10.
         </p>
         <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:480ms">
           <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
           <a href={telHref} class="inline-flex items-center gap-2 text-[16px] font-semibold text-mist-200 hover:text-white self-start sm:self-auto"><Icon name="phone" size={17} />or call {SITE.phone}</a>
         </div>
-        <p class="mt-8 text-[14.5px] text-mist-400 fade-in" style="--d:560ms">
-          Recent clients: <a href="/results/safe-haven-inspections/" class="text-mist-200 hover:text-white">Safe Haven Inspections</a>,
-          <a href="/results/heros-pavers/" class="text-mist-200 hover:text-white">Hero's Pavers</a>, and
-          <a href="/results/next-level-air-conditioning/" class="text-mist-200 hover:text-white">Next Level Air Conditioning</a>.
+        <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[14.5px] text-mist-200 fade-in" style="--d:520ms">
+          {terms.map((t) => <li class="inline-flex items-center gap-2"><Icon name="check" size={15} stroke={2.4} class="text-gold-300" />{t}</li>)}
+        </ul>
+        <p class="mt-8 text-[14.5px] text-mist-400 max-w-[58ch] fade-in" style="--d:560ms">
+          <a href="/results/paver-contractor/" class="text-mist-200 hover:text-white">A Lake Worth paver contractor</a> shows up on page one of Google for its main paver searches.
+          <a href="/results/mold-inspection-company/" class="text-mist-200 hover:text-white">A mold inspection company</a> writes each report in 10 minutes instead of 45.
         </p>
       </div>
 
       <div class="lg:col-span-5 relative fade-in" style="--d:250ms">
         <div class="absolute -inset-10 rounded-full bg-navy-700/30 blur-3xl" aria-hidden="true"></div>
-        <div class="xl:flex xl:justify-end plx-1"><PhoneDemo /></div>
+        <!-- Illustration of a Google map result. "Your business" is a stand-in, so there are no ratings or review counts on it. -->
+        <div class="relative mx-auto xl:mr-0 w-full max-w-[420px] plx-1">
+          <div class="mappack" role="img" aria-label="Example of a Google map result with your business listed first">
+            <div class="flex items-center gap-2.5 px-4 py-3 border-b border-stone-300/70 text-[14px] text-ink-900"><Icon name="search" size={16} class="text-ink-600" />ac repair near me</div>
+            <div class="map" aria-hidden="true">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 420 200" preserveAspectRatio="none">
+                <rect width="420" height="200" fill="#e8eef3" />
+                <path d="M372 0 C360 50 384 110 366 200 L420 200 L420 0 Z" fill="#c9dff0" />
+                <path d="M0 62 C70 48 150 78 230 60 S330 44 372 54" stroke="#fff" stroke-width="7" fill="none" />
+                <path d="M0 142 C90 128 170 156 260 138 S340 128 368 134" stroke="#fff" stroke-width="5" fill="none" />
+                <path d="M84 0 L104 200" stroke="#fff" stroke-width="5" />
+                <path d="M196 0 L212 200" stroke="#fff" stroke-width="7" />
+                <path d="M296 0 L306 200" stroke="#fff" stroke-width="4" />
+                <path d="M0 102 L370 96" stroke="#fff" stroke-width="3" opacity=".8" />
+                <rect x="116" y="74" width="66" height="20" rx="3" fill="#d6e6d2" />
+                <rect x="224" y="150" width="60" height="34" rx="3" fill="#d6e6d2" />
+              </svg>
+              <svg class="pin pin-us" style="left:34%;top:20%" viewBox="0 0 24 32" width="34" height="45"><path d="M12 0C5.4 0 0 5.3 0 11.8 0 20.6 12 32 12 32s12-11.4 12-20.2C24 5.3 18.6 0 12 0Z" fill="#d93025" /><circle cx="12" cy="11.5" r="4.6" fill="#fff" /></svg>
+              <svg class="pin" style="left:62%;top:52%" viewBox="0 0 24 32" width="22" height="29"><path d="M12 0C5.4 0 0 5.3 0 11.8 0 20.6 12 32 12 32s12-11.4 12-20.2C24 5.3 18.6 0 12 0Z" fill="#9aa3ad" /><circle cx="12" cy="11.5" r="4.6" fill="#fff" /></svg>
+              <svg class="pin" style="left:14%;top:58%" viewBox="0 0 24 32" width="22" height="29"><path d="M12 0C5.4 0 0 5.3 0 11.8 0 20.6 12 32 12 32s12-11.4 12-20.2C24 5.3 18.6 0 12 0Z" fill="#9aa3ad" /><circle cx="12" cy="11.5" r="4.6" fill="#fff" /></svg>
+            </div>
+          </div>
+          <!-- The business profile pops out over the map. Name, rating and phone are placeholders for an example business. -->
+          <div class="profile" aria-hidden="true">
+            <div class="text-[19px] font-semibold text-ink-900 leading-tight">Your Business Name</div>
+            <div class="mt-1.5 flex items-center gap-1.5 text-[13.5px] text-ink-600"><span class="font-semibold text-ink-900">4.9</span><span class="text-[#fbbc04] tracking-[1px]">★★★★★</span><span>(127)</span></div>
+            <div class="mt-0.5 text-[13.5px] text-ink-600">Air conditioning contractor in Royal Palm Beach</div>
+            <div class="mt-4 grid grid-cols-4 gap-2 text-center text-[12px] font-medium text-navy-700">
+              {[['phone', 'Call'], ['pin', 'Directions'], ['globe', 'Website'], ['star', 'Reviews']].map(([icon, label]) => (
+                <div><span class="mx-auto flex size-10 items-center justify-center rounded-full border border-navy-300/80 bg-navy-50"><Icon name={icon} size={17} stroke={2} /></span><span class="mt-1.5 block">{label}</span></div>
+              ))}
+            </div>
+            <dl class="mt-4 border-t border-stone-300/70 pt-3 space-y-1.5 text-[13.5px]">
+              <div class="flex gap-2"><dt class="font-semibold text-ink-900">Hours:</dt><dd class="text-ink-600"><span class="text-[#188038] font-medium">Open</span> · Closes 6 PM</dd></div>
+              <div class="flex gap-2"><dt class="font-semibold text-ink-900">Phone:</dt><dd class="text-ink-600">(561) 555-0142</dd></div>
+              <div class="flex gap-2"><dt class="font-semibold text-ink-900">Service area:</dt><dd class="text-ink-600">Palm Beach County</dd></div>
+            </dl>
+          </div>
+          <p class="mt-6 text-center text-[13.5px] text-mist-400">An example of the Google profile a homeowner sees when they search for your trade.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  .mappack { overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8), 0 0 0 1px rgba(230, 205, 131, .08); }
+  .map { position: relative; height: 250px; }
+  .profile { position: relative; z-index: 2; margin: -96px 14px 0; padding: 18px 18px 16px; border-radius: 16px; background: #fff; box-shadow: 0 30px 60px -18px rgba(0, 0, 0, .75), 0 0 0 1px rgba(3, 14, 29, .06); }
+  @media (min-width: 640px) { .profile { margin: -104px 44px 0 -36px; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .profile { animation: profile-pop 620ms cubic-bezier(.2, 1.2, .3, 1) 700ms both; transform-origin: 40% 0; }
+  }
+  @keyframes profile-pop { from { opacity: 0; transform: translateY(14px) scale(.9); } to { opacity: 1; transform: none; } }
+  .pin { position: absolute; transform: translate(-50%, 0); filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .25)); }
   .hero-contours {
     opacity: 0.07;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600' fill='none' stroke='%23E9E4D6' stroke-width='1'%3E%3Cpath d='M-50 420c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 460c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 500c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 540c80-60 160-80 240-40s160 60 240 10 150-80 220-40'/%3E%3Cpath d='M-50 120c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 160c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3Cpath d='M-50 200c90 40 170 30 250-20s170-60 250-10 130 40 200 20'/%3E%3C/svg%3E");

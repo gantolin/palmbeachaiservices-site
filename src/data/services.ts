@@ -12,6 +12,8 @@ export interface Service {
   outcomes: { title: string; text: string }[];
   included: string[];
   process: { title: string; text: string }[];
+  /** Optional "one missed call" walk-through. An example, not a statistic. */
+  timeline?: { title: string; steps: { time: string; text: string }[]; after: string };
   relatedCase: string; // case study slug
   priceNote: string;
   faqs: { q: string; a: string }[];
@@ -52,7 +54,7 @@ export const services: Service[] = [
       { title: 'Build', text: 'Your site goes live in 14 days from the day we have your content.' },
       { title: 'Grow', text: 'On the monthly plan we keep improving it, building backlinks, and tracking competitors.' },
     ],
-    relatedCase: 'heros-pavers',
+    relatedCase: 'paver-contractor',
     priceNote: 'A one-time website build, then one flat monthly plan for reviews, Google profile management, lead follow-up, backlinks, and competitor tracking. Fixed quote in writing after a free call. No contract.',
     faqs: [
       { q: 'Do I own the website?', a: 'Yes. Your domain, your content, your site. No hostage situations.' },
@@ -95,7 +97,7 @@ export const services: Service[] = [
       { title: 'Automate', text: 'Review requests go out automatically after every job.' },
       { title: 'Check in', text: 'Every month we go over the calls, reviews, and rankings with you.' },
     ],
-    relatedCase: 'heros-pavers',
+    relatedCase: 'paver-contractor',
     priceNote: 'Google Business Profile management is included in the monthly plan, after a one-time website build. Fixed quote in writing after a free call. Month-to-month.',
     faqs: [
       { q: 'Can you guarantee #1 on Google?', a: 'No, and be wary of anyone who does. Google decides rankings. We control the work: a complete profile, steady reviews, and a site that backs it up.' },
@@ -114,13 +116,13 @@ export const services: Service[] = [
     metaDescription:
       'AI automation services that save home service businesses time and make them money: missed-call text-back, speed to lead, review requests, invoicing, and custom AI workflows.',
     eyebrow: 'AI automation services · Get your time back',
-    headline: 'Stop losing jobs to *voicemail*.',
+    headline: 'Get hours of office work *off your plate*.',
     subhead:
-      'Missed-call text-back, instant follow-ups, review requests, invoicing, and custom AI tools that take hours of busywork off your week. Set up for you, running quietly in the background.',
+      'AI tools that handle the reports, estimates, invoices, and follow-up that eat your week, plus a text back for every missed call. For a mold inspection company, one of these tools cut each report from 45 minutes to 10. It is set up for you by the same person who gets your phone ringing from Google.',
     outcomes: [
-      { title: 'Every missed call gets a text', text: 'Within seconds, so the customer hears from you before they call the next company.' },
-      { title: 'Follow-up that goes out on time', text: 'Quotes, reminders, and check-ins get sent by text and email, even on your busiest weeks.' },
       { title: 'Less paperwork', text: 'AI drafts your reports, invoices, and estimates, so you review them instead of writing them from scratch.' },
+      { title: 'Follow-up that goes out on time', text: 'Quotes, reminders, and check-ins get sent by text and email, even on your busiest weeks.' },
+      { title: 'Every missed call gets a text', text: 'Within seconds, so the customer hears from you before they call the next company.' },
     ],
     included: [
       'CRM setup on GoHighLevel: pipeline, unified inbox, calendar',
@@ -130,7 +132,7 @@ export const services: Service[] = [
       'Invoicing + payment reminder automation',
       'AI answering service for after-hours + overflow calls (custom quote)',
       'Custom AI workflows with Claude, ChatGPT, or Grok',
-      'Custom tools built around your process, like the Safe Haven report system',
+      'Custom tools built around your process, like the report system we built for a mold inspection company',
     ],
     process: [
       { title: 'Map it', text: 'We find where leads slip and where your hours go, and pick the highest-payoff fix first.' },
@@ -138,12 +140,13 @@ export const services: Service[] = [
       { title: 'Test it', text: 'We run real scenarios with you until it works the way you run your business.' },
       { title: 'Tune it', text: 'We watch the numbers monthly and keep improving what is working.' },
     ],
-    relatedCase: 'safe-haven-inspections',
+    relatedCase: 'mold-inspection-company',
     priceNote: `Review automation and lead follow-up are included in the monthly plan. CRM/GoHighLevel setup, custom AI workflows, and the AI Workday Install are quoted per project.`,
     faqs: [
       { q: 'What is GoHighLevel?', a: 'An all-in-one CRM: contacts, texting, calendar, pipeline, and automations in one place. We set it up and run it for you.' },
       { q: 'Will AI sound robotic to my customers?', a: 'We write every message in your voice and keep it short and human. You approve it before it goes live.' },
       { q: 'Do I need to be good with tech?', a: 'No. We build it, test it, and show you the few things you need to know.' },
+      { q: 'Is it legal to text my customers automatically?', a: 'Yes, when it is set up properly. Phone carriers require a business to register before it sends texts, and customers have to be able to opt out. We handle the registration during setup and build the opt-out in.' },
     ],
     icon: 'spark',
   },
@@ -157,9 +160,20 @@ export const services: Service[] = [
     metaDescription:
       'An AI answering service for contractors and home service businesses. Every call answered 24/7, questions handled, jobs booked, and the details texted to you. Set up in Palm Beach County.',
     eyebrow: 'AI answering service for contractors',
-    headline: 'Every call *answered*, even when you are on a roof.',
+    headline: 'An answering service for contractors that *books the job*.',
     subhead:
-      'You cannot pick up while you are on a job, driving, or asleep. Our AI answering service picks up for you, 24/7, in a natural voice: it answers common questions, books the job, and texts you the details.',
+      'You cannot pick up while you are on a roof, driving, or asleep. Our AI answering service picks up for you, 24/7, in a natural voice: it answers common questions, books the job, and texts you the details. It is set up by the same person who gets your phone ringing from Google.',
+    timeline: {
+      title: 'One missed call, minute by minute',
+      steps: [
+        { time: '2:14 PM', text: 'A homeowner’s AC stops cooling. They search Google and call you.' },
+        { time: '2:14 PM', text: 'You are on a ladder at another job. The call rings out to voicemail.' },
+        { time: '2:15 PM', text: 'They hang up without leaving a message and call the next company on the list.' },
+        { time: '2:17 PM', text: 'That company picks up and books the visit.' },
+        { time: '5:30 PM', text: 'You see the missed call and call back. They already have someone coming.' },
+      ],
+      after: 'With the answering service, the 2:14 call gets picked up, the visit goes on your calendar, and you get a text with the address and the problem. This is an example of how it goes, not a statistic.',
+    },
     outcomes: [
       { title: 'No more voicemail', text: 'Callers get a real conversation instead of a beep, so they do not hang up and call the next company.' },
       { title: 'Jobs booked while you work', text: 'It collects the address and the problem and books straight into your calendar.' },
@@ -181,12 +195,14 @@ export const services: Service[] = [
       { title: 'Test', text: 'We call it ourselves, over and over, until it sounds like your business and books correctly.' },
       { title: 'Go live', text: 'You forward missed or after-hours calls to it, and a short summary of each call lands on your phone. We keep adjusting it every month.' },
     ],
-    relatedCase: 'safe-haven-inspections',
+    relatedCase: 'mold-inspection-company',
     priceNote: 'The AI answering service is quoted per business, based on call volume and how much it should handle. Missed-call text-back is already included in the monthly plan.',
     faqs: [
       { q: 'Will callers know it is AI?', a: 'It sounds natural and polite, and we do not pretend it is a person if someone asks. Most callers just care that someone answered and their job got booked.' },
-      { q: 'What happens with emergencies?', a: 'You decide what counts as an emergency (no AC in August, a burst pipe). Those calls get transferred to you or your on-call tech right away.' },
-      { q: 'Do I have to change my phone number?', a: 'No. You keep your number and forward missed or after-hours calls to the AI line.' },
+      { q: 'What happens with emergencies?', a: 'You decide what counts as an emergency, such as no AC in August, a burst pipe, a gas smell, or sparking. When a caller says one of those, the call gets transferred to you or your on-call tech right away.' },
+      { q: 'What if it books the wrong job?', a: 'It only books the kinds of jobs and the time slots you approve during setup. Anything it is unsure about comes to you as a message to call back, instead of landing on your calendar.' },
+      { q: 'Can it cover only nights and weekends?', a: 'Yes. If you would rather answer your own phone during the day, forward calls only after hours, or only when you do not pick up.' },
+      { q: 'Do I have to change my phone number?', a: 'No. The number on your trucks, your website, and your Google profile stays the same. You forward missed or after-hours calls to the AI line.' },
       { q: 'Is this different from an answering service?', a: 'A traditional answering service takes a message. The AI can answer questions, qualify the job, and book it on your calendar, any hour of the day.' },
     ],
     icon: 'phone',

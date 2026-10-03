@@ -25,7 +25,7 @@ const gets = [
         <div class="lg:col-span-5 lg:sticky lg:top-28">
           <div class="eyebrow fade-in">Free Google Visibility Check</div>
           <h1 class="h1 mt-6 text-[#f4f1e8] word-rise" set:html={words('See exactly what is costing you *calls.*')} />
-          <p class="lede mt-6 fade-in" style="--d:300ms">A free review of your Google Business Profile, website, and top local competitors, done by {FOUNDER_FIRST_NAME}, the founder. <span class="text-mist-200">You keep the fixes whether or not we work together.</span> No payment, no contract, no pitch deck.</p>
+          <p class="lede mt-6 fade-in" style="--d:300ms">A free recorded walkthrough of your Google Business Profile, website, and top local competitors, done by {FOUNDER_FIRST_NAME}, the founder, and sent within two business days. <span class="text-mist-200">You keep the fixes whether or not we work together.</span> No payment, no contract, no pitch deck.</p>
           <ul class="mt-10 space-y-5 fade-in" style="--d:400ms">
             {gets.map((g) => (
               <li class="flex gap-4">
@@ -35,7 +35,7 @@ const gets = [
             ))}
           </ul>
           <figure class="note mt-10 fade-in" style="--d:480ms">
-            <blockquote class="text-[15.5px] leading-relaxed text-mist-200">“Answer two quick sets of questions, and I'll personally look at your Google profile and site before we talk. Bring your questions. If I can't help, I'll tell you straight.”</blockquote>
+            <blockquote class="text-[15.5px] leading-relaxed text-mist-200">“Send me your link and I'll record a short video walking through your Google profile, your website, and the companies showing up above you. You get it within two business days. If I can't help, I'll tell you straight.”</blockquote>
             <figcaption class="mt-4 flex items-center gap-3">
               <span class="font-display font-[600] tracking-tight text-[26px] leading-none text-[#f4f1e8]">{FOUNDER_FIRST_NAME}</span>
               <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-mist-400">Founder · {SITE.homeBase}</span>
@@ -50,9 +50,8 @@ const gets = [
           <div class="rounded-[24px] bg-cream-50 p-6 sm:p-9 shadow-[0_40px_80px_-40px_rgba(0,0,0,.7)] border border-white/10 fade-in" style="--d:200ms">
             <div class="flex items-center justify-between gap-4">
               <h2 class="font-display text-[24px] sm:text-[28px] font-[600] tracking-tight text-ink-900">Request your free Google Visibility Check</h2>
-              <span class="hidden sm:inline-flex whitespace-nowrap shrink-0 chip bg-navy-100 text-navy-800 text-[12.5px]"><Icon name="clock" size={14} />About 60 seconds</span>
             </div>
-            <p class="mt-2 text-[15px] text-ink-600">Two quick steps, then you pick a time.</p>
+            <p class="mt-2 text-[15px] text-ink-600">Start with one link. {FOUNDER_FIRST_NAME} records a walkthrough of what he finds and emails it to you within two business days.</p>
             <div class="mt-7"><LeadForm /></div>
           </div>
         </div>

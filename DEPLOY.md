@@ -1,7 +1,6 @@
 # Launch checklist
 
-**Status (2026-09-27): intentionally offline.** GitHub Pages is disabled, the apex/www DNS records are removed
-(so nobody can claim the domain on GitHub while Pages is off), and the deploy workflow runs only when triggered manually.
+**Status (2026-10-03): launched.** DNS points at GitHub Pages and every push to `main` deploys.
 Preview locally with `npm run dev` (http://localhost:4321).
 
 DNS change files live outside the repo in `Claude\palm-beach-ai\launch\`:

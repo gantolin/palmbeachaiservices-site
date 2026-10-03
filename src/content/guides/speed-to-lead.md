@@ -140,7 +140,7 @@ That is not a sales trick. It is just making sure the people who want to hire yo
 
 The point of all this is not to have you glued to your phone. It is the opposite. When the first minute is handled automatically, you stop feeling the pull to answer every call on a ladder. You call back when it is safe and you are ready, and the lead is still warm.
 
-We have seen what the right automation does for a small team's time. For [Safe Haven Inspections](/results/safe-haven-inspections/), a custom AI automation cut inspection report time from 45 minutes to 10 minutes per report (78% less). Lead response works the same way: take the repetitive part off your plate so you can spend your time on the work only you can do.
+We have seen what the right automation does for a small team's time. For [a mold inspection company we work with](/results/mold-inspection-company/), a custom AI automation cut inspection report time from 45 minutes to 10 minutes per report (78% less). Lead response works the same way: take the repetitive part off your plate so you can spend your time on the work only you can do.
 
 ## Where to start
 

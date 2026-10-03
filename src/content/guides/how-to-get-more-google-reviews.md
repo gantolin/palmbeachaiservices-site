@@ -40,7 +40,7 @@ That is the whole system. The rest of this guide is the details that make it wor
 
 Google says local results are based on three things: relevance, distance, and prominence. On its [local ranking help page](https://support.google.com/business/answer/7091), Google describes prominence as how well known a business is, based partly on "how many reviews you have," and says "more reviews and positive ratings can help your business's local ranking."
 
-Notice the word "help." Reviews are one input, not a switch. You still need the right categories, a complete profile, and a real service area. We saw this firsthand with [Next Level Air Conditioning](/results/next-level-air-conditioning/): it had 31 five-star reviews and still did not show up in the top 20 Google Maps results in 4 live searches in its own area in August 2026. Its profile had 1 photo, no description, no services, and 1 category. Reviews could not carry that on their own.
+Notice the word "help." Reviews are one input, not a switch. You still need the right categories, a complete profile, and a real service area. We saw this firsthand with [an HVAC client in Lake Worth](/results/hvac-contractor/): it had 31 five-star reviews and still did not show up in the top 20 Google Maps results in 4 live searches in its own area in August 2026. Its profile had 1 photo, no description, no services, and 1 category. Reviews could not carry that on their own.
 
 So think of reviews as two jobs at once. They feed prominence for ranking, and they are what a homeowner reads before they decide to call you or the next company on the list. If you want the ranking side in full, read our guide on [how to rank higher on Google Maps](/guides/how-to-rank-higher-on-google-maps/).
 

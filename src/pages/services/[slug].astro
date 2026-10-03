@@ -32,7 +32,7 @@ const serviceLd = {
   <PageHero eyebrow={service.eyebrow} title={service.headline} lede={service.subhead} crumbs={crumbs}>
     <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
-      <a href="/#whats-included" class="link-mono self-start sm:self-auto">See what's included <Icon name="arrow-right" size={14} /></a>
+      <a href="#whats-included" class="link-mono self-start sm:self-auto">See what's included <Icon name="arrow-right" size={14} /></a>
     </div>
   </PageHero>
 
@@ -54,8 +54,28 @@ const serviceLd = {
     </div>
   </section>
 
+  {service.timeline && (
+    <section class="section surface-cream !pt-0">
+      <div class="container-x">
+        <div class="max-w-3xl" data-reveal>
+          <h2 class="h2">{service.timeline.title}</h2>
+          <ol class="mt-9 border-l border-stone-300">
+            {service.timeline.steps.map((s) => (
+              <li class="relative pl-7 pb-6 last:pb-0">
+                <span class="absolute -left-[5px] top-[9px] size-[9px] rounded-full bg-navy-700" aria-hidden="true"></span>
+                <div class="text-[14px] font-semibold text-navy-700 tabular">{s.time}</div>
+                <p class="mt-1 text-[16.5px] text-ink-900">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+          <p class="mt-8 rounded-2xl bg-navy-50 border border-navy-100 p-6 text-[16px]">{service.timeline.after}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Included + proof -->
-  <section class="section surface-sand">
+  <section class="section surface-sand" id="whats-included">
     <div class="container-x grid gap-12 lg:grid-cols-12 lg:gap-16 items-start">
       <div class="lg:col-span-6" data-reveal>
         <div class="eyebrow">What's included</div>

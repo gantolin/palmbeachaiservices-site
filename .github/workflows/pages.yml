@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
-# PRE-LAUNCH: manual runs only. The site is intentionally offline (Pages disabled, DNS records
-# removed) until launch. At launch, put the push trigger back (see DEPLOY.md > Go live).
 on:
-  # push:
-  #   branches: [main]
+  push:
+    branches: [main]
   workflow_dispatch:
 
 # Default to read-only; each job widens only to what it actually needs. The build job

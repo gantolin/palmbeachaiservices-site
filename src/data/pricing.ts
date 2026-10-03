@@ -88,7 +88,7 @@ export const customAI = {
   priceLabel: 'Quoted per project',
   items: [
     { title: 'CRM + GoHighLevel setup', text: 'Your leads, texts, calendar, and pipeline in one place.', icon: 'inbox' },
-    { title: 'Custom AI workflows', text: 'Like the Safe Haven report tool that cut 45 minutes down to 10.', icon: 'sparkles' },
+    { title: 'Custom AI workflows', text: 'Like the inspection report tool that cut 45 minutes down to 10.', icon: 'sparkles' },
     { title: 'AI Workday Install', text: 'A hands-on day getting your team set up with Claude, ChatGPT, or Grok.', icon: 'zap' },
   ],
   cta: { label: 'Talk it through on a call', href: '/book/' },

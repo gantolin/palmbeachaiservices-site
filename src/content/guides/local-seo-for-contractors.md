@@ -72,7 +72,7 @@ Reviews help with both ranking and getting picked. Google's own page says [more 
 
 The trick is making it routine. Ask at the end of every job, while the customer is happy and you are still in the driveway. Follow up the same day with a text that has your direct review link. Reply to every review, good and bad, with a real sentence, not a copy-paste.
 
-Reviews alone are not enough, though. [Next Level Air Conditioning](/results/next-level-air-conditioning/), a Lake Worth HVAC company, had 31 five-star reviews and still did not appear in the top 20 Google Maps results in 4 live searches in its own area in August 2026. The profile had 1 photo, no description, no services, and 1 category, and the website had 5 pages. In September 2026 we rebuilt the site to 30+ pages, including 15 city pages, and rebuilt the profile's categories, description, and service areas. Results are still in progress, but the lesson is already clear: good reviews can't carry an empty profile.
+Reviews alone are not enough, though. [One of our clients](/results/hvac-contractor/), a Lake Worth HVAC company, had 31 five-star reviews and still did not appear in the top 20 Google Maps results in 4 live searches in its own area in August 2026. The profile had 1 photo, no description, no services, and 1 category, and the website had 5 pages. In September 2026 we rebuilt the site to 30+ pages, including 15 city pages, and rebuilt the profile's categories, description, and service areas. Results are still in progress, but the lesson is already clear: good reviews can't carry an empty profile.
 
 ## Step 2: Build a website with a page per service and main town
 
@@ -92,7 +92,7 @@ Each main service gets its own page. A roofer might have separate pages for roof
 
 Then build a page for each town that brings in real work. Not 200 thin pages with the city name swapped. A good town page mentions the neighborhoods you work in, the kinds of homes there (older homes with cast iron drains, newer builds with HOA rules on pavers), jobs you have done nearby, and reviews from customers in that town.
 
-This is what worked for [Hero's Pavers](/results/heros-pavers/), a Lake Worth Beach paver and hardscape company. After an SEO website rebuild and Google Business Profile optimization, it now ranks #2 to #3 on Google for multiple Lake Worth keywords.
+This is what worked for [one of our clients](/results/paver-contractor/), a Lake Worth Beach paver and hardscape company. After an SEO website rebuild and Google Business Profile optimization, it now ranks #2 to #3 on Google for multiple Lake Worth keywords.
 
 ### The basics that still matter
 

@@ -9,19 +9,19 @@ const problems = [];
 page.on('console', (m) => { if (m.type() === 'error') problems.push(`console: ${m.text()}`); });
 page.on('pageerror', (e) => problems.push(`pageerror: ${e.message}`));
 
-for (const path of ['/', '/services/websites/', '/results/next-level-air-conditioning/', '/book/', '/privacy/']) {
+for (const path of ['/', '/services/websites/', '/results/hvac-contractor/', '/book/', '/privacy/']) {
   const res = await page.goto(BASE + path, { waitUntil: 'load' });
   console.log(path, res.status(), '|', await page.title());
 }
 
 // Form flow
 await page.goto(BASE + '/free-google-check/?utm_source=test', { waitUntil: 'load' });
+await page.fill('#check-website', 'testpavers.example');
+await page.click('[data-step="0"] [data-next]');
+await page.fill('#check-name', 'Test Person');
 await page.fill('#check-business', 'Test Pavers LLC');
 await page.selectOption('#check-trade', { index: 1 });
 await page.selectOption('#check-town', 'Wellington');
-await page.check('input[name=revenueBand] >> nth=1', { force: true });
-await page.click('[data-step="0"] [data-next]');
-await page.fill('#check-name', 'Test Person');
 await page.fill('#check-phone', '5615550123');
 await page.fill('#check-email', 'test@example.com');
 await Promise.all([page.waitForURL('**/thanks/**'), page.click('[data-submit]')]);

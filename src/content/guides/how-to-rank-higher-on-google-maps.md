@@ -116,7 +116,7 @@ A link from your local chamber of commerce, a supplier's dealer locator, a youth
 
 Plenty of owners assume reviews are the whole game. They're a big part of prominence, but they can't make up for weak relevance.
 
-Here's a real example. In August 2026, [Next Level Air Conditioning](/results/next-level-air-conditioning/), a Lake Worth HVAC company, had 31 five-star reviews. In 4 live searches in its own area, it did not appear in the top 20 Google Maps results. Its profile had 1 photo, no description, no services, and 1 category. Its website had 5 pages.
+Here's a real example. In August 2026, [one of our clients](/results/hvac-contractor/), a Lake Worth HVAC company, had 31 five-star reviews. In 4 live searches in its own area, it did not appear in the top 20 Google Maps results. Its profile had 1 photo, no description, no services, and 1 category. Its website had 5 pages.
 
 Thirty-one perfect reviews and still invisible. Google simply didn't have enough to connect that business to the searches homeowners were making. In September 2026 we rebuilt the site to 30+ pages (including 15 city pages) and rebuilt the profile (categories, description, service areas). Results are still in progress, so we're not claiming any ranking gains yet. The point stands: reviews without relevance don't get you on the map.
 

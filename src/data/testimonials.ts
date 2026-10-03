@@ -25,23 +25,23 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     todo: true,
-    quote: 'TODO: Real quote from Safe Haven Inspections about the report automation (ask for permission).',
+    quote: 'TODO: Real quote from the mold inspection client about the report automation (ask for permission).',
     name: 'TODO: Owner name',
-    business: 'Safe Haven Inspections',
+    business: 'Mold inspection company',
     town: 'TODO: town',
   },
   {
     todo: true,
-    quote: "TODO: Real quote from Hero's Pavers about the website + Google rankings (ask for permission).",
+    quote: "TODO: Real quote from the paver client about the website + Google rankings (ask for permission).",
     name: 'TODO: Owner name',
-    business: "Hero's Pavers",
+    business: 'Paver contractor',
     town: 'Lake Worth Beach',
   },
   {
     todo: true,
-    quote: 'TODO: Real quote from Next Level once results come in.',
+    quote: 'TODO: Real quote from the HVAC client once results come in.',
     name: 'TODO: Owner name',
-    business: 'Next Level',
+    business: 'HVAC contractor',
     town: 'TODO: town',
   },
 ];

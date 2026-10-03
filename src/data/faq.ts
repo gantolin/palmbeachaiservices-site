@@ -21,7 +21,7 @@ export const homeFaqs = [
   },
   {
     q: 'What does "AI automation" actually mean for my business?',
-    a: 'Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut Safe Haven Inspections\u2019 report time from 45 to 10 minutes.',
+    a: 'Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut a mold inspection company\u2019s report time from 45 to 10 minutes.',
   },
   {
     q: 'What if it doesn\u2019t work?',

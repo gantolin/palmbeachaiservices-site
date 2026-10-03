@@ -26,8 +26,8 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: 'safe-haven-inspections',
-    client: 'Safe Haven Inspections',
+    slug: 'mold-inspection-company',
+    client: 'A mold inspection company',
     trade: 'Mold inspection',
     area: 'Martin, Palm Beach & Broward counties',
     status: 'result',
@@ -58,8 +58,8 @@ export const caseStudies: CaseStudy[] = [
     visual: 'report-time',
   },
   {
-    slug: 'heros-pavers',
-    client: "Hero's Pavers",
+    slug: 'paver-contractor',
+    client: 'A paver contractor in Lake Worth',
     trade: 'Paver & hardscape contractor',
     area: 'Lake Worth Beach',
     status: 'result',
@@ -67,14 +67,14 @@ export const caseStudies: CaseStudy[] = [
     headlineLabel: 'on Google for multiple Lake Worth keywords',
     title: 'Ranking #2 to #3 on Google for multiple Lake Worth keywords.',
     summary:
-      "An SEO-focused website rebuild plus a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring paver jobs in Lake Worth.",
+      "An SEO-focused website rebuild plus a fully optimized Google Business Profile put this paver contractor near the top of Google for the searches that bring paver jobs in Lake Worth.",
     stats: [
       { value: '#2–#3', label: 'Google position for multiple Lake Worth keywords' },
       { value: 'Rebuilt', label: 'SEO website, built to rank locally' },
       { value: 'Optimized', label: 'Google Business Profile' },
     ],
     challenge:
-      'Great work, but not enough visibility. When Lake Worth homeowners searched for paver and hardscape help, Hero\u2019s Pavers needed to show up near the top instead of below the competition.',
+      'Great work, but not enough visibility. When Lake Worth homeowners searched for paver and hardscape help, this contractor needed to show up near the top instead of below the competition.',
     whatWeDid: [
       'Rebuilt the website from the ground up with a local SEO structure',
       'Built the pages around the Lake Worth searches that bring in paver jobs',
@@ -89,8 +89,8 @@ export const caseStudies: CaseStudy[] = [
     visual: 'rank-ladder',
   },
   {
-    slug: 'next-level-air-conditioning',
-    client: 'Next Level Air Conditioning',
+    slug: 'hvac-contractor',
+    client: 'An HVAC contractor in Lake Worth',
     trade: 'HVAC contractor',
     area: 'Lake Worth & Palm Beach County',
     status: 'in-progress',
@@ -98,14 +98,14 @@ export const caseStudies: CaseStudy[] = [
     headlineLabel: 'website pages, results in progress',
     title: 'A 5-page site rebuilt into 30+ pages, with a Google profile to match.',
     summary:
-      'Next Level had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.',
+      'This HVAC contractor had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.',
     stats: [
       { value: '5 → 30+', label: 'Website pages, including 15 city pages' },
       { value: '5.0 ★', label: 'Google rating, 34 reviews' },
       { value: 'Tracking', label: 'Map rankings, calls, and website clicks' },
     ],
     challenge:
-      'Great reviews, but a 5-page website and a Google profile that was mostly empty: one photo, no description, no services, and a single category. In live map searches across Lake Worth, Greenacres, and Boynton Beach, competitors with a fraction of the reviews ranked while Next Level did not appear in the top 20.',
+      'Great reviews, but a 5-page website and a Google profile that was mostly empty: one photo, no description, no services, and a single category. In live map searches across Lake Worth, Greenacres, and Boynton Beach, competitors with a fraction of the reviews ranked while this company did not appear in the top 20.',
     whatWeDid: [
       'Rebuilt the website with a page for every core service',
       'Added 15 city pages across Palm Beach and Broward counties',

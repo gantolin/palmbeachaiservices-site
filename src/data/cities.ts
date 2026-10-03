@@ -2,8 +2,8 @@
  * City landing pages, rendered by src/pages/[city].astro at /seo-company-<slug>/.
  *
  * Rule (docs/keyword-map.md): a city only gets a page if it carries local substance that would stop being true
- * if you swapped the city name. Market facts come from the sourced city dossiers researched for Next Level AC
- * (Claude/next-level-ac/research/city-pages/dossiers/, ACS 2024 5-year census data). Drive figures are OSRM
+ * if you swapped the city name. Market facts come from the sourced city dossiers researched for an HVAC client
+ * (ACS 2024 5-year census data). Drive figures are OSRM
  * free-flow (no traffic) from the office to the Census place center, pulled 2026-09-28.
  */
 import { SITE } from '../config/site';

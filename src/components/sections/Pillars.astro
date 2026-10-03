@@ -1,0 +1,102 @@
+---
+import Icon from '../ui/Icon.astro';
+import { industries } from '@/data/comparison';
+// The two halves of the main message, each next to the client result that backs it up.
+---
+<section class="section surface-cream relative" id="services">
+  <div class="container-x">
+    <div class="max-w-3xl" data-reveal>
+      <div class="eyebrow">What we do</div>
+      <h2 class="h2 mt-5">Two things: get you found, and get you time back.</h2>
+      <p class="lede mt-6">We get you found on Google, and we use AI to take work off your plate. We set all of it up, and you own all of it.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-2">
+      <!-- 1. Get found -->
+      <div class="pillar card" data-reveal>
+        <div class="pillar-ui">
+          <div class="mx-auto w-full max-w-[420px] rounded-xl bg-white border border-stone-300 overflow-hidden shadow-[0_8px_24px_-16px_rgba(3,14,29,.35)]">
+            <div class="flex items-center gap-2 px-3 py-2.5 border-b border-stone-300/70 text-[12px] text-ink-600"><Icon name="search" size={14} />pavers near me</div>
+            <div class="h-16 relative bg-[linear-gradient(135deg,#e9eef5,#dfe6f0)]">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C60 20 110 55 170 30 S260 20 300 34" stroke="#fff" stroke-width="5" fill="none" opacity=".8"/><path d="M90 0 L120 64" stroke="#fff" stroke-width="3" opacity=".7"/></svg>
+              <span class="absolute left-[30%] top-3 text-navy-700"><Icon name="pin" size={22} stroke={2} /></span>
+              <span class="absolute left-[62%] top-6 text-ink-600/50"><Icon name="pin" size={16} /></span>
+              <span class="absolute left-[80%] top-2 text-ink-600/50"><Icon name="pin" size={16} /></span>
+            </div>
+            <ul class="text-[12.5px]">
+              <li class="flex items-center justify-between px-3 py-2 bg-navy-50"><span class="font-semibold text-ink-900">Your business</span><span class="text-[12px] font-medium text-navy-700">Top 3</span></li>
+              <li class="flex items-center justify-between px-3 py-2 border-t border-stone-300/60 text-ink-600"><span>Competitor</span></li>
+              <li class="flex items-center justify-between px-3 py-2 border-t border-stone-300/60 text-ink-600"><span>Competitor</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="text-[14px] font-semibold text-navy-700">Get found on Google</div>
+          <h3 class="h3 mt-3">Show up when people nearby search.</h3>
+          <p class="mt-3 text-ink-600 text-[15.5px]">A fast website and a complete Google Business Profile, built around what people in your area type in when they need your trade.</p>
+          <a href="/results/paver-contractor/" class="proof group">
+            <span class="font-semibold text-ink-900">Paver contractor, Lake Worth Beach</span>
+            <span class="text-ink-600">Rebuilt website and Google profile. Now on page one of Google for its main paver searches in Lake Worth.</span>
+            <span class="mt-1 inline-flex items-center gap-2 text-[14px] font-semibold text-navy-700">Read the case study <Icon name="arrow-right" size={15} class="transition-transform group-hover:translate-x-1" /></span>
+          </a>
+          <div class="links">
+            <a href="/services/google-maps-seo/">Google Maps SEO <Icon name="arrow-right" size={15} /></a>
+            <a href="/services/websites/">Websites <Icon name="arrow-right" size={15} /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Get your time back -->
+      <div class="pillar card" data-reveal style="--d:90ms">
+        <div class="pillar-ui">
+          <div class="mx-auto w-full max-w-[420px] rounded-xl bg-white border border-stone-300 p-4 shadow-[0_8px_24px_-16px_rgba(3,14,29,.35)]">
+            <div class="flex items-center justify-between text-[12px] font-medium text-ink-600"><span>Time per inspection report</span><span class="text-navy-700">Mold inspection</span></div>
+            <div class="mt-4 space-y-3">
+              <div>
+                <div class="flex justify-between text-[12px] text-ink-600"><span>Before</span><span class="tabular">45 min</span></div>
+                <div class="mt-1.5 h-2.5 rounded-full bg-[#e8d9d3]"><div class="h-full w-full rounded-full bg-[#c98b78]"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[12px] text-ink-900 font-semibold"><span>With the AI tool</span><span class="tabular">10 min</span></div>
+                <div class="mt-1.5 h-2.5 rounded-full bg-navy-100"><div class="h-full w-[22%] rounded-full bg-navy-700"></div></div>
+              </div>
+            </div>
+            <div class="mt-4 text-[12px] text-navy-700 font-semibold">35 minutes saved on every report</div>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="text-[14px] font-semibold text-navy-700">Get your time back with AI</div>
+          <h3 class="h3 mt-3">Hand off the paperwork and the follow-up.</h3>
+          <p class="mt-3 text-ink-600 text-[15.5px]">We build AI tools for the work that eats your week: reports, estimates, invoices, and reminders. And when you can't pick up, a missed call gets a text back within seconds.</p>
+          <a href="/results/mold-inspection-company/" class="proof group">
+            <span class="font-semibold text-ink-900">Mold inspection company</span>
+            <span class="text-ink-600">A custom AI tool cut each inspection report from 45 minutes to 10.</span>
+            <span class="mt-1 inline-flex items-center gap-2 text-[14px] font-semibold text-navy-700">Read the case study <Icon name="arrow-right" size={15} class="transition-transform group-hover:translate-x-1" /></span>
+          </a>
+          <div class="links">
+            <a href="/services/ai-automation/">AI Automation <Icon name="arrow-right" size={15} /></a>
+            <a href="/services/ai-answering-service/">AI Answering Service <Icon name="arrow-right" size={15} /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col lg:flex-row lg:items-center gap-5" data-reveal>
+      <p class="text-[14px] font-medium text-ink-600 shrink-0">Built for</p>
+      <ul class="flex flex-wrap gap-2">
+        {industries.map((i) => <li class="chip bg-white border border-stone-300 text-ink-900 text-[13.5px]">{i}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pillar { display: flex; flex-direction: column; overflow: hidden; border-radius: 20px; }
+  .pillar-ui { padding: 22px; background: linear-gradient(180deg, var(--color-navy-50), var(--color-sand-100)); border-bottom: 1px solid var(--color-stone-300); height: 268px; display: flex; flex-direction: column; justify-content: center; }
+  .pillar-body { padding: 26px 26px 28px; display: flex; flex-direction: column; flex: 1; }
+  .proof { display: flex; flex-direction: column; gap: 4px; margin-top: 22px; padding: 16px 18px; border-radius: 14px; background: var(--color-navy-50); border: 1px solid var(--color-navy-100); font-size: 15px; line-height: 1.5; transition: border-color 200ms; }
+  .proof:hover { border-color: var(--color-navy-300); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: auto; padding-top: 22px; }
+  .links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14.5px; font-weight: 600; color: var(--color-navy-700); }
+  .links a:hover { color: var(--color-navy-800); }
+</style>

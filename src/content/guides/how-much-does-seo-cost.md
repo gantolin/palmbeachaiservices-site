@@ -93,7 +93,7 @@ Most local service businesses win or lose on the Google Maps results and a handf
 - Big link-building bundles from sites that have nothing to do with your trade or town
 - Reports stuffed with vanity numbers instead of calls and form fills
 
-A real example: Hero's Pavers, a pavers and hardscape company in Lake Worth Beach, did not need a giant content program. It needed an [SEO website rebuild and Google Business Profile optimization](/results/heros-pavers/), and it now ranks #2 to #3 on Google for multiple Lake Worth keywords. The basics, done well, carry a lot of weight for local trades.
+A real example: one of our clients, a pavers and hardscape company in Lake Worth Beach, did not need a giant content program. It needed an [SEO website rebuild and Google Business Profile optimization](/results/paver-contractor/), and it now ranks #2 to #3 on Google for multiple Lake Worth keywords. The basics, done well, carry a lot of weight for local trades.
 
 ## Red flags before you sign an SEO contract
 
