@@ -17,7 +17,7 @@ export interface Service {
   relatedCase?: string; // case study slug, when one is relevant
   priceNote: string;
   faqs: { q: string; a: string }[];
-  icon: 'globe' | 'pin' | 'spark' | 'phone' | 'star' | 'users' | 'message' | 'chart';
+  icon: 'globe' | 'pin' | 'spark' | 'phone' | 'star' | 'message' | 'chart';
 }
 
 export const services: Service[] = [
@@ -147,48 +147,6 @@ export const services: Service[] = [
       { q: 'Is it legal to text my customers?', a: 'Yes, when it is set up properly. Phone carriers require a business to register before it sends texts, and customers have to be able to opt out. We handle the registration and build the opt-out in.' },
     ],
     icon: 'star',
-  },
-  {
-    slug: 'facebook-ads',
-    pillar: 'Get more leads',
-    name: 'Facebook Ads',
-    navLabel: 'Facebook Ads',
-    metaTitle: 'Facebook Ads for Home Service Businesses | Palm Beach AI Services',
-    metaDescription:
-      'Facebook and Instagram ads for home service businesses in Palm Beach County. Ads shown to homeowners in the towns you work in, with every lead texted to your phone. No contract.',
-    eyebrow: 'Facebook and Instagram ads · Palm Beach County',
-    headline: 'Local leads from *Facebook*, sent to your phone.',
-    subhead:
-      'Google takes time to build. Facebook and Instagram ads can put your business in front of homeowners in the towns you work in this week. We set up the ads, the lead form, and the follow-up, and every new lead lands on your phone as a text.',
-    outcomes: [
-      { title: 'Leads while Google builds', text: 'Ads can start bringing in inquiries within days, while your website and Google profile climb.' },
-      { title: 'Only the towns you serve', text: 'Your ads show to homeowners in the zip codes you pick, so you are not paying for clicks an hour away.' },
-      { title: 'No lead left sitting', text: 'Each lead gets a text back right away and comes to your phone with a name, number, and what they need.' },
-    ],
-    included: [
-      'Ad account and Facebook page set up in your name, so you own them',
-      'Ads written for your trade, using photos of your real jobs',
-      'Targeting by town and zip code',
-      'A short lead form, or a landing page on your website',
-      'New leads texted and emailed to you the moment they come in',
-      'An automatic text back to the lead',
-      'Follow-up texts for leads who do not answer',
-      'A monthly report: what you spent, how many leads, and the cost per lead',
-    ],
-    process: [
-      { title: 'Plan', text: 'We agree on the service to advertise, the towns, and a monthly ad budget you are comfortable with.' },
-      { title: 'Build', text: 'We set up the account, write the ads, and connect the lead form to your phone.' },
-      { title: 'Launch', text: 'The ads go live and we watch the first leads come in with you.' },
-      { title: 'Adjust', text: 'Every month we keep the ads that bring in jobs and replace the ones that do not.' },
-    ],
-    priceNote: 'Ad management is quoted per business after a free call. Your ad budget is paid straight to Facebook, with no markup from us. Month-to-month.',
-    faqs: [
-      { q: 'How much should I spend on ads?', a: 'It depends on your trade and how many towns you cover. We suggest a starting budget on the call, and you can raise, lower, or pause it at any time. The budget goes to Facebook, not to us.' },
-      { q: 'Do Facebook ads work for my trade?', a: 'They tend to work best for jobs people plan and like to see first, such as pavers, roofing, remodeling, cleaning, and landscaping. For emergency work like a broken AC, Google usually does better. We tell you honestly on the call.' },
-      { q: 'Can you guarantee a number of leads?', a: 'No. Nobody can promise what Facebook will deliver. We report what you spent and what came in every month, so you can see whether it is paying for itself.' },
-      { q: 'Do I need a Facebook page?', a: 'Yes, and if you do not have one we set it up for you during the build.' },
-    ],
-    icon: 'users',
   },
   {
     slug: 'ai-automation',
