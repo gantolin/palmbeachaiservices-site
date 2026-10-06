@@ -75,6 +75,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   .head-phone:active { background: rgba(230, 205, 131, .32); }
   .head-phone :global(.head-phone-icon) { color: var(--color-gold-300); flex: none; }
   @media (min-width: 640px) { .head-phone { font-size: 18px; height: 44px; padding: 0 18px 0 14px; gap: 8px; } }
+  /* The desktop bar has its own number; this rule has to repeat lg:hidden because display is set above. */
+  @media (min-width: 1024px) { .head-phone { display: none; } }
   @media (max-width: 379px) { .head-phone { font-size: 14.5px; height: 38px; padding: 0 11px; } .head-phone :global(.head-phone-icon) { display: none; } }
   @media (max-width: 349px) { .head-phone { font-size: 14px; padding: 0 9px; } }
 </style>
