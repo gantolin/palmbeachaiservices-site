@@ -115,12 +115,16 @@ const callFacts = [
     color: var(--color-navy-950); animation: none;
   }
   .hero-head .hero-h1 :global(.accent)::before {
-    content: ""; position: absolute; z-index: -1; inset: .1em 0 .02em; border-radius: .14em .2em .16em .22em;
-    background: linear-gradient(100deg, #c9a227, #e2c25a 55%, #c9a227);
-    transform: rotate(-1.2deg) scaleX(0); transform-origin: 0 50%;
-    animation: marker 520ms cubic-bezier(.3, .8, .3, 1) 900ms forwards;
+    content: ""; position: absolute; z-index: -1; inset: .1em 0 .02em; border-radius: .16em;
+    /* Top layer is the same white sheen the Book a free audit button has; it sweeps across on the same beat. */
+    background:
+      linear-gradient(108deg, rgba(255, 255, 255, 0) 42%, rgba(255, 255, 255, .6) 50%, rgba(255, 255, 255, 0) 58%) 160% 0 / 260% 100% no-repeat,
+      linear-gradient(100deg, #c9a227, #e2c25a 55%, #c9a227);
+    transform: scaleX(0); transform-origin: 0 50%;
+    animation: marker 520ms cubic-bezier(.3, .8, .3, 1) 900ms forwards, marker-shine 6s var(--ease-out-soft) 1.8s infinite;
   }
-  @keyframes marker { to { transform: rotate(-1.2deg) scaleX(1); } }
+  @keyframes marker { to { transform: scaleX(1); } }
+  @keyframes marker-shine { 0% { background-position: 160% 0, 0 0; } 22%, 100% { background-position: -60% 0, 0 0; } }
 
   /* Map pin art to the right of the headline. The headline keeps clear of it by giving up that width. */
   .hero-head { position: relative; --art: clamp(84px, 24vw, 112px); --kick: 64px; }
