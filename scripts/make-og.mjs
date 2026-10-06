@@ -18,24 +18,13 @@ const html = `<!doctype html><html><head><style>
 *{box-sizing:border-box}
 body{margin:0;width:1200px;height:630px;overflow:hidden;font-family:Geist;color:#f4f1e8;
   background:radial-gradient(110% 90% at 85% 115%,#1a4d88 0%,#062d59 30%,#061f3f 55%,#030e1d 85%)}
-.wrap{position:absolute;inset:0;padding:64px 76px 84px;display:flex;flex-direction:column}
-.brand svg{height:104px;width:auto;display:block}
-.kicker{margin-top:auto;font:600 27px/1.3 Inter;color:#e6cd83}
-h1{margin:auto 0 0;font-size:80px;line-height:1.08;letter-spacing:-.035em;font-weight:590;white-space:nowrap}
-mark{display:inline-block;line-height:1;background:linear-gradient(100deg,#c9a227,#e2c25a 55%,#c9a227);color:#030e1d;padding:.04em .14em .08em;margin:0 -.06em;border-radius:.16em}
-.art{position:absolute;right:86px;top:250px;width:262px;height:262px}
-.tile{position:absolute;inset:0;border-radius:22%;overflow:hidden;border:2px solid rgba(230,205,131,.5);
-  box-shadow:0 40px 70px -30px rgba(0,0,0,.85),0 0 90px -20px rgba(201,162,39,.55)}
-.tile svg{width:100%;height:100%;display:block}
-.pin{position:absolute;left:50%;top:50%;width:46%;transform:translate(-50%,-100%);filter:drop-shadow(0 12px 10px rgba(0,0,0,.45))}
-.ring{position:absolute;left:50%;top:50%;width:34%;aspect-ratio:2.4;border-radius:50%;transform:translate(-50%,-50%);border:4px solid rgba(234,67,53,.85)}
-.chip{position:absolute;right:-22px;bottom:-14px;display:flex;align-items:center;gap:9px;padding:11px 20px 11px 16px;border-radius:999px;
-  background:#fff;color:#202124;font:600 25px/1 Inter;box-shadow:0 16px 30px -10px rgba(0,0,0,.6)}
-.chip svg{width:24px;height:24px}
+.wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:10px}
+.brand svg{height:210px;width:auto;display:block}
+.tag{margin-top:46px;font:500 38px/1.2 Inter;letter-spacing:-.01em;color:#e6cd83}
 .line{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,#e6cd83,transparent);opacity:.7}
 </style></head><body><div class="wrap">
 <div class="brand">${logo}</div>
-<h1>Get found on Google.<br>Get <mark>hours back</mark> every week.</h1>
+<div class="tag">Get found on Google. Get hours back with AI.</div>
 </div>
 <div class="line"></div></body></html>`;
 
