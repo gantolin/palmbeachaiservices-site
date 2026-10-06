@@ -30,6 +30,39 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: 'heros-pavers',
+    client: "Hero's Pavers",
+    logo: { src: '/clients/heros-pavers.png', width: 727, height: 160 },
+    trade: 'Paver & hardscape contractor',
+    area: 'Lake Worth Beach',
+    status: 'result',
+    headlineStat: '10+',
+    headlineLabel: 'keywords in the Google map pack',
+    title: 'In the Google map pack for more than 10 keywords.',
+    summary:
+      "A rebuilt website and a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring in paver jobs.",
+    stats: [
+      { value: 'Map pack', label: 'for more than 10 keywords' },
+      { value: 'Top of Google', label: 'for its main paver searches' },
+      { value: 'Rebuilt', label: 'website, built to rank locally' },
+    ],
+    challenge:
+      'Great work, but not enough visibility. When homeowners searched for paver and hardscape help, the company needed to show up near the top instead of below the competition.',
+    whatWeDid: [
+      'Rebuilt the website from the ground up with a local SEO structure',
+      'Built the pages around the searches that bring in paver jobs',
+      'Optimized the Google Business Profile',
+    ],
+    outcome: [
+      'Shows up in the Google map pack for more than 10 keywords',
+      'Ranks near the top of Google for its main paver searches',
+      'A modern website built to turn those searches into calls',
+    ],
+    services: ['Website', 'Local SEO', 'Google Business Profile'],
+    proofMath: 'Google map pack for more than 10 keywords after the SEO website rebuild + Google Business Profile optimization.',
+    visual: 'rank-ladder',
+  },
+  {
     slug: 'safe-haven-inspections',
     client: 'Safe Haven Inspections',
     logo: { src: '/clients/safe-haven-inspections.png', width: 335, height: 160 },
@@ -64,39 +97,6 @@ export const caseStudies: CaseStudy[] = [
     proofMath: '45 min − 10 min = 35 min saved per report (78%). × 10 reports ≈ 5.8 hrs back. Source: report time before vs. after the automation.',
     services: ['AI Automation', 'Website', 'Google Business Profile'],
     visual: 'report-time',
-  },
-  {
-    slug: 'heros-pavers',
-    client: "Hero's Pavers",
-    logo: { src: '/clients/heros-pavers.png', width: 727, height: 160 },
-    trade: 'Paver & hardscape contractor',
-    area: 'Lake Worth Beach',
-    status: 'result',
-    headlineStat: '10+',
-    headlineLabel: 'keywords in the Google map pack',
-    title: 'In the Google map pack for more than 10 keywords.',
-    summary:
-      "A rebuilt website and a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring in paver jobs.",
-    stats: [
-      { value: 'Map pack', label: 'for more than 10 keywords' },
-      { value: 'Top of Google', label: 'for its main paver searches' },
-      { value: 'Rebuilt', label: 'website, built to rank locally' },
-    ],
-    challenge:
-      'Great work, but not enough visibility. When homeowners searched for paver and hardscape help, the company needed to show up near the top instead of below the competition.',
-    whatWeDid: [
-      'Rebuilt the website from the ground up with a local SEO structure',
-      'Built the pages around the searches that bring in paver jobs',
-      'Optimized the Google Business Profile',
-    ],
-    outcome: [
-      'Shows up in the Google map pack for more than 10 keywords',
-      'Ranks near the top of Google for its main paver searches',
-      'A modern website built to turn those searches into calls',
-    ],
-    services: ['Website', 'Local SEO', 'Google Business Profile'],
-    proofMath: 'Google map pack for more than 10 keywords after the SEO website rebuild + Google Business Profile optimization.',
-    visual: 'rank-ladder',
   },
   {
     slug: 'next-level-air-conditioning',
