@@ -1,10 +1,9 @@
 ---
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/sections/PageHero.astro';
-import Founder from '@/components/sections/Founder.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
+import { SITE } from '@/config/site';
 import { trades } from '@/data/offer';
 const values = [
   { icon: 'receipt', title: 'Your price in writing', text: 'You should know exactly what something costs before any work starts. So every quote is fixed and in writing, with no surprise invoices later.' },
@@ -16,13 +15,12 @@ const values = [
 ];
 ---
 <Base
-  title={`About ${SITE.name} | Founder-Run in Royal Palm Beach, FL`}
-  description={`${SITE.name} is a founder-run local SEO and AI company in Royal Palm Beach, serving contractors, restaurants, medical offices, and other local businesses across Palm Beach County.`}
+  title={`About ${SITE.name} | Local SEO and AI in Royal Palm Beach, FL`}
+  description={`${SITE.name} is a local SEO and AI company in Royal Palm Beach, serving contractors, restaurants, medical offices, and other local businesses across Palm Beach County.`}
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
 >
-  <PageHero compact eyebrow="About" title="Local, founder-run, and built for local business owners."
-    lede={`${SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google and get hours back with AI. Run by ${FOUNDER_FIRST_NAME}.`} />
-  <Founder />
+  <PageHero compact eyebrow="About" title="Local, and built for local business owners."
+    lede={`${SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google and get hours back with AI. We do the work ourselves, so the people you talk to are the people building it.`} />
   <section class="section surface-cream">
     <div class="container-x">
       <div class="max-w-2xl" data-reveal>
