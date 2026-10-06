@@ -7,8 +7,8 @@ export const serviceGroups = [
     title: 'Get found on Google',
     intro: 'Show up when someone nearby searches for what you do.',
     items: [
-      { name: 'Website', icon: 'globe', text: 'We build or fix your website so it shows up for your services in the towns you work in.', detail: 'A page for every service and every town you cover, built to load fast on a phone and get the visitor to call.' },
-      { name: 'Google Business Profile', icon: 'pin', text: 'We set up and manage your profile so you show up on Google Maps.', detail: 'Categories, services, photos, and weekly posts, kept up for you so the map listing keeps working.' },
+      { name: 'SEO optimized website', icon: 'globe', text: 'We build or fix your website so it is SEO optimized and shows up for your services in the towns you work in.', detail: 'A page for every service and every town you cover, built to load fast on a phone and get the visitor to call.' },
+      { name: 'Optimized Google Business Profile', icon: 'pin', text: 'We set up and optimize your Google Business Profile so you show up on Google Maps.', detail: 'Categories, services, photos, and weekly posts, kept up for you so the map listing keeps working.' },
       { name: 'Google reviews', icon: 'star', text: 'Every customer gets a review request by text.', detail: 'Customers get a direct link while the visit is still fresh, so reviews come in without you having to ask.' },
     ],
   },
