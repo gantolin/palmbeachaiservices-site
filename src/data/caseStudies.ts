@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     headlineLabel: 'to write each inspection report',
     title: 'From 45 minutes to 10 minutes per inspection report.',
     summary:
-      'Writing the report was the slowest part of every mold inspection. A custom AI tool now does the heavy lifting, so each report takes 10 minutes instead of 45.',
+      "We built a custom tool that pairs the inspector's expertise with the full, detailed report every client expects. The inspector brings the findings and the judgment. The tool handles every other part of the report and writes it in the inspector's own voice, so it reads like they wrote it themselves. A 45-minute report now takes 10.",
     stats: [
       { value: '78%', label: 'less time on every report' },
       { value: '35 min', label: 'saved per inspection' },
@@ -49,12 +49,15 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       'Every inspection ended with about 45 minutes of writing and formatting the report. That time capped how many jobs could fit in a week.',
     whatWeDid: [
-      'Built a custom AI tool that drafts every inspection report',
+      'Built a custom report tool around the way the inspector already works',
+      'Automated every part of the report, from the findings to the final formatting',
+      "Set it up to write each report in the inspector's own voice",
       'Designed and built a new website',
       'Set up and optimized the Google Business Profile',
     ],
     outcome: [
       'Report time dropped from 45 minutes to 10 minutes',
+      'Every report is just as thorough as before, and still sounds like the inspector',
       '35 minutes saved on every inspection, about 5.8 hours for every 10 reports',
       'That time goes back into booking more inspections',
     ],
