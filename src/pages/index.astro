@@ -150,46 +150,22 @@ const callFacts = [
       st.list.style.setProperty('--trail-fill', st.len ? (Math.max(0, st.best) / st.len).toFixed(4) : '0');
       st.rows.forEach((r, i) => r.classList.toggle('is-lit', st.best >= 0 && st.centers[i] - st.top <= st.best + 2));
     };
-    measure();
-    if (window.matchMedia('(min-width: 1024px)').matches) {
-      // Computers: most of a card is on screen at once, so tying the line to scrolling made it lag
-      // behind what the visitor could already see. Here it runs by itself, top to bottom, as soon as
-      // a third of the card is on screen.
-      const run = (st: (typeof state)[number]) => {
-        const t0 = performance.now(), dur = 1500;
-        const step = (t: number) => {
-          const p = Math.min(1, (t - t0) / dur);
-          st.best = st.len * p;
-          paint(st);
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      };
-      const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        const st = state.find((x) => x.card === en.target);
-        if (st) window.setTimeout(() => run(st), 450);   // a beat after the card appears, so the run is seen
-        io.unobserve(en.target);
-      }), { threshold: 0.3 });
-      state.forEach((st) => { paint(st); io.observe(st.card); });
-      window.addEventListener('resize', () => { measure(); state.forEach(paint); });
-    } else {
-      // Phones and tablets: the line follows the scroll.
-      let queued = false;
-      const update = () => {
-        queued = false;
-        const line = window.innerHeight * 0.7;   // where on the screen the line's tip sits
-        state.forEach((st) => {
-          const y = st.list.getBoundingClientRect().top + st.top;
-          st.best = Math.max(st.best, Math.min(st.len, line - y));   // only ever grows
-          paint(st);
-        });
-      };
-      update();
-      window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
-      window.addEventListener('resize', () => { measure(); update(); });
-      window.setTimeout(() => { measure(); update(); }, 1500);   // fonts and the headline animation settle
-    }
+    // The line follows the scroll on every screen size: each service lights up as it comes up the
+    // screen. The tip sits low (80% down), so a service lights soon after it appears.
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const line = window.innerHeight * 0.8;
+      state.forEach((st) => {
+        const y = st.list.getBoundingClientRect().top + st.top;
+        st.best = Math.max(st.best, Math.min(st.len, line - y));   // only ever grows
+        paint(st);
+      });
+    };
+    measure(); update();
+    window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', () => { measure(); update(); });
+    window.setTimeout(() => { measure(); update(); }, 1500);   // fonts and the headline animation settle
   }
 </script>
 
