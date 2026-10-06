@@ -74,7 +74,7 @@ export const SITE = {
   web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
 
   /**
-   * Calendly event for the Google Visibility Check call. Embedded on /book/ and on /thanks/ after the form.
+   * Calendly event for the free call. Embedded on the home page.
    * If the Calendly link slug changes (Profile > My Link), update it here.
    */
   bookingUrl: 'https://calendly.com/antolinoaisolutions/palm-beach-teardown-call',
@@ -95,12 +95,7 @@ export const NAV = [
   { label: 'About', href: '/about/' },
 ] as const;
 
-/**
- * The main ask everywhere is booking a call (Gene, 2026-09-29). The Google check form stays as the
- * softer option for people who would rather send details first.
- */
+/** The one ask everywhere is booking a call. The calendar lives on the home page. */
 export const CTA = {
-  primary: { label: 'Book a free call', href: '/book/' },
-  offerName: 'The Free Google Visibility Check',
-  secondary: { label: 'Get my free Google check', href: '/free-google-check/' },
+  primary: { label: 'Book a free call', href: '/#book' },
 } as const;

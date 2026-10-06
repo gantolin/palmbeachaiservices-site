@@ -7,8 +7,7 @@ import { join } from 'node:path';
 const BASE = process.env.BASE ?? 'http://localhost:4321';
 const OUT = process.env.OUT ?? tmpdir();
 const pages = [
-  ['/', 'home'], ['/services/', 'services'], ['/services/ai-answering-service/', 'answering'],
-  ['/contact/', 'contact'],
+  ['/', 'home'], ['/services/', 'services'], ['/results/', 'results'], ['/about/', 'about'],
 ];
 const b = await chromium.launch({ channel: 'chrome' });
 const p = await b.newPage({ viewport: { width: 1440, height: 1000 } });

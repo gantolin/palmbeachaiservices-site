@@ -2,7 +2,6 @@
 import Logo from './ui/Logo.astro';
 import Icon from './ui/Icon.astro';
 import { NAV, CTA, SITE, telHref } from '@/config/site';
-import { services } from '@/data/services';
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
@@ -35,10 +34,6 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       <nav aria-label="Mobile" class="flex flex-col">
         {NAV.map((n) => (
           <a href={n.href} class="flex items-center justify-between py-4 border-b border-white/8 text-[20px] font-display font-medium tracking-tight">{n.label}<Icon name="arrow-right" size={18} class="text-gold-300" /></a>
-        ))}
-        <div class="pt-4 pb-2 font-mono text-[11px] uppercase tracking-[0.12em] text-mist-400">Services</div>
-        {services.map((s) => (
-          <a href={`/services/${s.slug}/`} class="py-2 text-mist-200/85 text-[16px]">{s.name}</a>
         ))}
       </nav>
       <div class="mt-6 grid gap-3">

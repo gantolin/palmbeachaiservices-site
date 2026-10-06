@@ -5,7 +5,7 @@ import Founder from '@/components/sections/Founder.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
-import { industries } from '@/data/comparison';
+import { trades } from '@/data/offer';
 const values = [
   { icon: 'receipt', title: 'Your price in writing', text: 'You should know exactly what something costs before any work starts. So every quote is fixed and in writing, with no surprise invoices later.' },
   { icon: 'key', title: 'You own everything', text: 'Your domain, your website, your Google profile, your customer list. If you ever leave, it all goes with you.' },
@@ -17,18 +17,17 @@ const values = [
 ---
 <Base
   title={`About ${SITE.name} | Founder-Run in Royal Palm Beach, FL`}
-  description={`${SITE.name} is a founder-run web, local SEO, and AI automation company based in Royal Palm Beach, serving home-service businesses across Palm Beach County.`}
+  description={`${SITE.name} is a founder-run local SEO and AI company in Royal Palm Beach, serving plumbers, electricians, HVAC, roofers, painters, cleaners, and other home service businesses across Palm Beach County.`}
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
 >
-  <PageHero eyebrow="About" title="Local, founder-run, and built for *busy* owners."
-    lede={`${SITE.name} helps Palm Beach County home-service businesses get found on Google, answer every lead, and get hours back with AI. Run by ${FOUNDER_FIRST_NAME}.`}
-    crumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]} />
+  <PageHero compact eyebrow="About" title="Local, founder-run, and built for home service owners."
+    lede={`${SITE.name} helps plumbers, electricians, HVAC companies, roofers, painters, cleaners, and other home service businesses in Palm Beach County get found on Google and get hours back with AI. Run by ${FOUNDER_FIRST_NAME}.`} />
   <Founder />
   <section class="section surface-cream">
     <div class="container-x">
       <div class="max-w-2xl" data-reveal>
         <div class="eyebrow">How we work</div>
-        <h2 class="h2 mt-5">The rules we <em class="accent">run on.</em></h2>
+        <h2 class="h2 mt-5">The rules we run on.</h2>
       </div>
       <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {values.map((v, i) => (
@@ -45,13 +44,13 @@ const values = [
     <div class="container-x grid gap-12 lg:grid-cols-2">
       <div data-reveal>
         <div class="eyebrow">Who we help</div>
-        <h2 class="h2 mt-5">Home-service pros and local <em class="accent">practices.</em></h2>
-        <p class="lede mt-6">If customers find you on Google and call you on the phone, we can help you get more of them.</p>
-        <ul class="mt-8 flex flex-wrap gap-2">{industries.map((i) => <li class="chip bg-white border border-stone-300 text-[14px]">{i}</li>)}</ul>
+        <h2 class="h2 mt-5">Home service businesses.</h2>
+        <p class="lede mt-6">If customers find you on Google and call you for a job at their house, we can help you get more of them.</p>
+        <ul class="mt-8 flex flex-wrap gap-2">{trades.map((i) => <li class="chip bg-white border border-stone-300 text-[14px]">{i}</li>)}</ul>
       </div>
       <div data-reveal style="--d:100ms">
         <div class="eyebrow">Where we work</div>
-        <h2 class="h2 mt-5">Home base: <em class="accent">{SITE.homeBase}.</em></h2>
+        <h2 class="h2 mt-5">Home base: {SITE.homeBase}.</h2>
         <p class="lede mt-6">We serve all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}. Local means we can meet in person.</p>
         <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15.5px]">
           {SITE.serviceAreas.map((a, i) => <li class="flex items-center gap-2.5"><Icon name="pin" size={16} class={i === 0 ? 'text-gold-700' : 'text-navy-700'} /><span class={i === 0 ? 'font-semibold' : ''}>{a}</span></li>)}

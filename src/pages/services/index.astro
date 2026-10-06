@@ -1,39 +1,40 @@
 ---
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/sections/PageHero.astro';
-import Pillars from '@/components/sections/Pillars.astro';
-import HowItWorks from '@/components/sections/HowItWorks.astro';
+import Trades from '@/components/sections/Trades.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
-import { services } from '@/data/services';
-import { accent } from '@/lib/text';
+import { serviceGroups } from '@/data/offer';
 ---
 <Base
-  title="Services: Get Seen on Google & Save Time with AI | Palm Beach AI Services"
-  description={`Websites, Google Maps SEO, Google reviews, lead follow-up, and AI automation for home service businesses in Palm Beach County. No contract, and you own everything.`}
+  title="Services for Home Service Businesses | Palm Beach AI Services"
+  description="Websites, Google Business Profile, Google reviews, call answering, lead follow-up, and AI paperwork for plumbers, electricians, HVAC, roofers, painters, cleaners, and other home service businesses in Palm Beach County."
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]}
 >
-  <PageHero eyebrow="Get seen on Google · Get your time back with AI" title="Get you *seen* on Google, then give you time back."
-    lede="Seven services that work as one system, set up and run for you. Pick one, or let them work together."
-    crumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]} />
+  <PageHero compact eyebrow="Services" title="What we do for home service businesses."
+    lede="Two things: get you found on Google, and get you hours back with AI." />
 
-  <section class="section surface-cream">
-    <div class="container-x grid gap-5 md:grid-cols-2">
-      {services.map((s, i) => (
-        <a href={`/services/${s.slug}/`} class="card lift group p-8 rounded-[20px] flex flex-col" data-reveal style={`--d:${i * 90}ms`}>
-          <span class="size-12 rounded-2xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={22} /></span>
-          <div class="mt-6 font-mono text-[11.5px] uppercase tracking-[0.1em] text-navy-700">{s.pillar}</div>
-          <h2 class="h3 mt-2">{s.name}</h2>
-          <p class="mt-3 text-ink-600 text-[15.5px]" set:html={accent(s.subhead)} />
-          <ul class="mt-6 space-y-2.5 text-[15px]">
-            {s.outcomes.map((o) => <li class="flex gap-2.5"><Icon name="check" size={17} stroke={2.2} class="text-navy-700 shrink-0 mt-[3px]" />{o.title}</li>)}
-          </ul>
-          <span class="mt-auto pt-8 inline-flex items-center gap-2 text-[14.5px] font-semibold text-navy-700">Explore {s.navLabel} <Icon name="arrow-right" size={16} class="transition-transform group-hover:translate-x-1" /></span>
-        </a>
+  <section class="surface-cream py-12 sm:py-16">
+    <div class="container-x space-y-14">
+      {serviceGroups.map((g) => (
+        <div>
+          <h2 class="h2 text-ink-900">{g.title}</h2>
+          <p class="mt-3 text-[17px] text-ink-600">{g.intro}</p>
+          <div class:list={['mt-7 grid gap-5 sm:grid-cols-2', g.items.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3']}>
+            {g.items.map((s) => (
+              <div class="card rounded-[20px] p-7">
+                <span class="size-11 rounded-xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={20} /></span>
+                <h3 class="mt-5 font-display text-[21px] font-[600] tracking-tight text-ink-900">{s.name}</h3>
+                <p class="mt-2 text-[16px] leading-snug text-ink-900/90">{s.text}</p>
+                <p class="mt-3 text-[15px] leading-relaxed text-ink-600">{s.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   </section>
-  <Pillars />
-  <HowItWorks />
+
+  <Trades />
   <FinalCTA />
 </Base>

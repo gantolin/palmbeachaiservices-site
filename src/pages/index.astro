@@ -4,33 +4,14 @@ import Icon from '@/components/ui/Icon.astro';
 import BookingEmbed from '@/components/islands/BookingEmbed.astro';
 import { SITE, FOUNDER_FIRST_NAME, telHref } from '@/config/site';
 import { words } from '@/lib/text';
+import { serviceGroups as groups } from '@/data/offer';
 
 const headline = 'Get found on Google. Get *hours back* every week.';
 
-// Everything we do, in the two groups an owner cares about.
-const groups = [
-  {
-    title: 'Get found on Google',
-    items: [
-      { name: 'Website', text: 'We build or fix your website so it shows up for your services in the towns you work in.' },
-      { name: 'Google Business Profile', text: 'We set up and manage your profile so you show up on Google Maps.' },
-      { name: 'Google reviews', text: 'Every finished job gets a review request by text.' },
-    ],
-  },
-  {
-    title: 'Get hours back with AI',
-    items: [
-      { name: 'Call answering', text: 'Calls get answered and missed calls get a text back while you are on a job.' },
-      { name: 'Lead follow-up', text: 'New leads and open quotes get a text or an email until they book or say no.' },
-      { name: 'Reports and paperwork', text: 'AI drafts your reports, estimates, and invoices.' },
-      { name: 'Lead dashboard', text: 'Every lead and job in one place.' },
-    ],
-  },
-];
 ---
 <Base
   title="Local SEO & AI for Home Service Businesses | Palm Beach AI Services"
-  description={`Get found on Google and get hours back with AI. Websites, Google Business Profile, reviews, call answering, and lead follow-up for home service businesses in Royal Palm Beach and Palm Beach County.`}
+  description={`Get found on Google and get hours back with AI. Websites, Google Business Profile, reviews, call answering, and lead follow-up for plumbers, electricians, HVAC, roofers, painters, cleaners, and other home service businesses in Palm Beach County.`}
 >
   <section class="relative overflow-hidden surface-dark grain -mt-px" id="services">
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
@@ -39,6 +20,7 @@ const groups = [
         <div>
           <div class="eyebrow fade-in">For home service businesses in Palm Beach County</div>
           <h1 class="h1 hero-h1 mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
+          <p class="mt-5 text-[17px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For plumbers, electricians, HVAC, roofers, painters, cleaners, landscapers, and every other home service business.</p>
 
           <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
             <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free call<Icon name="arrow-right" size={18} /></a>
@@ -75,5 +57,5 @@ const groups = [
 </Base>
 
 <style>
-  @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.6rem, 3.9vw, 3.5rem); } }
+  @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.4rem, 3.4vw, 3.1rem); } }
 </style>

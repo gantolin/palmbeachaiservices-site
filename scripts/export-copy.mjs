@@ -7,9 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = join(root, 'dist');
-const order = ['/', '/services/', '/services/google-maps-seo/', '/services/websites/', '/services/ai-automation/',
-  '/services/ai-answering-service/',
-  '/results/', '/about/', '/free-google-check/', '/book/', '/contact/', '/thanks/', '/privacy/', '/terms/', '/404/'];
+const order = ['/', '/services/', '/results/', '/about/', '/privacy/', '/terms/', '/404/'];
 
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));
 const files = walk(dist).filter((f) => f.endsWith('.html'));

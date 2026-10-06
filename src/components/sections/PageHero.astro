@@ -1,14 +1,14 @@
 ---
 import { words } from '@/lib/text';
 import Aurora from '../ui/Aurora.astro';
-interface Props { eyebrow: string; title: string; lede?: string; crumbs?: { name: string; url: string }[]; center?: boolean }
-const { eyebrow, title, lede, crumbs, center = false } = Astro.props;
+interface Props { eyebrow: string; title: string; lede?: string; crumbs?: { name: string; url: string }[]; center?: boolean; compact?: boolean }
+const { eyebrow, title, lede, crumbs, center = false, compact = false } = Astro.props;
 ---
 <section class="relative overflow-hidden surface-dark grain -mt-px" data-parallax-root>
   <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
   <Aurora variant="soft" orbit={center ? 'center' : 'right'} />
   <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
-  <div class="container-x relative pt-14 pb-16 sm:pt-20 sm:pb-24">
+  <div class:list={['container-x relative', compact ? 'pt-10 pb-10 sm:pt-12 sm:pb-12' : 'pt-14 pb-16 sm:pt-20 sm:pb-24']}>
     {crumbs && (
       <nav aria-label="Breadcrumb" class="mb-8">
         <ol class="flex flex-wrap items-center gap-2 font-mono text-[11.5px] uppercase tracking-[0.1em] text-mist-400">
@@ -23,8 +23,8 @@ const { eyebrow, title, lede, crumbs, center = false } = Astro.props;
     )}
     <div class:list={[center ? 'mx-auto text-center max-w-4xl' : 'max-w-4xl']}>
       <div class:list={['eyebrow fade-in', center && 'justify-center']}>{eyebrow}</div>
-      <h1 class="h1 mt-6 text-[#f4f1e8] word-rise" set:html={words(title)} />
-      {lede && <p class:list={['lede mt-7 fade-in', center && 'mx-auto']} style="--d:320ms">{lede}</p>}
+      <h1 class:list={['text-[#f4f1e8] word-rise', compact ? 'h2 mt-4' : 'h1 mt-6']} set:html={words(title)} />
+      {lede && <p class:list={['lede fade-in', compact ? 'mt-4' : 'mt-7', center && 'mx-auto']} style="--d:320ms">{lede}</p>}
       <slot />
     </div>
   </div>

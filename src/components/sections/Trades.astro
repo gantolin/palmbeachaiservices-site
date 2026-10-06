@@ -1,0 +1,17 @@
+---
+import { trades } from '@/data/offer';
+interface Props { surface?: string; onDark?: boolean; heading?: string }
+const { surface = 'surface-sand', onDark = false, heading = 'Built for home service businesses' } = Astro.props;
+---
+<section class:list={['py-14 sm:py-16', surface]}>
+  <div class="container-x">
+    <h2 class:list={['h3', onDark ? 'text-[#f4f1e8]' : 'text-ink-900']}>{heading}</h2>
+    <p class:list={['mt-3 text-[16px] max-w-2xl', onDark ? 'text-mist-400' : 'text-ink-600']}>If customers find you on Google and call you for a job at their house, this is for you.</p>
+    <ul class="mt-7 flex flex-wrap gap-2.5">
+      {trades.map((t) => (
+        <li class:list={['rounded-full px-4 py-2 text-[15px] font-medium', onDark ? 'bg-white/8 text-mist-200 border border-white/10' : 'bg-white text-ink-900 border border-stone-300']}>{t}</li>
+      ))}
+      <li class:list={['rounded-full px-4 py-2 text-[15px]', onDark ? 'text-mist-400' : 'text-ink-600']}>and any other home service</li>
+    </ul>
+  </div>
+</section>
