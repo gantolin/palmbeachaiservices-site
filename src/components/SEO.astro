@@ -1,6 +1,6 @@
 ---
 import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
-import { plan, customAI } from '@/data/pricing';
+import { serviceGroups } from '@/data/offer';
 
 interface Props {
   title: string;
@@ -46,23 +46,14 @@ const business = {
     ...SITE.nearbyCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c}, FL` })),
   ],
   founder: { '@type': 'Person', name: FOUNDER_FIRST_NAME },
-  knowsAbout: ['Local SEO', 'Google Maps SEO', 'Google Business Profile optimization', 'Website design', 'AI automation', 'AI answering service', 'Missed-call text-back', 'Speed to lead', 'Review management', 'GoHighLevel CRM'],
+  knowsAbout: ['Local SEO', 'Google Maps SEO', 'Google Business Profile optimization', 'Website design', 'AI automation', 'Call answering', 'Lead follow-up', 'Review management'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Plans and services',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: `${plan.name}: website build`,
-        description: plan.build.text,
-      },
-      {
-        '@type': 'Offer',
-        name: `${plan.name}: monthly`,
-        description: plan.included.map((i) => i.title).join(', '),
-      },
-      { '@type': 'Offer', name: customAI.eyebrow, description: customAI.items.map((i) => i.title).join(', ') },
-    ],
+    name: 'Services',
+    // The same services the Services page lists, so the schema never drifts from the page.
+    itemListElement: serviceGroups.flatMap((g) =>
+      g.items.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, description: s.text, areaServed: 'Palm Beach County, FL' } })),
+    ),
   },
   ...(sameAs.length ? { sameAs } : {}),
 };
