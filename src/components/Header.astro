@@ -8,8 +8,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold-500 focus:text-navy-950 focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
 <header id="site-header" data-open="false" class="site-header sticky top-0 z-40 text-mist-200">
-  <div class="container-x flex items-center justify-between h-[72px] sm:h-[76px] lg:h-[92px] gap-2 sm:gap-3 lg:gap-6">
-    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[44px] w-auto min-[350px]:h-[50px] min-[380px]:h-[54px] sm:h-[56px] lg:h-[64px]" /></a>
+  <div class="container-x flex items-center justify-between h-[76px] lg:h-[92px] gap-2 sm:gap-3 lg:gap-6">
+    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[30px] w-auto min-[350px]:h-[34px] min-[380px]:h-[38px] min-[420px]:h-[44px] sm:h-[56px] lg:h-[64px]" /></a>
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
@@ -23,7 +23,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Book a free audit <Icon name="arrow-right" size={16} /></a>
     </div>
 
-    <a href={telHref} class="head-phone head-phone-inline lg:hidden ml-auto" aria-label={`Call ${SITE.phone}`}><Icon name="phone" size={15} class="head-phone-icon" />{SITE.phone}</a>
+    <a href={telHref} class="head-phone lg:hidden ml-auto" aria-label={`Call ${SITE.phone}`}><Icon name="phone" size={15} class="head-phone-icon" />{SITE.phone}</a>
 
     <button type="button" class="lg:hidden shrink-0 inline-flex items-center justify-center size-11 -mr-2 rounded-full hover:bg-white/5" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
       <Icon name="menu" size={24} />
@@ -47,12 +47,6 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </div>
   </div>
 </header>
-
-<!-- Phones: the number gets its own row under the bar, big enough to read at a glance. It is not
-     sticky, so it scrolls away with the page (the bottom bar keeps Call and Text on screen). -->
-<div class="phone-strip">
-  <a href={telHref} class="head-phone head-phone-big" aria-label={`Call ${SITE.phone}`}><Icon name="phone" size={19} class="head-phone-icon" />{SITE.phone}</a>
-</div>
 
 <style>
   .site-header { transition: background-color 300ms, backdrop-filter 300ms, border-color 300ms, box-shadow 300ms; border-bottom: 1px solid transparent; background: #07182f; }
@@ -87,12 +81,4 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   @media (min-width: 1024px) { .head-phone { display: none; } }
   @media (max-width: 379px) { .head-phone { font-size: 14.5px; height: 38px; padding: 0 11px; } .head-phone :global(.head-phone-icon) { display: none; } }
   @media (max-width: 349px) { .head-phone { font-size: 14px; padding: 0 9px; } }
-
-  .phone-strip { display: none; }
-  @media (max-width: 639px) {
-    .head-phone-inline { display: none; }
-    .phone-strip { display: block; background: #07182f; padding: 0 20px 12px; }
-    .head-phone.head-phone-big { display: flex; justify-content: center; width: 100%; height: 48px; padding: 0 16px; gap: 9px; font-size: 21px; }
-    .head-phone-big :global(.head-phone-icon) { display: block; }
-  }
 </style>
