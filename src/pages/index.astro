@@ -24,7 +24,7 @@ const callFacts = [
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
     <Aurora variant="soft" />
     <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
-    <div class="container-x relative pt-10 pb-16 sm:pt-14 sm:pb-24">
+    <div class="container-x relative pt-3 pb-16 sm:pt-14 sm:pb-24">
       <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
         <div>
           <!-- The hero copy sits inside a search page: the search someone types, and this business as the top result. -->
@@ -42,11 +42,11 @@ const callFacts = [
                 <span class="result-icon"><Icon name="pin" size={16} /></span>
                 <span><span class="block text-[14px] font-medium text-ink-900 leading-tight">{SITE.name}</span><span class="block text-[12.5px] text-ink-600 leading-tight">{SITE.domain}</span></span>
               </div>
-              <div class="eyebrow mt-4">For local businesses in Palm Beach County</div>
+              <div class="eyebrow mt-3 sm:mt-4">For local businesses in Palm Beach County</div>
               <h1 class="h1 hero-h1 mt-2 word-rise" set:html={words(headline)} />
-              <p class="mt-4 text-[18px] sm:text-[19px] leading-snug font-medium text-ink-900 max-w-[40ch]">We build your website, manage your Google Maps listing, and use AI to automate the everyday work that eats your time, like following up with leads.</p>
+              <p class="mt-3 sm:mt-4 text-[16.5px] sm:text-[19px] leading-snug font-medium text-ink-900 max-w-[40ch]">We build your website, manage your Google Maps listing, and use AI to automate the everyday work that eats your time, like following up with leads.</p>
               <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-ink-600 max-w-[46ch]">For contractors, restaurants, medical offices, and every other local business.</p>
-              <div class="mt-6 lg:hidden">
+              <div class="mt-4 sm:mt-6 lg:hidden">
                 <a href="#book" class="btn btn-primary btn-lg btn-shine w-full sm:w-auto">Book a free audit<Icon name="arrow-right" size={18} /></a>
               </div>
             </div>
@@ -162,10 +162,27 @@ const callFacts = [
     -webkit-background-clip: border-box; background-clip: border-box;
     color: inherit; animation: none; padding: 0 .06em; margin: 0 -.06em;
   }
+  /* Phones: tightened so the Book a free audit button clears the bottom bar on the first screen. */
   @media (max-width: 640px) {
-    .search-top { padding: 14px 14px 0; }
-    .search-result { padding: 16px 18px 22px; }
+    .search-frame { border-radius: 20px; }
+    .search-top { padding: 10px 12px 0; }
+    .search-bar { height: 42px; font-size: 15px; }
+    .search-tabs { margin-top: 8px; font-size: 13px; }
+    .search-tabs span { padding-bottom: 6px; }
     .search-tabs span:last-child { display: none; }
+    .search-result { padding: 12px 16px 16px; }
+    .result-icon { width: 26px; height: 26px; }
+    .search-frame .eyebrow { font-size: 13.5px; }
+    .search-frame .hero-h1 { font-size: 1.95rem; line-height: 1.05; }
+  }
+  /* Narrow or short phones drop the result's site row, then the tabs, to keep the button on screen. */
+  @media (max-width: 370px), (max-width: 640px) and (max-height: 600px) {
+    .result-site { display: none; }
+    .search-frame .eyebrow { margin-top: 0; }
+  }
+  @media (max-width: 640px) and (max-height: 600px) {
+    .search-tabs { display: none; }
+    .search-top { padding-bottom: 10px; }
   }
 
   .service-card {

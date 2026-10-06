@@ -5,9 +5,22 @@ import { CTA, telHref, smsHref } from '@/config/site';
 const showBook = Astro.url.pathname !== '/';
 ---
 <div class="mobile-bar lg:hidden fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(10px,env(safe-area-inset-bottom))] pt-2" aria-label="Quick actions">
-  <div class:list={['grid gap-2 rounded-full bg-navy-950/92 backdrop-blur-md border border-white/10 p-1.5 shadow-[0_12px_40px_-12px_rgba(0,0,0,.6)]', showBook ? 'grid-cols-[1fr_1fr_1.6fr]' : 'grid-cols-2']}>
-    <a href={telHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-white text-[16px] font-semibold hover:bg-white/5"><Icon name="phone" size={18} />Call</a>
-    <a href={smsHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-white text-[16px] font-semibold hover:bg-white/5"><Icon name="message" size={18} />Text</a>
-    {showBook && <a href={CTA.primary.href} class="flex items-center justify-center gap-1.5 h-11 rounded-full bg-gold-500 text-navy-950 text-[14px] font-semibold">Free audit</a>}
+  <div class:list={['grid gap-2 rounded-full bg-navy-950/92 backdrop-blur-md border border-white/15 p-1.5 shadow-[0_16px_44px_-12px_rgba(0,0,0,.75)]', showBook ? 'grid-cols-[1fr_1fr_1.6fr]' : 'grid-cols-2']}>
+    <a href={telHref} class="bar-btn"><Icon name="phone" size={18} class="text-gold-300" />Call</a>
+    <a href={smsHref} class="bar-btn"><Icon name="message" size={18} class="text-gold-300" />Text</a>
+    {showBook && <a href={CTA.primary.href} class="flex items-center justify-center gap-1.5 h-12 rounded-full bg-gold-500 text-navy-950 text-[14.5px] font-semibold">Free audit</a>}
   </div>
 </div>
+
+<style>
+  /* Call and Text read as two real buttons: a lighter panel, a gold icon, and a press state. */
+  .bar-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 999px;
+    color: #fff; font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .06));
+    border: 1px solid rgba(255, 255, 255, .16);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .14) inset;
+    transition: background-color 150ms, border-color 150ms;
+  }
+  .bar-btn:active { background: rgba(230, 205, 131, .22); border-color: rgba(230, 205, 131, .6); }
+</style>
