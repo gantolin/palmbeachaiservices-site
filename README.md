@@ -47,7 +47,7 @@ Copy uses `*word*` in data strings to render the italic-serif accent (`src/lib/t
 - `lambda/lead/` (GoHighLevel webhook) is not used; it is kept as a future option.
 
 ## Deploy: GitHub Pages (current hosting)
-`.github/workflows/pages.yml` builds and publishes on every push to `main` (and on manual runs). It follows the same pattern as the Safe Haven site:
+`.github/workflows/pages.yml` builds and publishes on every push to `main` (and on manual runs). It follows the same pattern as the mold inspection company site:
 - Actions are pinned to commit SHAs.
 - The top-level permissions are read-only.
 - A **build** job (`npm ci`, `npm run build`, output checks, `upload-pages-artifact`) runs first, then a **deploy** job with `pages: write` + `id-token: write` (`deploy-pages`).

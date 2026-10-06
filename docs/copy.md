@@ -36,9 +36,9 @@ Gene@Palmbeachaiservices.com
 
 ### Results
 
-- Safe Haven Inspections
-- Hero's Pavers
-- Next Level Air Conditioning
+- The mold inspection company
+- The paver contractor
+- The HVAC contractor
 
 ### Company
 
@@ -118,13 +118,13 @@ Text message
 - Thanks for choosing us! Would you mind leaving a quick Google review? ⭐ Review request · after the job
 Demo · missed-call text-back
 
-Safe Haven
+the mold inspection company
 
 45 → 10 min
 
 per inspection report
 
-Hero's Pavers
+the paver contractor
 
 Ranking #2–#3 on Google
 
@@ -153,16 +153,16 @@ for multiple Lake Worth keywords
 
 Recent work in South Florida
 
-- Safe Haven Inspections
-- Hero's Pavers
-- Next Level Air Conditioning
+- The mold inspection company
+- The paver contractor
+- The HVAC contractor
 78%
 
-less time per inspection report · Safe Haven
+less time per inspection report · the mold inspection company
 
 #2–#3
 
-on Google for Lake Worth keywords · Hero's Pavers
+on Google for Lake Worth keywords · the paver contractor
 
 14 days
 
@@ -245,7 +245,7 @@ AI Automation
 
 Inspection report
 
-Safe Haven
+the mold inspection company
 
 Before
 
@@ -263,7 +263,7 @@ With automation
 
 Reports, invoices, estimates, and reminders, handled by custom AI workflows built with tools like Claude, ChatGPT, and Grok.
 
-See the Safe Haven result
+See the mold inspection company result
 
 Built for
 
@@ -364,7 +364,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 Full pricing + FAQ
 
@@ -398,7 +398,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -411,15 +411,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -441,7 +441,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -501,7 +501,7 @@ Meet the founder
 
 I'm a local, founder-run shop in Royal Palm Beach. I build every website, set up every Google profile, and wire up every automation myself, so the person you talk to is the person doing the work.
 
-I use the same AI tools the big companies use (Claude, ChatGPT, and Grok) to build simple systems for local owners: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut Safe Haven Inspections' report time from 45 to 10 minutes.
+I use the same AI tools the big companies use (Claude, ChatGPT, and Grok) to build simple systems for local owners: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut the mold inspection company' report time from 45 to 10 minutes.
 
 Because I do the work myself, I take a limited number of clients per trade, per town. That way you never compete with another client of mine for the same customers.
 
@@ -528,7 +528,7 @@ Still have a question? Call or text (561) 365-8443.
 - **Q: How fast will I see results?**
   A: Missed-call text-back and review requests work from day one. A new website goes live in 14 days. Google rankings take longer and depend on your town and competition, so we report progress monthly.
 - **Q: What does "AI automation" actually mean for my business?**
-  A: Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut Safe Haven Inspections’ report time from 45 to 10 minutes.
+  A: Simple things that save jobs and hours: texting back missed calls, following up on quotes, asking for reviews, sending invoices, and custom tools like the one that cut the mold inspection company’ report time from 45 to 10 minutes.
 - **Q: What if it doesn’t work?**
   A: You can leave any month and keep everything we built. We also put our delivery in writing: your site, Google profile cleanup, and review + lead follow-up automations are live within 14 days of getting your content, or your first month is free. We never promise rankings or revenue we can’t control.
 - **Q: Why do you limit clients per trade?**
@@ -602,7 +602,7 @@ Meet the founder
 
 I'm a local, founder-run shop in Royal Palm Beach. I build every website, set up every Google profile, and wire up every automation myself, so the person you talk to is the person doing the work.
 
-I use the same AI tools the big companies use (Claude, ChatGPT, and Grok) to build simple systems for local owners: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut Safe Haven Inspections' report time from 45 to 10 minutes.
+I use the same AI tools the big companies use (Claude, ChatGPT, and Grok) to build simple systems for local owners: missed-call text-back, review requests, follow-ups, and custom tools like the one that cut the mold inspection company' report time from 45 to 10 minutes.
 
 Because I do the work myself, I take a limited number of clients per trade, per town. That way you never compete with another client of mine for the same customers.
 
@@ -1092,7 +1092,7 @@ That is the whole system. The rest of this guide is the details that make it wor
 
 Google says local results are based on three things: relevance, distance, and prominence. On its local ranking help page, Google describes prominence as how well known a business is, based partly on “how many reviews you have,” and says “more reviews and positive ratings can help your business’s local ranking.”
 
-Notice the word “help.” Reviews are one input, not a switch. You still need the right categories, a complete profile, and a real service area. We saw this firsthand with Next Level Air Conditioning: it had 31 five-star reviews and still did not show up in the top 20 Google Maps results in 4 live searches in its own area in August 2026. Its profile had 1 photo, no description, no services, and 1 category. Reviews could not carry that on their own.
+Notice the word “help.” Reviews are one input, not a switch. You still need the right categories, a complete profile, and a real service area. We saw this firsthand with the HVAC contractor: it had 31 five-star reviews and still did not show up in the top 20 Google Maps results in 4 live searches in its own area in August 2026. Its profile had 1 photo, no description, no services, and 1 category. Reviews could not carry that on their own.
 
 So think of reviews as two jobs at once. They feed prominence for ranking, and they are what a homeowner reads before they decide to call you or the next company on the list. If you want the ranking side in full, read our guide on how to rank higher on Google Maps.
 
@@ -1417,7 +1417,7 @@ A link from your local chamber of commerce, a supplier’s dealer locator, a you
 
 Plenty of owners assume reviews are the whole game. They’re a big part of prominence, but they can’t make up for weak relevance.
 
-Here’s a real example. In August 2026, Next Level Air Conditioning, a Lake Worth HVAC company, had 31 five-star reviews. In 4 live searches in its own area, it did not appear in the top 20 Google Maps results. Its profile had 1 photo, no description, no services, and 1 category. Its website had 5 pages.
+Here’s a real example. In August 2026, the HVAC contractor, a Lake Worth HVAC company, had 31 five-star reviews. In 4 live searches in its own area, it did not appear in the top 20 Google Maps results. Its profile had 1 photo, no description, no services, and 1 category. Its website had 5 pages.
 
 Thirty-one perfect reviews and still invisible. Google simply didn’t have enough to connect that business to the searches homeowners were making. In September 2026 we rebuilt the site to 30+ pages (including 15 city pages) and rebuilt the profile (categories, description, service areas). Results are still in progress, so we’re not claiming any ranking gains yet. The point stands: reviews without relevance don’t get you on the map.
 
@@ -1660,7 +1660,7 @@ Reviews help with both ranking and getting picked. Google’s own page says more
 
 The trick is making it routine. Ask at the end of every job, while the customer is happy and you are still in the driveway. Follow up the same day with a text that has your direct review link. Reply to every review, good and bad, with a real sentence, not a copy-paste.
 
-Reviews alone are not enough, though. Next Level Air Conditioning, a Lake Worth HVAC company, had 31 five-star reviews and still did not appear in the top 20 Google Maps results in 4 live searches in its own area in August 2026. The profile had 1 photo, no description, no services, and 1 category, and the website had 5 pages. In September 2026 we rebuilt the site to 30+ pages, including 15 city pages, and rebuilt the profile’s categories, description, and service areas. Results are still in progress, but the lesson is already clear: good reviews can’t carry an empty profile.
+Reviews alone are not enough, though. The HVAC contractor, a Lake Worth HVAC company, had 31 five-star reviews and still did not appear in the top 20 Google Maps results in 4 live searches in its own area in August 2026. The profile had 1 photo, no description, no services, and 1 category, and the website had 5 pages. In September 2026 we rebuilt the site to 30+ pages, including 15 city pages, and rebuilt the profile’s categories, description, and service areas. Results are still in progress, but the lesson is already clear: good reviews can’t carry an empty profile.
 
 ### Step 2: Build a website with a page per service and main town
 
@@ -1959,7 +1959,7 @@ That is not a sales trick. It is just making sure the people who want to hire yo
 
 The point of all this is not to have you glued to your phone. It is the opposite. When the first minute is handled automatically, you stop feeling the pull to answer every call on a ladder. You call back when it is safe and you are ready, and the lead is still warm.
 
-We have seen what the right automation does for a small team’s time. For Safe Haven Inspections, a custom AI automation cut inspection report time from 45 minutes to 10 minutes per report (78% less). Lead response works the same way: take the repetitive part off your plate so you can spend your time on the work only you can do.
+We have seen what the right automation does for a small team’s time. For the mold inspection company, a custom AI automation cut inspection report time from 45 minutes to 10 minutes per report (78% less). Lead response works the same way: take the repetitive part off your plate so you can spend your time on the work only you can do.
 
 ### Where to start
 
@@ -2105,7 +2105,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 - Live in 14 days Counted from the day we have your content and account access.
 - Or month one is free If we miss the 14 days, your first month is on us. In writing.
@@ -2142,7 +2142,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -2155,15 +2155,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -2185,7 +2185,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -2248,7 +2248,7 @@ Still have a question? Call or text (561) 365-8443.
 - **Q: Are there any other fees?**
   A: No hidden fees. The $750 build and the $297/month plan are the price. Custom AI work is optional and quoted separately, in writing, before anything starts. If your texting or calling volume is unusually high, we will tell you up front before any usage costs apply.
 - **Q: What about custom AI automation?**
-  A: CRM and GoHighLevel setup, custom AI workflows (like the Safe Haven report system), and the AI Workday Install are quoted per project, because every business is different. You get a fixed quote before we start.
+  A: CRM and GoHighLevel setup, custom AI workflows (like the mold inspection company report system), and the AI Workday Install are quoted per project, because every business is different. You get a fixed quote before we start.
 - **Q: How do I cancel?**
   A: Tell us. The plan is month-to-month, and everything we built for you stays yours.
 
@@ -2342,33 +2342,33 @@ We may update this policy. The "last updated" date above shows when it last chan
 
 Palm Beach AI Services · Royal Palm Beach, FL Phone: (561) 365-8443 · Email: Gene@Palmbeachaiservices.com
 
-# Page: /results\heros-pavers\
+# Page: /results\paver-contractor\
 
-- **SEO title:** Hero's Pavers: #2–#3 on Google for multiple Lake Worth keywords | Palm Beach AI Services
-- **Meta description:** An SEO-focused website rebuild plus a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring paver jobs in Lake Worth.
+- **SEO title:** the paver contractor: #2–#3 on Google for multiple Lake Worth keywords | Palm Beach AI Services
+- **Meta description:** An SEO-focused website rebuild plus a fully optimized Google Business Profile put the paver contractor near the top of Google for the searches that bring paver jobs in Lake Worth.
 
 ---
 
 - Home /
 - Results /
-- Hero's Pavers
+- The paver contractor
 Case study
 
 ## Ranking #2 to #3 on Google for multiple Lake Worth keywords.
 
-An SEO-focused website rebuild plus a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring paver jobs in Lake Worth.
+An SEO-focused website rebuild plus a fully optimized Google Business Profile put the paver contractor near the top of Google for the searches that bring paver jobs in Lake Worth.
 
-**Client:** Hero's Pavers
+**Client:** the paver contractor
 **Trade:** Paver & hardscape contractor
 **Area:** Lake Worth Beach
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 ---
 
@@ -2420,7 +2420,7 @@ Real client result, shared with context. Every business and market is different;
 
 [Button: ← All results](/results/)
 
-Next: Next Level Air Conditioning
+Next: The HVAC contractor
 
 ---
 
@@ -2441,7 +2441,7 @@ We take a limited number of clients per trade, per town.
 # Page: /results\
 
 - **SEO title:** Results & Case Studies | Palm Beach AI Services
-- **Meta description:** Real results for South Florida businesses: 78% less time per inspection report for Safe Haven Inspections, and #2 to #3 Google rankings in Lake Worth for Hero's Pavers.
+- **Meta description:** Real results for South Florida businesses: 78% less time per inspection report for the mold inspection company, and #2 to #3 Google rankings in Lake Worth for the paver contractor.
 
 ---
 
@@ -2475,7 +2475,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -2488,15 +2488,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -2518,7 +2518,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -2554,25 +2554,25 @@ Know you want to talk? Skip the form and book a call.
 
 We take a limited number of clients per trade, per town.
 
-# Page: /results\next-level-air-conditioning\
+# Page: /results\hvac-contractor\
 
-- **SEO title:** Next Level Air Conditioning: 5 → 30+ website pages, results in progress | Palm Beach AI Services
-- **Meta description:** Next Level had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.
+- **SEO title:** the HVAC contractor: 5 → 30+ website pages, results in progress | Palm Beach AI Services
+- **Meta description:** the HVAC contractor had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.
 
 ---
 
 - Home /
 - Results /
-- Next Level Air Conditioning
+- The HVAC contractor
 Case study
 
 Rebuilt · results in progress
 
 ## A 5-page site rebuilt into 30+ pages, with a Google profile to match.
 
-Next Level had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.
+the HVAC contractor had 31 five-star reviews and still did not show up in the top 20 map results in its own city. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so we will post real numbers here when they come in.
 
-**Client:** Next Level Air Conditioning
+**Client:** the HVAC contractor
 **Trade:** HVAC contractor
 **Area:** Lake Worth & Palm Beach County
 Project status
@@ -2620,7 +2620,7 @@ Start with a free Google Visibility Check.
 
 The challenge
 
-Great reviews, but a 5-page website and a Google profile that was mostly empty: one photo, no description, no services, and a single category. In live map searches across Lake Worth, Greenacres, and Boynton Beach, competitors with a fraction of the reviews ranked while Next Level did not appear in the top 20.
+Great reviews, but a 5-page website and a Google profile that was mostly empty: one photo, no description, no services, and a single category. In live map searches across Lake Worth, Greenacres, and Boynton Beach, competitors with a fraction of the reviews ranked while the HVAC contractor did not appear in the top 20.
 
 What we did
 
@@ -2636,7 +2636,7 @@ Real client result, shared with context. Every business and market is different;
 
 [Button: ← All results](/results/)
 
-Next: Safe Haven Inspections
+Next: The mold inspection company
 
 ---
 
@@ -2654,23 +2654,23 @@ Know you want to talk? Skip the form and book a call.
 
 We take a limited number of clients per trade, per town.
 
-# Page: /results\safe-haven-inspections\
+# Page: /results\mold-inspection-company\
 
-- **SEO title:** Safe Haven Inspections: 78% less time per inspection report | Palm Beach AI Services
+- **SEO title:** the mold inspection company: 78% less time per inspection report | Palm Beach AI Services
 - **Meta description:** A custom automation turned the slowest part of every mold inspection, writing the report, into a 10-minute job. That time goes back into booking more inspections.
 
 ---
 
 - Home /
 - Results /
-- Safe Haven Inspections
+- The mold inspection company
 Case study
 
 ## From 45 minutes to 10 minutes per inspection report.
 
 A custom automation turned the slowest part of every mold inspection, writing the report, into a 10-minute job. That time goes back into booking more inspections.
 
-**Client:** Safe Haven Inspections
+**Client:** the mold inspection company
 **Trade:** Mold inspection
 **Area:** Martin, Palm Beach & Broward counties
 Time per inspection report
@@ -2743,7 +2743,7 @@ Real client result, shared with context. Every business and market is different;
 
 [Button: ← All results](/results/)
 
-Next: Hero's Pavers
+Next: The paver contractor
 
 ---
 
@@ -2910,7 +2910,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -2923,15 +2923,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -2953,7 +2953,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -3037,7 +3037,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -3235,7 +3235,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -3248,15 +3248,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -3278,7 +3278,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -3362,7 +3362,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -3562,7 +3562,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -3575,15 +3575,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -3605,7 +3605,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -3689,7 +3689,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -3885,7 +3885,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -3898,15 +3898,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -3928,7 +3928,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -4012,7 +4012,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -4210,7 +4210,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -4223,15 +4223,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -4253,7 +4253,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -4337,7 +4337,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -4541,7 +4541,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -4554,15 +4554,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -4584,7 +4584,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -4668,7 +4668,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -4869,7 +4869,7 @@ saved, every report
 
 Mold inspection Martin, Palm Beach & Broward counties
 
-#### Safe Haven Inspections
+#### The mold inspection company
 
 78%
 
@@ -4882,15 +4882,15 @@ Read the case study
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
 Paver & hardscape contractor Lake Worth Beach
 
-#### Hero's Pavers
+#### The paver contractor
 
 #2–#3
 
@@ -4912,7 +4912,7 @@ We post real numbers here when they come in. No projections.
 
 HVAC contractor Lake Worth & Palm Beach County
 
-#### Next Level Air Conditioning
+#### The HVAC contractor
 
 5 → 30+
 
@@ -4996,7 +4996,7 @@ For businesses that are ready for more than the essentials. Scoped to your workf
 [Button: Get a custom quote](/free-google-check/?plan=custom-ai)
 
 - CRM + GoHighLevel setup Pipeline, inbox, calendar, and automations in one place.
-- Custom AI workflows Like the Safe Haven report system: 45 → 10 minutes per report.
+- Custom AI workflows Like the mold inspection company report system: 45 → 10 minutes per report.
 - AI Workday Install A hands-on day setting up Claude, ChatGPT, or Grok for your team.
 
 ---
@@ -5160,7 +5160,7 @@ less time per report
 
 saved, every report
 
-Case study · Safe Haven Inspections
+Case study · the mold inspection company
 
 From 45 minutes to 10 minutes per inspection report.
 
@@ -5295,7 +5295,7 @@ What's included
 - Invoicing + payment reminder automation
 - AI answering service for after-hours + overflow calls (custom quote)
 - Custom AI workflows with Claude, ChatGPT, or Grok
-- Custom tools built around your process, like the Safe Haven report system
+- Custom tools built around your process, like the mold inspection company report system
 Review automation and lead follow-up are included in the $297/month plan. CRM/GoHighLevel setup, custom AI workflows, and the AI Workday Install are quoted per project. Full pricing
 
 Missed-call cost calculator
@@ -5341,7 +5341,7 @@ less time per report
 
 saved, every report
 
-Case study · Safe Haven Inspections
+Case study · the mold inspection company
 
 From 45 minutes to 10 minutes per inspection report.
 
@@ -5480,13 +5480,13 @@ Google Business Profile management is included in the $297/month plan (after a $
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
-Case study · Hero's Pavers
+Case study · the paver contractor
 
 Ranking #2 to #3 on Google for multiple Lake Worth keywords.
 
@@ -5652,7 +5652,7 @@ AI Automation
 
 Inspection report
 
-Safe Haven
+the mold inspection company
 
 Before
 
@@ -5670,7 +5670,7 @@ With automation
 
 Reports, invoices, estimates, and reminders, handled by custom AI workflows built with tools like Claude, ChatGPT, and Grok.
 
-See the Safe Haven result
+See the mold inspection company result
 
 Built for
 
@@ -5790,13 +5790,13 @@ $750 one-time website build, then $297/month for reviews, Google profile managem
 Google · Lake Worth searches
 
 - #1
-- #2 Hero's Pavers
-- #3 Hero's Pavers
+- #2 the paver contractor
+- #3 the paver contractor
 - #4
 - #5
-Illustration of where Hero's Pavers ranks (#2 to #3) across multiple Lake Worth keywords.
+Illustration of where the paver contractor ranks (#2 to #3) across multiple Lake Worth keywords.
 
-Case study · Hero's Pavers
+Case study · the paver contractor
 
 Ranking #2 to #3 on Google for multiple Lake Worth keywords.
 
@@ -5963,6 +5963,6 @@ Heading: "What local owners *say.*"
 
 Slots (TODO: real, permission-granted quotes only):
 
-- TODO: Real quote from Safe Haven Inspections about the report automation (ask for permission).
-- TODO: Real quote from Hero's Pavers about the website + Google rankings (ask for permission).
-- TODO: Real quote from Next Level once results come in.
+- TODO: Real quote from the mold inspection company about the report automation (ask for permission).
+- TODO: Real quote from the paver contractor about the website + Google rankings (ask for permission).
+- TODO: Real quote from the HVAC contractor once results come in.

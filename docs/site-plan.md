@@ -35,7 +35,7 @@
 - **Typography:** Geist (headings), Inter (body), JetBrains Mono (labels), plus **Instrument Serif italic** for one accent word per headline (gold on navy, navy on cream). The logo's bold serif wordmark is used only as the traced logo artwork. It is not a web font, so it isn't loaded, and it doesn't compete with headings. The light italic serif accent echoes it, so the logo and headlines feel like one family without a second heavy serif.
 
 ## Hard content rules (enforced in code/data)
-- **Only real facts.** Safe Haven: 45 → 10 min, 78%. Hero's Pavers: #2–#3 on Google for Lake Worth keywords. Next Level: just launched, results in progress. No invented stats, reviews, logos, or quotes.
+- **Only real facts.** the mold inspection company: 45 → 10 min, 78%. The paver contractor: #2–#3 on Google for Lake Worth keywords. The HVAC contractor: just launched, results in progress. No invented stats, reviews, logos, or quotes.
 - **No uncited industry stats.** Examples: "84%", "5.3x", "$5.44 ROI". The missed-call calculator only uses numbers the visitor enters, and it is labeled as an estimate.
 - **No fake scarcity, no countdowns, no review-count promises, no ranking or revenue guarantees.** The capacity line ("limited clients per trade, per town") is a real policy. It has no numbers and no timers.
 - **Founder name** lives only in `FOUNDER_FIRST_NAME` (`src/config/site.ts`).
@@ -58,12 +58,12 @@ All forms POST to Web3Forms (`PUBLIC_WEB3FORMS_KEY`, emails Gene@) straight from
 | `/` | Home | Hero (headline, dual CTA, **$750 + $297/mo price ticket**, teardown offer line, trust ticks, phone-thread demo, 2 floating proof cards), proof strip (real numbers only), Problem + missed-call calculator, **Three things, live in 14 days** (arrow chain + 3 illustrated cards + industries), How it works (4 sticky steps), **Pricing** (single plan card + "What your $297/mo covers" 6-item checklist with what each replaces + "Your $750 build includes" + unpriced Custom AI strip), **Case studies directly below pricing** ("The proof behind the price", proof cards with the math), **Us vs a typical agency** comparison, **Palm Beach Promise** guarantee, Testimonials (dev only), Founder note (signed), FAQ (opens with "How much does it cost?"), Final CTA |
 | `/services/` | Services hub | 3 service cards, Three things, comparison, CTA |
 | `/services/websites/` | Service | Hero, what you get, process, related case study, pricing link, FAQ, CTA |
-| `/services/local-seo-google-business-profile/` | Service | Same pattern; Hero's Pavers proof |
-| `/services/ai-automation/` | Service | Same pattern; Safe Haven proof, missed-call demo |
+| `/services/local-seo-google-business-profile/` | Service | Same pattern; the paver contractor proof |
+| `/services/ai-automation/` | Service | Same pattern; the mold inspection company proof, missed-call demo |
 | `/results/` | Results hub | 3 case cards and an honest "results vary" note |
-| `/results/safe-haven-inspections/` | Case study | Challenge → what we built → result (45 → 10 min, 78%, math shown) |
-| `/results/heros-pavers/` | Case study | #2–#3 for Lake Worth keywords (TODO: exact keywords, screenshots) |
-| `/results/next-level/` | Case study | Rebuilt, results in progress (no numbers) |
+| `/results/mold-inspection-company/` | Case study | Challenge → what we built → result (45 → 10 min, 78%, math shown) |
+| `/results/paver-contractor/` | Case study | #2–#3 for Lake Worth keywords (TODO: exact keywords, screenshots) |
+| `/results/hvac-contractor/` | Case study | Rebuilt, results in progress (no numbers) |
 | `/pricing/` | Pricing | Single plan + included checklist + build scope + Custom AI strip (all from `src/data/pricing.ts`), delivery promises, **case studies right below**, guarantee, comparison, pricing FAQ (cost, what the $750 covers, what the $297 covers, contract, fees, custom AI, cancel) |
 | `/about/` | About | Founder story (first name via constant), values, local area, signed note |
 | `/free-teardown/` | Primary lead magnet | What you get, "you keep the fixes whether or not we work together", qualifying form, founder note |
@@ -77,7 +77,7 @@ One plan, no tiers, no toggle. The earlier Get Found/Growth/Automate tiers, the 
 
 - **$750 one-time** custom website build (`BUILD_FEE`). Covers a custom mobile-first design, service pages + main town page, click-to-call/quote form/structured data, Google Business Profile connected and cleaned up, and Analytics + Search Console. Live in 14 days from content (the same 14-day promise as the guarantee).
 - **$297/month** (`MONTHLY`): month-to-month, no contract. Includes exactly 6 things: **review automation, Google Business Profile management, lead follow-up, monthly check-in, backlink building, competitor analysis + ranking improvement.** Each item shows a qualitative "Replaces: ..." line (no invented dollar values).
-- **Custom AI automation, quoted per project** (no price shown): CRM/GoHighLevel setup, custom AI workflows (e.g. the Safe Haven report system), AI Workday Install.
+- **Custom AI automation, quoted per project** (no price shown): CRM/GoHighLevel setup, custom AI workflows (e.g. The mold inspection company report system), AI Workday Install.
 - **Where the price appears:** hero price ticket, home pricing section heading + card, `/pricing/` hero + card, home and pricing FAQs, meta descriptions, JSON-LD offers, service-page price notes, the comparison table, `llms.txt`. All of these read `BUILD_FEE`, `MONTHLY`, and `priceLine` from the data file.
 - **Guarantee (delivery only):** your website, Google profile cleanup, and review + lead follow-up automations are live in 14 days of content + access, or month one ($297) is free. Leave anytime, keep everything. No ranking or revenue promises.
 - **Premium treatment of a lower price:** the plan is shown as one gold-edged dark card with large type, a checklist that explains the value, and real case studies directly beneath. No "cheap" badges, discounts, or countdowns.

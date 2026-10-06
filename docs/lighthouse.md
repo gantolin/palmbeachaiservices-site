@@ -8,8 +8,8 @@ Lighthouse 12, headless Chrome, against `astro preview` (http://127.0.0.1:4321).
 | `/` | Desktop | 100 | 100 | 100 | 100 |
 | `/pricing/` | Mobile | 99 | 100 | 100 | 100 |
 | `/pricing/` | Desktop | 100 | 100 | 100 | 100 |
-| `/results/safe-haven-inspections/` | Mobile | 99 | 100 | 100 | 100 |
-| `/results/safe-haven-inspections/` | Desktop | 100 | 100 | 100 | 100 |
+| `/results/mold-inspection-company/` | Mobile | 99 | 100 | 100 | 100 |
+| `/results/mold-inspection-company/` | Desktop | 100 | 100 | 100 | 100 |
 
 (The case-study rows are from the pre-rebrand run; home and pricing were re-run after the navy rebrand.)
 

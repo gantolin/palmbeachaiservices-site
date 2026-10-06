@@ -32,7 +32,7 @@ Rule: one target search per page, so pages never compete with each other. Data: 
 - **how to rank higher on google maps**: Google Help, Reddit, Thrive, WordStream, Ahrefs. Harder; local angle is our edge.
 
 ## Next pages (not built yet, in priority order)
-1. ~~City SEO pages~~ Built 2026-09-28 (Boca Raton, Delray Beach, Wellington, Jupiter, Palm Beach Gardens, Boynton Beach), all from `src/data/cities.ts` via `src/pages/[city].astro`. Local facts come from the sourced Next Level AC city dossiers plus ACS 2024 5-year data; each page leads with the city's address-vs-city-limits quirk (West Boca, West Delray, Jupiter Farms, etc.), which is real GBP service-area advice. Next candidates only if volume justifies: Lake Worth Beach (Hero's Pavers proof), Greenacres, Royal Palm Beach.
+1. ~~City SEO pages~~ Built 2026-09-28 (Boca Raton, Delray Beach, Wellington, Jupiter, Palm Beach Gardens, Boynton Beach), all from `src/data/cities.ts` via `src/pages/[city].astro`. Local facts come from the sourced the HVAC contractor city dossiers plus ACS 2024 5-year data; each page leads with the city's address-vs-city-limits quirk (West Boca, West Delray, Jupiter Farms, etc.), which is real GBP service-area advice. Next candidates only if volume justifies: Lake Worth Beach (the paver contractor proof), Greenacres, Royal Palm Beach.
 2. Guides: how to respond to google reviews (880, KD 29) as its own page if the reviews guide ranks; google business profile suspended (320, KD 26); contractor marketing ideas (260, KD 17).
 3. Trade pages (HVAC, pavers, inspections) once each has client proof. National volumes: hvac seo 2,900 · roofing seo 3,600 · plumber seo 2,400 · electrician seo 2,900 · pest control seo 1,600 (KD 24) · pressure washing seo 390 (KD 5).
 
