@@ -2,6 +2,7 @@
 import Base from '@/layouts/Base.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Aurora from '@/components/ui/Aurora.astro';
+import HeroPin from '@/components/ui/HeroPin.astro';
 import BookingEmbed from '@/components/islands/BookingEmbed.astro';
 import { SITE, FOUNDER_FIRST_NAME, telHref, smsHref } from '@/config/site';
 import { words } from '@/lib/text';
@@ -26,7 +27,10 @@ const callFacts = [
       <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
         <div>
           <div class="eyebrow fade-in">For local businesses in Palm Beach County</div>
-          <h1 class="h1 hero-h1 mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
+          <div class="hero-head">
+            <h1 class="h1 hero-h1 mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
+            <div class="hero-art fade-in" style="--d:350ms"><HeroPin /></div>
+          </div>
           <p class="mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">We build your website, manage your Google Business Profile, and use AI to automate the everyday work that eats your time, like following up with leads.</p>
           <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For contractors, restaurants, medical offices, and every other local business.</p>
 
@@ -89,8 +93,25 @@ const callFacts = [
 
 <style>
   @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.4rem, 3.4vw, 3.1rem); } }
+
+  /* Map pin art to the right of the headline. The headline keeps clear of it by giving up that width. */
+  .hero-head { position: relative; --art: clamp(84px, 24vw, 112px); }
+  .hero-art { position: absolute; right: 0; top: 50%; width: var(--art); margin-top: 2px; transform: translateY(-50%); }
+  .hero-head .hero-h1 { max-width: calc(100% - var(--art) - 14px); }
+  @media (max-width: 640px) { .hero-head .hero-h1 { font-size: min(2.4rem, 9.8vw); } }
+  @media (min-width: 641px) { .hero-head { --art: 140px; } }
+  @media (min-width: 1024px) {
+    .hero-head { --art: 112px; }
+    .hero-head .hero-h1 { font-size: clamp(2.2rem, 2.9vw, 2.65rem); }
+  }
+  @media (min-width: 1280px) { .hero-head { --art: 140px; } }
+  /* Very narrow or short phones: no room for the art without pushing the button off the first screen. */
+  @media (max-width: 349px), (max-width: 640px) and (max-height: 600px) {
+    .hero-art { display: none; }
+    .hero-head .hero-h1 { max-width: none; }
+  }
   /* Short phones: a smaller headline keeps the Book a free audit button above the bottom bar. */
-  @media (max-width: 640px) and (max-height: 600px) { .hero-h1 { font-size: 1.95rem; margin-top: 12px; } .hero-pad { padding-top: 24px; } }
+  @media (max-width: 640px) and (max-height: 600px) { .hero-head .hero-h1 { font-size: 1.95rem; margin-top: 12px; } .hero-pad { padding-top: 24px; } }
 
   .service-card {
     border-radius: 22px; padding: 26px 28px 14px;
