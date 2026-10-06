@@ -39,10 +39,10 @@ const callFacts = [
             </h1>
             <div class="hero-art fade-in" style="--d:350ms"><HeroPin /></div>
           </div>
-          <p class="mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">We build your website, manage your Google Business Profile, and use AI to automate the everyday work that eats your time.</p>
+          <p class="hero-say mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">We build your website, manage your Google Business Profile, and use AI to automate the everyday work that eats your time.</p>
           <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For contractors, restaurants, medical offices, and every other local business.</p>
 
-          <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
+          <div class="hero-cta mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
             <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free audit<Icon name="arrow-right" size={18} /></a>
           </div>
           </div>
@@ -174,7 +174,12 @@ const callFacts = [
 
   /* Phones: the headline, sentence and button own the first screen. The block is as tall as the space
      between the top bar (84px) and the bottom bar (69px), so the white service cards start below it. */
-  @media (max-width: 640px) { .hero-first { min-height: calc(100svh - 84px - 69px - 40px); display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 20px; } }
+  @media (max-width: 640px) { .hero-first { min-height: calc(100svh - 84px - 69px - 40px); display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 20px; }
+    /* The headline stays at the top; the sentence and the button share the space left below it,
+       so the button sits just above the bottom bar. */
+    .hero-first .hero-say { margin-top: auto; padding-top: 16px; }
+    .hero-first .hero-cta { margin-top: auto; padding-top: 20px; }
+  }
 
   /* "hours back" gets a marker stroke: a gold bar swipes in behind the words, which turn navy on it.
      This replaces the gold shimmer text the other dark heroes use. */
