@@ -116,7 +116,7 @@ for (const [vpName, device] of Object.entries(VIEWPORTS)) {
     if (/not valid|unavailable|page not found|no longer/i.test(text)) fail(`[${vpName}] Calendly shows an error: ${text.slice(0, 120)}`);
     if (!days) fail(`[${vpName}] Calendly shows no bookable days`);
   }
-  await page.screenshot({ path: `${process.env.SHOTS ?? '.'}/home-${vpName}.png` });
+  if (process.env.SHOTS) await page.screenshot({ path: `${process.env.SHOTS}/home-${vpName}.png` });
 
   // "Book a free call" from another page lands on the calendar
   await page.goto(BASE + '/about/', { waitUntil: 'load' });
