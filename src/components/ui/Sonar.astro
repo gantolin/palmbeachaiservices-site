@@ -1,0 +1,98 @@
+---
+/**
+ * Home hero background: slow radar pings that spread out from the map pin and light up a dot grid
+ * as they pass. Canvas, no libraries. Decorative only.
+ *
+ * `origin` is a CSS selector for the element the pings come from. With reduced motion the canvas
+ * shows three still rings instead of moving ones.
+ */
+interface Props { origin: string }
+const { origin } = Astro.props;
+---
+<canvas class="sonar" data-sonar data-origin={origin} aria-hidden="true"></canvas>
+
+<style>
+  .sonar { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+</style>
+
+<script>
+  const GAP = 26;          // dot spacing
+  const SPEED = 70;        // ring growth, px per second
+  const EVERY = 3400;      // ms between pings
+  const BAND = 46;         // how far behind the ring edge dots stay lit
+
+  document.querySelectorAll<HTMLCanvasElement>('[data-sonar]').forEach((canvas) => {
+    const ctx = canvas.getContext('2d');
+    const host = canvas.parentElement;
+    if (!ctx || !host) return;
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let w = 0, h = 0, ox = 0, oy = 0, max = 0, hasOrigin = false;
+    let rings: number[] = [];   // birth times
+    let last = 0, raf = 0, visible = true;
+
+    const measure = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const box = host.getBoundingClientRect();
+      w = box.width; h = box.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const el = document.querySelector<HTMLElement>(canvas.dataset.origin ?? '');
+      const r = el?.getBoundingClientRect();
+      hasOrigin = !!r && r.width > 0;
+      if (r && hasOrigin) { ox = r.left + r.width / 2 - box.left; oy = r.top + r.height / 2 - box.top; }
+      // Rings stop at about one screen from the pin, so they never reach the cards far below.
+      max = Math.min(Math.hypot(Math.max(ox, w - ox), Math.max(oy, h - oy)), 760);
+    };
+
+    const draw = (now: number) => {
+      ctx.clearRect(0, 0, w, h);
+      if (!hasOrigin) return;
+      const radii = still ? [90, 190, 300] : rings.map((t) => ((now - t) / 1000) * SPEED);
+      radii.forEach((r) => {
+        if (r <= 0 || r > max) return;
+        const life = 1 - r / max;                       // 1 at the pin, 0 at the far edge
+        ctx.beginPath();
+        ctx.arc(ox, oy, r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(230, 205, 131, ${0.16 * life})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // Dots in the band just inside the ring
+        const x0 = Math.max(0, Math.floor((ox - r) / GAP) * GAP), x1 = Math.min(w, ox + r);
+        const y0 = Math.max(0, Math.floor((oy - r) / GAP) * GAP), y1 = Math.min(h, oy + r);
+        for (let x = x0; x <= x1; x += GAP) {
+          for (let y = y0; y <= y1; y += GAP) {
+            const d = Math.hypot(x - ox, y - oy);
+            const behind = r - d;
+            if (behind < 0 || behind > BAND) continue;
+            const a = (1 - behind / BAND) * 0.5 * life;
+            ctx.fillStyle = `rgba(142, 169, 203, ${a})`;
+            ctx.fillRect(x - 1, y - 1, 2, 2);
+          }
+        }
+      });
+    };
+
+    const tick = (now: number) => {
+      if (now - last > EVERY) { rings.push(now); last = now; }
+      rings = rings.filter((t) => ((now - t) / 1000) * SPEED < max);
+      draw(now);
+      if (visible) raf = requestAnimationFrame(tick);
+    };
+
+    measure();
+    if (still) { draw(0); window.addEventListener('resize', () => { measure(); draw(0); }); return; }
+
+    // One ring is already on its way when the page opens.
+    const start = performance.now();
+    rings = [start - 1600]; last = start;
+    raf = requestAnimationFrame(tick);
+    window.addEventListener('resize', measure);
+    // The headline animates in and can shift the pin by a few pixels.
+    window.setTimeout(measure, 1200);
+    new IntersectionObserver(([en]) => {
+      visible = en.isIntersecting;
+      cancelAnimationFrame(raf);
+      if (visible) raf = requestAnimationFrame(tick);
+    }).observe(canvas);
+  });
+</script>

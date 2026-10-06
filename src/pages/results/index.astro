@@ -5,6 +5,20 @@ import Trades from '@/components/sections/Trades.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { caseStudies } from '@/data/caseStudies';
+
+/**
+ * Numbers roll up (or down) to their value when they scroll into view. Only whole numbers of 10 or
+ * more are animated: "10+", "78%", "35 min", and the second number in "45 → 10 min". Anything else
+ * ("5.8 hrs", "Map pack", "2 restaurants") is returned as plain text. The script in motion.ts does
+ * the counting and leaves the real value in the HTML for Google and for reduced motion.
+ */
+function roll(text: string) {
+  const range = text.match(/^(\d+) → (\d+)(\D*)$/);
+  if (range) return [`${range[1]} → `, { from: Number(range[1]), to: Number(range[2]), suffix: range[3] }];
+  const one = text.match(/^(\d+)(\D*)$/);
+  if (one && Number(one[1]) >= 10) return ['', { from: 0, to: Number(one[1]), suffix: one[2] }];
+  return [text, null];
+}
 ---
 <Base
   title="Local SEO & AI Results for Palm Beach County Businesses"
@@ -22,7 +36,7 @@ import { caseStudies } from '@/data/caseStudies';
             {c.logo && <img src={c.logo.src} alt={`${c.client} logo`} width={c.logo.width} height={c.logo.height} class="mb-6 h-14 w-auto max-w-[240px] object-contain object-left" loading="lazy" decoding="async" />}
             <h2 class="h3 text-ink-900">{c.client}</h2>
             <p class="mt-1.5 text-[15px] text-ink-600">{c.trade} · {c.area}</p>
-            <div class:list={['mt-6 font-display font-[600] tracking-[-0.035em] leading-none text-[clamp(2.4rem,5vw,3.4rem)]', c.status === 'result' ? 'text-navy-700' : 'text-gold-700']}>{c.headlineStat}</div>
+            <div class:list={['mt-6 font-display font-[600] tracking-[-0.035em] leading-none text-[clamp(2.4rem,5vw,3.4rem)]', c.status === 'result' ? 'text-navy-700' : 'text-gold-700']}>{(() => { const [lead, n] = roll(c.headlineStat) as [string, any]; return <>{lead}{n && <span class="tabular" data-count-to={n.to} data-count-from={n.from} data-suffix={n.suffix}>{n.to}{n.suffix}</span>}</>; })()}</div>
             <p class="mt-2 text-[16px] font-medium text-ink-900">{c.headlineLabel}</p>
             <p class="mt-5 text-[16px] leading-relaxed text-ink-600">{c.summary}</p>
           </div>
@@ -43,7 +57,7 @@ import { caseStudies } from '@/data/caseStudies';
               <dl class="sm:col-span-2 grid grid-cols-3 gap-4 border-t border-stone-300 pt-6">
                 {c.stats.map((s) => (
                   <div>
-                    <dt class="font-display text-[22px] font-[600] tracking-tight text-ink-900 leading-tight">{s.value}</dt>
+                    <dt class="font-display text-[22px] font-[600] tracking-tight text-ink-900 leading-tight">{(() => { const [lead, n] = roll(s.value) as [string, any]; return <>{lead}{n && <span class="tabular" data-count-to={n.to} data-count-from={n.from} data-suffix={n.suffix}>{n.to}{n.suffix}</span>}</>; })()}</dt>
                     <dd class="mt-1 text-[13.5px] leading-snug text-ink-600">{s.label}</dd>
                   </div>
                 ))}

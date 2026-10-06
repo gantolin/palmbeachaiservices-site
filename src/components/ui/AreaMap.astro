@@ -45,7 +45,8 @@ const home = { name: 'Royal Palm Beach', x: 116, y: 166 };
     </g>
   ))}
   <g>
-    <circle cx={home.x} cy={home.y} r="15" fill="none" stroke="rgba(230,205,131,.55)" stroke-width="1.5" />
+    <circle class="pulse" cx={home.x} cy={home.y} r="15" fill="none" stroke="rgba(230,205,131,.8)" stroke-width="1.5" />
+    <circle class="pulse late" cx={home.x} cy={home.y} r="15" fill="none" stroke="rgba(230,205,131,.8)" stroke-width="1.5" />
     <circle cx={home.x} cy={home.y} r="7" fill="#c9a227" stroke="#fff" stroke-width="2" />
     <rect x={home.x - 66} y={home.y - 46} width="132" height="24" rx="12" fill="#fff" />
     <text x={home.x} y={home.y - 29} text-anchor="middle" class="home">{home.name}</text>
@@ -56,4 +57,9 @@ const home = { name: 'Royal Palm Beach', x: 116, y: 166 };
   .area-map { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(230, 205, 131, .35); }
   .town { font: 500 13.5px var(--font-sans); fill: #e6e9f0; }
   .home { font: 700 13.5px var(--font-sans); fill: #0b2a50; }
+  /* Two rings ripple out from the home base pin, one after the other. */
+  .pulse { transform-box: fill-box; transform-origin: center; animation: area-pulse 2.6s ease-out infinite; }
+  .pulse.late { animation-delay: 1.3s; }
+  @keyframes area-pulse { 0% { transform: scale(.5); opacity: .95; } 100% { transform: scale(2.6); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .pulse.late { display: none; } }
 </style>
