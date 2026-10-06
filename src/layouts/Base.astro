@@ -56,6 +56,18 @@ const props = Astro.props;
 
     <script>
       import '@/scripts/motion';
+      import '@/scripts/contact-links';
     </script>
+
+    <style is:global>
+      .contact-note {
+        position: fixed; left: 50%; bottom: 28px; z-index: 60; transform: translate(-50%, 12px);
+        max-width: calc(100vw - 32px); padding: 14px 22px; border-radius: 999px;
+        background: var(--color-navy-950); color: #fff; border: 1px solid var(--color-gold-500);
+        font: 600 16px/1.3 var(--font-sans); box-shadow: 0 14px 40px -12px rgba(0, 0, 0, .6);
+        opacity: 0; pointer-events: none; transition: opacity 200ms, transform 200ms;
+      }
+      .contact-note[data-show='true'] { opacity: 1; transform: translate(-50%, 0); }
+    </style>
   </body>
 </html>
