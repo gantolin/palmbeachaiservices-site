@@ -6,10 +6,11 @@
  */
 import Icon from '../ui/Icon.astro';
 import { SITE, telHref } from '@/config/site';
-interface Props { title?: string }
-const { title = 'Book your free Google Visibility Check call' } = Astro.props;
+/** compact: calendar only (Calendly's own title and description hidden), for use beside page copy. */
+interface Props { title?: string; compact?: boolean }
+const { title = 'Book your free Google Visibility Check call', compact = false } = Astro.props;
 ---
-<div class="booking" data-booking data-url={SITE.bookingUrl}>
+<div class:list={['booking', { compact }]} data-booking data-url={SITE.bookingUrl} data-compact={compact ? '' : undefined}>
   <div class="frame rounded-[20px] overflow-hidden bg-white">
     <iframe title={title} class="w-full border-0" data-booking-frame></iframe>
   </div>
@@ -29,6 +30,7 @@ const { title = 'Book your free Google Visibility Check call' } = Astro.props;
 <style>
   .frame iframe { height: 700px; }
   @media (max-width: 640px) { .frame iframe { height: 1000px; } }
+  .compact .frame iframe { height: 640px; }
 </style>
 
 <script>
@@ -39,6 +41,7 @@ const { title = 'Book your free Google Visibility Check call' } = Astro.props;
     url.searchParams.set('embed_type', 'Inline');
     url.searchParams.set('hide_gdpr_banner', '1');
     url.searchParams.set('primary_color', 'c9a227');
+    if (root.dataset.compact !== undefined) url.searchParams.set('hide_event_type_details', '1');
 
     let prefill: { name?: string; email?: string; phone?: string; notes?: string } = {};
     try { prefill = JSON.parse(sessionStorage.getItem('pbai-booking') ?? '{}'); } catch { /* ignore */ }
