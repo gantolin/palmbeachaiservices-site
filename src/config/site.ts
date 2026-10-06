@@ -97,5 +97,5 @@ export const NAV = [
 
 /** The one ask everywhere is booking a call. The calendar lives on the home page. */
 export const CTA = {
-  primary: { label: 'Book a free call', href: '/#book' },
+  primary: { label: 'Book a free audit', href: '/#book' },
 } as const;

@@ -31,8 +31,7 @@ const callFacts = [
           <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For contractors, restaurants, medical offices, and every other local business.</p>
 
           <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
-            <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free call<Icon name="arrow-right" size={18} /></a>
-            <a href={telHref} class="inline-flex items-center gap-2 text-[18px] font-semibold text-white self-start sm:self-auto"><Icon name="phone" size={18} />{SITE.phone}</a>
+            <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free audit<Icon name="arrow-right" size={18} /></a>
           </div>
 
           <div class="mt-9 grid gap-5 fade-in" style="--d:300ms">
@@ -53,13 +52,13 @@ const callFacts = [
         </div>
 
         <div id="book" class="book-card scroll-mt-28 fade-in" style="--d:200ms">
-          <h2 class="h3 text-[#f4f1e8]">Book a free 30-minute call.</h2>
+          <h2 class="h3 text-[#f4f1e8]">Book your free 30-minute audit.</h2>
           <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. {FOUNDER_FIRST_NAME} looks at your website and your Google profile before the call and tells you what to fix first.</p>
           <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] text-mist-200">
             {callFacts.map((f) => <li class="inline-flex items-center gap-2"><Icon name={f.icon} size={16} class="text-gold-300" />{f.text}</li>)}
           </ul>
           <div class="mt-6">
-            <BookingEmbed title="Book a free 30-minute call" compact />
+            <BookingEmbed title="Book your free 30-minute audit" compact />
           </div>
           <div class="mt-5 grid gap-3 sm:grid-cols-2">
             <a href={telHref} class="contact-pill"><Icon name="phone" size={19} class="text-gold-300" /><span><span class="block text-[12.5px] font-normal text-mist-400">Call</span>{SITE.phone}</span></a>
@@ -72,7 +71,7 @@ const callFacts = [
 </Base>
 
 <script>
-  // "Book a free call" points at the calendar on this page. When the calendar is already on screen the
+  // "Book a free audit" points at the calendar on this page. When the calendar is already on screen the
   // jump moves nothing, so light up its frame for a moment to show where to book.
   const book = document.getElementById('book');
   const flash = () => {
