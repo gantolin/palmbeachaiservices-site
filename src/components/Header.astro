@@ -8,8 +8,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold-500 focus:text-navy-950 focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
 <header id="site-header" data-open="false" class="site-header sticky top-0 z-40 text-mist-200">
-  <div class="container-x flex items-center justify-between h-[76px] lg:h-[92px] gap-2 sm:gap-3 lg:gap-6">
-    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[30px] w-auto min-[350px]:h-[34px] min-[380px]:h-[38px] min-[420px]:h-[44px] sm:h-[56px] lg:h-[64px]" /></a>
+  <div class="container-x flex items-center justify-between h-[84px] lg:h-[92px] gap-1.5 sm:gap-3 lg:gap-6">
+    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[32px] w-auto min-[350px]:h-[37px] min-[370px]:h-[40px] min-[380px]:h-[42px] min-[405px]:h-[46px] min-[420px]:h-[48px] sm:h-[58px] lg:h-[64px]" /></a>
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
@@ -63,12 +63,12 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   .site-header[data-open='true'] { background: rgba(3, 14, 29, 0.98); }
   /* Phones: the bar stays solid while scrolling, so the white cards do not show through it. */
   @media (max-width: 1023px) { .site-header[data-scrolled='true'] { background: #030e1d; backdrop-filter: none; -webkit-backdrop-filter: none; } }
-  .mobile-sheet { max-height: calc(100dvh - 76px); overflow-y: auto; }
+  .mobile-sheet { max-height: calc(100dvh - 84px); overflow-y: auto; }
 
   /* Phone number in the top bar on phones: a gold-edged pill, so it reads as a button to tap. */
   .head-phone {
-    display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 13px 0 10px; border-radius: 999px;
-    white-space: nowrap; color: #fff; font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em;
+    display: inline-flex; align-items: center; gap: 4px; height: 40px; padding: 0 10px 0 8px; border-radius: 999px;
+    white-space: nowrap; color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
     background: linear-gradient(180deg, rgba(230, 205, 131, .2), rgba(230, 205, 131, .08));
     border: 1px solid rgba(230, 205, 131, .55);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .12) inset, 0 6px 18px -10px rgba(201, 162, 39, .7);
