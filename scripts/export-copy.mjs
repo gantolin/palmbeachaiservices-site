@@ -8,8 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = join(root, 'dist');
 const order = ['/', '/services/', '/services/google-maps-seo/', '/services/websites/', '/services/ai-automation/',
-  '/services/ai-answering-service/', '/seo-company-west-palm-beach/', '/seo-company-wellington/', '/seo-company-palm-beach-gardens/',
-  '/seo-company-jupiter/', '/seo-company-boynton-beach/', '/seo-company-delray-beach/', '/seo-company-boca-raton/',
+  '/services/ai-answering-service/',
   '/results/', '/about/', '/free-google-check/', '/book/', '/contact/', '/thanks/', '/privacy/', '/terms/', '/404/'];
 
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));

@@ -3,7 +3,6 @@ import Logo from './ui/Logo.astro';
 import Icon from './ui/Icon.astro';
 import { SITE, telHref, mailHref } from '@/config/site';
 import { services } from '@/data/services';
-import { cities, cityPath } from '@/data/cities';
 const year = new Date().getFullYear();
 const heading = 'text-[14px] font-semibold text-mist-200';
 const link = 'text-mist-200/85 hover:text-white';
@@ -39,7 +38,7 @@ const link = 'text-mist-200/85 hover:text-white';
       <div class="col-span-2 lg:col-span-3">
         <h2 class={heading}>Areas we serve</h2>
         <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15px] lg:grid-cols-1">
-          {cities.map((c) => <li><a class={link} href={cityPath(c)}>{c.name}</a></li>)}
+          {SITE.serviceAreas.map((a) => <li class="text-mist-200/85">{a}</li>)}
         </ul>
         <p class="mt-4 text-[14px] text-mist-400">And the rest of {SITE.primaryArea}.</p>
       </div>

@@ -8,7 +8,7 @@ const BASE = process.env.BASE ?? 'http://localhost:4321';
 const OUT = process.env.OUT ?? tmpdir();
 const pages = [
   ['/', 'home'], ['/services/', 'services'], ['/services/ai-answering-service/', 'answering'],
-  ['/seo-company-west-palm-beach/', 'wpb'], ['/guides/', 'guides'],
+  ['/guides/', 'guides'],
   ['/guides/how-to-rank-higher-on-google-maps/', 'guide'], ['/contact/', 'contact'],
 ];
 const b = await chromium.launch({ channel: 'chrome' });
