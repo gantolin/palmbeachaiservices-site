@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     headlineLabel: 'keywords in the Google map pack',
     title: 'In the Google map pack for more than 10 keywords.',
     summary:
-      "A rebuilt website and a fully optimized Google Business Profile put Hero's Pavers near the top of Google for the searches that bring in paver jobs.",
+      "We rebuilt the website and optimized the Google Business Profile. Hero's Pavers now shows up near the top of Google for the searches that bring in paver jobs.",
     stats: [
       { value: 'Map pack', label: 'for more than 10 keywords' },
       { value: 'Top of Google', label: 'for its main paver searches' },
@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
     headlineLabel: 'to write each inspection report',
     title: 'From 45 minutes to 10 minutes per inspection report.',
     summary:
-      "We built a custom tool that pairs the inspector's expertise with the full, detailed report every client expects. The inspector brings the findings and the judgment. The tool handles every other part of the report and writes it in the inspector's own voice, so it reads like they wrote it themselves. A 45-minute report now takes 10.",
+      "We built a custom tool that writes each inspection report in the inspector's own voice. The inspector brings the findings, and the tool does the rest. That saves about 5.8 hours for every 10 reports. We also built the website and set up the Google Business Profile.",
     stats: [
       { value: '78%', label: 'less time on every report' },
       { value: '35 min', label: 'saved per inspection' },
@@ -106,10 +106,10 @@ export const caseStudies: CaseStudy[] = [
     area: 'Greenacres & Palm Beach County',
     status: 'in-progress',
     headlineStat: '5 → 30+',
-    headlineLabel: 'website pages, results in progress',
+    headlineLabel: 'website pages',
     title: 'A 5-page site rebuilt into 30+ pages, with a Google profile to match.',
     summary:
-      'A family-owned HVAC company with a 5.0 star Google rating and a website that was too small to rank. We rebuilt the website and the Google Business Profile in September 2026. Rankings take time, so real numbers go here when they come in.',
+      'A family-owned HVAC company with a 5.0 star Google rating and a website too small to rank. We rebuilt it with 15 city pages and rebuilt the Google Business Profile in September 2026. Ranking numbers go here when they come in.',
     stats: [
       { value: '30+', label: 'website pages, up from 5' },
       { value: '15', label: 'city pages across two counties' },
@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
     area: 'Two locations',
     status: 'in-progress',
     headlineStat: '2 restaurants',
-    headlineLabel: 'AI consulting and professional development',
+    headlineLabel: 'working with one operator',
     title: 'AI consulting and professional development for a two-restaurant operator.',
     summary:
       'We work with the operator of two Chick-fil-A restaurants on where AI can take work off the leadership team, and train the team to use it day to day.',
