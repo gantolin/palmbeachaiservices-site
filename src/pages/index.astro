@@ -9,7 +9,7 @@ import { SITE, telHref, smsHref } from '@/config/site';
 import { words } from '@/lib/text';
 import { serviceGroups as groups } from '@/data/offer';
 
-const headline = 'Get found on Google. Get *hours back* every week.';
+const headline = 'Turn Google searches into booked jobs. Get *hours back* every week.';
 /** Matches the Google Business Profile: primary category (Marketing agency), main services, and city. */
 const kicker = 'SEO and AI marketing agency in Royal Palm Beach, FL';
 const callFacts = [
@@ -210,11 +210,18 @@ const callFacts = [
   /* Centered on the big headline, not on the small line above it (--kick is that line's height). */
   .hero-art { position: absolute; right: 0; top: 50%; width: var(--art); margin-top: calc(var(--kick) / 2); transform: translateY(-50%); }
   .hero-head .hero-h1 { max-width: calc(100% - var(--art) - 14px); }
-  @media (max-width: 640px) { .hero-head .hero-h1 { font-size: min(2.6rem, 10.25vw); } }
+  /* Phones: the headline is long, so it takes the full width and the map tile sits small in the top
+     right corner, beside the gold line. */
+  @media (max-width: 640px) {
+    .hero-head { --art: 64px; }
+    .hero-art { top: 0; margin-top: -4px; transform: none; }
+    .hero-kicker { padding-right: 84px; }
+    .hero-head .hero-h1 { max-width: none; font-size: min(2.2rem, 8.9vw); margin-top: 30px; }
+  }
   @media (min-width: 641px) { .hero-head { --art: 140px; --kick: 42px; } }
   @media (min-width: 1024px) {
     .hero-head { --art: 112px; }
-    .hero-head .hero-h1 { font-size: clamp(2.3rem, 3.05vw, 2.75rem); }
+    .hero-head .hero-h1 { font-size: clamp(2.1rem, 2.8vw, 2.55rem); }
   }
   @media (min-width: 1280px) { .hero-head { --art: 140px; } }
   /* Very narrow or short phones: no room for the art without pushing the button off the first screen. */
@@ -223,7 +230,7 @@ const callFacts = [
     .hero-head .hero-h1 { max-width: none; }
   }
   /* Short phones: a smaller headline keeps the Book a free audit button above the bottom bar. */
-  @media (max-width: 640px) and (max-height: 600px) { .hero-head .hero-h1 { font-size: 1.95rem; margin-top: 12px; } .hero-pad { padding-top: 24px; } }
+  @media (max-width: 640px) and (max-height: 600px) { .hero-head .hero-h1 { font-size: 1.8rem; margin-top: 12px; } .hero-kicker { padding-right: 0; } .hero-pad { padding-top: 16px; } }
 
   /* Service cards: dark glass like the booking card, each with its own picture on top. */
   .service-card {

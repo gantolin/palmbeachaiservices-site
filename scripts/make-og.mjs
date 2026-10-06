@@ -18,10 +18,10 @@ const html = `<!doctype html><html><head><style>
 *{box-sizing:border-box}
 body{margin:0;width:1200px;height:630px;overflow:hidden;font-family:Geist;color:#f4f1e8;
   background:radial-gradient(110% 90% at 85% 115%,#1a4d88 0%,#062d59 30%,#061f3f 55%,#030e1d 85%)}
-.wrap{position:absolute;inset:0;padding:64px 76px 84px;display:flex;flex-direction:column}
+.wrap{position:absolute;inset:0;padding:60px 76px 70px;display:flex;flex-direction:column}
 .brand svg{height:104px;width:auto;display:block}
 .kicker{margin-top:auto;font:600 27px/1.3 Inter;color:#e6cd83}
-h1{margin:auto 0 0;font-size:80px;line-height:1.08;letter-spacing:-.035em;font-weight:590;white-space:nowrap}
+h1{margin:auto 0 0;font-size:76px;line-height:1.08;letter-spacing:-.035em;font-weight:590;white-space:nowrap}
 mark{display:inline-block;line-height:1;background:linear-gradient(100deg,#c9a227,#e2c25a 55%,#c9a227);color:#030e1d;padding:.04em .14em .08em;margin:0 -.06em;border-radius:.16em}
 .art{position:absolute;right:86px;top:250px;width:262px;height:262px}
 .tile{position:absolute;inset:0;border-radius:22%;overflow:hidden;border:2px solid rgba(230,205,131,.5);
@@ -35,7 +35,7 @@ mark{display:inline-block;line-height:1;background:linear-gradient(100deg,#c9a22
 .line{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,#e6cd83,transparent);opacity:.7}
 </style></head><body><div class="wrap">
 <div class="brand">${logo}</div>
-<h1>Get found on Google.<br>Get <mark>hours back</mark> every week.</h1>
+<h1>Turn Google searches<br>into booked jobs.<br>Get <mark>hours back</mark> every week.</h1>
 </div>
 <div class="line"></div></body></html>`;
 
