@@ -10,18 +10,18 @@ const values = [
   { icon: 'receipt', title: 'Your price in writing', text: 'You should know exactly what something costs before any work starts. So every quote is fixed and in writing, with no surprise invoices later.' },
   { icon: 'key', title: 'You own everything', text: 'Your domain, your website, your Google profile, your customer list. If you ever leave, it all goes with you.' },
   { icon: 'handshake', title: 'Month-to-month', text: 'There is no long contract. If it stops paying off, you can stop.' },
-  { icon: 'users', title: 'Local, in person', text: 'We meet owners at their shop or job site anywhere in Palm Beach County, so you know who you are working with.' },
+  { icon: 'users', title: 'Local, in person', text: 'We meet owners at their business anywhere in Palm Beach County, so you know who you are working with.' },
   { icon: 'zap', title: 'Less busywork', text: 'We automate the repetitive stuff, like follow-up texts and review requests, so it gets done without you.' },
   { icon: 'chart', title: 'Straightforward reports', text: 'Once a month you see your calls, reviews, and rankings, and we talk through what they mean.' },
 ];
 ---
 <Base
   title={`About ${SITE.name} | Founder-Run in Royal Palm Beach, FL`}
-  description={`${SITE.name} is a founder-run local SEO and AI company in Royal Palm Beach, serving plumbers, electricians, HVAC, roofers, painters, cleaners, and other home service businesses across Palm Beach County.`}
+  description={`${SITE.name} is a founder-run local SEO and AI company in Royal Palm Beach, serving contractors, restaurants, medical offices, and other local businesses across Palm Beach County.`}
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
 >
-  <PageHero compact eyebrow="About" title="Local, founder-run, and built for home service owners."
-    lede={`${SITE.name} helps plumbers, electricians, HVAC companies, roofers, painters, cleaners, and other home service businesses in Palm Beach County get found on Google and get hours back with AI. Run by ${FOUNDER_FIRST_NAME}.`} />
+  <PageHero compact eyebrow="About" title="Local, founder-run, and built for local business owners."
+    lede={`${SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google and get hours back with AI. Run by ${FOUNDER_FIRST_NAME}.`} />
   <Founder />
   <section class="section surface-cream">
     <div class="container-x">
@@ -44,8 +44,8 @@ const values = [
     <div class="container-x grid gap-12 lg:grid-cols-2">
       <div data-reveal>
         <div class="eyebrow">Who we help</div>
-        <h2 class="h2 mt-5">Home service businesses.</h2>
-        <p class="lede mt-6">If customers find you on Google and call you for a job at their house, we can help you get more of them.</p>
+        <h2 class="h2 mt-5">Local businesses.</h2>
+        <p class="lede mt-6">If customers find you on Google and then call or book, we can help you get more of them.</p>
         <ul class="mt-8 flex flex-wrap gap-2">{trades.map((i) => <li class="chip bg-white border border-stone-300 text-[14px]">{i}</li>)}</ul>
       </div>
       <div data-reveal style="--d:100ms">
