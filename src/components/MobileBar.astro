@@ -4,8 +4,8 @@ import { CTA, telHref, smsHref } from '@/config/site';
 // The home page already has its own Book a free audit button, so the bar there is Call and Text only.
 const showBook = Astro.url.pathname !== '/';
 ---
-<div class="mobile-bar lg:hidden fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(10px,env(safe-area-inset-bottom))] pt-2" aria-label="Quick actions">
-  <div class:list={['grid gap-2 rounded-full bg-navy-950/92 backdrop-blur-md border border-white/15 p-1.5 shadow-[0_16px_44px_-12px_rgba(0,0,0,.75)]', showBook ? 'grid-cols-[1fr_1fr_1.6fr]' : 'grid-cols-2']}>
+<div class="mobile-bar lg:hidden fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(10px,env(safe-area-inset-bottom))] pt-2.5" aria-label="Quick actions">
+  <div class:list={['grid gap-2', showBook ? 'grid-cols-[1fr_1fr_1.6fr]' : 'grid-cols-2']}>
     <a href={telHref} class="bar-btn"><Icon name="phone" size={18} class="text-gold-300" />Call</a>
     <a href={smsHref} class="bar-btn"><Icon name="message" size={18} class="text-gold-300" />Text</a>
     {showBook && <a href={CTA.primary.href} class="flex items-center justify-center gap-1.5 h-12 rounded-full bg-gold-500 text-navy-950 text-[14.5px] font-semibold">Free audit</a>}
@@ -13,6 +13,8 @@ const showBook = Astro.url.pathname !== '/';
 </div>
 
 <style>
+  /* A solid dock across the bottom, edge to edge, so the buttons never float over the white cards. */
+  .mobile-bar { background: var(--color-navy-950); border-top: 1px solid rgba(230, 205, 131, .28); box-shadow: 0 -14px 30px -12px rgba(0, 0, 0, .55); }
   /* Call and Text read as two real buttons: a lighter panel, a gold icon, and a press state. */
   .bar-btn {
     display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 999px;
