@@ -8,8 +8,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold-500 focus:text-navy-950 focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
 <header id="site-header" data-open="false" class="site-header sticky top-0 z-40 text-mist-200">
-  <div class="container-x flex items-center justify-between h-[76px] lg:h-[92px] gap-2 min-[350px]:gap-3 lg:gap-6">
-    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[30px] w-auto min-[350px]:h-[38px] min-[380px]:h-[44px] sm:h-[56px] lg:h-[64px]" /></a>
+  <div class="container-x flex items-center justify-between h-[76px] lg:h-[92px] gap-2 sm:gap-3 lg:gap-6">
+    <a href="/" class="header-logo shrink-0 rounded-lg" aria-label={`${SITE.name} home`}><Logo height={64} class="h-[30px] w-auto min-[350px]:h-[34px] min-[380px]:h-[38px] min-[420px]:h-[44px] sm:h-[56px] lg:h-[64px]" /></a>
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
@@ -23,7 +23,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Book a free audit <Icon name="arrow-right" size={16} /></a>
     </div>
 
-    <a href={telHref} class="lg:hidden ml-auto whitespace-nowrap text-[15px] min-[350px]:text-[16px] min-[380px]:text-[17px] sm:text-[19px] font-semibold tracking-tight text-white">{SITE.phone}</a>
+    <a href={telHref} class="head-phone lg:hidden ml-auto" aria-label={`Call ${SITE.phone}`}><Icon name="phone" size={15} class="head-phone-icon" />{SITE.phone}</a>
 
     <button type="button" class="lg:hidden shrink-0 inline-flex items-center justify-center size-11 -mr-2 rounded-full hover:bg-white/5" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
       <Icon name="menu" size={24} />
@@ -62,4 +62,19 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   .site-header[data-scrolled='true'] .header-logo { transform: scale(0.9); }
   .site-header[data-open='true'] { background: rgba(3, 14, 29, 0.98); }
   .mobile-sheet { max-height: calc(100dvh - 76px); overflow-y: auto; }
+
+  /* Phone number in the top bar on phones: a gold-edged pill, so it reads as a button to tap. */
+  .head-phone {
+    display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 13px 0 10px; border-radius: 999px;
+    white-space: nowrap; color: #fff; font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em;
+    background: linear-gradient(180deg, rgba(230, 205, 131, .2), rgba(230, 205, 131, .08));
+    border: 1px solid rgba(230, 205, 131, .55);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .12) inset, 0 6px 18px -10px rgba(201, 162, 39, .7);
+    transition: background-color 150ms;
+  }
+  .head-phone:active { background: rgba(230, 205, 131, .32); }
+  .head-phone :global(.head-phone-icon) { color: var(--color-gold-300); flex: none; }
+  @media (min-width: 640px) { .head-phone { font-size: 18px; height: 44px; padding: 0 18px 0 14px; gap: 8px; } }
+  @media (max-width: 379px) { .head-phone { font-size: 14.5px; height: 38px; padding: 0 11px; } .head-phone :global(.head-phone-icon) { display: none; } }
+  @media (max-width: 349px) { .head-phone { font-size: 14px; padding: 0 9px; } }
 </style>
