@@ -104,9 +104,10 @@ const callFacts = [
   });
   if (location.hash === '#book') window.setTimeout(flash, 400);
 
-  // Type the searches into the search bar, one after another. With reduced motion it stays on the first.
+  // Type the searches into the search bar, one after another. This runs even with reduced motion set:
+  // it is a few characters of text changing in place, and Gene's own PC has that setting on.
   const q = document.querySelector<HTMLElement>('.search-query');
-  if (q && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (q) {
     const list: string[] = JSON.parse(q.dataset.queries ?? '[]');
     let n = 0;
     const type = (text: string, i: number) => {
@@ -141,7 +142,6 @@ const callFacts = [
   .search-bar :global(.search-glass) { color: #4285f4; flex: none; }
   .search-caret { width: 1.5px; height: 20px; margin-left: -8px; background: #202124; animation: caret 1.1s steps(1) infinite; }
   @keyframes caret { 50% { opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .search-caret { animation: none; } }
   .search-dots { margin-left: auto; display: flex; gap: 5px; flex: none; }
   .search-dots i { width: 8px; height: 8px; border-radius: 50%; }
   .search-dots i:nth-child(1) { background: #4285f4; }
