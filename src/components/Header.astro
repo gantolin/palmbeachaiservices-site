@@ -55,9 +55,9 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 </div>
 
 <style>
-  .site-header { transition: background-color 300ms, backdrop-filter 300ms, border-color 300ms, box-shadow 300ms; border-bottom: 1px solid transparent; background: #030e1d; }
+  .site-header { transition: background-color 300ms, backdrop-filter 300ms, border-color 300ms, box-shadow 300ms; border-bottom: 1px solid transparent; background: #07182f; }
   .site-header[data-scrolled='true'], .site-header[data-open='true'] {
-    background: rgba(3, 14, 29, 0.84);
+    background: rgba(7, 24, 47, 0.84);
     backdrop-filter: saturate(160%) blur(18px);
     -webkit-backdrop-filter: saturate(160%) blur(18px);
     border-bottom-color: rgba(230, 233, 240, 0.08);
@@ -66,9 +66,9 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   /* Shrink effect without layout shift: header height is fixed, only the logo scales (transform). */
   .header-logo { transform-origin: 0 50%; transition: transform 350ms cubic-bezier(.22, 1, .36, 1); }
   .site-header[data-scrolled='true'] .header-logo { transform: scale(0.9); }
-  .site-header[data-open='true'] { background: rgba(3, 14, 29, 0.98); }
+  .site-header[data-open='true'] { background: rgba(7, 24, 47, 0.98); }
   /* Phones: the bar stays solid while scrolling, so the white cards do not show through it. */
-  @media (max-width: 1023px) { .site-header[data-scrolled='true'] { background: #030e1d; backdrop-filter: none; -webkit-backdrop-filter: none; } }
+  @media (max-width: 1023px) { .site-header[data-scrolled='true'] { background: #07182f; backdrop-filter: none; -webkit-backdrop-filter: none; } }
   .mobile-sheet { max-height: calc(100dvh - 76px); overflow-y: auto; }
 
   /* Phone number in the top bar on phones: a gold-edged pill, so it reads as a button to tap. */
@@ -91,7 +91,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
   .phone-strip { display: none; }
   @media (max-width: 639px) {
     .head-phone-inline { display: none; }
-    .phone-strip { display: block; background: #030e1d; padding: 0 20px 12px; }
+    .phone-strip { display: block; background: #07182f; padding: 0 20px 12px; }
     .head-phone.head-phone-big { display: flex; justify-content: center; width: 100%; height: 48px; padding: 0 16px; gap: 9px; font-size: 21px; }
     .head-phone-big :global(.head-phone-icon) { display: block; }
   }
