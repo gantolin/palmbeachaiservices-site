@@ -124,6 +124,10 @@ const callFacts = [
     animation: marker 520ms cubic-bezier(.3, .8, .3, 1) 900ms forwards, marker-shine 6s var(--ease-out-soft) 1.8s infinite;
   }
   @keyframes marker { to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-head .hero-h1 :global(.accent)::before { animation-duration: 520ms, 6s !important; animation-iteration-count: 1, infinite !important; }
+    .book-card::before { animation-duration: 7s !important; animation-iteration-count: infinite !important; }
+  }
   @keyframes marker-shine { 0% { background-position: 160% 0, 0 0; } 22%, 100% { background-position: -60% 0, 0 0; } }
 
   /* Map pin art to the right of the headline. The headline keeps clear of it by giving up that width. */

@@ -20,7 +20,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     <div class="hidden lg:flex items-center gap-2">
       <a href={telHref} class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-[19px] font-semibold tracking-tight text-white hover:bg-white/5"><Icon name="phone" size={19} /> {SITE.phone}</a>
       <a href={smsHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="message" size={16} /> Text us</a>
-      <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Book a free audit <Icon name="arrow-right" size={16} /></a>
+      <a href={CTA.primary.href} class="btn btn-primary btn-sm btn-shine" data-magnetic>Book a free audit <Icon name="arrow-right" size={16} /></a>
     </div>
 
     <a href={telHref} class="head-phone lg:hidden ml-auto" aria-label={`Call ${SITE.phone}`}><Icon name="phone" size={15} class="head-phone-icon" />{SITE.phone}</a>

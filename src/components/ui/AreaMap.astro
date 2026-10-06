@@ -61,5 +61,6 @@ const home = { name: 'Royal Palm Beach', x: 116, y: 166 };
   .pulse { transform-box: fill-box; transform-origin: center; animation: area-pulse 2.6s ease-out infinite; }
   .pulse.late { animation-delay: 1.3s; }
   @keyframes area-pulse { 0% { transform: scale(.5); opacity: .95; } 100% { transform: scale(2.6); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .pulse.late { display: none; } }
+  /* Gene's own PC has reduced motion on and he wants to see these, so the small effects run anyway. */
+  @media (prefers-reduced-motion: reduce) { .pulse { animation-duration: 2.6s !important; animation-iteration-count: infinite !important; } }
 </style>

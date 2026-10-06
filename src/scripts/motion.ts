@@ -59,7 +59,6 @@ const runCount = (el: HTMLElement) => {
   const from = Number(el.dataset.countFrom ?? 0);
   const pre = el.dataset.prefix ?? '';
   const suf = el.dataset.suffix ?? '';
-  if (reduce) { el.textContent = pre + to + suf; return; }
   const t0 = performance.now();
   const dur = Number(el.dataset.countDur ?? 1100);
   const step = (t: number) => {

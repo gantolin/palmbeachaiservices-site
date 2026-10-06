@@ -379,7 +379,10 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
-  .aurora-spot, .btn-primary::after, .has-spot::before, .has-spot::after { display: none; }
+  .aurora-spot, .has-spot::before, .has-spot::after { display: none; }
+  /* Gene's own PC has reduced motion on and he wants to see these, so the small effects run anyway.
+     Big movement (parallax, tilt, marquee, the headline rise) still stays off. */
+  .btn-shine::after { animation: shine-sweep 6s var(--ease-out-soft) 1.8s infinite !important; }
   [data-tilt], .plx-1, .plx-2, .btn-primary { transform: none !important; translate: none !important; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .marquee-track { display: block; width: auto; animation: none !important; }

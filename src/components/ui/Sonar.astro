@@ -3,8 +3,8 @@
  * Home hero background: slow radar pings that spread out from the map pin and light up a dot grid
  * as they pass. Canvas, no libraries. Decorative only.
  *
- * `origin` is a CSS selector for the element the pings come from. With reduced motion the canvas
- * shows three still rings instead of moving ones.
+ * `origin` is a CSS selector for the element the pings come from. It runs with reduced motion too:
+ * Gene's own PC has reduced motion on and he wants to see it, so it runs anyway.
  */
 interface Props { origin: string }
 const { origin } = Astro.props;
@@ -25,7 +25,6 @@ const { origin } = Astro.props;
     const ctx = canvas.getContext('2d');
     const host = canvas.parentElement;
     if (!ctx || !host) return;
-    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let w = 0, h = 0, ox = 0, oy = 0, max = 0, hasOrigin = false;
     let rings: number[] = [];   // birth times
     let last = 0, raf = 0, visible = true;
@@ -47,7 +46,7 @@ const { origin } = Astro.props;
     const draw = (now: number) => {
       ctx.clearRect(0, 0, w, h);
       if (!hasOrigin) return;
-      const radii = still ? [90, 190, 300] : rings.map((t) => ((now - t) / 1000) * SPEED);
+      const radii = rings.map((t) => ((now - t) / 1000) * SPEED);
       radii.forEach((r) => {
         if (r <= 0 || r > max) return;
         const life = 1 - r / max;                       // 1 at the pin, 0 at the far edge
@@ -80,7 +79,6 @@ const { origin } = Astro.props;
     };
 
     measure();
-    if (still) { draw(0); window.addEventListener('resize', () => { measure(); draw(0); }); return; }
 
     // One ring is already on its way when the page opens.
     const start = performance.now();
