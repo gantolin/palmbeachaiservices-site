@@ -1,5 +1,5 @@
 ---
-import { SITE, FOUNDER_FIRST_NAME } from '@/config/site';
+import { SITE } from '@/config/site';
 import { serviceGroups } from '@/data/offer';
 
 interface Props {
@@ -45,7 +45,6 @@ const business = {
     ...SITE.serviceAreas.map((c) => ({ '@type': 'City', name: `${c}, FL` })),
     ...SITE.nearbyCounties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c}, FL` })),
   ],
-  founder: { '@type': 'Person', name: FOUNDER_FIRST_NAME },
   knowsAbout: ['Local SEO', 'Google Maps SEO', 'Google Business Profile optimization', 'Website design', 'Paid ads', 'AI automation', 'Call answering', 'Lead follow-up', 'Review management'],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

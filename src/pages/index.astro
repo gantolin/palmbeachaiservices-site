@@ -5,7 +5,7 @@ import Aurora from '@/components/ui/Aurora.astro';
 import HeroPin from '@/components/ui/HeroPin.astro';
 import Sonar from '@/components/ui/Sonar.astro';
 import BookingEmbed from '@/components/islands/BookingEmbed.astro';
-import { SITE, FOUNDER_FIRST_NAME, telHref, smsHref } from '@/config/site';
+import { SITE, telHref, smsHref } from '@/config/site';
 import { words } from '@/lib/text';
 import { serviceGroups as groups } from '@/data/offer';
 
@@ -48,14 +48,43 @@ const callFacts = [
           </div>
 
           <div class="mt-8 sm:mt-9 grid gap-4 sm:gap-5 fade-in" style="--d:300ms">
-            {groups.map((g) => (
-              <div class="service-card">
-                <h2 class="h3 text-ink-900">{g.title}</h2>
-                <ul class="mt-2 divide-y divide-stone-300/70">
+            {groups.map((g, gi) => (
+              <div class="service-card" data-trail>
+                {gi === 0 ? (
+                  /* Found on Google: a map with "Your business" at the top of the local results. */
+                  <div class="viz viz-map" aria-hidden="true">
+                    <svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMid slice">
+                      <rect width="400" height="130" fill="#0b2a50" />
+                      <path d="M318 0C306 34 334 72 320 130H400V0Z" fill="#12467f" />
+                      <rect x="214" y="14" width="46" height="30" rx="7" fill="#12553f" opacity=".7" />
+                      <ellipse cx="250" cy="112" rx="34" ry="14" fill="#12553f" opacity=".7" />
+                      <g fill="none" stroke="rgba(255,255,255,.14)" stroke-width="3" stroke-linecap="round">
+                        <path d="M150 52H318" /><path d="M196 -4V134" /><path d="M276 -4V134" /><path d="M150 100L318 88" /><path d="M236 52V96" />
+                      </g>
+                      <path d="M150 74H322" fill="none" stroke="#c9a227" stroke-width="3.5" stroke-linecap="round" opacity=".9" />
+                    </svg>
+                    <span class="viz-ring"></span>
+                    <svg class="viz-pin" viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" fill="#ea4335" /><circle cx="12" cy="10" r="3.2" fill="#fff" /></svg>
+                    <div class="viz-pack">
+                      <div class="viz-top"><span class="viz-rank">1</span><span class="viz-biz">Your business</span></div>
+                      <div class="viz-bar" style="width:78%"></div>
+                      <div class="viz-bar" style="width:60%"></div>
+                    </div>
+                  </div>
+                ) : (
+                  /* Hours back: the jobs the AI finishes, ticking off one after another. */
+                  <div class="viz viz-auto" aria-hidden="true">
+                    {['New lead followed up', 'Review request sent', 'Estimate drafted'].map((t, i) => (
+                      <div class="viz-done" style={`--n:${i}`}><span class="viz-check"><Icon name="check" size={13} stroke={3} /></span>{t}</div>
+                    ))}
+                  </div>
+                )}
+                <h2 class="h3 mt-5 text-[#f4f1e8]">{g.title}</h2>
+                <ul class="trail mt-2 divide-y divide-white/10">
                   {g.items.map((s) => (
-                    <li class="flex items-start gap-4 py-3.5">
-                      <span class="mt-0.5 size-9 shrink-0 rounded-[10px] bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={17} /></span>
-                      <p class="text-[16px] leading-snug text-ink-600"><span class="block font-semibold text-ink-900">{s.name}</span>{s.text}</p>
+                    <li class="trail-row flex items-start gap-4 py-3.5">
+                      <span class="trail-dot mt-0.5 size-9 shrink-0 rounded-[10px] flex items-center justify-center"><Icon name={s.icon} size={17} /></span>
+                      <p class="trail-text text-[16px] leading-snug text-mist-400"><span class="block font-semibold text-[#f4f1e8]">{s.name}</span>{s.text}</p>
                     </li>
                   ))}
                 </ul>
@@ -66,7 +95,7 @@ const callFacts = [
 
         <div id="book" class="book-card scroll-mt-28 fade-in" style="--d:200ms">
           <h2 class="h3 text-[#f4f1e8]">Book your free 30-minute audit.</h2>
-          <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. {FOUNDER_FIRST_NAME} looks at your website and your Google profile before the call and tells you what to fix first.</p>
+          <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. We look at your website and your Google profile before the call and tell you what to fix first.</p>
           <ul class="call-facts mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] text-mist-200">
             {callFacts.map((f) => <li class="inline-flex items-center gap-2"><Icon name={f.icon} size={16} class="text-gold-300" />{f.text}</li>)}
           </ul>
@@ -98,6 +127,41 @@ const callFacts = [
     if (a) window.setTimeout(flash, 50);
   });
   if (location.hash === '#book') window.setTimeout(flash, 400);
+
+  // A gold line runs down each service card as you scroll, and each service lights up when the line
+  // reaches it (and stays lit). Without this script the cards simply show fully lit.
+  const trailCards = Array.from(document.querySelectorAll<HTMLElement>('[data-trail]'));
+  if (trailCards.length) {
+    const state = trailCards.map((card) => {
+      const list = card.querySelector<HTMLElement>('.trail')!;
+      const rows = Array.from(card.querySelectorAll<HTMLElement>('.trail-row'));
+      card.classList.add('trail-on');
+      return { card, list, rows, top: 0, len: 0, centers: [] as number[], best: -1 };
+    });
+    const measure = () => state.forEach((st) => {
+      const lb = st.list.getBoundingClientRect();
+      st.centers = st.rows.map((r) => { const d = r.querySelector('.trail-dot')!.getBoundingClientRect(); return d.top + d.height / 2 - lb.top; });
+      st.top = st.centers[0];
+      st.len = st.centers[st.centers.length - 1] - st.top;
+      st.list.style.setProperty('--trail-top', `${st.top}px`);
+      st.list.style.setProperty('--trail-len', `${st.len}px`);
+    });
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const line = window.innerHeight * 0.62;   // where on the screen the line's tip sits
+      state.forEach((st) => {
+        const y = st.list.getBoundingClientRect().top + st.top;
+        st.best = Math.max(st.best, Math.min(st.len, line - y));   // only ever grows
+        st.list.style.setProperty('--trail-fill', st.len ? (Math.max(0, st.best) / st.len).toFixed(4) : '0');
+        st.rows.forEach((r, i) => r.classList.toggle('is-lit', st.best >= 0 && st.centers[i] - st.top <= st.best + 2));
+      });
+    };
+    measure(); update();
+    window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', () => { measure(); update(); });
+    window.setTimeout(() => { measure(); update(); }, 1500);   // fonts and the headline animation settle
+  }
 </script>
 
 <style>
@@ -126,7 +190,7 @@ const callFacts = [
   @keyframes marker { to { transform: scaleX(1); } }
   @media (prefers-reduced-motion: reduce) {
     .hero-head .hero-h1 :global(.accent)::before { animation-duration: 520ms, 6s !important; animation-iteration-count: 1, infinite !important; }
-    .book-card::before { animation-duration: 7s !important; animation-iteration-count: infinite !important; }
+    .book-card::before, .book-card :global(.frame)::after { animation-duration: 7s !important; animation-iteration-count: infinite !important; }
   }
   @keyframes marker-shine { 0% { background-position: 160% 0, 0 0; } 22%, 100% { background-position: -60% 0, 0 0; } }
 
@@ -151,11 +215,65 @@ const callFacts = [
   /* Short phones: a smaller headline keeps the Book a free audit button above the bottom bar. */
   @media (max-width: 640px) and (max-height: 600px) { .hero-head .hero-h1 { font-size: 1.95rem; margin-top: 12px; } .hero-pad { padding-top: 24px; } }
 
+  /* Service cards: dark glass like the booking card, each with its own picture on top. */
   .service-card {
-    border-radius: 22px; padding: 26px 28px 14px;
-    background: linear-gradient(180deg, #fff, var(--color-cream-50));
-    border: 1px solid rgba(255, 255, 255, .7);
-    box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .75), 0 1px 0 rgba(255, 255, 255, .9) inset;
+    border-radius: 24px; padding: 18px 22px 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
+    border: 1px solid rgba(230, 205, 131, .3);
+    box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .85), 0 1px 0 rgba(255, 255, 255, .1) inset;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  .viz { position: relative; height: 132px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .1); }
+  .viz > svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* Picture 1: the map, with "Your business" first in the list. */
+  .viz-pin { position: absolute; left: 68%; top: 56%; width: 40px; transform: translate(-50%, -100%); filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .45)); }
+  .viz-ring { position: absolute; left: 68%; top: 56%; width: 30px; aspect-ratio: 2.4; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid rgba(234, 67, 53, .85); animation: viz-ring 2.4s ease-out infinite; }
+  @keyframes viz-ring { 0% { opacity: .9; transform: translate(-50%, -50%) scale(.6); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.6); } }
+  .viz-pack { position: absolute; left: 12px; top: 50%; width: min(46%, 190px); transform: translateY(-50%); display: grid; gap: 7px; }
+  .viz-top { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: #fff; color: #0b2a50; font: 700 14px/1.1 var(--font-sans); box-shadow: 0 0 0 2px var(--color-gold-500), 0 10px 22px -8px rgba(0, 0, 0, .7); white-space: nowrap; }
+  .viz-rank { width: 20px; height: 20px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: var(--color-gold-500); color: #0b2a50; font-size: 12px; }
+  .viz-bar { height: 12px; border-radius: 6px; background: rgba(255, 255, 255, .16); }
+
+  /* Picture 2: finished jobs ticking off, one after another, on a loop. */
+  .viz-auto { display: grid; align-content: center; gap: 8px; padding: 0 14px; background: radial-gradient(120% 140% at 100% 0%, #12467f 0%, #0b2a50 45%, #061f3f 100%); }
+  .viz-done { display: flex; align-items: center; gap: 9px; width: fit-content; padding: 6px 12px 6px 7px; border-radius: 999px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .14); color: #f4f1e8; font: 600 13.5px/1.1 var(--font-sans); animation: viz-done 7.5s cubic-bezier(.22, 1, .36, 1) calc(var(--n) * .9s + .4s) infinite backwards; }
+  .viz-done:nth-child(2) { margin-left: 22px; }
+  .viz-done:nth-child(3) { margin-left: 44px; }
+  .viz-check { width: 20px; height: 20px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: var(--color-gold-500); color: #0b2a50; }
+  @keyframes viz-done { 0% { opacity: 0; transform: translateY(10px); } 7%, 86% { opacity: 1; transform: none; } 94%, 100% { opacity: 0; transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    .viz-ring { animation-duration: 2.4s !important; animation-iteration-count: infinite !important; }
+    .viz-done { animation-duration: 7.5s !important; animation-iteration-count: infinite !important; }
+  }
+
+  /* Service trail (see the script above). The track and the gold fill sit behind the icons; a row is
+     dim until the fill reaches its icon. Rows with no script running show in the lit colors. */
+  .trail { position: relative; }
+  .service-card.trail-on .trail::before, .service-card.trail-on .trail::after {
+    content: ""; position: absolute; left: 17px; top: var(--trail-top, 0); width: 2px; height: var(--trail-len, 0); border-radius: 2px;
+  }
+  .service-card.trail-on .trail::before { background: rgba(255, 255, 255, .1); }
+  .service-card.trail-on .trail::after {
+    background: linear-gradient(180deg, #e2c25a, #c9a227); transform-origin: 50% 0; transform: scaleY(var(--trail-fill, 0));
+    transition: transform 260ms linear; box-shadow: 0 0 10px rgba(201, 162, 39, .55);
+  }
+  .trail-dot { position: relative; z-index: 1; background: var(--color-gold-500); color: var(--color-navy-950); }
+  .service-card.trail-on .trail-dot { background: #1b3557; color: #8ea9cb; transition: background-color 300ms, color 300ms, box-shadow 300ms; }
+  .service-card.trail-on .trail-text { opacity: .42; transform: translateX(6px); transition: opacity 400ms, transform 400ms cubic-bezier(.22, 1, .36, 1); }
+  .service-card.trail-on .is-lit .trail-dot {
+    background: var(--color-gold-500); color: var(--color-navy-950);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, .25), 0 0 18px -2px rgba(201, 162, 39, .7);
+    animation: trail-pop 420ms cubic-bezier(.3, 1.6, .5, 1);
+  }
+  .service-card.trail-on .is-lit .trail-text { opacity: 1; transform: none; }
+  @keyframes trail-pop { 0% { transform: scale(.82); } 60% { transform: scale(1.14); } 100% { transform: scale(1); } }
+  /* Runs with reduced motion too: it only moves when the visitor scrolls. */
+  @media (prefers-reduced-motion: reduce) {
+    .service-card.trail-on .trail::after { transition-duration: 260ms !important; }
+    .service-card.trail-on .trail-dot { transition-duration: 300ms !important; }
+    .service-card.trail-on .trail-text { transition-duration: 400ms !important; }
+    .service-card.trail-on .is-lit .trail-dot { animation-duration: 420ms !important; }
   }
 
   /* The booking card: glass panel with a gold hairline, so the calendar reads as the main action. */
@@ -174,6 +292,17 @@ const callFacts = [
     .book-card::before {
       content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 2px; pointer-events: none;
       background: conic-gradient(from var(--beam), transparent 0 78%, rgba(201, 162, 39, .9) 90%, #fff3c4 96%, transparent 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+      animation: beam 7s linear infinite;
+    }
+  }
+  /* Phones: the calendar has no card around it, so the light runs around the white calendar itself. */
+  @media (max-width: 640px) {
+    .book-card :global(.frame) { position: relative; box-shadow: 0 0 0 1px rgba(201, 162, 39, .55), 0 20px 40px -24px rgba(0, 0, 0, .6); }
+    .book-card :global(.frame)::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 3px; pointer-events: none;
+      background: conic-gradient(from var(--beam), transparent 0 74%, rgba(226, 194, 90, .95) 88%, #b8860b 96%, transparent 100%);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
       mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
       animation: beam 7s linear infinite;
@@ -201,12 +330,25 @@ const callFacts = [
       animation: beam 7s linear infinite;
     }
   }
+  /* Phones: the calendar has no card around it, so the light runs around the white calendar itself. */
+  @media (max-width: 640px) {
+    .book-card :global(.frame) { position: relative; box-shadow: 0 0 0 1px rgba(201, 162, 39, .55), 0 20px 40px -24px rgba(0, 0, 0, .6); }
+    .book-card :global(.frame)::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 3px; pointer-events: none;
+      background: conic-gradient(from var(--beam), transparent 0 74%, rgba(226, 194, 90, .95) 88%, #b8860b 96%, transparent 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+      animation: beam 7s linear infinite;
+    }
+  }
   @keyframes beam { to { --beam: 360deg; } }
   .book-card.is-flash { box-shadow: none; }
     .book-card.is-flash :global(.frame) { box-shadow: 0 0 0 4px rgba(201, 162, 39, .7); }
     .book-card :global(h2) { font-size: 1.6rem; }
     .call-facts { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 15.5px; }
-    .service-card { padding: 20px 20px 8px; border-radius: 20px; }
+    .service-card { padding: 14px 16px 6px; border-radius: 20px; }
+    .viz { height: 118px; }
+    .viz-auto { height: 138px; }
     .service-card :global(h2) { font-size: 1.3rem; }
     .service-card :global(li) { padding-top: 12px; padding-bottom: 12px; gap: 14px; }
   }

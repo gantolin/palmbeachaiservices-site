@@ -8,7 +8,7 @@ const { title, description, heading, updated, path } = Astro.props;
   <PageHero eyebrow="Legal" title={heading} lede={`Last updated ${updated}`} crumbs={[{ name: 'Home', url: '/' }, { name: heading, url: path }]} />
   <section class="section surface-cream !pt-16">
     <div class="container-x">
-      <!-- TODO(Gene): have an attorney review this page before launch. -->
+      <!-- TODO(owner): have an attorney review this page before launch. -->
       <div class="prose-legal"><slot /></div>
     </div>
   </section>
