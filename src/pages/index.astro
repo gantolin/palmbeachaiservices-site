@@ -26,6 +26,7 @@ const callFacts = [
     <div class="container-x hero-pad relative pt-10 pb-16 sm:pt-14 sm:pb-24">
       <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
         <div>
+          <div class="hero-first">
           <div class="eyebrow fade-in">For local businesses in Palm Beach County</div>
           <div class="hero-head">
             <h1 class="h1 hero-h1 mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
@@ -36,6 +37,7 @@ const callFacts = [
 
           <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
             <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free audit<Icon name="arrow-right" size={18} /></a>
+          </div>
           </div>
 
           <div class="mt-8 sm:mt-9 grid gap-4 sm:gap-5 fade-in" style="--d:300ms">
@@ -93,6 +95,10 @@ const callFacts = [
 
 <style>
   @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.4rem, 3.4vw, 3.1rem); } }
+
+  /* Phones: the headline, sentence and button own the first screen. The block is as tall as the space
+     between the top bar (76px) and the bottom bar (69px), so the white service cards start below it. */
+  @media (max-width: 640px) { .hero-first { min-height: calc(100svh - 76px - 69px - 40px); display: flex; flex-direction: column; justify-content: center; padding-bottom: 20px; } }
 
   /* Map pin art to the right of the headline. The headline keeps clear of it by giving up that width. */
   .hero-head { position: relative; --art: clamp(84px, 24vw, 112px); }
