@@ -4,8 +4,8 @@ import { CTA, telHref, smsHref } from '@/config/site';
 ---
 <div class="mobile-bar lg:hidden fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(10px,env(safe-area-inset-bottom))] pt-2" aria-label="Quick actions">
   <div class="grid grid-cols-[1fr_1fr_1.6fr] gap-2 rounded-full bg-navy-950/92 backdrop-blur-md border border-white/10 p-1.5 shadow-[0_12px_40px_-12px_rgba(0,0,0,.6)]">
-    <a href={telHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-mist-200 text-[14px] font-semibold hover:bg-white/5"><Icon name="phone" size={16} />Call</a>
-    <a href={smsHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-mist-200 text-[14px] font-semibold hover:bg-white/5"><Icon name="message" size={16} />Text</a>
+    <a href={telHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-white text-[16px] font-semibold hover:bg-white/5"><Icon name="phone" size={18} />Call</a>
+    <a href={smsHref} class="flex items-center justify-center gap-1.5 h-11 rounded-full text-white text-[16px] font-semibold hover:bg-white/5"><Icon name="message" size={18} />Text</a>
     <a href={CTA.primary.href} class="flex items-center justify-center gap-1.5 h-11 rounded-full bg-gold-500 text-navy-950 text-[14px] font-semibold">Book a call</a>
   </div>
 </div>

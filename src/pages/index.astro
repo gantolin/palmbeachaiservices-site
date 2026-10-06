@@ -1,13 +1,18 @@
 ---
 import Base from '@/layouts/Base.astro';
 import Icon from '@/components/ui/Icon.astro';
+import Aurora from '@/components/ui/Aurora.astro';
 import BookingEmbed from '@/components/islands/BookingEmbed.astro';
-import { SITE, FOUNDER_FIRST_NAME, telHref } from '@/config/site';
+import { SITE, FOUNDER_FIRST_NAME, telHref, smsHref } from '@/config/site';
 import { words } from '@/lib/text';
 import { serviceGroups as groups } from '@/data/offer';
 
 const headline = 'Get found on Google. Get *hours back* every week.';
-
+const callFacts = [
+  { icon: 'clock', text: '30 minutes' },
+  { icon: 'phone', text: 'Phone or video' },
+  { icon: 'check', text: 'Free, nothing to sign' },
+];
 ---
 <Base
   title="Local SEO & AI for Home Service Businesses | Palm Beach AI Services"
@@ -15,8 +20,10 @@ const headline = 'Get found on Google. Get *hours back* every week.';
 >
   <section class="relative overflow-hidden surface-dark grain -mt-px" id="services">
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
-    <div class="container-x relative pt-10 pb-16 sm:pt-14 sm:pb-20">
-      <div class="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
+    <Aurora variant="soft" />
+    <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
+    <div class="container-x relative pt-10 pb-16 sm:pt-14 sm:pb-24">
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
         <div>
           <div class="eyebrow fade-in">For home service businesses in Palm Beach County</div>
           <h1 class="h1 hero-h1 mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
@@ -24,18 +31,18 @@ const headline = 'Get found on Google. Get *hours back* every week.';
 
           <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
             <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free call<Icon name="arrow-right" size={18} /></a>
-            <a href={telHref} class="inline-flex items-center gap-2 text-[16px] font-semibold text-mist-200 hover:text-white self-start sm:self-auto"><Icon name="phone" size={17} />or call {SITE.phone}</a>
+            <a href={telHref} class="inline-flex items-center gap-2 text-[18px] font-semibold text-white self-start sm:self-auto"><Icon name="phone" size={18} />{SITE.phone}</a>
           </div>
 
           <div class="mt-9 grid gap-5 fade-in" style="--d:300ms">
             {groups.map((g) => (
-              <div class="rounded-[20px] bg-cream-50 p-6 sm:p-7">
+              <div class="service-card">
                 <h2 class="h3 text-ink-900">{g.title}</h2>
-                <ul class="mt-4 space-y-3">
+                <ul class="mt-2 divide-y divide-stone-300/70">
                   {g.items.map((s) => (
-                    <li class="flex gap-3">
-                      <Icon name="check" size={19} stroke={2.6} class="mt-[3px] shrink-0 text-navy-700" />
-                      <p class="text-[16px] leading-snug text-ink-600"><span class="font-semibold text-ink-900">{s.name}.</span> {s.text}</p>
+                    <li class="flex items-start gap-4 py-3.5">
+                      <span class="mt-0.5 size-9 shrink-0 rounded-[10px] bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={s.icon} size={17} /></span>
+                      <p class="text-[16px] leading-snug text-ink-600"><span class="block font-semibold text-ink-900">{s.name}</span>{s.text}</p>
                     </li>
                   ))}
                 </ul>
@@ -44,11 +51,18 @@ const headline = 'Get found on Google. Get *hours back* every week.';
           </div>
         </div>
 
-        <div id="book" class="scroll-mt-28 fade-in lg:sticky lg:top-28" style="--d:200ms">
+        <div id="book" class="book-card scroll-mt-28 fade-in" style="--d:200ms">
           <h2 class="h3 text-[#f4f1e8]">Book a free 30-minute call.</h2>
-          <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. {FOUNDER_FIRST_NAME} looks at your website and your Google profile before the call and tells you what to fix first. No contract, and nothing to sign.</p>
+          <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. {FOUNDER_FIRST_NAME} looks at your website and your Google profile before the call and tells you what to fix first.</p>
+          <ul class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] text-mist-200">
+            {callFacts.map((f) => <li class="inline-flex items-center gap-2"><Icon name={f.icon} size={16} class="text-gold-300" />{f.text}</li>)}
+          </ul>
           <div class="mt-6">
             <BookingEmbed title="Book a free 30-minute call" compact />
+          </div>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <a href={telHref} class="contact-pill"><Icon name="phone" size={19} class="text-gold-300" /><span><span class="block text-[12.5px] font-normal text-mist-400">Call</span>{SITE.phone}</span></a>
+            <a href={smsHref} class="contact-pill"><Icon name="message" size={19} class="text-gold-300" /><span><span class="block text-[12.5px] font-normal text-mist-400">Text</span>{SITE.phone}</span></a>
           </div>
         </div>
       </div>
@@ -56,6 +70,54 @@ const headline = 'Get found on Google. Get *hours back* every week.';
   </section>
 </Base>
 
+<script>
+  // "Book a free call" points at the calendar on this page. When the calendar is already on screen the
+  // jump moves nothing, so light up its frame for a moment to show where to book.
+  const book = document.getElementById('book');
+  const flash = () => {
+    if (!book) return;
+    book.scrollIntoView({ block: 'nearest' });
+    book.classList.add('is-flash');
+    window.setTimeout(() => book.classList.remove('is-flash'), 2200);
+  };
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[href$="#book"]');
+    if (a) window.setTimeout(flash, 50);
+  });
+  if (location.hash === '#book') window.setTimeout(flash, 400);
+</script>
+
 <style>
   @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.4rem, 3.4vw, 3.1rem); } }
+
+  .service-card {
+    border-radius: 22px; padding: 26px 28px 14px;
+    background: linear-gradient(180deg, #fff, var(--color-cream-50));
+    border: 1px solid rgba(255, 255, 255, .7);
+    box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .75), 0 1px 0 rgba(255, 255, 255, .9) inset;
+  }
+
+  /* The booking card: glass panel with a gold hairline, so the calendar reads as the main action. */
+  .book-card {
+    position: relative; border-radius: 28px; padding: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
+    border: 1px solid rgba(230, 205, 131, .38);
+    box-shadow: 0 50px 90px -45px rgba(0, 0, 0, .85), 0 0 70px -30px rgba(201, 162, 39, .35), 0 1px 0 rgba(255, 255, 255, .12) inset;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: border-color 300ms, box-shadow 300ms;
+  }
+  .book-card.is-flash {
+    border-color: var(--color-gold-500);
+    box-shadow: 0 50px 90px -45px rgba(0, 0, 0, .85), 0 0 0 4px rgba(201, 162, 39, .55), 0 0 90px -20px rgba(201, 162, 39, .7);
+  }
+  .book-card :global(.frame) { border-radius: 18px; box-shadow: 0 20px 40px -24px rgba(0, 0, 0, .6); }
+  @media (max-width: 640px) { .book-card { padding: 20px; border-radius: 24px; } }
+
+  .contact-pill {
+    display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 16px;
+    font-size: 18px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; color: #fff;
+    background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12);
+    transition: background-color 200ms, border-color 200ms;
+  }
+  .contact-pill:hover { background: rgba(255, 255, 255, .1); border-color: rgba(230, 205, 131, .5); }
 </style>

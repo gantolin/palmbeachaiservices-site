@@ -1,7 +1,7 @@
 ---
 import Icon from '../ui/Icon.astro';
 import Aurora from '../ui/Aurora.astro';
-import { CTA, SITE, telHref } from '@/config/site';
+import { CTA, SITE, telHref, smsHref } from '@/config/site';
 interface Props { title?: string; text?: string }
 const {
   title = 'Book a free 30-minute call.',
@@ -17,6 +17,7 @@ const {
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine" data-magnetic>{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
       <a href={telHref} class="btn btn-outline-dark btn-lg"><Icon name="phone" size={18} />Call {SITE.phone}</a>
+      <a href={smsHref} class="btn btn-outline-dark btn-lg"><Icon name="message" size={18} />Text us</a>
     </div>
   </div>
 </section>

@@ -1,7 +1,7 @@
 ---
 import Logo from './ui/Logo.astro';
 import Icon from './ui/Icon.astro';
-import { NAV, CTA, SITE, telHref } from '@/config/site';
+import { NAV, CTA, SITE, telHref, smsHref } from '@/config/site';
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
@@ -18,7 +18,8 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
     </nav>
 
     <div class="hidden lg:flex items-center gap-2">
-      <a href={telHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="phone" size={16} /> {SITE.phone}</a>
+      <a href={telHref} class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-[19px] font-semibold tracking-tight text-white hover:bg-white/5"><Icon name="phone" size={19} /> {SITE.phone}</a>
+      <a href={smsHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="message" size={16} /> Text us</a>
       <a href={CTA.primary.href} class="btn btn-primary btn-sm" data-magnetic>Book a free call <Icon name="arrow-right" size={16} /></a>
     </div>
 
@@ -39,6 +40,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
       <div class="mt-6 grid gap-3">
         <a href={CTA.primary.href} class="btn btn-primary btn-lg w-full">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
         <a href={telHref} class="btn btn-outline-dark btn-lg w-full"><Icon name="phone" size={18} /> Call {SITE.phone}</a>
+        <a href={smsHref} class="btn btn-outline-dark btn-lg w-full"><Icon name="message" size={18} /> Text {SITE.phone}</a>
       </div>
     </div>
   </div>
