@@ -1,10 +1,13 @@
 ---
 import Base from '@/layouts/Base.astro';
-import PageHero from '@/components/sections/PageHero.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
+import Aurora from '@/components/ui/Aurora.astro';
+import HeroPin from '@/components/ui/HeroPin.astro';
+import AreaMap from '@/components/ui/AreaMap.astro';
 import { SITE } from '@/config/site';
 import { trades } from '@/data/offer';
+import { words } from '@/lib/text';
 const values = [
   { icon: 'receipt', title: 'Your price in writing', text: 'You should know exactly what something costs before any work starts. So every quote is fixed and in writing, with no surprise invoices later.' },
   { icon: 'key', title: 'You own everything', text: 'Your domain, your website, your Google profile, your customer list. If you ever leave, it all goes with you.' },
@@ -19,42 +22,86 @@ const values = [
   description={`${SITE.name} is a local SEO and AI company in Royal Palm Beach, serving contractors, restaurants, medical offices, and other local businesses across Palm Beach County.`}
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'About', url: '/about/' }]}
 >
-  <PageHero compact eyebrow="About" title="Local, and built for local business owners."
-    lede={`${SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google and get hours back with AI. We do the work ourselves, so the people you talk to are the people building it.`} />
+  <section class="relative overflow-hidden surface-dark grain -mt-px">
+    <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
+    <Aurora variant="soft" orbit="right" />
+    <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
+    <div class="container-x relative pt-10 pb-12 sm:pt-14 sm:pb-16">
+      <div class="about-head">
+        <div>
+          <div class="eyebrow fade-in">About</div>
+          <h1 class="h1 about-h1 mt-4 text-[#f4f1e8] word-rise" set:html={words('A local team for *local businesses.*')} />
+        </div>
+        <div class="about-art fade-in" style="--d:350ms"><HeroPin /></div>
+      </div>
+      <p class="lede mt-5 fade-in" style="--d:320ms">{SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google and get hours back with AI. We do the work ourselves, so the people you talk to are the people building it.</p>
+    </div>
+  </section>
+
   <section class="section surface-cream">
     <div class="container-x">
       <div class="max-w-2xl" data-reveal>
         <div class="eyebrow">How we work</div>
-        <h2 class="h2 mt-5">The rules we run on.</h2>
+        <h2 class="h2 mt-4">The rules we run on.</h2>
       </div>
-      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {values.map((v, i) => (
-          <div class="card p-7 rounded-[20px]" data-reveal style={`--d:${(i % 3) * 80}ms`}>
-            <span class="size-11 rounded-xl bg-navy-100 text-navy-700 flex items-center justify-center"><Icon name={v.icon} size={20} /></span>
-            <h3 class="mt-5 font-display text-[20px] font-[600] tracking-tight">{v.title}</h3>
-            <p class="mt-2 text-ink-600 text-[15.5px]">{v.text}</p>
+          <div class="rule card lift" data-reveal style={`--d:${(i % 3) * 80}ms`}>
+            <span class="size-11 shrink-0 rounded-xl bg-navy-700 text-gold-300 flex items-center justify-center"><Icon name={v.icon} size={20} /></span>
+            <div>
+              <h3 class="font-display text-[19px] font-[600] tracking-tight">{v.title}</h3>
+              <p class="mt-1.5 text-ink-600 text-[15.5px] leading-relaxed">{v.text}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
+
   <section class="section surface-sand">
-    <div class="container-x grid gap-12 lg:grid-cols-2">
-      <div data-reveal>
+    <div class="container-x grid gap-5 lg:grid-cols-2 lg:gap-6">
+      <div class="panel panel-light" data-reveal>
         <div class="eyebrow">Who we help</div>
-        <h2 class="h2 mt-5">Local businesses.</h2>
-        <p class="lede mt-6">If customers find you on Google and then call or book, we can help you get more of them.</p>
-        <ul class="mt-8 flex flex-wrap gap-2">{trades.map((i) => <li class="chip bg-white border border-stone-300 text-[14px]">{i}</li>)}</ul>
+        <h2 class="panel-title mt-3">Local businesses.</h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-ink-600">If customers find you on Google and then call or book, we can help you get more of them.</p>
+        <ul class="mt-7 flex flex-wrap gap-2">{trades.map((i) => <li class="chip bg-cream-50 border border-stone-300 text-[14px]">{i}</li>)}</ul>
+        <p class="mt-4 text-[15px] text-ink-600">And other local businesses.</p>
       </div>
-      <div data-reveal style="--d:100ms">
-        <div class="eyebrow">Where we work</div>
-        <h2 class="h2 mt-5">Home base: {SITE.homeBase}.</h2>
-        <p class="lede mt-6">We serve all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}. Local means we can meet in person.</p>
-        <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-[15.5px]">
-          {SITE.serviceAreas.map((a, i) => <li class="flex items-center gap-2.5"><Icon name="pin" size={16} class={i === 0 ? 'text-gold-700' : 'text-navy-700'} /><span class={i === 0 ? 'font-semibold' : ''}>{a}</span></li>)}
-        </ul>
+      <div class="panel panel-dark" data-reveal style="--d:100ms">
+        <div class="panel-dark-text">
+          <div class="eyebrow">Where we work</div>
+          <h2 class="panel-title mt-3 text-[#f4f1e8]">Home base: {SITE.homeBase}.</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-mist-400">We serve all of {SITE.primaryArea}, plus {SITE.nearbyCounties.join(' and ')}. Local means we can meet in person.</p>
+        </div>
+        <div class="panel-map"><AreaMap /></div>
       </div>
     </div>
   </section>
   <FinalCTA />
 </Base>
+
+<style>
+  /* Hero: map pin art beside the headline, which gives up that width so the two never overlap. */
+  .about-head { position: relative; --art: clamp(84px, 24vw, 112px); }
+  .about-h1 { max-width: calc(100% - var(--art) - 14px); font-size: min(2.4rem, 9.8vw); }
+  .about-art { position: absolute; right: 0; top: 50%; width: var(--art); transform: translateY(-46%); }
+  @media (min-width: 641px) { .about-head { --art: 150px; } .about-h1 { font-size: clamp(2.6rem, 4.4vw, 3.6rem); max-width: min(calc(100% - var(--art) - 40px), 16ch); } .about-art { right: 4%; } }
+  @media (min-width: 1024px) { .about-head { --art: 190px; } .about-art { right: 8%; } }
+  @media (max-width: 349px) { .about-art { display: none; } .about-h1 { max-width: none; } }
+
+  /* Rules: icon beside the text, so each card is short and the six scan as a list. */
+  .rule { display: flex; gap: 16px; align-items: flex-start; padding: 24px; border-radius: 20px; }
+
+  .panel { border-radius: 28px; padding: 36px; }
+  .panel-title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
+  .panel-light { background: #fff; border: 1px solid var(--color-stone-300); box-shadow: 0 30px 60px -44px rgba(3, 14, 29, .45); }
+  .panel-dark {
+    display: grid; gap: 28px; align-items: center; color: var(--color-mist-200);
+    background: radial-gradient(120% 90% at 100% 0%, #12467f 0%, #061f3f 45%, #030e1d 100%);
+    border: 1px solid rgba(230, 205, 131, .35); box-shadow: 0 30px 60px -40px rgba(3, 14, 29, .8);
+  }
+  .panel-dark .eyebrow { color: var(--color-gold-300); }
+  .panel-map { max-width: 300px; width: 100%; margin-inline: auto; }
+  @media (min-width: 640px) { .panel-dark { grid-template-columns: 1fr 280px; } .panel-map { max-width: none; } }
+  @media (max-width: 640px) { .panel { padding: 24px; border-radius: 22px; } .rule { padding: 20px; gap: 14px; } }
+</style>

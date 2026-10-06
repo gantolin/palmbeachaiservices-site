@@ -1,0 +1,59 @@
+---
+/**
+ * Drawn map of the service area for the About page: the Palm Beach County coast with the towns we
+ * work in. Positions are roughly geographic (north at the top), not to scale. Decorative; the page
+ * text names the area.
+ */
+const coast = [
+  { name: 'Jupiter', y: 42 },
+  { name: 'Palm Beach Gardens', y: 92 },
+  { name: 'West Palm Beach', y: 150 },
+  { name: 'Lake Worth Beach', y: 222 },
+  { name: 'Boynton Beach', y: 278 },
+  { name: 'Delray Beach', y: 330 },
+  { name: 'Boca Raton', y: 384 },
+];
+const inland = [
+  { name: 'Loxahatchee', x: 50, y: 100, dy: -11 },
+  { name: 'Wellington', x: 84, y: 214, dy: 19 },
+  { name: 'Greenacres', x: 134, y: 252, dy: 19 },
+];
+const home = { name: 'Royal Palm Beach', x: 116, y: 166 };
+---
+<svg class="area-map" viewBox="0 0 384 420" role="img" aria-label="Map of the Palm Beach County towns we work in, with Royal Palm Beach as home base">
+  <rect width="384" height="420" fill="#0b2a50" />
+  <path d="M218 0C226 60 204 110 216 170C226 230 206 290 214 350C218 384 210 404 214 420H384V0Z" fill="#12467f" />
+  <path d="M206 0C214 60 192 110 204 170C214 230 194 290 202 350C206 384 198 404 202 420" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="2" />
+  <ellipse cx="18" cy="52" rx="46" ry="60" fill="#12467f" opacity=".7" />
+  <rect x="34" y="250" width="70" height="52" rx="10" fill="#12553f" opacity=".45" />
+  <rect x="120" y="30" width="52" height="40" rx="10" fill="#12553f" opacity=".45" />
+  <g fill="none" stroke="rgba(255,255,255,.13)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M20 166H196" /><path d="M40 228H196" /><path d="M60 92H190" /><path d="M70 300H194" />
+    <path d="M116 60V330" /><path d="M58 100V260" />
+  </g>
+  <path d="M186 0C194 60 172 110 184 170C194 230 174 290 182 350C186 384 178 404 182 420" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round" opacity=".85" />
+  {coast.map((t) => (
+    <g>
+      <circle cx="196" cy={t.y} r="4.5" fill="#fff" stroke="#0b2a50" stroke-width="2" />
+      <text x="226" y={t.y + 4.5} class="town">{t.name}</text>
+    </g>
+  ))}
+  {inland.map((t) => (
+    <g>
+      <circle cx={t.x} cy={t.y} r="4.5" fill="#fff" stroke="#0b2a50" stroke-width="2" />
+      <text x={t.x} y={t.y + t.dy} text-anchor="middle" class="town">{t.name}</text>
+    </g>
+  ))}
+  <g>
+    <circle cx={home.x} cy={home.y} r="15" fill="none" stroke="rgba(230,205,131,.55)" stroke-width="1.5" />
+    <circle cx={home.x} cy={home.y} r="7" fill="#c9a227" stroke="#fff" stroke-width="2" />
+    <rect x={home.x - 66} y={home.y - 46} width="132" height="24" rx="12" fill="#fff" />
+    <text x={home.x} y={home.y - 29} text-anchor="middle" class="home">{home.name}</text>
+  </g>
+</svg>
+
+<style>
+  .area-map { display: block; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(230, 205, 131, .35); }
+  .town { font: 500 13.5px var(--font-sans); fill: #e6e9f0; }
+  .home { font: 700 13.5px var(--font-sans); fill: #0b2a50; }
+</style>
