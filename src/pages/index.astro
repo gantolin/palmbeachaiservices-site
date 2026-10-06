@@ -128,8 +128,8 @@ const callFacts = [
   });
   if (location.hash === '#book') window.setTimeout(flash, 400);
 
-  // A gold line runs down each service card and each service lights up when the line reaches it (and
-  // stays lit). Without this script the cards simply show fully lit.
+  // A gold line runs down each service card, lighting each service in turn, on a loop. Without this
+  // script the cards simply show fully lit.
   const trailCards = Array.from(document.querySelectorAll<HTMLElement>('[data-trail]'));
   if (trailCards.length) {
     const state = trailCards.map((card) => {
@@ -150,22 +150,27 @@ const callFacts = [
       st.list.style.setProperty('--trail-fill', st.len ? (Math.max(0, st.best) / st.len).toFixed(4) : '0');
       st.rows.forEach((r, i) => r.classList.toggle('is-lit', st.best >= 0 && st.centers[i] - st.top <= st.best + 2));
     };
-    // The line follows the scroll on every screen size: each service lights up as it comes up the
-    // screen. The tip sits low (80% down), so a service lights soon after it appears.
-    let queued = false;
-    const update = () => {
-      queued = false;
-      const line = window.innerHeight * 0.8;
-      state.forEach((st) => {
-        const y = st.list.getBoundingClientRect().top + st.top;
-        st.best = Math.max(st.best, Math.min(st.len, line - y));   // only ever grows
-        paint(st);
-      });
-    };
-    measure(); update();
-    window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener('resize', () => { measure(); update(); });
-    window.setTimeout(() => { measure(); update(); }, 1500);   // fonts and the headline animation settle
+    // A loop, not tied to scrolling: the line steps down one service at a time, lighting each, holds
+    // with all of them lit, then clears and starts again. It only runs while the card is on screen.
+    const STEP = 950, HOLD = 2200, CLEAR = 700;
+    measure();
+    state.forEach((st, n) => {
+      let timer = 0, k = -1, running = false;
+      const show = () => { st.best = k < 0 ? -1 : st.centers[k] - st.top; paint(st); };
+      const tick = () => {
+        if (!running) return;
+        if (k < st.rows.length - 1) { k++; show(); timer = window.setTimeout(tick, k === st.rows.length - 1 ? HOLD : STEP); }
+        else { k = -1; show(); timer = window.setTimeout(tick, CLEAR); }
+      };
+      show();
+      new IntersectionObserver(([en]) => {
+        window.clearTimeout(timer);
+        running = en.isIntersecting;
+        if (running) timer = window.setTimeout(tick, 350 + n * 450);   // the two cards run out of step
+      }, { threshold: 0.25 }).observe(st.card);
+    });
+    window.addEventListener('resize', () => { measure(); state.forEach(paint); });
+    window.setTimeout(() => { measure(); state.forEach(paint); }, 1500);   // fonts and the headline animation settle
   }
 </script>
 
@@ -266,11 +271,11 @@ const callFacts = [
   .service-card.trail-on .trail::before { background: rgba(255, 255, 255, .1); }
   .service-card.trail-on .trail::after {
     background: linear-gradient(180deg, #e2c25a, #c9a227); transform-origin: 50% 0; transform: scaleY(var(--trail-fill, 0));
-    transition: transform 260ms linear; box-shadow: 0 0 10px rgba(201, 162, 39, .55);
+    transition: transform 600ms cubic-bezier(.4, 0, .2, 1); box-shadow: 0 0 10px rgba(201, 162, 39, .55);
   }
   .trail-dot { position: relative; z-index: 1; background: var(--color-gold-500); color: var(--color-navy-950); }
   .service-card.trail-on .trail-dot { background: #1b3557; color: #8ea9cb; transition: background-color 300ms, color 300ms, box-shadow 300ms; }
-  .service-card.trail-on .trail-text { opacity: .42; transform: translateX(6px); transition: opacity 400ms, transform 400ms cubic-bezier(.22, 1, .36, 1); }
+  .service-card.trail-on .trail-text { opacity: .62; transform: translateX(4px); transition: opacity 400ms, transform 400ms cubic-bezier(.22, 1, .36, 1); }
   .service-card.trail-on .is-lit .trail-dot {
     background: var(--color-gold-500); color: var(--color-navy-950);
     box-shadow: 0 0 0 3px rgba(201, 162, 39, .25), 0 0 18px -2px rgba(201, 162, 39, .7);
@@ -278,9 +283,9 @@ const callFacts = [
   }
   .service-card.trail-on .is-lit .trail-text { opacity: 1; transform: none; }
   @keyframes trail-pop { 0% { transform: scale(.82); } 60% { transform: scale(1.14); } 100% { transform: scale(1); } }
-  /* Runs with reduced motion too: it only moves when the visitor scrolls. */
+  /* Runs with reduced motion too (the owner's PC has that setting on and he wants to see it). */
   @media (prefers-reduced-motion: reduce) {
-    .service-card.trail-on .trail::after { transition-duration: 260ms !important; }
+    .service-card.trail-on .trail::after { transition-duration: 600ms !important; }
     .service-card.trail-on .trail-dot { transition-duration: 300ms !important; }
     .service-card.trail-on .trail-text { transition-duration: 400ms !important; }
     .service-card.trail-on .is-lit .trail-dot { animation-duration: 420ms !important; }
