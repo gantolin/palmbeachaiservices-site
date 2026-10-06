@@ -92,7 +92,6 @@ export const mailHref = `mailto:${SITE.email}`;
 export const NAV = [
   { label: 'Services', href: '/services/' },
   { label: 'Results', href: '/results/' },
-  { label: 'Guides', href: '/guides/' },
   { label: 'About', href: '/about/' },
 ] as const;
 

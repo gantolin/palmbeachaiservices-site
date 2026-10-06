@@ -8,8 +8,7 @@ const BASE = process.env.BASE ?? 'http://localhost:4321';
 const OUT = process.env.OUT ?? tmpdir();
 const pages = [
   ['/', 'home'], ['/services/', 'services'], ['/services/ai-answering-service/', 'answering'],
-  ['/guides/', 'guides'],
-  ['/guides/how-to-rank-higher-on-google-maps/', 'guide'], ['/contact/', 'contact'],
+  ['/contact/', 'contact'],
 ];
 const b = await chromium.launch({ channel: 'chrome' });
 const p = await b.newPage({ viewport: { width: 1440, height: 1000 } });
@@ -20,9 +19,5 @@ for (const [path, name] of pages) {
   await p.waitForTimeout(2500);
   await p.screenshot({ path: join(OUT, `pbai-${name}.png`) });
 }
-await p.goto(BASE + '/guides/how-to-rank-higher-on-google-maps/', { waitUntil: 'load' });
-await p.evaluate(() => window.scrollTo(0, 1100));
-await p.waitForTimeout(1200);
-await p.screenshot({ path: join(OUT, 'pbai-guide-body.png') });
 console.log(errs.length ? errs.join('\n') : 'no console errors');
 await b.close();
