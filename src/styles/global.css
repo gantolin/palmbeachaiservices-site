@@ -12,9 +12,9 @@
    700 = accent navy on light backgrounds, 600/500 = mid navy (cards, borders, glows on dark).
    Gold stays the CTA/highlight accent. Cream/sand stay the light surfaces. Ink/mist are cool neutrals. */
 @theme {
-  --color-navy-950: #07182f;
-  --color-navy-925: #0a1f3b;
-  --color-navy-900: #0a2647;
+  --color-navy-950: #030e1d;
+  --color-navy-925: #05152a;
+  --color-navy-900: #061f3f;
   --color-navy-800: #062d59;
   --color-navy-700: #0e3d72;
   --color-navy-600: #1a4d88;
@@ -177,20 +177,20 @@
 
   .card {
     background: #fff; border: 1px solid var(--color-stone-300); border-radius: var(--radius-card);
-    box-shadow: 0 1px 2px rgba(7, 24, 47,.05), 0 12px 32px -18px rgba(7, 24, 47,.18);
+    box-shadow: 0 1px 2px rgba(3,14,29,.05), 0 12px 32px -18px rgba(3,14,29,.18);
   }
   .card-dark {
     background: linear-gradient(180deg, rgba(6,31,63,.7), rgba(5,21,42,.7));
     border: 1px solid rgba(230,233,240,.1); border-radius: var(--radius-card);
   }
   .lift { transition: transform 280ms var(--ease-out-soft), box-shadow 280ms var(--ease-out-soft), border-color 280ms; }
-  .lift:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(7, 24, 47,.05), 0 24px 48px -20px rgba(7, 24, 47,.28); }
+  .lift:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(3,14,29,.05), 0 24px 48px -20px rgba(3,14,29,.28); }
 
 
   .hairline-gold { height: 1px; background: linear-gradient(90deg, transparent, var(--color-gold-300), transparent); opacity: .5; }
 
   .glow-navy {
-    background: radial-gradient(120% 80% at 50% 110%, #1a4d88 0%, #062d59 30%, #0b2550 56%, #07182f 80%);
+    background: radial-gradient(120% 80% at 50% 110%, #1a4d88 0%, #062d59 30%, #05193a 56%, #030e1d 80%);
   }
   .grain::after {
     content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
