@@ -18,10 +18,10 @@ const html = `<!doctype html><html><head><style>
 *{box-sizing:border-box}
 body{margin:0;width:1200px;height:630px;overflow:hidden;font-family:Geist;color:#f4f1e8;
   background:radial-gradient(110% 90% at 85% 115%,#1a4d88 0%,#062d59 30%,#061f3f 55%,#030e1d 85%)}
-.wrap{position:absolute;inset:0;padding:56px 72px 60px;display:flex;flex-direction:column}
-.brand svg{height:96px;width:auto;display:block}
+.wrap{position:absolute;inset:0;padding:64px 76px 84px;display:flex;flex-direction:column}
+.brand svg{height:104px;width:auto;display:block}
 .kicker{margin-top:auto;font:600 27px/1.3 Inter;color:#e6cd83}
-h1{margin:14px 0 0;font-size:78px;line-height:1.08;letter-spacing:-.035em;font-weight:590;white-space:nowrap}
+h1{margin:auto 0 0;font-size:80px;line-height:1.08;letter-spacing:-.035em;font-weight:590;white-space:nowrap}
 mark{display:inline-block;line-height:1;background:linear-gradient(100deg,#c9a227,#e2c25a 55%,#c9a227);color:#030e1d;padding:.04em .14em .08em;margin:0 -.06em;border-radius:.16em}
 .art{position:absolute;right:86px;top:250px;width:262px;height:262px}
 .tile{position:absolute;inset:0;border-radius:22%;overflow:hidden;border:2px solid rgba(230,205,131,.5);
@@ -35,23 +35,7 @@ mark{display:inline-block;line-height:1;background:linear-gradient(100deg,#c9a22
 .line{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,transparent,#e6cd83,transparent);opacity:.7}
 </style></head><body><div class="wrap">
 <div class="brand">${logo}</div>
-<div class="kicker">SEO and AI marketing agency in Royal Palm Beach, FL</div>
-<h1>Get found on Google.<br>Get <mark>hours back</mark><br>every week.</h1>
-</div>
-<div class="art">
-  <div class="tile"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
-    <rect width="120" height="120" fill="#0b2a50"/>
-    <path d="M92 0C84 30 104 62 94 120H120V0Z" fill="#12467f"/>
-    <rect x="10" y="12" width="26" height="20" rx="4" fill="#12553f" opacity=".75"/>
-    <ellipse cx="58" cy="100" rx="20" ry="10" fill="#12553f" opacity=".75"/>
-    <g fill="none" stroke="rgba(255,255,255,.16)" stroke-width="3" stroke-linecap="round">
-      <path d="M-4 40H92"/><path d="M22 -4V124"/><path d="M70 -4V124"/><path d="M-4 86L92 78"/><path d="M46 40V84"/>
-    </g>
-    <path d="M-4 62H96" fill="none" stroke="#c9a227" stroke-width="3.5" stroke-linecap="round" opacity=".9"/>
-  </svg></div>
-  <span class="ring"></span>
-  <svg class="pin" viewBox="0 0 24 24"><path d="${pin}" fill="#ea4335"/><circle cx="12" cy="10" r="3.2" fill="#fff"/></svg>
-  <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>near me</span>
+<h1>Get found on Google.<br>Get <mark>hours back</mark> every week.</h1>
 </div>
 <div class="line"></div></body></html>`;
 

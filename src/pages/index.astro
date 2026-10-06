@@ -27,7 +27,7 @@ const callFacts = [
     <Aurora variant="soft" />
     <Sonar origin=".hero-art .tile" />
     <div class="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(230,205,131,.45),transparent)]" aria-hidden="true"></div>
-    <div class="container-x hero-pad relative pt-10 pb-16 sm:pt-14 sm:pb-24">
+    <div class="container-x hero-pad relative pt-6 pb-16 sm:pt-10 sm:pb-24">
       <div class="grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
         <div>
           <div class="hero-first">
@@ -174,7 +174,7 @@ const callFacts = [
 
   /* Phones: the headline, sentence and button own the first screen. The block is as tall as the space
      between the top bar (84px) and the bottom bar (69px), so the white service cards start below it. */
-  @media (max-width: 640px) { .hero-first { min-height: calc(100svh - 84px - 69px - 40px); display: flex; flex-direction: column; justify-content: center; padding-bottom: 20px; } }
+  @media (max-width: 640px) { .hero-first { min-height: calc(100svh - 84px - 69px - 40px); display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 20px; } }
 
   /* "hours back" gets a marker stroke: a gold bar swipes in behind the words, which turn navy on it.
      This replaces the gold shimmer text the other dark heroes use. */
@@ -205,11 +205,11 @@ const callFacts = [
   /* Centered on the big headline, not on the small line above it (--kick is that line's height). */
   .hero-art { position: absolute; right: 0; top: 50%; width: var(--art); margin-top: calc(var(--kick) / 2); transform: translateY(-50%); }
   .hero-head .hero-h1 { max-width: calc(100% - var(--art) - 14px); }
-  @media (max-width: 640px) { .hero-head .hero-h1 { font-size: min(2.4rem, 9.8vw); } }
+  @media (max-width: 640px) { .hero-head .hero-h1 { font-size: min(2.6rem, 10.25vw); } }
   @media (min-width: 641px) { .hero-head { --art: 140px; --kick: 42px; } }
   @media (min-width: 1024px) {
     .hero-head { --art: 112px; }
-    .hero-head .hero-h1 { font-size: clamp(2.2rem, 2.9vw, 2.65rem); }
+    .hero-head .hero-h1 { font-size: clamp(2.3rem, 3.05vw, 2.75rem); }
   }
   @media (min-width: 1280px) { .hero-head { --art: 140px; } }
   /* Very narrow or short phones: no room for the art without pushing the button off the first screen. */
