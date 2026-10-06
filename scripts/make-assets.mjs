@@ -66,28 +66,6 @@ await shot(plate(), pw, Math.round((pw * (LH + PAD_Y * 2)) / (LW + PAD_X * 2)), 
 await shot(markOnly(NAVY), Math.round((512 * mark.width) / mark.height), 512, 'brand/logo-mark-navy.png');
 await shot(icon(null, { rounded: false, scale: 0.62 }), 800, 800, 'brand/logo-square-800.png', NAVY); // social avatars
 
-// OG image (1200x630)
-await page.setViewportSize({ width: 1200, height: 630 });
-await page.setContent(`<!doctype html><html><head><style>
-@font-face{font-family:Geist;src:url(${font('@fontsource-variable/geist/files/geist-latin-wght-normal.woff2')}) format('woff2');font-weight:100 900}
-@font-face{font-family:Serif;font-style:italic;src:url(${font('@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2')}) format('woff2')}
-@font-face{font-family:JBMono;src:url(${font('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2')}) format('woff2');font-weight:100 900}
-*{box-sizing:border-box}body{margin:0;width:1200px;height:630px;overflow:hidden;font-family:Geist;color:#f4f1e8;
-background:radial-gradient(110% 90% at 85% 115%,#1a4d88 0%,${NAVY} 30%,#061f3f 55%,${NAVY_950} 85%)}
-.wrap{position:absolute;inset:0;padding:60px 72px;display:flex;flex-direction:column}
-.brand svg{height:92px;width:auto;display:block}
-h1{margin:auto 0 0;font-size:84px;line-height:1;letter-spacing:-.04em;font-weight:590;max-width:1000px}
-em{font-family:Serif;font-weight:400;color:#d9b84a;letter-spacing:-.01em;font-size:1.08em}
-.row{margin-top:34px;display:flex;gap:28px;font-family:JBMono;font-size:17px;letter-spacing:.08em;text-transform:uppercase;color:#e6cd83}
-.row span{display:flex;align-items:center;gap:10px}.row span:before{content:"";width:8px;height:8px;border-radius:50%;background:#c9a227}
-.line{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,#e6cd83,transparent);opacity:.7}
-</style></head><body><div class="wrap">
-<div class="brand">${lockup(WHITE).replace(/ width="[\d.]+" height="[\d.]+"/, '')}</div>
-<h1>Turn Google searches into <em>booked</em> jobs.</h1>
-<div class="row"><span>Websites</span><span>Google Business Profile</span><span>AI automation</span></div>
-</div><div class="line"></div></body></html>`);
-await page.evaluate(() => document.fonts.ready);
-await page.waitForTimeout(300);
-await page.screenshot({ path: `${root}public/og/default.png` });
+// The link preview image (public/og/default.png) is made by scripts/make-og.mjs.
 await browser.close();
 console.log('brand assets written', { LW, LH });
