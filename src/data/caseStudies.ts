@@ -6,6 +6,10 @@
 export interface CaseStudy {
   slug: string;
   client: string;
+  /** Client logo under /public/clients/, shown on the results page (used with the client's OK). */
+  logo?: { src: string; width: number; height: number };
+  /** Small print under the card. */
+  note?: string;
   trade: string;
   area: string;
   status: 'result' | 'in-progress';
@@ -28,6 +32,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'safe-haven-inspections',
     client: 'Safe Haven Inspections',
+    logo: { src: '/clients/safe-haven-inspections.png', width: 335, height: 160 },
     trade: 'Mold inspection',
     area: 'Martin, Palm Beach & Broward counties',
     status: 'result',
@@ -60,6 +65,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'heros-pavers',
     client: "Hero's Pavers",
+    logo: { src: '/clients/heros-pavers.png', width: 727, height: 160 },
     trade: 'Paver & hardscape contractor',
     area: 'Lake Worth Beach',
     status: 'result',
@@ -92,6 +98,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'next-level-air-conditioning',
     client: 'Next Level Air Conditioning',
+    logo: { src: '/clients/next-level-air-conditioning.png', width: 561, height: 160 },
     trade: 'HVAC contractor',
     area: 'Greenacres & Palm Beach County',
     status: 'in-progress',
@@ -119,6 +126,29 @@ export const caseStudies: CaseStudy[] = [
     ],
     services: ['Website', 'Local SEO', 'Google Business Profile'],
     proofMath: 'Before: 5 pages. After: 30+ pages including 15 city pages, live September 2026. Ranking numbers will be posted here, not projected.',
+    visual: 'launch-timeline',
+  },
+  {
+    slug: 'chick-fil-a-operator',
+    client: 'A Chick-fil-A operator',
+    trade: 'Restaurants',
+    area: 'Two locations',
+    status: 'in-progress',
+    headlineStat: '2 restaurants',
+    headlineLabel: 'AI consulting and professional development',
+    title: 'AI consulting and professional development for a two-restaurant operator.',
+    summary:
+      'We work with the operator of two Chick-fil-A restaurants on where AI can take work off the leadership team, and train the team to use it day to day.',
+    stats: [],
+    challenge: 'Running two busy restaurants leaves little time for the office work behind them.',
+    whatWeDid: [
+      'AI consulting with the operator',
+      'Professional development for the team on using AI at work',
+    ],
+    outcome: ['Ongoing engagement across both restaurants'],
+    services: ['AI Consulting', 'Professional Development'],
+    proofMath: '',
+    note: 'Independent work for a franchise operator. Not affiliated with or endorsed by Chick-fil-A, Inc.',
     visual: 'launch-timeline',
   },
 ];

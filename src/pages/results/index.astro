@@ -8,17 +8,18 @@ import { caseStudies } from '@/data/caseStudies';
 ---
 <Base
   title="Results for Home Service Businesses | Palm Beach AI Services"
-  description="Results for South Florida home service businesses: Safe Haven Inspections cut report time from 45 minutes to 10, and Hero's Pavers shows up in the Google map pack for more than 10 keywords."
+  description="Results for South Florida home service businesses: Safe Haven Inspections cut report time from 45 minutes to 10, and Hero's Pavers shows up in the Google map pack for more than 10 keywords. Plus AI consulting for a two-restaurant operator."
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Results', url: '/results/' }]}
 >
   <PageHero compact eyebrow="Results" title="Results from local home service businesses."
-    lede="Three companies we work with, and what changed for each one." />
+    lede="Businesses we work with, and what changed for each one." />
 
   <section class="surface-cream py-12 sm:py-16">
     <div class="container-x space-y-6">
       {caseStudies.map((c) => (
         <article class="card rounded-[20px] p-7 sm:p-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div class="lg:col-span-5">
+            {c.logo && <img src={c.logo.src} alt={`${c.client} logo`} width={c.logo.width} height={c.logo.height} class="mb-6 h-14 w-auto max-w-[240px] object-contain object-left" loading="lazy" decoding="async" />}
             <h2 class="h3 text-ink-900">{c.client}</h2>
             <p class="mt-1.5 text-[15px] text-ink-600">{c.trade} · {c.area}</p>
             <div class:list={['mt-6 font-display font-[600] tracking-[-0.035em] leading-none text-[clamp(2.4rem,5vw,3.4rem)]', c.status === 'result' ? 'text-navy-700' : 'text-gold-700']}>{c.headlineStat}</div>
@@ -38,14 +39,17 @@ import { caseStudies } from '@/data/caseStudies';
                 {c.outcome.map((o) => <li class="flex gap-2.5"><Icon name="check" size={17} stroke={2.4} class="mt-[3px] shrink-0 text-navy-700" />{o}</li>)}
               </ul>
             </div>
-            <dl class="sm:col-span-2 grid grid-cols-3 gap-4 border-t border-stone-300 pt-6">
-              {c.stats.map((s) => (
-                <div>
-                  <dt class="font-display text-[22px] font-[600] tracking-tight text-ink-900 leading-tight">{s.value}</dt>
-                  <dd class="mt-1 text-[13.5px] leading-snug text-ink-600">{s.label}</dd>
-                </div>
-              ))}
-            </dl>
+            {c.stats.length > 0 && (
+              <dl class="sm:col-span-2 grid grid-cols-3 gap-4 border-t border-stone-300 pt-6">
+                {c.stats.map((s) => (
+                  <div>
+                    <dt class="font-display text-[22px] font-[600] tracking-tight text-ink-900 leading-tight">{s.value}</dt>
+                    <dd class="mt-1 text-[13.5px] leading-snug text-ink-600">{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+            {c.note && <p class="sm:col-span-2 text-[13px] text-ink-600">{c.note}</p>}
           </div>
         </article>
       ))}
