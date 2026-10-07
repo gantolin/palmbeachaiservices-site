@@ -77,7 +77,7 @@ export const SITE = {
    * Calendly event for the free call. Embedded on the home page.
    * If the Calendly link slug changes (Profile > My Link), update it here.
    */
-  bookingUrl: 'https://calendly.com/antolinoaisolutions/palm-beach-teardown-call',
+  bookingUrl: 'https://calendly.com/gene-palmbeachaiservices/free-audit',
 
   /** Portrait for the founder block. TODO(Gene): drop a photo at /public/images/founder.jpg and set this. */
   founderPhoto: '' as string,
