@@ -3,8 +3,9 @@
 // Run: node scripts/make-assets.mjs   (needs local Chrome; set CHROME_PATH if not /usr/bin/google-chrome)
 import { chromium } from 'playwright-core';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const NAVY = '#062D59'; // sampled from the supplied logo PNG
 const NAVY_950 = '#030E1D';
 const WHITE = '#FFFFFF';
@@ -19,9 +20,26 @@ const LW = +(word.x + word.width - LX).toFixed(1);
 const LH = +(Math.max(mark.y + mark.height, word.y + word.height) - LY).toFixed(1);
 const markPath = (fill) => `<path fill="${fill}" fill-rule="evenodd" transform="translate(${(mark.x - LX).toFixed(1)} ${(mark.y - LY).toFixed(1)})" d="${mark.d}"/>`;
 const wordPath = (fill) => `<path fill="${fill}" fill-rule="evenodd" transform="translate(${(word.x - LX).toFixed(1)} ${(word.y - LY).toFixed(1)})" d="${word.d}"/>`;
-const title = '<title>Palm Beach AI Services</title>';
+const title = '<title>West Palm Beach SEO</title>';
 
 const lockup = (fill) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} ${LH}" width="${LW}" height="${LH}" role="img">${title}${markPath(fill)}${wordPath(fill)}</svg>`;
+// Header/footer lockup on navy: gold pin with a white sheen that sweeps across it, white wordmark.
+const lockupGold = () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${LW} ${LH}" width="${LW}" height="${LH}" role="img">${title}
+<defs>
+  <path id="pin" fill-rule="evenodd" transform="translate(${(mark.x - LX).toFixed(1)} ${(mark.y - LY).toFixed(1)})" d="${mark.d}"/>
+  <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e8cc6a"/><stop offset=".55" stop-color="#c9a227"/><stop offset="1" stop-color="#b58d1c"/>
+  </linearGradient>
+  <!-- The same white sheen the gold buttons have: it crosses the pin in the first part of a six second beat. -->
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="150" y2="70" gradientTransform="translate(-260 -120)">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-260 -120; 420 200; 420 200" keyTimes="0; 0.22; 1" dur="6s" begin="1.8s" repeatCount="indefinite"/>
+  </linearGradient>
+</defs>
+<use href="#pin" fill="url(#gold)"/>
+<use href="#pin" fill="url(#shine)"/>
+${wordPath(WHITE)}
+</svg>`;
 const markOnly = (fill) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${mark.width} ${mark.height}" width="${mark.width}" height="${mark.height}" role="img">${title}<path fill="${fill}" fill-rule="evenodd" d="${mark.d}"/></svg>`;
 // Navy plate like the original artwork (rounded rectangle, white art)
 const PAD_X = 110, PAD_Y = 80;
@@ -33,6 +51,7 @@ const icon = (size, { rounded = true, scale = 0.7 } = {}) => {
 };
 
 const files = {
+  'brand/logo-lockup-gold.svg': lockupGold(),
   'brand/logo-lockup-white.svg': lockup(WHITE), // for dark backgrounds
   'brand/logo-lockup-navy.svg': lockup(NAVY), // for light backgrounds
   'brand/logo-mark-white.svg': markOnly(WHITE),
@@ -44,7 +63,7 @@ for (const [p, svg] of Object.entries(files)) writeFileSync(`${root}public/${p}`
 writeFileSync(`${root}brand/lockup-geometry.json`, JSON.stringify({ width: LW, height: LH, ratio: +(LW / LH).toFixed(4) }, null, 2));
 
 const font = (p) => `data:font/woff2;base64,${readFileSync(`${root}node_modules/${p}`).toString('base64')}`;
-const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH ?? '/usr/bin/google-chrome', args: ['--no-sandbox'] });
+const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH ?? (process.platform === 'win32' ? 'C:/Program Files/Google/Chrome/Application/chrome.exe' : '/usr/bin/google-chrome'), args: ['--no-sandbox'] });
 const page = await browser.newPage();
 const shot = async (svg, w, h, path, bg = 'transparent') => {
   await page.setViewportSize({ width: w, height: h });

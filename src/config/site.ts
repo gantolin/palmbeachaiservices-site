@@ -7,8 +7,8 @@
 export const FOUNDER_FIRST_NAME = 'Gene';
 
 export const SITE = {
-  name: 'Palm Beach AI Services',
-  shortName: 'PBAI Services',
+  name: 'West Palm Beach SEO',
+  shortName: 'WPB SEO',
   domain: 'palmbeachaiservices.com',
   url: 'https://palmbeachaiservices.com',
   /** The brand line (chosen by Gene 2026-09-27). */

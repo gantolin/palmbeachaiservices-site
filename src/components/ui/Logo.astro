@@ -1,7 +1,7 @@
 ---
 /**
- * Official Palm Beach AI Services logo (pin + palm mark with the serif wordmark), vectorized from
- * Gene's supplied PNG by scripts/trace-logo.py and written to /public/brand by scripts/make-assets.mjs.
+ * West Palm Beach SEO logo: the pin + palm mark (vectorized from Gene's original PNG by scripts/trace-logo.py)
+ * with the wordmark set in Fraunces by scripts/set-wordmark.py, written to /public/brand by scripts/make-assets.mjs.
  * tone="dark"  -> white wordmark with a gold pin that has a sweeping shine, for dark/navy backgrounds (header, footer)
  * tone="light" -> navy logo for light backgrounds
  */
@@ -12,4 +12,4 @@ const color = tone === 'dark' ? 'white' : 'navy';
 const src = compact ? `/brand/logo-mark-${color}.svg` : tone === 'dark' ? '/brand/logo-lockup-gold.svg' : `/brand/logo-lockup-${color}.svg`;
 const width = compact ? Math.round(height * (319.7 / 416)) : Math.round(height * geo.ratio);
 ---
-<img src={src} width={width} height={height} alt="Palm Beach AI Services" class={`block shrink-0 select-none ${cls}`} decoding="async" draggable="false" />
+<img src={src} width={width} height={height} alt="West Palm Beach SEO" class={`block shrink-0 select-none ${cls}`} decoding="async" draggable="false" />
