@@ -1,5 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
+import Founder from '@/components/sections/Founder.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
 import Aurora from '@/components/ui/Aurora.astro';
@@ -34,7 +35,7 @@ const values = [
         </div>
         <div class="about-art fade-in" style="--d:350ms"><HeroPin /></div>
       </div>
-      <p class="lede mt-5 fade-in" style="--d:320ms">{SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google. We do the work ourselves, so the people you talk to are the people building it.</p>
+      <p class="lede mt-5 fade-in" style="--d:320ms">{SITE.name} helps contractors, restaurants, medical offices, and other local businesses in Palm Beach County get found on Google. The person you talk to is the person doing the work.</p>
     </div>
   </section>
 
@@ -77,6 +78,7 @@ const values = [
       </div>
     </div>
   </section>
+  <Founder />
   <FinalCTA />
 </Base>
 

@@ -8,6 +8,7 @@ import BookingEmbed from '@/components/islands/BookingEmbed.astro';
 import { SITE, telHref, smsHref } from '@/config/site';
 import { words } from '@/lib/text';
 import FAQ from '@/components/sections/FAQ.astro';
+import Founder from '@/components/sections/Founder.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import { serviceGroups as groups } from '@/data/offer';
 
@@ -150,7 +151,8 @@ const callFacts = [
     </div>
   </section>
 
-  <FAQ faqs={faqs} title="Questions about SEO in West Palm Beach" surface="surface-sand" />
+  <Founder surface="surface-sand" />
+  <FAQ faqs={faqs} title="Questions about SEO in West Palm Beach" surface="surface-cream" />
   <FinalCTA />
 </Base>
 
