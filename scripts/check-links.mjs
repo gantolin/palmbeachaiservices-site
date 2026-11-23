@@ -4,7 +4,7 @@
 import { chromium, devices } from 'playwright-core';
 import { SITE } from './site-facts.mjs';
 
-const BASE = process.env.BASE ?? 'https://palmbeachaiservices.com';
+const BASE = process.env.BASE ?? 'https://westpalmbeachseo.com';
 const PAGES = ['/', '/services/', '/results/', '/about/', '/privacy/', '/terms/'];
 const OLD_URLS = ['/book/', '/contact/', '/free-google-check/', '/free-teardown/'];
 // A real phone profile: Calendly serves a blank frame to a bare narrow viewport.

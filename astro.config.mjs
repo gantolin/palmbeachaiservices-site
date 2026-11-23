@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://palmbeachaiservices.com',
+  site: 'https://westpalmbeachseo.com',
   output: 'static',
   // Astro 7's HTML compression drops the space where a line of text meets an inline tag on the next line
   // ("hours.One simple plan"). Keep whitespace as written; GitHub Pages gzips the output anyway.

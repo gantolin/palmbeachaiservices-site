@@ -9,8 +9,8 @@ export const FOUNDER_FIRST_NAME = 'Gene';
 export const SITE = {
   name: 'West Palm Beach SEO',
   shortName: 'WPB SEO',
-  domain: 'palmbeachaiservices.com',
-  url: 'https://palmbeachaiservices.com',
+  domain: 'westpalmbeachseo.com',
+  url: 'https://westpalmbeachseo.com',
   /** The brand line (chosen by Gene 2026-09-27). */
   tagline: 'Get seen on Google. Get your time back with AI.',
   /** One-sentence positioning, used under the tagline. */
