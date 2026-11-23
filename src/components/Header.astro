@@ -13,13 +13,13 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
 
     <nav aria-label="Main" class="hidden lg:flex items-center gap-1">
       {NAV.map((n) => (
-        <a href={n.href} class:list={['px-3.5 py-2 rounded-full text-[14.5px] font-medium transition-colors', isActive(n.href) ? 'text-white bg-white/8' : 'text-mist-200/80 hover:text-white hover:bg-white/5']} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
+        <a href={n.href} class:list={['px-3.5 py-2 rounded-full text-[14.5px] font-medium whitespace-nowrap transition-colors', isActive(n.href) ? 'text-white bg-white/8' : 'text-mist-200/80 hover:text-white hover:bg-white/5']} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
       ))}
     </nav>
 
     <div class="hidden lg:flex items-center gap-2">
-      <a href={telHref} class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-[19px] font-semibold tracking-tight text-white hover:bg-white/5"><Icon name="phone" size={19} /> {SITE.phone}</a>
-      <a href={smsHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5"><Icon name="message" size={16} /> Text us</a>
+      <a href={telHref} class="inline-flex items-center gap-2 px-3 py-2 rounded-full text-[19px] font-semibold tracking-tight whitespace-nowrap text-white hover:bg-white/5"><Icon name="phone" size={19} /> {SITE.phone}</a>
+      <a href={smsHref} class="btn btn-sm text-mist-200 hover:text-white hover:bg-white/5 hidden xl:inline-flex"><Icon name="message" size={16} /> Text us</a>
       <a href={CTA.primary.href} class="btn btn-primary btn-sm btn-shine" data-magnetic>Book a free audit <Icon name="arrow-right" size={16} /></a>
     </div>
 

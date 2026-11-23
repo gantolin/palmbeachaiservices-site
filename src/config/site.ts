@@ -93,6 +93,7 @@ export const NAV = [
   { label: 'Services', href: '/services/' },
   { label: 'Results', href: '/results/' },
   { label: 'About', href: '/about/' },
+  { label: 'Checklist', href: '/google-business-profile-checklist/' },
 ] as const;
 
 /** The one ask everywhere is booking a call. The calendar lives on the home page. */

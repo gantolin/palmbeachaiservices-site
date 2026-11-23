@@ -1,0 +1,119 @@
+---
+/**
+ * The free checklist: a second way in for owners who are not ready to book the audit.
+ * Every item is something an owner can check in their own profile. No ranking promises.
+ */
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { CTA } from '@/config/site';
+
+const path = '/google-business-profile-checklist/';
+const groups = [
+  {
+    title: 'The basics',
+    items: [
+      'The business name is your real name, exactly as it is on your sign and paperwork. No added towns or services.',
+      'The primary category is the main thing you sell. Look at the three businesses Google shows first for your main search and see which category they use.',
+      'Every other category that truly fits your business is added.',
+      'The address, or the service area if you go to customers, is correct.',
+      'The phone number is the same one that is on your website.',
+      'Regular hours are right, and holiday hours are set before each holiday.',
+      'The website link goes to a page that works and matches what the profile says you do.',
+      'The opening date is filled in.',
+    ],
+  },
+  {
+    title: 'What you do',
+    items: [
+      'Every service you offer is listed, each with a short description in your own words.',
+      'The business description says what you do and where, in plain language.',
+      'Every attribute that applies to you is ticked.',
+      'A booking or appointment link is added if you take bookings online.',
+      'Your social profiles are linked.',
+    ],
+  },
+  {
+    title: 'Photos',
+    items: [
+      'The logo and the cover photo are your own, not stock photos.',
+      'There are real photos of your work, your team, and your truck or storefront.',
+      'New photos go up every month.',
+    ],
+  },
+  {
+    title: 'Reviews',
+    items: [
+      'You have the direct review link from your profile saved where you can send it fast.',
+      'Every customer gets asked, not only the ones you think were happy. Google does not allow picking who gets asked.',
+      'Nobody is offered anything in exchange for a review.',
+      'Every review has a reply.',
+    ],
+  },
+  {
+    title: 'Keeping it active',
+    items: [
+      'There is a new post at least once a week.',
+      'Each post has a real photo and a button that goes to the matching page on your website.',
+      'Post text has no phone numbers in it. Google rejects those.',
+    ],
+  },
+  {
+    title: 'Protecting it',
+    items: [
+      'Email notifications are on for the Google account that owns the profile, so you see suggested edits.',
+      'You searched your business name on Google Maps and found no second listing for it.',
+      'Your name, address, and phone number are written the same way on your website and on every other listing.',
+    ],
+  },
+];
+const total = groups.reduce((n, g) => n + g.items.length, 0);
+const crumbs = [{ name: 'Home', url: '/' }, { name: 'Google Business Profile Checklist', url: path }];
+---
+<Base
+  title="Google Business Profile Checklist | West Palm Beach SEO"
+  description={`A free Google Business Profile checklist for local businesses: ${total} things to check in your own profile, from categories and services to reviews and posts.`}
+  breadcrumbs={crumbs}
+>
+  <PageHero eyebrow="Free checklist" title="Google Business Profile Checklist">
+    <p class="lede fade-in mt-7" style="--d:320ms">This Google Business Profile checklist is the list we go through when we look at a local business on Google. There are {total} things on it, and you can check every one of them yourself.</p>
+    <p class="lede fade-in mt-3" style="--d:320ms">Open your profile, go down the list, and tick what is done.</p>
+    <div class="no-print mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
+      <button type="button" class="btn btn-primary btn-lg btn-shine" id="print-list">Print or save as PDF<Icon name="arrow-right" size={18} /></button>
+      <a href={CTA.primary.href} class="text-[17px] font-semibold text-white underline">Or have us go through it with you</a>
+    </div>
+  </PageHero>
+
+  <section class="surface-cream py-12 sm:py-16">
+    <div class="container-x max-w-3xl">
+      {groups.map((g) => (
+        <div class="check-group">
+          <h2 class="h3 text-ink-900">{g.title}</h2>
+          <ul class="mt-4 grid gap-3">
+            {g.items.map((t) => (
+              <li><label class="check-row"><input type="checkbox" /><span>{t}</span></label></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <p class="mt-12 text-[14px] leading-relaxed text-ink-600/80">This list covers what you control in your own profile. Google decides the rankings, and a finished checklist is not a promise of a position.</p>
+    </div>
+  </section>
+
+  <div class="no-print"><FinalCTA title="Want us to go through it with you?" text="Book the free 30-minute audit. We look at your Google Business Profile and your website before the call and tell you what to fix first." /></div>
+</Base>
+
+<script>
+  document.getElementById('print-list')?.addEventListener('click', () => window.print());
+</script>
+
+<style>
+  .check-group + .check-group { margin-top: 44px; }
+  .check-row { display: flex; align-items: flex-start; gap: 14px; font-size: 17px; line-height: 1.5; color: var(--color-ink-900); cursor: pointer; }
+  .check-row input { flex: none; width: 22px; height: 22px; margin-top: 2px; accent-color: var(--color-navy-700); }
+  @media print {
+    :global(header), :global(footer), :global(nav), :global(.mobile-bar), .no-print { display: none !important; }
+    .check-group { break-inside: avoid; }
+  }
+</style>
