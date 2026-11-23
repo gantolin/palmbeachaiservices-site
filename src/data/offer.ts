@@ -1,5 +1,5 @@
 /**
- * Everything we do, in the two groups an owner cares about. The home page shows name + text;
+ * Everything we do to get a local business found on Google. The home page shows name + text;
  * the services page adds the detail line.
  */
 export const serviceGroups = [
@@ -11,16 +11,6 @@ export const serviceGroups = [
       { name: 'Optimized Google Business Profile', icon: 'pin', text: 'We set up and manage your profile so you show up on Google Maps.', detail: 'Categories, services, photos, and weekly posts, kept up for you so the map listing keeps working.' },
       { name: 'Paid ads', icon: 'zap', text: 'We set up and run your paid ads so new customers find you right away.', detail: 'We build the campaigns, watch the spend, and show you what each lead cost.' },
       { name: 'Google review management', icon: 'star', text: 'Every customer gets a review request by text.', detail: 'Customers get a direct link while the visit is still fresh, so reviews come in without you having to ask.' },
-    ],
-  },
-  {
-    title: 'Get hours back with AI',
-    intro: 'Hand off the office work that eats your nights and weekends.',
-    items: [
-      { name: 'Call answering', icon: 'phone', text: 'Calls get answered and missed calls get a text back while you are busy with a customer.', detail: 'The caller gets a reply in seconds instead of calling the next business on the list.' },
-      { name: 'Lead follow-up', icon: 'message', text: 'New leads and open quotes get a text or an email until they book or say no.', detail: 'Every estimate you send gets chased, even on your busiest week.' },
-      { name: 'Reports and paperwork', icon: 'spark', text: 'AI drafts your reports, estimates, and invoices.', detail: 'You check it and send it. The typing is already done.' },
-      { name: 'Lead dashboard', icon: 'chart', text: 'Every lead and customer in one place.', detail: 'See where each lead came from and who still needs a call back.' },
     ],
   },
 ] as const;

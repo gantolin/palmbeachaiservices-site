@@ -1,0 +1,74 @@
+---
+/**
+ * Targets "seo boca raton" (170 searches a month in Palm Beach County, DataForSEO Google Ads, 2026-11-23),
+ * with "seo company boca raton" and "seo services boca raton" as secondaries.
+ * City facts: U.S. Census Bureau ACS 2024 5-year estimates and the drive distance pulled 2026-09-28.
+ */
+import LocalPage from '@/components/sections/LocalPage.astro';
+
+const faqs = [
+  { q: 'Do you work with businesses in West Boca?', a: 'Yes. Boca West, Century Village, and Sandalfoot Cove have Boca Raton addresses but sit outside the city limits. People there still search for Boca Raton businesses, so we set up your Google Business Profile and your website to cover them.' },
+  { q: 'How much does SEO cost in Boca Raton?', a: 'It depends on what your business needs and where your website and Google Business Profile start today. We go over pricing on the free audit call.' },
+  { q: 'Your office is in Royal Palm Beach. Can you work with a Boca Raton business?', a: 'Yes. Our office is at 172 Roycourt Circle in Royal Palm Beach, about 35 miles from Boca Raton. The audit is by phone or video, so the distance does not get in the way.' },
+  { q: 'How long does SEO take in Boca Raton?', a: 'It depends on where your profile and website start and how many businesses are ahead of you for the searches you want. We look at both before the audit call and tell you what we see.' },
+  { q: 'Do I have to sign a contract?', a: 'No. There is no contract, and the audit is free.' },
+];
+---
+<LocalPage
+  path="/seo-boca-raton/"
+  title="SEO in Boca Raton, FL | Free Audit | West Palm Beach SEO"
+  description="SEO in Boca Raton for local businesses: a website with a page for each service, a managed Google Business Profile, and Google reviews. Book a free audit."
+  h1="SEO in Boca Raton, FL"
+  town="Boca Raton"
+  serviceType="Local SEO"
+  intro={[
+    'SEO in Boca Raton comes down to two things: your Google Business Profile and a website with a page for each service you sell.',
+    'West Palm Beach SEO works on both for local businesses in Boca Raton, from east of I-95 out past the Turnpike.',
+  ]}
+  summary={[
+    'What we do: build or fix your website, manage your Google Business Profile, and send every customer a review request by text.',
+    'Who it is for: contractors, restaurants, medical offices, and other local businesses with customers in Boca Raton.',
+    'How to start: a free 30-minute audit by phone or video. We look at your website and your profile before the call.',
+  ]}
+  sections={[
+    {
+      h2: 'A Boca Raton address is not always in Boca Raton',
+      paragraphs: [
+        'Boca Raton has about 100,234 residents, which makes it the second largest city in Palm Beach County. The name reaches further than the city does. Boca Raton addresses cover 16 ZIP codes, and places like Boca West, Century Village, and Sandalfoot Cove are in the unincorporated county, west of the city limits.',
+        'That matters for local SEO. Someone in West Boca types "Boca Raton" into Google the same way someone downtown does. Your Google Business Profile service area and the pages on your website should cover where your customers live, not where the city line falls.',
+      ],
+    },
+    {
+      h2: 'Condo buildings change who is searching',
+      paragraphs: [
+        'About 37 percent of Boca Raton homes are in buildings with 20 or more units. The county figure is 19 percent. If you serve homes, a lot of the people looking you up are condo boards and building managers, not only homeowners.',
+        'They compare reviews before they call. So we work on reviews along with the website: every customer gets a text with a direct link to leave one.',
+      ],
+    },
+    {
+      h2: 'What we do for a Boca Raton business',
+      bullets: [
+        'A website with a page for every service and every town you cover, built to load fast on a phone.',
+        'A Google Business Profile with the right categories, services, photos, and weekly posts.',
+        'A review request by text to every customer.',
+        'Paid ads when you need new customers to find you right away.',
+      ],
+    },
+    {
+      h2: 'How the free audit works',
+      paragraphs: [
+        'Pick a time on the calendar. Before the call we look at your website and your Google Business Profile. On the call we tell you what to fix first. It takes 30 minutes.',
+      ],
+    },
+  ]}
+  areasTitle="Parts of Boca Raton we cover"
+  areas={['Royal Palm Yacht & Country Club', 'Old Floresta', 'Camino Gardens', 'Woodfield Country Club', 'Boca West', 'Boca Pointe', 'Century Village', 'Sandalfoot Cove', 'Boca Falls']}
+  sourceNote="Population and housing figures: U.S. Census Bureau, American Community Survey 2024 5-year estimates. Distance is the drive from our office to Boca Raton with no traffic."
+  links={[
+    { href: '/', label: 'West Palm Beach SEO' },
+    { href: '/services/', label: 'SEO services' },
+    { href: '/web-design-west-palm-beach/', label: 'Web design in West Palm Beach' },
+  ]}
+  faqs={faqs}
+  faqTitle="Questions about SEO in Boca Raton"
+/>

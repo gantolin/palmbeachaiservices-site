@@ -7,12 +7,12 @@ import Icon from '@/components/ui/Icon.astro';
 import { serviceGroups } from '@/data/offer';
 ---
 <Base
-  title="Local SEO, Google Business Profile & AI Automation Services"
-  description="Websites, Google Business Profile, Google reviews, call answering, lead follow-up, and AI paperwork for local businesses in Palm Beach County."
+  title="SEO Services: Websites, Google Business Profile, Reviews"
+  description="SEO services for local businesses in Palm Beach County: an SEO optimized website, Google Business Profile management, paid ads, and Google reviews."
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Services', url: '/services/' }]}
 >
   <PageHero compact eyebrow="Services" title="What we do for local businesses."
-    lede="Two things: get you found on Google, and get you hours back with AI." />
+    lede="One thing: get you found on Google when someone nearby searches for what you do." />
 
   <section class="surface-cream py-12 sm:py-16">
     <div class="container-x space-y-14">
@@ -32,6 +32,16 @@ import { serviceGroups } from '@/data/offer';
           </div>
         </div>
       ))}
+    </div>
+  </section>
+
+  <section class="surface-sand py-12 sm:py-14">
+    <div class="container-x">
+      <h2 class="h3 text-ink-900">Pages by service and town</h2>
+      <ul class="mt-4 grid gap-2 text-[17px]">
+        <li><a class="text-navy-700 font-semibold underline" href="/web-design-west-palm-beach/">Web design in West Palm Beach</a></li>
+        <li><a class="text-navy-700 font-semibold underline" href="/seo-boca-raton/">SEO in Boca Raton</a></li>
+      </ul>
     </div>
   </section>
 

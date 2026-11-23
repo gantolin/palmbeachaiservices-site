@@ -1,0 +1,91 @@
+---
+/**
+ * One service-in-a-town landing page. Each page passes its own copy: nothing here is shared town text,
+ * so two pages can never read as the same page with the town swapped.
+ */
+import Base from '@/layouts/Base.astro';
+import PageHero from '@/components/sections/PageHero.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import FinalCTA from '@/components/sections/FinalCTA.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { SITE, CTA, telHref } from '@/config/site';
+
+interface Section { h2: string; paragraphs?: string[]; bullets?: string[] }
+interface Props {
+  path: string;
+  title: string;
+  description: string;
+  h1: string;
+  /** Two or three sentences. The first one starts with the search phrase. */
+  intro: string[];
+  /** The short version: three lines a reader can take in at a glance. */
+  summary: string[];
+  sections: Section[];
+  areasTitle: string;
+  areas: string[];
+  sourceNote: string;
+  links: { href: string; label: string }[];
+  faqs: { q: string; a: string }[];
+  faqTitle: string;
+  serviceType: string;
+  town: string;
+}
+const p = Astro.props;
+const crumbs = [{ name: 'Home', url: '/' }, { name: p.h1, url: p.path }];
+const pageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: p.h1,
+  serviceType: p.serviceType,
+  url: `${SITE.url}${p.path}`,
+  provider: { '@id': `${SITE.url}/#business` },
+  areaServed: { '@type': 'City', name: `${p.town}, FL` },
+};
+---
+<Base title={p.title} description={p.description} faqs={p.faqs} breadcrumbs={crumbs} schema={[pageLd]}>
+  <PageHero eyebrow={SITE.name} title={p.h1}>
+    {p.intro.map((t, i) => <p class:list={['lede fade-in', i === 0 ? 'mt-7' : 'mt-3']} style="--d:320ms">{t}</p>)}
+    <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:420ms">
+      <a href={CTA.primary.href} class="btn btn-primary btn-lg btn-shine">{CTA.primary.label}<Icon name="arrow-right" size={18} /></a>
+      <a href={telHref} class="text-[17px] font-semibold text-white inline-flex items-center gap-2"><Icon name="phone" size={17} class="text-gold-300" />{SITE.phone}</a>
+    </div>
+  </PageHero>
+
+  <section class="surface-cream py-12 sm:py-16">
+    <div class="container-x max-w-3xl">
+      <h2 class="h3 text-ink-900">The short version</h2>
+      <ul class="local-list mt-4 text-[17px] leading-relaxed text-ink-900/90">
+        {p.summary.map((t) => <li>{t}</li>)}
+      </ul>
+
+      {p.sections.map((s) => (
+        <div class="mt-12">
+          <h2 class="h3 text-ink-900">{s.h2}</h2>
+          {s.paragraphs?.map((t) => <p class="mt-3 text-[17px] leading-relaxed text-ink-600">{t}</p>)}
+          {s.bullets && <ul class="local-list mt-4 text-[17px] leading-relaxed text-ink-600">{s.bullets.map((t) => <li>{t}</li>)}</ul>}
+        </div>
+      ))}
+
+      <div class="mt-12">
+        <h2 class="h3 text-ink-900">{p.areasTitle}</h2>
+        <p class="mt-3 text-[17px] leading-relaxed text-ink-600">{p.areas.join(', ')}.</p>
+        <p class="mt-4 text-[14px] leading-relaxed text-ink-600/80">{p.sourceNote}</p>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="h3 text-ink-900">Related pages</h2>
+        <ul class="mt-4 grid gap-2 text-[17px]">
+          {p.links.map((l) => <li><a class="text-navy-700 font-semibold underline" href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <FAQ faqs={p.faqs} title={p.faqTitle} surface="surface-sand" />
+  <FinalCTA />
+</Base>
+
+<style>
+  .local-list { list-style: disc; padding-left: 1.2em; display: grid; gap: .5em; }
+  .local-list li::marker { color: var(--color-gold-500); }
+</style>

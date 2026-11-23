@@ -1,0 +1,72 @@
+---
+/**
+ * Targets "web design west palm beach" (110 searches a month in Palm Beach County, DataForSEO Google Ads,
+ * 2026-11-23), with "website design west palm beach" as the secondary.
+ * City facts: U.S. Census Bureau ACS 2024 5-year estimates.
+ */
+import LocalPage from '@/components/sections/LocalPage.astro';
+
+const faqs = [
+  { q: 'How much does a website cost in West Palm Beach?', a: 'It depends on how many services and towns the site needs to cover. We go over pricing on the free audit call.' },
+  { q: 'Can you fix my current website instead of building a new one?', a: 'Yes. We build new websites and we fix existing ones. On the audit we look at your current site and tell you which makes more sense.' },
+  { q: 'Will my West Palm Beach website show up on Google?', a: 'That is what it is built for. Each service and each town gets its own page, with the words people search in the title and the heading. Google decides the rankings, so we do not promise a position.' },
+  { q: 'Do you only build websites for West Palm Beach businesses?', a: 'No. We work with local businesses across Palm Beach County, from Jupiter to Boca Raton.' },
+  { q: 'What do I need for the free audit?', a: 'Your business name and city. A link to your current website helps if you have one.' },
+];
+---
+<LocalPage
+  path="/web-design-west-palm-beach/"
+  title="Web Design in West Palm Beach, FL | West Palm Beach SEO"
+  description="Web design in West Palm Beach for local businesses: a page for every service and town, fast on a phone, built to show up on Google. Book a free audit."
+  h1="Web Design in West Palm Beach, FL"
+  town="West Palm Beach"
+  serviceType="Website design"
+  intro={[
+    'Web design in West Palm Beach has one job for a local business: get someone nearby to find you on Google and call.',
+    'West Palm Beach SEO builds and fixes websites with a page for every service and every town you cover.',
+  ]}
+  summary={[
+    'What you get: a website with its own page for each service and each town, fast on a phone, with the call button easy to reach.',
+    'Who it is for: contractors, restaurants, medical offices, and other local businesses with customers in West Palm Beach.',
+    'How to start: a free 30-minute audit by phone or video. We look at your current website before the call.',
+  ]}
+  sections={[
+    {
+      h2: 'A page for every service and every town',
+      paragraphs: [
+        'Google ranks pages, not whole websites. A single Services page that lists ten things gives Google nothing specific to show when someone searches for one of them.',
+        'So each service you sell gets its own page, and so does each town you work in. The page title and the main heading say the service and the town in plain words.',
+      ],
+    },
+    {
+      h2: 'Built for a phone first',
+      paragraphs: [
+        'Most local searches happen on a phone, usually by someone who wants to call. We build the phone layout first: the heading, a short answer, and the call button before anything else.',
+      ],
+    },
+    {
+      h2: 'Half of West Palm Beach rents',
+      paragraphs: [
+        'West Palm Beach has about 122,290 residents and is the largest city in Palm Beach County. Only about 51 percent of homes are owner-occupied, against 70 percent for the county, and about 31 percent are in buildings with 20 or more units.',
+        'If your business serves homes, that changes who reads your website. A lot of your visitors are landlords, property managers, and condo associations. The site should speak to them as clearly as it speaks to a homeowner.',
+        'The mailing address also reaches past the city. Westgate, Haverhill, and parts of The Acreage have West Palm Beach addresses without being inside the city, and people there search for West Palm Beach businesses. We plan your pages around where your customers live.',
+      ],
+    },
+    {
+      h2: 'The website and the Google Business Profile work together',
+      paragraphs: [
+        'Your website backs up your Google Business Profile. The name, address, and phone number match on both, and the profile links to the page that fits each service.',
+      ],
+    },
+  ]}
+  areasTitle="Parts of West Palm Beach we cover"
+  areas={['Downtown', 'El Cid', 'Flamingo Park', 'Grandview Heights', 'Old Northwood', 'Northwood Shores', 'South End', 'Villages of Palm Beach Lakes', 'Bear Lakes', 'Ibis', 'Baywinds', 'Andros Isle']}
+  sourceNote="Population and housing figures: U.S. Census Bureau, American Community Survey 2024 5-year estimates."
+  links={[
+    { href: '/', label: 'West Palm Beach SEO' },
+    { href: '/services/', label: 'SEO services' },
+    { href: '/seo-boca-raton/', label: 'SEO in Boca Raton' },
+  ]}
+  faqs={faqs}
+  faqTitle="Questions about web design in West Palm Beach"
+/>

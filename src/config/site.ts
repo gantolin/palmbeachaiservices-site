@@ -12,11 +12,11 @@ export const SITE = {
   domain: 'westpalmbeachseo.com',
   url: 'https://westpalmbeachseo.com',
   /** The brand line (chosen by Gene 2026-09-27). */
-  tagline: 'Get seen on Google. Get your time back with AI.',
+  tagline: 'Get found on Google.',
   /** One-sentence positioning, used under the tagline. */
-  positioning: 'We get local businesses seen on Google, then use AI to save them time and make them money.',
+  positioning: 'We get local businesses found on Google.',
   description:
-    'Get seen on Google. Get your time back with AI. Local SEO, Google Maps, websites, and AI automation for local businesses in Palm Beach County. No contract. Based in Royal Palm Beach, FL.',
+    'Local SEO, Google Business Profile, websites, and Google reviews for local businesses in West Palm Beach and across Palm Beach County. No contract.',
 
   founder: FOUNDER_FIRST_NAME,
 

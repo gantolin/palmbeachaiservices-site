@@ -11,7 +11,7 @@ import FAQ from '@/components/sections/FAQ.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import { serviceGroups as groups } from '@/data/offer';
 
-const headline = 'Get found on Google. Get *hours back* every week.';
+const headline = 'Get found on Google by customers *near you*.';
 /** The H1. It is the business name and the phrase people search, so it stays exactly this. */
 const kicker = 'West Palm Beach SEO';
 const towns = SITE.serviceAreas.filter((t) => t !== 'West Palm Beach');
@@ -30,8 +30,8 @@ const callFacts = [
 ];
 ---
 <Base
-  title="West Palm Beach SEO | Free Website and Google Profile Audit"
-  description="West Palm Beach SEO helps local businesses in Palm Beach County get found on Google with a website, a Google Business Profile, and reviews. Book a free audit."
+  title="West Palm Beach SEO | SEO Services in West Palm Beach, FL"
+  description="West Palm Beach SEO provides SEO services in West Palm Beach and across Palm Beach County: websites, Google Business Profile, and reviews. Book a free audit."
   faqs={faqs}
 >
   <section class="relative overflow-hidden surface-dark grain -mt-px" id="services">
@@ -49,7 +49,7 @@ const callFacts = [
             <p class="h1 hero-h1 block mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
             <div class="hero-art fade-in" style="--d:350ms"><HeroPin /></div>
           </div>
-          <p class="hero-say mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">West Palm Beach SEO builds your website, manages your Google Business Profile, and uses AI to automate the everyday work that eats your time.</p>
+          <p class="hero-say mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">West Palm Beach SEO builds your website, manages your Google Business Profile, and gets you more Google reviews, so you show up when someone nearby searches for what you do.</p>
           <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For contractors, restaurants, medical offices, and every other local business in Palm Beach County.</p>
 
           <div class="hero-cta mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
@@ -124,7 +124,7 @@ const callFacts = [
   <section class="surface-cream py-12 sm:py-16">
     <div class="container-x grid gap-10 sm:grid-cols-2 lg:gap-x-16">
       <div>
-        <h2 class="h3 text-ink-900">Local SEO that covers the map and the website</h2>
+        <h2 class="h3 text-ink-900">SEO services in West Palm Beach</h2>
         <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">When someone nearby searches for what you do, Google shows a map with a few businesses and a list of websites under it. We work on both.</p>
         <ul class="home-list mt-4 text-[16.5px] leading-relaxed text-ink-600">
           <li>A website with a page for every service and every town you cover.</li>
@@ -133,17 +133,14 @@ const callFacts = [
         </ul>
       </div>
       <div>
-        <h2 class="h3 text-ink-900">AI that handles the office work</h2>
-        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">The second half of the job is getting your nights and weekends back.</p>
-        <ul class="home-list mt-4 text-[16.5px] leading-relaxed text-ink-600">
-          <li>Missed calls get a text back while you are busy with a customer.</li>
-          <li>New leads and open quotes get a follow-up until they book or say no.</li>
-          <li>Reports, estimates, and invoices are drafted for you to check and send.</li>
-        </ul>
+        <h2 class="h3 text-ink-900">Web design built to show up on Google</h2>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">We build or fix your website so each service and each town you cover has its own page. It loads fast on a phone and gets the visitor to call.</p>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600"><a class="text-navy-700 font-semibold underline" href="/web-design-west-palm-beach/">Web design in West Palm Beach</a></p>
       </div>
       <div>
         <h2 class="h3 text-ink-900">Towns we work in</h2>
         <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">We work with local businesses in {areaLine}.</p>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600"><a class="text-navy-700 font-semibold underline" href="/seo-boca-raton/">SEO in Boca Raton</a></p>
       </div>
       <div>
         <h2 class="h3 text-ink-900">What happens on the free audit</h2>
