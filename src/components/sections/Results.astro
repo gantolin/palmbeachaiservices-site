@@ -1,0 +1,56 @@
+---
+/**
+ * Client results with the dates next to every number. Names are left off on purpose (Gene's rule:
+ * client names only on the Results page).
+ * Source: each client's Google Search Console, site totals, pulled 2026-11-23.
+ * Periods: 2026-08-01 to 2026-08-28 and 2026-10-24 to 2026-11-20. Re-pull before changing a number.
+ */
+interface Props { surface?: string; only?: 'hvac' | 'pavers'; title?: string }
+const { surface = 'surface-sand', only, title = 'What the work did for two local businesses' } = Astro.props;
+const all = [
+  {
+    key: 'hvac',
+    who: 'An HVAC contractor in Palm Beach County',
+    stats: [
+      { label: 'Clicks from Google search in 28 days', from: '14', to: '43' },
+      { label: 'Times the site showed up in Google search', from: '524', to: '12,706' },
+      { label: 'Average position in Google search', from: '29.8', to: '12.9' },
+    ],
+  },
+  {
+    key: 'pavers',
+    who: 'A paver contractor in Lake Worth',
+    stats: [
+      { label: 'Clicks from Google search in 28 days', from: '10', to: '40' },
+      { label: 'Times the site showed up in Google search', from: '524', to: '2,962' },
+      { label: 'Average position in Google search', from: '56.7', to: '15.3' },
+    ],
+  },
+];
+const shown = only ? all.filter((r) => r.key === only) : all;
+---
+<section class:list={['py-12 sm:py-16', surface]} id="results">
+  <div class="container-x">
+    <h2 class="h3 text-ink-900">{title}</h2>
+    <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600 max-w-[62ch]">The first number is August 1 to 28, 2026. The second is October 24 to November 20, 2026. Both are 28 days.</p>
+    <div class:list={['mt-7 grid gap-5', shown.length > 1 && 'md:grid-cols-2']}>
+      {shown.map((r) => (
+        <div class="result-card">
+          <h3 class="text-[17px] font-semibold text-ink-900">{r.who}</h3>
+          <dl class="mt-3 divide-y divide-ink-900/10">
+            {r.stats.map((s) => (
+              <div class="py-3 flex items-baseline justify-between gap-4">
+                <dt class="text-[15.5px] leading-snug text-ink-600">{s.label}</dt>
+                <dd class="shrink-0 text-[19px] font-semibold text-ink-900 whitespace-nowrap"><span class="text-ink-600 font-medium">{s.from}</span><span class="mx-2 text-gold-500" aria-hidden="true">&rarr;</span><span class="sr-only"> to </span>{s.to}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
+    </div>
+    <p class="mt-5 text-[14px] leading-relaxed text-ink-600/90 max-w-[80ch]">Where these numbers come from: each client's Google Search Console, read on November 23, 2026. Client names are left off on purpose. Average position is across every search the site showed up for, so a lower number is better. {shown.length > 1 ? 'Two clients is a small sample, which is why every number has its dates.' : 'One client is a small sample, which is why every number has its dates.'}</p>
+  </div>
+</section>
+<style>
+  .result-card { background: #fff; border: 1px solid rgba(3, 14, 29, .1); border-radius: 18px; padding: 20px 22px 8px; }
+</style>

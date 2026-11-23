@@ -6,6 +6,7 @@
 import Base from '@/layouts/Base.astro';
 import PageHero from '@/components/sections/PageHero.astro';
 import FAQ from '@/components/sections/FAQ.astro';
+import Results from '@/components/sections/Results.astro';
 import FinalCTA from '@/components/sections/FinalCTA.astro';
 import Icon from '@/components/ui/Icon.astro';
 import { SITE, CTA, telHref } from '@/config/site';
@@ -81,7 +82,8 @@ const pageLd = {
     </div>
   </section>
 
-  <FAQ faqs={p.faqs} title={p.faqTitle} surface="surface-sand" />
+  <Results surface="surface-sand" />
+  <FAQ faqs={p.faqs} title={p.faqTitle} surface="surface-cream" />
   <FinalCTA />
 </Base>
 
