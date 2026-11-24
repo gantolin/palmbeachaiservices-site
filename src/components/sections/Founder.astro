@@ -5,8 +5,9 @@
  */
 import Icon from '../ui/Icon.astro';
 import { SITE, FOUNDER_FIRST_NAME, CTA, telHref } from '@/config/site';
-interface Props { surface?: string }
-const { surface = 'surface-sand' } = Astro.props;
+/** `intro` is an optional line shown before the bio (the home page uses it; About does not). */
+interface Props { surface?: string; intro?: string }
+const { surface = 'surface-sand', intro } = Astro.props;
 const hasPhoto = Boolean(SITE.founderPhoto);
 ---
 <section class:list={['py-14 sm:py-20 relative overflow-hidden', surface]} id="founder">
@@ -22,9 +23,10 @@ const hasPhoto = Boolean(SITE.founderPhoto);
       <div class:list={[hasPhoto && 'lg:col-span-8']}>
         <div class="eyebrow">Who you will work with</div>
         <h2 class="h2 mt-4 text-ink-900">Hi, I'm {FOUNDER_FIRST_NAME}. You'll work with me, not an account manager.</h2>
-        <p class="mt-6 text-[17px] leading-relaxed text-ink-900/90 max-w-[60ch]">I run {SITE.name}. I build every website and set up every Google Business Profile myself, so the person you talk to is the person doing the work.</p>
+        {intro && <p class="mt-6 text-[17px] leading-relaxed font-semibold text-ink-900 max-w-[60ch]">{intro}</p>}
+        <p class:list={[intro ? 'mt-3' : 'mt-6', 'text-[17px] leading-relaxed text-ink-900/90 max-w-[60ch]']}>I run {SITE.name}. I build every website and set up every Google Business Profile myself, so the person you talk to is the person doing the work.</p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
-          <a href={CTA.primary.href} class="btn btn-navy">{CTA.primary.label} with {FOUNDER_FIRST_NAME}<Icon name="arrow-right" size={17} /></a>
+          <a href={CTA.primary.href} class="btn btn-navy">{CTA.primary.label}<Icon name="arrow-right" size={17} /></a>
           <a href={telHref} class="inline-flex items-center gap-2 font-semibold text-navy-700 hover:text-navy-800 min-h-11"><Icon name="phone" size={17} />{SITE.phone}</a>
         </div>
       </div>

@@ -25,8 +25,14 @@ const faqs = [
   { q: 'Do I have to sign a contract?', a: 'No. There is no contract, and the audit is free.' },
   { q: 'What do I need for the free audit?', a: 'Your business name and city. A link to your website helps if you have one.' },
 ];
+/** The three-step plan. Step one is the same ask as every button on the page. */
+const steps = [
+  { title: 'Book a free audit', text: 'Pick a time on the calendar. It takes 15 minutes by phone or video.' },
+  { title: 'Hear what to fix first', text: 'We look at your website and your Google Business Profile before the call, then tell you what to fix first.' },
+  { title: 'Decide if you want us to do it', text: 'If you want us to do the work, we start. There is no contract.' },
+];
 const callFacts = [
-  { icon: 'clock', text: '30 minutes' },
+  { icon: 'clock', text: '15 minutes' },
   { icon: 'phone', text: 'Phone or video' },
   { icon: 'check', text: 'Free, nothing to sign' },
 ];
@@ -36,7 +42,7 @@ const callFacts = [
   description="West Palm Beach SEO provides SEO services in West Palm Beach and across Palm Beach County: websites, Google Business Profile, and reviews. Book a free audit."
   faqs={faqs}
 >
-  <section class="relative overflow-hidden surface-dark grain -mt-px" id="services">
+  <section class="relative overflow-hidden surface-dark grain -mt-px">
     <div class="hero-bloom absolute inset-0 glow-navy" aria-hidden="true"></div>
     <Aurora variant="soft" />
     <Sonar origin=".hero-art .tile" />
@@ -51,69 +57,24 @@ const callFacts = [
             <p class="h1 hero-h1 block mt-5 text-[#f4f1e8] word-rise" set:html={words(headline)} />
             <div class="hero-art fade-in" style="--d:350ms"><HeroPin /></div>
           </div>
-          <p class="hero-say mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">West Palm Beach SEO builds your website, manages your Google Business Profile, and gets you more Google reviews, so you show up when someone nearby searches for what you do.</p>
+          <p class="hero-say mt-5 text-[19px] sm:text-[20px] leading-snug font-medium text-white max-w-[40ch] fade-in" style="--d:250ms">West Palm Beach SEO builds your website and manages your Google Business Profile, so you show up when someone nearby searches for what you do.</p>
           <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 max-w-[46ch] fade-in" style="--d:250ms">For contractors, restaurants, medical offices, and every other local business in Palm Beach County.</p>
-          <p class="hidden sm:block mt-3 text-[15.5px] leading-relaxed text-mist-400 fade-in" style="--d:250ms">Not ready to talk? <a class="text-gold-300 font-semibold underline" href="/google-business-profile-checklist/">Get the free Google Business Profile checklist</a>.</p>
 
-          <div class="hero-cta mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in lg:hidden" style="--d:300ms">
+          <div class="hero-cta mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 fade-in" style="--d:300ms">
             <a href="#book" class="btn btn-primary btn-lg btn-shine">Book a free audit<Icon name="arrow-right" size={18} /></a>
+            <a class="hidden sm:inline text-[15.5px] text-gold-300 font-semibold underline" href="/google-business-profile-checklist/">Get the free checklist</a>
           </div>
-          </div>
-
-          <div class="mt-8 sm:mt-9 grid gap-4 sm:gap-5 fade-in" style="--d:300ms">
-            {groups.map((g, gi) => (
-              <div class="service-card" data-trail>
-                {gi === 0 ? (
-                  /* Found on Google: a map with "Your business" at the top of the local results. */
-                  <div class="viz viz-map" aria-hidden="true">
-                    <svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMid slice">
-                      <rect width="400" height="130" fill="#0b2a50" />
-                      <path d="M318 0C306 34 334 72 320 130H400V0Z" fill="#12467f" />
-                      <rect x="214" y="14" width="46" height="30" rx="7" fill="#12553f" opacity=".7" />
-                      <ellipse cx="250" cy="112" rx="34" ry="14" fill="#12553f" opacity=".7" />
-                      <g fill="none" stroke="rgba(255,255,255,.14)" stroke-width="3" stroke-linecap="round">
-                        <path d="M150 52H318" /><path d="M196 -4V134" /><path d="M276 -4V134" /><path d="M150 100L318 88" /><path d="M236 52V96" />
-                      </g>
-                      <path d="M150 74H322" fill="none" stroke="#c9a227" stroke-width="3.5" stroke-linecap="round" opacity=".9" />
-                    </svg>
-                    <span class="viz-ring"></span>
-                    <svg class="viz-pin" viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" fill="#ea4335" /><circle cx="12" cy="10" r="3.2" fill="#fff" /></svg>
-                    <div class="viz-pack">
-                      <div class="viz-top"><span class="viz-rank">1</span><span class="viz-biz">Your business</span></div>
-                      <div class="viz-bar" style="width:78%"></div>
-                      <div class="viz-bar" style="width:60%"></div>
-                    </div>
-                  </div>
-                ) : (
-                  /* Hours back: the jobs the AI finishes, ticking off one after another. */
-                  <div class="viz viz-auto" aria-hidden="true">
-                    {['New lead followed up', 'Review request sent', 'Estimate drafted'].map((t, i) => (
-                      <div class="viz-done" style={`--n:${i}`}><span class="viz-check"><Icon name="check" size={13} stroke={3} /></span>{t}</div>
-                    ))}
-                  </div>
-                )}
-                <h2 class="h3 mt-5 text-[#f4f1e8]">{g.title}</h2>
-                <ul class="trail mt-2 divide-y divide-white/10">
-                  {g.items.map((s) => (
-                    <li class="trail-row flex items-start gap-4 py-3.5">
-                      <span class="trail-dot mt-0.5 size-9 shrink-0 rounded-[10px] flex items-center justify-center"><Icon name={s.icon} size={17} /></span>
-                      <p class="trail-text text-[16px] leading-snug text-mist-400"><span class="block font-semibold text-[#f4f1e8]">{s.name}</span>{s.text}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
 
         <div id="book" class="book-card scroll-mt-28 fade-in" style="--d:200ms">
-          <h2 class="h3 text-[#f4f1e8]">Book your free 30-minute audit.</h2>
+          <h2 class="h3 text-[#f4f1e8]">Book your free 15-minute audit.</h2>
           <p class="mt-3 text-[16px] leading-relaxed text-mist-400">Pick a time. We look at your website and your Google profile before the call and tell you what to fix first.</p>
           <ul class="call-facts mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[14.5px] text-mist-200">
             {callFacts.map((f) => <li class="inline-flex items-center gap-2"><Icon name={f.icon} size={16} class="text-gold-300" />{f.text}</li>)}
           </ul>
           <div class="mt-6">
-            <BookingEmbed title="Book your free 30-minute audit" compact />
+            <BookingEmbed title="Book your free 15-minute audit" compact />
           </div>
           <div class="mt-5 hidden lg:grid gap-3 grid-cols-2">
             <a href={telHref} class="contact-pill"><Icon name="phone" size={19} class="text-gold-300" /><span><span class="block text-[12.5px] font-normal text-mist-400">Call</span>{SITE.phone}</span></a>
@@ -124,32 +85,98 @@ const callFacts = [
     </div>
   </section>
 
-  <section class="surface-cream py-12 sm:py-16">
-    <div class="container-x grid gap-10 sm:grid-cols-2 lg:gap-x-16">
-      <div>
-        <h2 class="h3 text-ink-900">SEO services in West Palm Beach</h2>
-        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">When someone nearby searches for what you do, Google shows a map with a few businesses and a list of websites under it. We work on both.</p>
-        <ul class="home-list mt-4 text-[16.5px] leading-relaxed text-ink-600">
-          <li>A website with a page for every service and every town you cover.</li>
-          <li>A Google Business Profile with the right categories, services, photos, and weekly posts.</li>
-          <li>A review request by text to every customer.</li>
+  {/* Stakes: what staying invisible costs. */}
+  <section class="surface-cream py-12 sm:py-16" id="stakes">
+    <div class="container-x">
+      <div class="max-w-[72ch]">
+        <h2 class="h3 text-ink-900">What it costs when you don't show up on Google</h2>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">A customer nearby searches for what you do, and Google shows them a short list. If you're not on it, they call someone who is. You never hear about that job, so it's easy to miss how many are going to another business.</p>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">It's worse when you already paid a lot for a website and SEO, and you still don't see your business when you search Google.</p>
+        <p class="mt-5 text-[16.5px] leading-relaxed text-ink-900 font-semibold">Three common reasons a local business doesn't show up:</p>
+        <ul class="home-list mt-3 text-[16.5px] leading-relaxed text-ink-600">
+          <li>The Google Business Profile is half filled in, with old photos and few reviews.</li>
+          <li>The website has one page for everything, so Google has nothing to show for each service or each town.</li>
+          <li>Nobody asks customers for a review, so the businesses that do ask look like the safer call.</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  {/* Value: what the owner gets. */}
+  <section class="relative overflow-hidden surface-dark grain py-12 sm:py-16" id="services">
+    <div class="container-x relative grid gap-10 lg:grid-cols-2 lg:gap-14 lg:items-start">
       <div>
-        <h2 class="h3 text-ink-900">Web design built to show up on Google</h2>
-        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">We build or fix your website so each service and each town you cover has its own page. It loads fast on a phone and gets the visitor to call.</p>
-        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600"><a class="text-navy-700 font-semibold underline" href="/web-design-west-palm-beach/">Web design in West Palm Beach</a></p>
+        <h2 class="h3 text-[#f4f1e8]">SEO services in West Palm Beach</h2>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-mist-400 max-w-[52ch]">When someone nearby searches for what you do, Google shows a map with a few businesses and a list of websites under it. We work on both, so you can show up in each place.</p>
+        <h2 class="h3 mt-9 text-[#f4f1e8]">Web design built to show up on Google</h2>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-mist-400 max-w-[52ch]">We build or fix your website so each service and each town you cover has its own page. It loads fast on a phone and gets the visitor to call.</p>
+        <p class="mt-3 text-[16.5px] leading-relaxed"><a class="text-gold-300 font-semibold underline" href="/web-design-west-palm-beach/">Web design in West Palm Beach</a></p>
+        <a href="#book" class="btn btn-primary btn-shine mt-8">Book a free audit<Icon name="arrow-right" size={17} /></a>
+      </div>
+      {groups.map((g) => (
+        <div class="service-card" data-trail>
+          <h2 class="h3 mt-2 text-[#f4f1e8]">{g.title}</h2>
+          <ul class="trail mt-2 divide-y divide-white/10">
+            {g.items.map((s) => (
+              <li class="trail-row flex items-start gap-4 py-3.5">
+                <span class="trail-dot mt-0.5 size-9 shrink-0 rounded-[10px] flex items-center justify-center"><Icon name={s.icon} size={17} /></span>
+                <p class="trail-text text-[16px] leading-snug text-mist-400"><span class="block font-semibold text-[#f4f1e8]">{s.name}</span>{s.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Guide: who does the work, then the proof. */}
+  <Founder surface="surface-cream" intro="If you paid a lot for a website and SEO and still don't see your business on Google, I understand the frustration. I hear it from business owners." />
+  <Results surface="surface-sand" />
+
+  {/* Plan: three steps. */}
+  <section class="surface-cream py-12 sm:py-16" id="how-it-works">
+    <div class="container-x">
+      <h2 class="h3 text-ink-900">How it works</h2>
+      <ol class="plan mt-6 grid gap-5 md:grid-cols-3">
+        {steps.map((st, i) => (
+          <li class="plan-step">
+            <span class="plan-n" aria-hidden="true">{i + 1}</span>
+            <h3 class="mt-3 text-[18px] font-semibold text-ink-900">{st.title}</h3>
+            <p class="mt-2 text-[16px] leading-relaxed text-ink-600">{st.text}</p>
+          </li>
+        ))}
+      </ol>
+      <a href="#book" class="btn btn-navy mt-8">Book a free audit<Icon name="arrow-right" size={17} /></a>
+    </div>
+  </section>
+
+  {/* Explanatory paragraph, then the towns. */}
+  <section class="surface-sand py-12 sm:py-16">
+    <div class="container-x grid gap-10 lg:grid-cols-3 lg:gap-x-16">
+      <div class="lg:col-span-2">
+        <h2 class="h3 text-ink-900">Why local businesses hire West Palm Beach SEO</h2>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">West Palm Beach SEO works with local business owners in Palm Beach County who want customers nearby to find them on Google. To get there, you need a website and a Google Business Profile that Google can match to the services you offer and the towns you cover. The problem is that many owners have already paid a lot for a website and SEO and still don't see themselves on Google, which is frustrating, and the calls keep going to a business that showed up. You shouldn't have to become a Google expert to know if the work you paid for is getting you found. That's why Gene builds every website and sets up every Google Business Profile himself, and why two clients' numbers are on this page with their dates.</p>
+        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">Here's how it works: you book a free audit, we tell you what to fix first, and you decide if you want us to do the work. <a class="text-navy-700 font-semibold underline" href="#book">Book a free audit</a> so you can stop wondering where the calls are going and start showing up when someone nearby searches for what you do.</p>
       </div>
       <div>
         <h2 class="h3 text-ink-900">Towns we work in</h2>
         <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">We work with local businesses in {areaLine}.</p>
         <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600"><a class="text-navy-700 font-semibold underline" href="/seo-boca-raton/">SEO in Boca Raton</a></p>
       </div>
-      <div>
-        <h2 class="h3 text-ink-900">What happens on the free audit</h2>
-        <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">Pick a time on the calendar. Before the call we look at your website and your Google Business Profile. On the call we tell you what to fix first. It takes 30 minutes by phone or video.</p>
+    </div>
+  </section>
+
+  {/* The free checklist, for owners who are not ready to book. Then the questions to ask. */}
+  <section class="surface-cream py-12 sm:py-16">
+    <div class="container-x grid gap-10">
+      <div class="lead-card" id="checklist">
+        <div>
+          <h2 class="h3 text-ink-900">Not ready to talk? Start with the free checklist.</h2>
+          <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600 max-w-[60ch]">Go through your own Google Business Profile with the same list we use. Print it or save it as a PDF.</p>
+        </div>
+        <a href="/google-business-profile-checklist/" class="btn btn-navy shrink-0">Get the free checklist<Icon name="arrow-right" size={17} /></a>
       </div>
-      <div class="sm:col-span-2">
+      <div>
         <h2 class="h3 text-ink-900">Questions to ask any SEO company in West Palm Beach</h2>
         <p class="mt-3 text-[16.5px] leading-relaxed text-ink-600">Ask these of whoever you hire, us included.</p>
         <ul class="home-list mt-4 text-[16.5px] leading-relaxed text-ink-600">
@@ -158,13 +185,11 @@ const callFacts = [
           <li>Who will I talk to, and is that the person doing the work?</li>
           <li>What will you look at before you tell me what it costs?</li>
         </ul>
-        <p class="mt-4 text-[16.5px] leading-relaxed text-ink-600">Our answers: there is no contract. Two clients' numbers are below, with dates. You talk to Gene, who does the work. We look at your website and your Google Business Profile before the audit call. We also have a page on <a class="text-navy-700 font-semibold underline" href="/hvac-seo/">HVAC SEO</a> with one client's numbers in full.</p>
+        <p class="mt-4 text-[16.5px] leading-relaxed text-ink-600 max-w-[80ch]">Our answers: there is no contract. Two clients' numbers are on this page, with dates. You talk to Gene, who does the work. We look at your website and your Google Business Profile before the audit call. We also have a page on <a class="text-navy-700 font-semibold underline" href="/hvac-seo/">HVAC SEO</a> with one client's numbers in full.</p>
       </div>
     </div>
   </section>
 
-  <Results surface="surface-sand" />
-  <Founder surface="surface-cream" />
   <FAQ faqs={faqs} title="Questions about SEO in West Palm Beach" surface="surface-sand" />
   <FinalCTA />
 </Base>
@@ -234,6 +259,12 @@ const callFacts = [
 <style>
   .home-list { list-style: disc; padding-left: 1.2em; display: grid; gap: .45em; }
   .home-list li::marker { color: var(--color-gold-500); }
+  /* The three plan steps and the checklist card. */
+  .plan { list-style: none; padding: 0; }
+  .plan-step { background: #fff; border: 1px solid rgba(3, 14, 29, .1); border-radius: 18px; padding: 20px 22px 22px; }
+  .plan-n { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-navy-700); color: #fff; font-weight: 600; font-size: 15px; }
+  .lead-card { display: flex; flex-direction: column; gap: 20px; background: #fff; border: 1px solid rgba(201, 162, 39, .55); border-radius: 18px; padding: 24px; }
+  @media (min-width: 768px) { .lead-card { flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; padding: 28px 32px; } }
   @media (min-width: 1024px) { .hero-h1 { font-size: clamp(2.4rem, 3.4vw, 3.1rem); } }
 
   /* Phones: the headline, sentence and button own the first screen. The block is as tall as the space
@@ -289,7 +320,7 @@ const callFacts = [
   /* Short phones: a smaller headline keeps the Book a free audit button above the bottom bar. */
   @media (max-width: 640px) and (max-height: 600px) { .hero-head .hero-h1 { font-size: 1.95rem; margin-top: 12px; } .hero-pad { padding-top: 24px; } }
 
-  /* Service cards: dark glass like the booking card, each with its own picture on top. */
+  /* Service card: dark glass like the booking card. */
   .service-card {
     border-radius: 24px; padding: 18px 22px 10px;
     background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03));
@@ -297,29 +328,8 @@ const callFacts = [
     box-shadow: 0 40px 70px -40px rgba(0, 0, 0, .85), 0 1px 0 rgba(255, 255, 255, .1) inset;
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
   }
-  .viz { position: relative; height: 132px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .1); }
-  .viz > svg:first-child { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-  /* Picture 1: the map, with "Your business" first in the list. */
-  .viz-pin { position: absolute; left: 68%; top: 56%; width: 40px; transform: translate(-50%, -100%); filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .45)); }
-  .viz-ring { position: absolute; left: 68%; top: 56%; width: 30px; aspect-ratio: 2.4; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid rgba(234, 67, 53, .85); animation: viz-ring 2.4s ease-out infinite; }
-  @keyframes viz-ring { 0% { opacity: .9; transform: translate(-50%, -50%) scale(.6); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.6); } }
-  .viz-pack { position: absolute; left: 12px; top: 50%; width: min(46%, 190px); transform: translateY(-50%); display: grid; gap: 7px; }
-  .viz-top { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: #fff; color: #0b2a50; font: 700 14px/1.1 var(--font-sans); box-shadow: 0 0 0 2px var(--color-gold-500), 0 10px 22px -8px rgba(0, 0, 0, .7); white-space: nowrap; }
-  .viz-rank { width: 20px; height: 20px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: var(--color-gold-500); color: #0b2a50; font-size: 12px; }
-  .viz-bar { height: 12px; border-radius: 6px; background: rgba(255, 255, 255, .16); }
 
-  /* Picture 2: finished jobs ticking off, one after another, on a loop. */
-  .viz-auto { display: grid; align-content: center; gap: 8px; padding: 0 14px; background: radial-gradient(120% 140% at 100% 0%, #12467f 0%, #0b2a50 45%, #061f3f 100%); }
-  .viz-done { display: flex; align-items: center; gap: 9px; width: fit-content; padding: 6px 12px 6px 7px; border-radius: 999px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .14); color: #f4f1e8; font: 600 13.5px/1.1 var(--font-sans); animation: viz-done 7.5s cubic-bezier(.22, 1, .36, 1) calc(var(--n) * .9s + .4s) infinite backwards; }
-  .viz-done:nth-child(2) { margin-left: 22px; }
-  .viz-done:nth-child(3) { margin-left: 44px; }
-  .viz-check { width: 20px; height: 20px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; background: var(--color-gold-500); color: #0b2a50; }
-  @keyframes viz-done { 0% { opacity: 0; transform: translateY(10px); } 7%, 86% { opacity: 1; transform: none; } 94%, 100% { opacity: 0; transform: translateY(-6px); } }
-  @media (prefers-reduced-motion: reduce) {
-    .viz-ring { animation-duration: 2.4s !important; animation-iteration-count: infinite !important; }
-    .viz-done { animation-duration: 7.5s !important; animation-iteration-count: infinite !important; }
-  }
 
   /* Service trail (see the script above). The track and the gold fill sit behind the icons; a row is
      dim until the fill reaches its icon. Rows with no script running show in the lit colors. */
@@ -421,8 +431,6 @@ const callFacts = [
     .book-card :global(h2) { font-size: 1.6rem; }
     .call-facts { display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 15.5px; }
     .service-card { padding: 14px 16px 6px; border-radius: 20px; }
-    .viz { height: 118px; }
-    .viz-auto { height: 138px; }
     .service-card :global(h2) { font-size: 1.3rem; }
     .service-card :global(li) { padding-top: 12px; padding-bottom: 12px; gap: 14px; }
   }
